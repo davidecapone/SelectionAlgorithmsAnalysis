@@ -33,8 +33,8 @@ int quickSelect(int A[], int i, int j, int k) {
     int perno = Partition(A, i, j);
 
     if ( k == perno ) return A[k];
-    else if ( k < perno ) return quickSelect(A, i, perno-1);
-    else return quickSelect(A, perno+1, j);
+    else if ( k < perno ) return quickSelect(A, i, perno-1, k);
+    else return quickSelect(A, perno+1, j, k);
   }
 }
 
