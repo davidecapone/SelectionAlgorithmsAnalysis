@@ -88,7 +88,7 @@ int quickSelect(int A[], int i, int j, int k) {
     }
 
     /* partizionamento intorno all'ultimo elemento in A, ottengo la posizione in cui è finito */
-    int perno = Partition(A, i, j);
+    int perno = partition(A, i, j);
 
     if ( k == perno ) return A[k];
     else if ( k < perno ) return quickSelect(A, i, perno-1, k);
@@ -101,6 +101,11 @@ int main () {
   int A[MAX_LINE_SIZE];
   int *p = &A[0];
   int l = scanArray(p);
+
+  int k;
+  scanf("%d", &k);
+
+  printf("%d\n", quickSelect(A, 0, l-1, k));
 
   return 0;
 }
