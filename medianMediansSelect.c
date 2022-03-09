@@ -36,13 +36,13 @@ int B[quinti];
 //dopo la chiamata ricorsiva abbiamo arr di dimensione <= 5; 
 //lo ordiniamo con ***** e restituisco la mediana, cioè l'elemento a metà del blocco
 if(q<=5){
-  sort(arr[]);
+  sort(arr);
   return arr[2];
 }
 
 //suddividiamo l' array in blocchi da 5 per poi salvare sul vettore B la mediana di ogni blocco
 for(int i = 0; i <= quinti; i++){
-  B[i] = select(arr[], k, quinti*i, quinti+quinti*i);
+  B[i] = select(arr, k, 5*i, 4+5*i);
 }
 
 }
