@@ -57,15 +57,16 @@ void swap(int A[], int i, int j){
  */
 int partition(int A[], int p, int q){
   
-  int i = p-1;
-  int x = A[q]; // perno (ultima posizione nell'intervallo [p, q])
+  int i = p;
+  int perno = A[q]; // perno (ultima posizione nell'intervallo [p, q])
   
-  for(int j=p; j<=q; j++){  // procedura di partizionamento del vettore intorno al perno
-    if(A[j] <= x){
+  for(int j=p; j<q; j++){  // procedura di partizionamento del vettore intorno al perno
+    if(A[j] < perno){
       swap(A, j, i);
       i++;
     }
   }
+  swap(A, i, q);
   return i;
 }
 
