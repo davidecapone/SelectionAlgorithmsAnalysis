@@ -15,8 +15,8 @@
  * @brief Selezione del k-esimo elemento
  * 
  * @param A porzione non necessariamente ordinata di interi
- * @param i partenza
- * @param j fine
+ * @param i indice sx
+ * @param j indice dx
  * @param k posizione da determinare
  * @return int : k-esimo elemento in un vettore ordinato 
  */
