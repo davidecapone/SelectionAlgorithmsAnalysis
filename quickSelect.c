@@ -1,6 +1,6 @@
 /**
  * @file quickSelect.c
- * @author Capone, Della Rovere, Gortani Fior
+ * @author Capone, Della Rovere, Gortani, Fior
  * @brief 
     Si tratta di una variante dell'algoritmo di ordinamento "quick sort", 
     in cui ogni chiamata ricorsiva su un intervallo [𝑖,𝑗] del vettore fornito in input termina in tempo costante 
@@ -67,6 +67,33 @@ int partition(int A[], int p, int q){
     }
   }
   return i;
+}
+
+/**
+ * @brief Selezione del k-esimo elemento
+ * 
+ * @param A porzione non necessariamente ordinata di interi
+ * @param i indice sx
+ * @param j indice dx
+ * @param k posizione da determinare
+ * @return int : k-esimo elemento in un vettore ordinato 
+ */
+int quickSelect(int A[], int i, int j, int k) {
+  /* verifico se k ha senso nella porzione [i, j] del vettore */
+  if (( k >= i ) && ( k <= j )) {
+
+    /* vettore di 1 elemento */
+    if ( i == j ) {
+      return A[i];
+    }
+
+    /* partizionamento intorno all'ultimo elemento in A, ottengo la posizione in cui è finito */
+    int perno = Partition(A, i, j);
+
+    if ( k == perno ) return A[k];
+    else if ( k < perno ) return quickSelect(A, i, perno-1);
+    else return quickSelect(A, perno+1, j);
+  }
 }
 
 int main () {
