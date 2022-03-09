@@ -1,6 +1,6 @@
 /**
  * @file medianMedians.c
- * @author Capone, Della Rovere, Gortani Fior
+ * @author Capone, Della Rovere, Gortani, Fior
  * @brief 
   L'algoritmo è basato sulla suddivisione del vettore fornito in input in blocchi di dimensione limitata 
   e sul calcolo della mediana delle mediane. Più precisamente, l'algoritmo esegue le seguenti operazioni:
@@ -14,6 +14,38 @@
  * 
  */
 #include <stdio.h>
+
+int select(int arr[], int k, int p, int q){
+  /*
+  if (A has 5 or fewer elements) {
+    sort L
+    return the element in the kth position
+  }
+
+partition L into subsets S[i] of five elements each
+        (there will be n/5 subsets total).
+
+    for (i = 1 to n/5) do
+        x[i] = select(S[i],3)
+*/
+
+int quinti = (q-p+1)/5; //quinti è il numero di blocchetti di dimensione <= 5 che compongono arr
+
+int B[quinti];
+
+//dopo la chiamata ricorsiva abbiamo arr di dimensione <= 5; 
+//lo ordiniamo con ***** e restituisco la mediana, cioè l'elemento a metà del blocco
+if(q<=5){
+  sort(arr[]);
+  return arr[2];
+}
+
+//suddividiamo l' array in blocchi da 5 per poi salvare sul vettore B la mediana di ogni blocco
+for(int i = 0; i <= quinti; i++){
+  B[i] = select(arr[], k, quinti*i, quinti+quinti*i);
+}
+
+}
 
 int main () {
 
