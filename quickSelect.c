@@ -32,7 +32,7 @@ int quickSelect(int A[], int i, int j, int k) {
     /* chiamata Select determinare mediano dei mediani M  */
     int M = Select();
 
-    /* partizionamento intorno ad M */
+    /* partizionamento intorno ad M, ottengo nuova posizione per M in A */
     int perno = Partition(A, i, j, M);
 
     if ( k == perno ) return A[k];
