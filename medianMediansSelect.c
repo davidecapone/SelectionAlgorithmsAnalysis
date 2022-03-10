@@ -17,6 +17,11 @@
 #include <stdio.h>
 #include <math.h>
 
+int MoM(int arr[], int p, int q);
+void inSort(int arr[], int p, int q );
+int med5(int arr[], int p, int q);
+int partition(int arr[], int k, int p, int q, int posPerno);
+
 void swap(int A[], int i, int j){
   
   int key = A[i];
@@ -92,7 +97,7 @@ int partition(int arr[], int k, int p, int q, int posPerno){
 
 int MoM(int arr[], int p, int q){
 
-  int quinti = ceiling((q-p+1)/5); //quinti è il numero di blocchetti di dimensione <= 5 che compongono arr
+  int quinti = ceil((q-p+1)/5); //quinti è il numero di blocchetti di dimensione <= 5 che compongono arr
   int B[quinti];
   int j=0;
 
@@ -113,7 +118,7 @@ int MoM(int arr[], int p, int q){
 int med5(int arr[], int p, int q){ //dato blocco, ritorno il mediano
 
   inSort(arr, p, q);
-  return ceiling( (p+q)/2 );
+  return ceil( (p+q)/2 );
 }
 
 void inSort(int arr[], int p, int q ){  //ordino blocco con insertion sort
