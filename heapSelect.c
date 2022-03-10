@@ -81,14 +81,14 @@ int parent( int i ) { return ( i - 1 ) / 2; } // passando all'enumerazione degli
 void heapify( int A[], int heapsize, int i ) {
   int l = left( i );
   int r = right( i );
-  int max = i;
+  int min = i;
 
-  if ( l < heapsize && A[ l ] > A[ max ] ) max = l;
-  if ( r < heapsize && A[ r ] > A[ max ] ) max = r;
+  if ( l < heapsize && A[ l ] < A[ min ] ) min = l;
+  if ( r < heapsize && A[ r ] < A[ min ] ) min = r;
 
-  if ( max != i ) {
-    swap( A, i, max );
-    heapify( A, heapsize, max );
+  if ( min != i ) {
+    swap( A, i, min );
+    heapify( A, heapsize, min );
   }
 }
 
@@ -100,7 +100,7 @@ void heapify( int A[], int heapsize, int i ) {
  */
 void buildMinHeap( int A[], int len ) {  
   // da controllare parte basse / parte alta per dim/2
-	for ( int i = (len)/2; i > 0; i-- ) {
+	for ( int i = (len)/2; i >= 0; i-- ) {
 		heapify( A, len, i );
 	}
 }
@@ -108,6 +108,24 @@ void buildMinHeap( int A[], int len ) {
 void printMinHeap( int A[], int heapsize ) {
   for (int i = 0; i < heapsize; i++) printf( " %d ", A[i] );
   printf("\n");
+}
+
+/**
+ * @brief estrae la radice dalla min-heap
+ * 
+ * @param A heap
+ * @param heapsize dimensione heap
+ * @return int radice estratta dalla min-heap
+ */
+int extractMinHeap( int A[], int heapsize ){
+  
+  int radix = A[ 0 ];
+
+  swap( A, 0, heapsize - 1 );
+  heapsize--;
+  heapify( A, heapsize, 0);
+
+  return radix;
 }
 
 int main () {
