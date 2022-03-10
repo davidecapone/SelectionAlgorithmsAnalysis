@@ -98,7 +98,12 @@ void heapify( int A[], int heapsize, int i ) {
  * @param A vettore non min-heap
  * @param dim dimensione della heap
  */
-void buildMinHeap( int A[], int dim ) {  }
+void buildMinHeap( int A[], int dim ) {  
+  // da controllare parte basse / parte alta per dim/2
+	for ( int i = (dim)/2; i > 0; i--; ) {
+		heapify( A, dim, i );
+	}
+}
 
 int main () {
   // scan sullo standard input per definire il vettore
