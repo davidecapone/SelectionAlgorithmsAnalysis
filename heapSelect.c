@@ -98,11 +98,16 @@ void heapify( int A[], int heapsize, int i ) {
  * @param A vettore non min-heap
  * @param dim dimensione della heap
  */
-void buildMinHeap( int A[], int dim ) {  
+void buildMinHeap( int A[], int len ) {  
   // da controllare parte basse / parte alta per dim/2
-	for ( int i = (dim)/2; i > 0; i--; ) {
-		heapify( A, dim, i );
+	for ( int i = (len)/2; i > 0; i-- ) {
+		heapify( A, len, i );
 	}
+}
+
+void printMinHeap( int A[], int heapsize ) {
+  for (int i = 0; i < heapsize; i++) printf( " %d ", A[i] );
+  printf("\n");
 }
 
 int main () {
@@ -111,5 +116,8 @@ int main () {
   int *p = &A[0];
   int len = scanArray(p);
 
+  printMinHeap( A, len );
+  buildMinHeap( A, len );
+  printMinHeap( A, len );
   return 0;
 }
