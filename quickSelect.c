@@ -31,6 +31,7 @@ int scanArray(int *A) {
     
     return size;
 }
+
 /**
  * @brief scambia 2 elementi in A
  * 
@@ -38,12 +39,12 @@ int scanArray(int *A) {
  * @param i indice primo elemento
  * @param j indice secondo elemento
  */
-void swap(int A[], int i, int j){
+void swap( int A[], int i, int j ){
   
-  int key = A[i];
+  int key = A[ i ];
   
-  A[i] = A[j];
-  A[j] = key;
+  A[ i ] = A[ j ];
+  A[ j ] = key;
 }
 
 /**
@@ -55,19 +56,20 @@ void swap(int A[], int i, int j){
  * @param q posizione finale
  * @return int: posizione in cui è finito il perno
  */
-int partition(int A[], int p, int q){
+int partition( int A[], int p, int q ) {
   
   int i = p;
-  int perno = A[q]; // perno (ultima posizione nell'intervallo [p, q])
+  int perno = A[ q ]; // perno (ultima posizione nell'intervallo [p, q])
   
-  for(int j=p; j<q; j++){  // procedura di partizionamento del vettore intorno al perno
-    if(A[j] < perno){
-      swap(A, j, i);
+  for( int j = p; j < q; j++ ) {  // procedura di partizionamento del vettore intorno al perno
+    if( A[ j ] < perno ) {
+      swap( A, j, i );
       i++;
     }
   }
 
-  swap(A, i, q);
+  swap( A, i, q );  // il perno si trova ancora in posizione q, viene spostato nella posizione in cui dovrebbe stare se il vettore fosse ordinato
+  
   return i;
 }
 
@@ -80,21 +82,19 @@ int partition(int A[], int p, int q){
  * @param k posizione da determinare
  * @return int : k-esimo elemento in un vettore ordinato, -1 se non k non ha senso
  */
-int quickSelect(int A[], int i, int j, int k) {
+int quickSelect( int A[], int i, int j, int k ) {
   /* verifico se k ha senso nella porzione [i, j] del vettore */
   if (( k >= i ) && ( k <= j )) {
 
     /* vettore di 1 elemento */
-    if ( i == j ) {
-      return A[i];
-    }
+    if ( i == j ) return A[ i ];
 
     /* partizionamento intorno all'ultimo elemento in A, ottengo la posizione in cui è finito */
     int perno = partition(A, i, j);
 
-    if ( k == perno ) return A[k];
-    else if ( k < perno ) return quickSelect(A, i, perno-1, k);
-    else return quickSelect(A, perno+1, j, k);
+    if ( k == perno ) return A[ k ];
+    else if ( k < perno ) return quickSelect( A, i, perno-1, k );
+    else return quickSelect( A, perno+1, j, k );
   } 
   else {
     return -1;
@@ -103,14 +103,14 @@ int quickSelect(int A[], int i, int j, int k) {
 
 int main () {
   // scan sullo standard input per definire il vettore
-  int A[MAX_LINE_SIZE];
-  int *p = &A[0];
-  int l = scanArray(p);
+  int A[ MAX_LINE_SIZE ];
+  int *p = &A[ 0 ];
+  int len = scanArray( p );
 
-  int k;
-  scanf("%d", &k);
+  int kSmallest;
+  scanf( "%d", &kSmallest );
 
-  printf("%d\n", quickSelect(A, 0, l-1, k));
+  printf( "%d\n", quickSelect( A, 0, len-1, kSmallest ));
 
   return 0;
 }
