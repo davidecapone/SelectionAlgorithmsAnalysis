@@ -31,6 +31,7 @@ int scanArray(int *A) {
     
     return size;
 }
+
 /**
  * @brief scambia 2 elementi in A
  * 
