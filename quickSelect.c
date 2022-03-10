@@ -66,7 +66,7 @@ int partition(int A[], int p, int q){
       i++;
     }
   }
-  
+
   swap(A, i, q);
   return i;
 }
@@ -78,7 +78,7 @@ int partition(int A[], int p, int q){
  * @param i indice sx
  * @param j indice dx
  * @param k posizione da determinare
- * @return int : k-esimo elemento in un vettore ordinato 
+ * @return int : k-esimo elemento in un vettore ordinato, -1 se non k non ha senso
  */
 int quickSelect(int A[], int i, int j, int k) {
   /* verifico se k ha senso nella porzione [i, j] del vettore */
@@ -95,6 +95,9 @@ int quickSelect(int A[], int i, int j, int k) {
     if ( k == perno ) return A[k];
     else if ( k < perno ) return quickSelect(A, i, perno-1, k);
     else return quickSelect(A, perno+1, j, k);
+  } 
+  else {
+    return -1;
   }
 }
 
