@@ -12,8 +12,104 @@
  * 
  */
 #include <stdio.h>
+#define MAX_LINE_SIZE 1000   // maximum size of a line of input
+
+int scanArray(int *A) {
+    // scan line of text
+    char line[MAX_LINE_SIZE];
+    scanf("%[^\n]", line);
+
+    // convert text into array
+    int size = 0, offset = 0, numFilled, n;
+    do {
+        numFilled = sscanf(line + offset, "%d%n", &(A[size]), &n);
+        if (numFilled > 0) {
+            size++;
+            offset += n;
+        }
+    } while (numFilled > 0);
+    
+    return size;
+}
+
+/**
+ * @brief scambia 2 elementi in A
+ * 
+ * @param A 
+ * @param i indice primo elemento
+ * @param j indice secondo elemento
+ */
+void swap( int A[], int i, int j ){
+  
+  int key = A[ i ];
+  
+  A[ i ] = A[ j ];
+  A[ j ] = key;
+}
+
+/**
+ * @brief posizione del figlio sinistro
+ * 
+ * @param i genitore
+ * @return int posizione del figlio sinistro
+ */
+int left( int i ) { return ( 2 * i ) + 1; }
+
+/**
+ * @brief posizione del figlio destro
+ * 
+ * @param i genitore
+ * @return int posizione del figlio destro
+ */
+int right( int i ) { return ( 2 * i ) + 2; }
+
+/**
+ * @brief posizione del genitore
+ * 
+ * @param i figlio destro/sinistro
+ * @return int posizione del genitore
+ */
+int parent( int i ) { return ( i - 1 ) / 2; } // passando all'enumerazione degli indici di c, è necessario togliere 1 all'indice del figlio per ottenere l'indice del genitore
+
+/**
+ * @brief preservare le propietà della min-heap A
+ * 
+ * @param A min-heap 
+ * @param heapsize dimensione della heap (rimane invariata nella procedura)
+ * @param i posizione in è presente l'errore
+ */
+void heapify( int A[], int heapsize, int i ) {
+  int l = left( i );
+  int r = right( i );
+  int max = i;
+
+  if ( l < heapsize && A[ l ] > A[ max ] ) max = l;
+  if ( r < heapsize && A[ r ] > A[ max ] ) max = r;
+
+  if ( max != i ) {
+    swap( A, i, max );
+    heapify( A, heapsize, max );
+  }
+}
+
+/**
+ * @brief costruire una min-heap a partire da un vettore A
+ * 
+ * @param A vettore non min-heap
+ * @param dim dimensione della heap
+ */
+void buildMinHeap( int A[], int dim ) {  
+  // da controllare parte basse / parte alta per dim/2
+	for ( int i = (dim)/2; i > 0; i--; ) {
+		heapify( A, dim, i );
+	}
+}
 
 int main () {
+  // scan sullo standard input per definire il vettore
+  int A[MAX_LINE_SIZE];
+  int *p = &A[0];
+  int len = scanArray(p);
 
   return 0;
 }
