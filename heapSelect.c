@@ -81,7 +81,7 @@ int parent( int i ) { return ( i - 1 ) / 2; } // passando all'enumerazione degli
 void heapify( int A[], int heapsize, int i ) {
   int l = left( i );
   int r = right( i );
-  int max;
+  int max = i;
 
   if ( l < heapsize && A[ l ] > A[ max ] ) max = l;
   if ( r < heapsize && A[ r ] > A[ max ] ) max = r;
