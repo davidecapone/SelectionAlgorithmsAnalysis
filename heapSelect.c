@@ -81,7 +81,7 @@ int parent( int i ) { return ( i - 1 ) / 2; } // passando all'enumerazione degli
 void heapify( int A[], int heapsize, int i ) {
   int l = left( i );
   int r = right( i );
-  int max;
+  int max = i;
 
   if ( l < heapsize && A[ l ] > A[ max ] ) max = l;
   if ( r < heapsize && A[ r ] > A[ max ] ) max = r;
@@ -98,7 +98,17 @@ void heapify( int A[], int heapsize, int i ) {
  * @param A vettore non min-heap
  * @param dim dimensione della heap
  */
-void buildMinHeap( int A[], int dim ) {  }
+void buildMinHeap( int A[], int len ) {  
+  // da controllare parte basse / parte alta per dim/2
+	for ( int i = (len)/2; i > 0; i-- ) {
+		heapify( A, len, i );
+	}
+}
+
+void printMinHeap( int A[], int heapsize ) {
+  for (int i = 0; i < heapsize; i++) printf( " %d ", A[i] );
+  printf("\n");
+}
 
 /**
  * @brief estrae la radice dalla min-heap
@@ -124,5 +134,8 @@ int main () {
   int *p = &A[0];
   int len = scanArray(p);
 
+  printMinHeap( A, len );
+  buildMinHeap( A, len );
+  printMinHeap( A, len );
   return 0;
 }

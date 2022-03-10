@@ -16,41 +16,50 @@
  */
 #include <stdio.h>
 
-int select(int arr[], int k, int p, int q){
+void swap(int A[], int i, int j){
+  
+  int key = A[i];
+  
+  A[i] = A[j];
+  A[j] = key;
+}
 
-  //dopo la chiamata ricorsiva abbiamo arr di dimensione <= 5; 
-  //lo ordiniamo con ***** e restituisco la mediana, cioè l'elemento a metà del blocco
-  if(q<=5){
-    sort(arr);
-    return arr[2];
-  }
+int medianOfMedians(int arr[], int k, int p, int q){
 
-  int quinti = (q-p+1)/5; //quinti è il numero di blocchetti di dimensione <= 5 che compongono arr
-
+  int quinti = ceiling((q-p+1)/5); //quinti è il numero di blocchetti di dimensione <= 5 che compongono arr
   int B[quinti];
+  int j=0;
 
   //suddividiamo l' array in blocchi da 5 per poi salvare sul vettore B la mediana di ogni blocco
-  for(int i = 0; i <= quinti; i++){
+  for(int i = 0; i <= q; i+=5){
+    
+    if(4+i>q){
+      B[j] = med5(arr, i, q);
+    } else {
     //B[i] = select(arr, k, 5*i, 4+5*i);
-    B[i] = med5(arr, 5*i, 4+5*i); //da rivedere correttezza
+    B[j] = med5(arr, i, 4+i);
+    }
+    j++;
   }
+
+  return med5(B, 0, quinti);
 
 }
 
-int med5(int arr[], int p, int q){ //dato blocco da 5, ritorno il mediano
+int med5(int arr[], int p, int q){ //dato blocco, ritorno il mediano
 
   inSort(arr, p, q);
   return ceiling( (p+q)/2 );
 }
 
-void inSort(int arr[], int p, int q ){  //ordino blocco da 5 con insertion sort
+void inSort(int arr[], int p, int q ){  //ordino blocco con insertion sort
   
   int i = p+1;
 
   while(i <= q){
     int j = i;
     while (j > p && arr[j-1] > arr[j] ){
-      swap(arr[j-1], arr[j]);
+      swap(arr, j-1, j);
       j = j-1;
       i = i+1;
     }    

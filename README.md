@@ -2,16 +2,16 @@
 
 > Il progetto richiede l'implementazione e l'analisi dei tempi medi di esecuzione di tre algoritmi di selezione > (calcolo del 𝑘-esimo elemento più piccolo in un vettore non ordinato di interi). I tre algoritmi di selezione, denominati rispettivamente "quick select", "heap select" e "median-of-medians select", dovranno avere le seguenti caratteristiche:
 
-## Quick select
+## Quick select 🐸
 
 Si tratta di una variante dell'algoritmo di ordinamento "quick sort", in cui ogni chiamata ricorsiva su un intervallo [𝑖,𝑗] del vettore fornito in input termina in tempo costante ogniqualvolta il parametro 𝑘 non sia contenuto nell'intervallo [𝑖,𝑗]. L'algoritmo deve avere complessità temporale asintotica Θ(𝑛2) nel caso pessimo e 𝑂(𝑛) nel caso medio, dove 𝑛 è il numero di elementi del vettore.
 
-## Heap select
+## Heap select 🦄
 
 Questo algoritmo di selezione utilizza due min-heap, denominate H1 e H2. La prima heap H1 é costruita a partire dal vettore fornito in input in tempo lineare e non viene modificata. La seconda heap H2 contiene inizialmente un solo nodo, corrispondente alla radice di H1. All'𝑖-esima iterazione, per 𝑖 che va da 1 a 𝑘−1, l'algoritmo estrae la radice di H2, che corrisponde a un nodo 𝑥𝑖 in H1, e reinserisce in H2 i nodi successori (figli sinistro e destro) di 𝑥𝑖 nella heap H1. Dopo 𝑘−1 iterazioni, la radice di H2 corrisponderà al 𝑘-esimo elemento più piccolo del vettore fornito in input.
 L'algoritmo descritto ha complessità temporale 𝑂(𝑛+𝑘𝑙𝑜𝑔𝑘) sia nel caso pessimo che in quello medio. Per 𝑘 sufficientemente piccolo, quindi, l'algoritmo "heap select" sarà preferibile, almeno nel caso pessimo, all'algoritmo "quick select". È possibile implementare una variante che utilizzi opportunamente min-heap o max-heap, a seconda del valore di 𝑘.
 
-## Median-of-medians select
+## Median-of-medians select 🐶
 
 L'algoritmo è basato sulla suddivisione del vettore fornito in input in blocchi di dimensione limitata e sul calcolo della mediana delle mediane. Più precisamente, l'algoritmo esegue le seguenti operazioni:
 - divisione dell'array in blocchi di 5 elementi, escluso eventualmente l'ultimo blocco che potrà contenere meno di 5 elementi,
@@ -24,7 +24,7 @@ Indipendentemente dalla variante implementata, nel caso pessimo l'algoritmo dovr
 
 
 
-## Modalità di consegna
+## Modalità di consegna 📤
 
 Si richiede:
 1. L'implementazione in un linguaggio a scelta (ad esempio, C, C++, Java) dei tre algoritmi descritti sopra, in modo che siano formalmente corretti (è possibile assumere che gli input siano ben formati, ovvero che i vettori non siano vuoti e che il parametro 𝑘 sia sempre positivo e minore o uguale alla dimensione 𝑛 del vettore). Per agevolare la verifica di correttezza da parte del docente sono stati predisposti tre moduli "Virtual Programming Laboratory" (VPL) da utilizzare per caricare il codice degli algoritmi. Una condizione necessaria alla valutazione dell'elaborato è il superamento di tutti i test previsti, per tutti e tre gli algoritmi. Nota: l'esecuzione di un programma lato server attraverso un modulo VPL garantisce uno spazio di memoria di almeno 64KB, giudicato ampiamente sufficiente per risolvere il problema assegnato con qualunque algoritmo fra quelli sopra descritti.
