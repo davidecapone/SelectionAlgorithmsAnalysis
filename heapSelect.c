@@ -128,14 +128,40 @@ int extractMinHeap( int A[], int heapsize ){
   return radix;
 }
 
+/**
+ * @brief inserisce una chiave k nel vettore min heap
+ * 
+ * @param A min heap
+ * @param k chiave da inserire
+ * @param heapsize dimensione dell'heap (il valore viene modificato, quindi lo passo come riferimento)
+ */
+void minHeapInsert( int A[], int* heapsize, int k ) {
+  A[*heapsize] = k;
+  *heapsize = *heapsize + 1;
+  A[*heapsize-1] = k;
+  
+  int i = *heapsize-1; 
+
+  while ( i > 0 && A[i] > A[ parent(i) ] ) {
+    swap( A, i, parent( i ) );
+    i = parent( i );
+  }
+
+}
+
 int main () {
   // scan sullo standard input per definire il vettore
   int A[MAX_LINE_SIZE];
   int *p = &A[0];
   int len = scanArray(p);
 
-  printMinHeap( A, len );
-  buildMinHeap( A, len );
-  printMinHeap( A, len );
+  // costruire min heap dal vettore in input (nessuna successiva modifica)
+  buildMinHeap(A, len);
+  printMinHeap(A, len);
+  minHeapInsert(A, &len, -1);
+  printMinHeap(A, len);
+
+
+
   return 0;
 }
