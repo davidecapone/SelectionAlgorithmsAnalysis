@@ -32,11 +32,11 @@ int scanArray(int *A) {
     return size;
 }
 /**
- * @brief scambia 2 elementi in un vettore
+ * @brief scambia 2 elementi in A
  * 
- * @param A il vettore
- * @param i elemento da scambiare
- * @param j elemento da scambiare
+ * @param A 
+ * @param i indice primo elemento
+ * @param j indice secondo elemento
  */
 void swap(int A[], int i, int j){
   
