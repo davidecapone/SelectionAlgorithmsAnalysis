@@ -66,6 +66,7 @@ int partition(int A[], int p, int q){
       i++;
     }
   }
+  
   swap(A, i, q);
   return i;
 }
