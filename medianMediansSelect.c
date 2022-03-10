@@ -15,6 +15,7 @@
  * 
  */
 #include <stdio.h>
+#include <math.h>
 
 void swap(int A[], int i, int j){
   
@@ -24,7 +25,72 @@ void swap(int A[], int i, int j){
   A[j] = key;
 }
 
-int medianOfMedians(int arr[], int k, int p, int q){
+int MoMSelect(int arr[], int k, int p, int q){
+
+  //caso base: 1 elemento
+  if(p == q){
+    return p;
+  }
+
+  //calcola con median of medians la posizione del perno
+  int posPerno = MoM(arr, p, q);
+  posPerno = partition(arr, k, p, q, posPerno);
+
+
+  if(k == posPerno){
+    return k;
+  } else if(k < posPerno){
+    q = posPerno - 1;
+    return MoMSelect(arr, k, p, q);
+  } else {
+    p = posPerno + 1;
+    return MoMSelect(arr, k, p, q);
+  }
+}
+
+
+//divide l'array in 3 sezioni: quello minore di k, quello uguale a k e quello maggiore di k
+//alla fine restituisce 
+int partition(int arr[], int k, int p, int q, int posPerno){
+
+  int perno = arr[posPerno];   //pivotValue, valore del perno in posizione posPerno
+  swap(arr, posPerno, q);      //sposto il perno in ultima posizione
+  int indice = p;              //storeIndex, prima posizione nell'array
+
+  //
+  for(int i = p; i < q-1; i++){
+    if(arr[i] < perno){
+      swap(arr, indice, i);
+      indice++;
+    }
+  }
+
+  int indiciEq = indice; //storeIndexEq, indice dell'ultimo elemento uguale al perno
+
+  //Gruppo "in mezzo" di elementi uguali al perno
+  for(int i = indice; i < q-1; i++){
+    if(arr[i] == perno){
+      swap(arr, indiciEq, i);
+      indiciEq++;
+    }
+  }
+  
+  //sistemo il perno in modo da avere stabilità
+  swap(arr, q, indiciEq);
+
+  //restituisco indice del perno
+  if(k < indice){
+    return indice;
+  }
+
+  if(k <= indiciEq){
+    return k;
+  }
+
+  return indiciEq;
+}
+
+int MoM(int arr[], int p, int q){
 
   int quinti = ceiling((q-p+1)/5); //quinti è il numero di blocchetti di dimensione <= 5 che compongono arr
   int B[quinti];
@@ -41,9 +107,7 @@ int medianOfMedians(int arr[], int k, int p, int q){
     }
     j++;
   }
-
   return med5(B, 0, quinti);
-
 }
 
 int med5(int arr[], int p, int q){ //dato blocco, ritorno il mediano
