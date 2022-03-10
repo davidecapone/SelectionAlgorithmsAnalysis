@@ -13,6 +13,33 @@
  */
 #include <stdio.h>
 
+/**
+ * @brief chiave del figlio sinistro
+ * 
+ * @param A heap
+ * @param i genitore
+ * @return int chiave del figlio sinistro
+ */
+int left( int A[], int i ) { return A[ ( 2 * i ) + 1 ]; }
+
+/**
+ * @brief chiave del figlio destro
+ * 
+ * @param A heap
+ * @param i genitore
+ * @return int chiave del figlio destro
+ */
+int right( int A[], int i ) { return A[ ( 2 * i ) + 2 ]; }
+
+/**
+ * @brief chiave del genitore
+ * 
+ * @param A heap
+ * @param i figlio destro/sinistro
+ * @return int chiave del genitore
+ */
+int parent( int A[], int i ) { return A[ ( i - 1 ) / 2 ]; } // passando all'enumerazione degli indici di c, è necessario togliere 1 all'indice del figlio per ottenere l'indice del genitore
+
 int main () {
 
   return 0;
