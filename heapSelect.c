@@ -57,7 +57,7 @@ void swap(int A[], int i, int j){
 void heapify( int A[], int heapsize, int i ) {
   int left = left( i );
   int right = right( i );
-  int max;
+  int max = i;
 
   if (left < heapsize && A[ left ] > A[ max ]) max = left;
   if (right < heapsize && A[ right ] > A[ max ]) max = right;
