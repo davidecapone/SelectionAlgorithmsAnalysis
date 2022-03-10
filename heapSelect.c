@@ -39,13 +39,37 @@ int scanArray(int *A) {
  * @param i indice primo elemento
  * @param j indice secondo elemento
  */
-void swap(int A[], int i, int j){
+void swap( int A[], int i, int j ){
   
-  int key = A[i];
+  int key = A[ i ];
   
-  A[i] = A[j];
-  A[j] = key;
+  A[ i ] = A[ j ];
+  A[ j ] = key;
 }
+
+/**
+ * @brief posizione del figlio sinistro
+ * 
+ * @param i genitore
+ * @return int posizione del figlio sinistro
+ */
+int left( int i ) { return ( 2 * i ) + 1; }
+
+/**
+ * @brief posizione del figlio destro
+ * 
+ * @param i genitore
+ * @return int posizione del figlio destro
+ */
+int right( int i ) { return ( 2 * i ) + 2; }
+
+/**
+ * @brief posizione del genitore
+ * 
+ * @param i figlio destro/sinistro
+ * @return int posizione del genitore
+ */
+int parent( int i ) { return ( i - 1 ) / 2; } // passando all'enumerazione degli indici di c, è necessario togliere 1 all'indice del figlio per ottenere l'indice del genitore
 
 /**
  * @brief preservare le propietà della min-heap A
@@ -55,16 +79,16 @@ void swap(int A[], int i, int j){
  * @param i posizione in è presente l'errore
  */
 void heapify( int A[], int heapsize, int i ) {
-  int left = left( i );
-  int right = right( i );
+  int l = left( i );
+  int r = right( i );
   int max;
 
-  if (left < heapsize && A[ left ] > A[ max ]) max = left;
-  if (right < heapsize && A[ right ] > A[ max ]) max = right;
+  if ( l < heapsize && A[ l ] > A[ max ] ) max = l;
+  if ( r < heapsize && A[ r ] > A[ max ] ) max = r;
 
-  if (max != i) {
-    swap(A, i, max);
-    heapify(A, heapsize, max);
+  if ( max != i ) {
+    swap( A, i, max );
+    heapify( A, heapsize, max );
   }
 }
 
@@ -74,40 +98,13 @@ void heapify( int A[], int heapsize, int i ) {
  * @param A vettore non min-heap
  * @param dim dimensione della heap
  */
-void buildMinHeap( int A[], int dim ) {}
-
-/**
- * @brief chiave del figlio sinistro
- * 
- * @param A heap
- * @param i genitore
- * @return int chiave del figlio sinistro
- */
-int left( int A[], int i ) { return A[ ( 2 * i ) + 1 ]; }
-
-/**
- * @brief chiave del figlio destro
- * 
- * @param A heap
- * @param i genitore
- * @return int chiave del figlio destro
- */
-int right( int A[], int i ) { return A[ ( 2 * i ) + 2 ]; }
-
-/**
- * @brief chiave del genitore
- * 
- * @param A heap
- * @param i figlio destro/sinistro
- * @return int chiave del genitore
- */
-int parent( int A[], int i ) { return A[ ( i - 1 ) / 2 ]; } // passando all'enumerazione degli indici di c, è necessario togliere 1 all'indice del figlio per ottenere l'indice del genitore
+void buildMinHeap( int A[], int dim ) {  }
 
 int main () {
   // scan sullo standard input per definire il vettore
   int A[MAX_LINE_SIZE];
   int *p = &A[0];
-  int l = scanArray(p);
+  int len = scanArray(p);
 
   return 0;
 }
