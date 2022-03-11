@@ -120,13 +120,13 @@ void printMinHeap( int A[], int heapsize ) {
  */
 int extractMinHeap( int A[], int* heapsize ){
   
-  int radix = A[ 0 ];
+  int root = A[ 0 ];
 
   swap( A, 0, *heapsize - 1 );
   *heapsize--;
   heapify( A, *heapsize, 0);
 
-  return radix;
+  return root;
 }
 
 /**
