@@ -118,13 +118,13 @@ void printMinHeap( int A[], int heapsize ) {
  * @param heapsize dimensione heap
  * @return int radice estratta dalla min-heap
  */
-int extractMinHeap( int A[], int heapsize ){
+int extractMinHeap( int A[], int* heapsize ){
   
   int radix = A[ 0 ];
 
-  swap( A, 0, heapsize - 1 );
-  heapsize--;
-  heapify( A, heapsize, 0);
+  swap( A, 0, *heapsize - 1 );
+  *heapsize--;
+  heapify( A, *heapsize, 0);
 
   return radix;
 }
@@ -161,7 +161,8 @@ int main () {
   minHeapInsert(A, &len, -1);
   printMinHeap(A, len);
 
-
+  extractMinHeap(A, &len);
+  printMinHeap(A, len);
 
   return 0;
 }
