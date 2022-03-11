@@ -106,6 +106,7 @@ void buildMinHeap( int A[], int len ) {
 }
 
 void printMinHeap( int A[], int heapsize ) {
+  printf(" MinHeap : \n ");
   for (int i = 0; i < heapsize; i++) printf( " %d ", A[i] );
   printf("\n");
 }
@@ -136,13 +137,11 @@ int extractMinHeap( int A[], int heapsize ){
  * @param heapsize dimensione dell'heap (il valore viene modificato, quindi lo passo come riferimento)
  */
 void minHeapInsert( int A[], int* heapsize, int k ) {
-  A[*heapsize] = k;
   *heapsize = *heapsize + 1;
   A[*heapsize-1] = k;
-  
   int i = *heapsize-1; 
 
-  while ( i > 0 && A[i] > A[ parent(i) ] ) {
+  while ( i > 0 && A[i] < A[ parent(i) ] ) {
     swap( A, i, parent( i ) );
     i = parent( i );
   }
@@ -158,6 +157,7 @@ int main () {
   // costruire min heap dal vettore in input (nessuna successiva modifica)
   buildMinHeap(A, len);
   printMinHeap(A, len);
+  
   minHeapInsert(A, &len, -1);
   printMinHeap(A, len);
 
