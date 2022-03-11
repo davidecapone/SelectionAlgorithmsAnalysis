@@ -72,11 +72,33 @@ int right( int i ) { return ( 2 * i ) + 2; }
 int parent( int i ) { return ( i - 1 ) / 2; } // passando all'enumerazione degli indici di c, è necessario togliere 1 all'indice del figlio per ottenere l'indice del genitore
 
 /**
- * @brief preservare le propietà della min-heap A
+ * @brief preservare le propietà della min-heap A (versione ricorsiva)
  * 
  * @param A min-heap 
  * @param heapsize dimensione della heap (rimane invariata nella procedura)
- * @param i posizione in è presente l'errore
+ * @param i posizione ove staimo analizzando l'errore nell'albero
+ */
+void heapify_noninplace( int A[], int heapsize, int i ) {
+
+  int l = left( i );
+  int r = right( i );
+  int min = i;
+
+  if ( l < heapsize && A[ l ] < A[ min ] ) min = l;
+  if ( r < heapsize && A[ r ] < A[ min ] ) min = r;
+
+  if ( min != i ) {
+    swap( A, i, min );
+    heapify( A, heapsize, min );
+  }
+}
+
+/**
+ * @brief preservare le propietà della min-heap A (versione iterativa)
+ * 
+ * @param A min-heap 
+ * @param heapsize dimensione della heap (rimane invariata nella procedura)
+ * @param i posizione ove staimo analizzando l'errore nell'albero
  */
 void heapify( int A[], int heapsize, int i ) {
 
@@ -94,10 +116,10 @@ void heapify( int A[], int heapsize, int i ) {
 }
 
 /**
- * @brief costruire una min-heap a partire da un vettore A
+ * @brief costruire una min-heap a partire da un vettore A non heap
  * 
  * @param A vettore non min-heap
- * @param dim dimensione della heap
+ * @param dim dimensione del vettore A
  */
 void buildMinHeap( int A[], int len ) {  
 
@@ -107,8 +129,14 @@ void buildMinHeap( int A[], int len ) {
 	}
 }
 
+/**
+ * @brief stampa una min heap
+ * 
+ * @param A min heap
+ * @param heapsize dimensione delle heap
+ */
 void printMinHeap( int A[], int heapsize ) {
-  printf(" MinHeap : \n ");
+  printf("\n MinHeap : \n ");
   for (int i = 0; i < heapsize; i++) printf( " %d ", A[i] );
   printf("\n");
 }
@@ -151,20 +179,35 @@ void minHeapInsert( int A[], int* heapsize, int k ) {
 
 }
 
-void heapSelect( int H1[], int* heapsize1, int k ) {
+/**
+ * @brief selezione del k-esimo elemento più piccolo
+ * 
+ * @param H1 una min heap
+ * @param heapsize dimensione della min heap H1
+ * @param k k-esimo
+ * @return int valore del k-esimo elemento
+ */
+int heapSelect( int H1[], int* heapsize, int k ) {
 
-  // creazione di H2
-  int H2[ *heapsize1 ];
-  // inizialmente H2 contiene solamente la radice di H1
-  H2[ 0 ] = H1[ 0 ];
-  int heapsize2 = 1;
-  buildMinHeap(H2, heapsize2);
+  int heapsize2 = 0;
+  int H2[ MAX_LINE_SIZE ];
+  
+  // inizialmente H2 contiene la radice di H1 (posizione 0)
+  minHeapInsert(H2, &heapsize2, H1[0]);
 
-  for( int i = 0; i < ( k - 1 ); i++ ) {
-    int root = extractMinHeap(H2, &heapsize2);
+  int root_h2;
+  for ( int i = 0; i < k-1; i++ ) {
 
+    // estrazione radice H2
+    root_h2 = extractMinHeap(H2, &heapsize2);  
+
+    // inserimento in H2 dei figli di i a partire da H1
+    minHeapInsert( H2, &heapsize2, H1[ left(i) ]);
+    minHeapInsert( H2, &heapsize2, H1[ right(i) ]);
   }
-
+  
+  // k-esimo elemento
+  return H2[ 0 ];
 }
 
 int main () {
@@ -174,10 +217,12 @@ int main () {
   int *p = &A[0];
   printf("\033[2J");
   int len = scanArray(p);
-  printf("\033[2J");
 
-  buildMinHeap(A, len);
   printMinHeap(A, len);
 
+  int k;
+  printf("k = ");
+  scanf("%d", &k);
+  printf("\nk: %d, k-esimo elemento: %d", k, heapSelect(A, &len, k));
   return 0;
 }
