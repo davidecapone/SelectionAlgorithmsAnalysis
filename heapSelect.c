@@ -79,6 +79,7 @@ int parent( int i ) { return ( i - 1 ) / 2; } // passando all'enumerazione degli
  * @param i posizione in è presente l'errore
  */
 void heapify( int A[], int heapsize, int i ) {
+
   int l = left( i );
   int r = right( i );
   int min = i;
@@ -99,6 +100,7 @@ void heapify( int A[], int heapsize, int i ) {
  * @param dim dimensione della heap
  */
 void buildMinHeap( int A[], int len ) {  
+
   // da controllare parte basse / parte alta per dim/2
 	for ( int i = (len)/2; i >= 0; i-- ) {
 		heapify( A, len, i );
@@ -123,7 +125,7 @@ int extractMinHeap( int A[], int* heapsize ){
   int radix = A[ 0 ];
 
   swap( A, 0, *heapsize - 1 );
-  *heapsize--;
+  *heapsize = *heapsize - 1;
   heapify( A, *heapsize, 0);
 
   return radix;
@@ -137,6 +139,7 @@ int extractMinHeap( int A[], int* heapsize ){
  * @param heapsize dimensione dell'heap (il valore viene modificato, quindi lo passo come riferimento)
  */
 void minHeapInsert( int A[], int* heapsize, int k ) {
+
   *heapsize = *heapsize + 1;
   A[*heapsize-1] = k;
   int i = *heapsize-1; 
@@ -149,6 +152,7 @@ void minHeapInsert( int A[], int* heapsize, int k ) {
 }
 
 int main () {
+
   // scan sullo standard input per definire il vettore
   int A[MAX_LINE_SIZE];
   int *p = &A[0];
@@ -156,15 +160,7 @@ int main () {
   int len = scanArray(p);
   printf("\033[2J");
 
-  // costruire min heap dal vettore in input (nessuna successiva modifica)
-  buildMinHeap(A, len);
-  printMinHeap(A, len);
-
-  minHeapInsert(A, &len, -1);
-  printMinHeap(A, len);
-
-  extractMinHeap(A, &len);
-  printMinHeap(A, len);
+  
 
   return 0;
 }
