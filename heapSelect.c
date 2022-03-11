@@ -151,6 +151,22 @@ void minHeapInsert( int A[], int* heapsize, int k ) {
 
 }
 
+void heapSelect( int H1[], int* heapsize1, int k ) {
+
+  // creazione di H2
+  int H2[ *heapsize1 ];
+  // inizialmente H2 contiene solamente la radice di H1
+  H2[ 0 ] = H1[ 0 ];
+  int heapsize2 = 1;
+  buildMinHeap(H2, heapsize2);
+
+  for( int i = 0; i < ( k - 1 ); i++ ) {
+    int root = extractMinHeap(H2, &heapsize2);
+
+  }
+
+}
+
 int main () {
 
   // scan sullo standard input per definire il vettore
@@ -160,7 +176,8 @@ int main () {
   int len = scanArray(p);
   printf("\033[2J");
 
-  
+  buildMinHeap(A, len);
+  printMinHeap(A, len);
 
   return 0;
 }
