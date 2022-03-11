@@ -152,12 +152,14 @@ int main () {
   // scan sullo standard input per definire il vettore
   int A[MAX_LINE_SIZE];
   int *p = &A[0];
+  printf("\033[2J");
   int len = scanArray(p);
+  printf("\033[2J");
 
   // costruire min heap dal vettore in input (nessuna successiva modifica)
   buildMinHeap(A, len);
   printMinHeap(A, len);
-  
+
   minHeapInsert(A, &len, -1);
   printMinHeap(A, len);
 
