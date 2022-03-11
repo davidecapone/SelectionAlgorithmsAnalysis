@@ -108,7 +108,7 @@ void buildMinHeap( int A[], int len ) {
 }
 
 void printMinHeap( int A[], int heapsize ) {
-  printf(" MinHeap : \n ");
+  printf("\n MinHeap : \n ");
   for (int i = 0; i < heapsize; i++) printf( " %d ", A[i] );
   printf("\n");
 }
@@ -151,6 +151,29 @@ void minHeapInsert( int A[], int* heapsize, int k ) {
 
 }
 
+int heapSelect( int H1[], int* heapsize, int k ) {
+
+  int heapsize2 = 0;
+  int H2[ MAX_LINE_SIZE ];
+  
+  // inizialmente H2 contiene la radice di H1 (posizione 0)
+  minHeapInsert(H2, &heapsize2, H1[0]);
+
+  int root_h2;
+  for ( int i = 0; i < k-1; i++ ) {
+
+    // estrazione radice H2
+    root_h2 = extractMinHeap(H2, &heapsize2);  
+
+    // inserimento in H2 dei figli di i a partire da H1
+    minHeapInsert( H2, &heapsize2, H1[ left(i) ]);
+    minHeapInsert( H2, &heapsize2, H1[ right(i) ]);
+  }
+  
+  // k-esimo elemento in radice di H2
+  return H2[ 0 ];
+}
+
 int main () {
 
   // scan sullo standard input per definire il vettore
@@ -158,9 +181,12 @@ int main () {
   int *p = &A[0];
   printf("\033[2J");
   int len = scanArray(p);
-  printf("\033[2J");
 
-  
+  printMinHeap(A, len);
 
+  int k;
+  printf("k = ");
+  scanf("%d", &k);
+  printf("\nk: %d, k-esimo elemento: %d", k, heapSelect(A, &len, k));
   return 0;
 }
