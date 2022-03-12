@@ -207,22 +207,22 @@ int heapSelect( int H1[], int* heapsize, int k) {
   int H2[ MAX_LINE_SIZE ];
   
   // inizialmente H2 contiene la radice di H1 (posizione 0)
-  minHeapInsert(H2, &heapsize2, H1[0]);
+  minHeapInsert( H2, &heapsize2, H1[0] );
 
   int root_h2;
   for ( int i = 0; i < k; i++ ) {
 
     // estrazione radice H2
-    root_h2 = extractMinHeap(H2, &heapsize2);  
+    root_h2 = extractMinHeap( H2, &heapsize2 );  
 
     // inserimento in H2 dei figli di i a partire da H1, se esistono
-    if( ( 2 * i + 1 ) < *heapsize){
-      minHeapInsert( H2, &heapsize2, H1[ left(i) ]);
+    if( ( 2 * i + 2 ) <= *heapsize){
+      minHeapInsert( H2, &heapsize2, H1[ left( i ) ] );
+      minHeapInsert( H2, &heapsize2, H1[ right( i ) ] );
+    } else if( ( 2 * i + 1 ) <= *heapsize){
+      minHeapInsert( H2, &heapsize2, H1[ left( i ) ] );
     }
-
-    if( ( 2 * i + 2 ) < *heapsize){
-      minHeapInsert( H2, &heapsize2, H1[ right(i) ]);
-    }
+    
   }
   
   // k-esimo elemento
