@@ -102,16 +102,30 @@ void heapify_noninplace( int A[], int heapsize, int i ) {
  */
 void heapify( int A[], int heapsize, int i ) {
 
-  int l = left( i );
-  int r = right( i );
-  int min = i;
+  int done = -1;
+  
+  while( done != 0 ){
 
-  if ( l < heapsize && A[ l ] < A[ min ] ) min = l;
-  if ( r < heapsize && A[ r ] < A[ min ] ) min = r;
+    int smallest = i;
+    int l = left(i);
+    int r = right(i);
 
-  if ( min != i ) {
-    swap( A, i, min );
-    heapify( A, heapsize, min );
+    if( l < heapsize && A[ l ] < A[ i ] ){
+      smallest = l; // caso in cui scambio con il figlio sinistro
+    } else {
+      smallest = i;
+    }
+
+    if( r < heapsize && A[ r ] < A[ smallest ] ){
+      smallest = r; // caso in cui scambio con il figlio destro
+    }
+
+    if( smallest != i ){ // se serve lo scambio,qui viene eseguito, altrimenti la procedura termina
+      swap(A, i, smallest);
+      i = smallest;
+    } else {
+      done = 0;
+    }
   }
 }
 
@@ -187,23 +201,28 @@ void minHeapInsert( int A[], int* heapsize, int k ) {
  * @param k k-esimo
  * @return int valore del k-esimo elemento
  */
-int heapSelect( int H1[], int* heapsize, int k ) {
+int heapSelect( int H1[], int* heapsize, int k) {
 
-  int heapsize2 = 0;
+  int heapsize2 = 0; 
   int H2[ MAX_LINE_SIZE ];
   
   // inizialmente H2 contiene la radice di H1 (posizione 0)
   minHeapInsert(H2, &heapsize2, H1[0]);
 
   int root_h2;
-  for ( int i = 0; i < k-1; i++ ) {
+  for ( int i = 0; i < k; i++ ) {
 
     // estrazione radice H2
     root_h2 = extractMinHeap(H2, &heapsize2);  
 
-    // inserimento in H2 dei figli di i a partire da H1
-    minHeapInsert( H2, &heapsize2, H1[ left(i) ]);
-    minHeapInsert( H2, &heapsize2, H1[ right(i) ]);
+    // inserimento in H2 dei figli di i a partire da H1, se esistono
+    if( ( 2 * i + 1 ) < *heapsize){
+      minHeapInsert( H2, &heapsize2, H1[ left(i) ]);
+    }
+
+    if( ( 2 * i + 2 ) < *heapsize){
+      minHeapInsert( H2, &heapsize2, H1[ right(i) ]);
+    }
   }
   
   // k-esimo elemento
@@ -218,11 +237,16 @@ int main () {
   printf("\033[2J");
   int len = scanArray(p);
 
+  buildMinHeap(A, len);
+
   printMinHeap(A, len);
 
   int k;
-  printf("k = ");
-  scanf("%d", &k);
-  printf("\nk: %d, k-esimo elemento: %d", k, heapSelect(A, &len, k));
+
+  while( k != -1 ){
+    printf("k = ");
+    scanf("%d", &k);
+    printf("\nk: %d, k-esimo elemento: %d\n", k, heapSelect(A, &len, k));
+  }
   return 0;
 }
