@@ -28,7 +28,6 @@ double getResolution(){
     return duration(start, end);
 }
 
-<<<<<<< HEAD
 /**
  * @brief alloca un vettore di dimensione random (tra 0 e MAX_LEN) e lo popola di numeri pseudo-casuali anche negativi
  * 
@@ -55,18 +54,4 @@ int randomVector(int *A){
     }
 
     return len;
-=======
-int main () {
-    // risoluzione stimata
-    double R = getResolution();
-
-    // valore relativo massimo ammissibile
-    double E = 0.001;
-
-    // tempo minimo misurabile
-    double Tmin = R * ( 1/E + 1 );
-
-    printf("%f\n", Tmin);
-    return 0;
->>>>>>> 0633d60906aae7b4e656f2cedbbf0f93f6a647a9
 }
