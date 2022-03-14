@@ -9,6 +9,8 @@
 #include <stdlib.h>
 
 #define MAX_LEN_FOR_TEST 500000
+
+// alloca number spazio al vettore di tipo int
 #define MALLOC_ARRAY(number, type) \
     ((type *)malloc((number) * sizeof(type)))
 
@@ -28,14 +30,15 @@ double getResolution(){
 
 void populate ( int A[], int len ) {
 
+  int random;
   for( int i = 0; i < len; i++) {
 
       // ottenere anche numeri negativi
-      int j = rand() - (RAND_MAX/2);     
-      A[ i ] = j;         
+      int random = rand() - (RAND_MAX/2);     
+      A[ i ] = random;         
   }
-
 }
+
 
 int main () {
   srand(time(NULL));
@@ -50,16 +53,19 @@ int main () {
   // tempo minimo misurabile
   double Tmin = R * ( 1/E + 1 );
 
+  // genera numeri interi positivi (dimensione dei vettori)
   int len = (unsigned)rand() % MAX_LEN_FOR_TEST;
   A = MALLOC_ARRAY(len, int);
-  populate(A, len);
 
-  for (size_t i = 0; i < len; i++)
-  {
+  if (A != NULL)
+    populate(A, len);
+
+  for (size_t i = 0; i < len; i++) {
     printf(" %i ", A[i]);
   }
 
-
+  // liberare memoria precedenztemente allocata
   free(A);
+
   return 0;
 }
