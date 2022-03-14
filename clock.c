@@ -8,16 +8,14 @@
  * @copyright Copyright (c) 2021
  * 
  */
-
+#include <stdio.h>
 #include <time.h>
-#include <stdlib.h>
-
-#define MAX_LEN 500000
 
 double duration(struct timespec start, struct timespec end) {
     return end.tv_sec - start.tv_sec
          + ((end.tv_nsec - start.tv_nsec ) / (double) 1000000000.0);
 }
+
 double getResolution(){
     struct timespec start, end;
     clock_gettime(CLOCK_MONOTONIC, &start);
@@ -27,30 +25,16 @@ double getResolution(){
     return duration(start, end);
 }
 
-/**
- * @brief alloca un vettore di dimensione random (tra 0 e MAX_LEN) e lo popola di numeri pseudo-casuali anche negativi
- * 
- * @param A vettore da allocare e popolare
- * @return int lunghezza vettore
- */
-int randomVector(int *A){
+int main () {
+    // risoluzione stimata
+    double R = getResolution();
 
-    srand( ( unsigned )time( NULL ) ); // seme casuale
+    // valore relativo massimo ammissibile
+    double E = 0.001;
 
-    int len = rand()%MAX_LEN;    // dimensione del vettore casuale (max MAX_LEN)
+    // tempo minimo misurabile
+    double Tmin = R * ( 1/E + 1 );
 
-    A = ( ( int * )malloc( ( len ) * sizeof( int ) ) ); // allocazione dinamica memoria vettore
-
-    for( int i = 0; i < len; i++) {
-
-        int j = rand();     // genera un numero casuale
-
-        if(rand()%2 != 0){
-            j = 0 - j;      // pseudo-casualmente rende il numero negativo
-        }
-
-        A[ i ] = j;         // inserisce il numero casuale nel vettore
-    }
-
-    return len;
+    printf("%f\n", Tmin);
+    return 0;
 }
