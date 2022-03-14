@@ -1,18 +1,6 @@
 /**
  * @file medianMedians.c
  * @author Capone, Della Rovere, Gortani, Fior
- * @brief 
-  L'algoritmo è basato sulla suddivisione del vettore fornito in input in blocchi di dimensione limitata 
-  e sul calcolo della mediana delle mediane. Più precisamente, l'algoritmo esegue le seguenti operazioni:
-  - divisione dell'array in blocchi di 5 elementi, escluso eventualmente l'ultimo blocco che potrà contenere meno di 5 elementi,
-  - ordinamento e calcolo della mediana di ciascun blocco,
-  - calcolo della mediana 𝑀 delle mediane dei blocchi, attraverso chiamata ricorsiva allo stesso algoritmo
-  - partizionamento dell'intero array attorno alla mediana 𝑀, attraverso una variante della procedura "partition" dell'algoritmo "quick sort"
-  - chiamata ricorsiva nella parte di array che sta a sinistra o a destra della mediana 𝑀, in funzione del valore 𝑘 fornito in input.
-  Il modo più semplice per implementare quest'algoritmo consiste nell'allocare, ad ogni chiamata ricorsiva, un nuovo vettore per memorizzare le mediane dei blocchi. Esiste tuttavia un approccio più efficiente e "in place" che riutilizza lo spazio allocato per il vettore originariamente fornito in input. La valutazione del progetto terrà conto della variante implementata (quella "in place", essendo più complicata ma anche più efficiente, sarà valutata con un punteggio più alto).
-  Indipendentemente dalla variante implementata, nel caso pessimo l'algoritmo dovrà avere complessità, sia temporale che spaziale, pari a O(𝑛).
-  codice: https://en.wikipedia.org/wiki/Median_of_medians
- * 
  */
 #include <stdio.h>
 #include <math.h>
@@ -22,14 +10,28 @@ void inSort(int arr[], int p, int q );
 int med5(int arr[], int p, int q);
 int partition(int arr[], int k, int p, int q, int posPerno);
 
-void swap(int A[], int i, int j){
-  
+/**
+ * @brief scambia due elementi dell'array
+ * 
+ * @param A array
+ * @param i primo indice
+ * @param j secondo indice
+ */
+void swap( int A[], int i, int j ){
   int key = A[i];
-  
   A[i] = A[j];
   A[j] = key;
 }
 
+/**
+ * @brief 
+ * 
+ * @param arr 
+ * @param k 
+ * @param p 
+ * @param q 
+ * @return int 
+ */
 int MoMSelect(int arr[], int k, int p, int q){
 
   //caso base: 1 elemento
@@ -55,7 +57,17 @@ int MoMSelect(int arr[], int k, int p, int q){
 
 
 //divide l'array in 3 sezioni: quello minore di k, quello uguale a k e quello maggiore di k
-//alla fine restituisce 
+//alla fine restituisce        --- QUESTO VA NEL CONTRATTO !!!
+/**
+ * @brief 
+ * 
+ * @param arr 
+ * @param k 
+ * @param p 
+ * @param q 
+ * @param posPerno 
+ * @return int 
+ */
 int partition(int arr[], int k, int p, int q, int posPerno){
 
   int perno = arr[posPerno];   //pivotValue, valore del perno in posizione posPerno
@@ -95,6 +107,14 @@ int partition(int arr[], int k, int p, int q, int posPerno){
   return indiciEq;
 }
 
+/**
+ * @brief 
+ * 
+ * @param arr 
+ * @param p 
+ * @param q 
+ * @return int 
+ */
 int MoM(int arr[], int p, int q){
 
   int quinti = ceil((q-p+1)/5); //quinti è il numero di blocchetti di dimensione <= 5 che compongono arr
@@ -115,12 +135,28 @@ int MoM(int arr[], int p, int q){
   return med5(B, 0, quinti);
 }
 
+/**
+ * @brief 
+ * 
+ * @param arr 
+ * @param p 
+ * @param q 
+ * @return int 
+ */
 int med5(int arr[], int p, int q){ //dato blocco, ritorno il mediano
 
   inSort(arr, p, q);
   return ceil( (p+q)/2 );
 }
 
+
+/**
+ * @brief 
+ * 
+ * @param arr 
+ * @param p 
+ * @param q 
+ */
 void inSort(int arr[], int p, int q ){  //ordino blocco con insertion sort
   
   int i = p+1;
@@ -137,6 +173,12 @@ void inSort(int arr[], int p, int q ){  //ordino blocco con insertion sort
 
 
 int main () {
-
+  /** TODO
+  - fare tutti i contratti delle funzioni
+  - importare la funzione scanArray del prof anche qua (la trovate anche nei nostri codici)
+  - pulizia del codice
+  - inSort cos'è? Una parola losca napoletana? chiamatela insertionSort
+  - versione in place di medianMediansSelect
+   */
   return 0;
 }
