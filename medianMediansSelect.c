@@ -175,6 +175,7 @@ void inSort(int arr[], int p, int q ){  //ordino blocco con insertion sort
 int main () {
   /** TODO
   - fare tutti i contratti delle funzioni
+  - non serve fare i prototipi all'inizio del codice per le funzioni se le funzioni le mettete prima del main
   - importare la funzione scanArray del prof anche qua (la trovate anche nei nostri codici)
   - pulizia del codice
   - inSort cos'è? Una parola losca napoletana? chiamatela insertionSort
