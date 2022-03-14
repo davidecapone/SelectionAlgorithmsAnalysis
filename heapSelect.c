@@ -89,7 +89,7 @@ void heapify_noninplace( int A[], int heapsize, int i ) {
 
   if ( min != i ) {
     swap( A, i, min );
-    heapify( A, heapsize, min );
+    heapify_noninplace( A, heapsize, min );
   }
 }
 
@@ -202,31 +202,35 @@ void minHeapInsert( int A[], int* heapsize, int k ) {
  * @return int valore del k-esimo elemento
  */
 int heapSelect( int H1[], int* heapsize, int k) {
+  if ( k >= 0 && k < *heapsize ) {
+    int heapsize2 = 0; 
+    int H2[ MAX_LINE_SIZE ];
+    
+    // inizialmente H2 contiene la radice di H1 (posizione 0)
+    minHeapInsert( H2, &heapsize2, H1[0] );
 
-  int heapsize2 = 0; 
-  int H2[ MAX_LINE_SIZE ];
-  
-  // inizialmente H2 contiene la radice di H1 (posizione 0)
-  minHeapInsert( H2, &heapsize2, H1[0] );
+    int root_h2;
+    for ( int i = 0; i < k; i++ ) {
 
-  int root_h2;
-  for ( int i = 0; i < k; i++ ) {
+      // estrazione radice H2
+      root_h2 = extractMinHeap( H2, &heapsize2 );  
 
-    // estrazione radice H2
-    root_h2 = extractMinHeap( H2, &heapsize2 );  
+      // inserimento in H2 dei figli di i a partire da H1, se esistono
+      if ( ( 2 * i + 2 ) < *heapsize) {
 
-    // inserimento in H2 dei figli di i a partire da H1, se esistono
-    if( ( 2 * i + 2 ) <= *heapsize){
-      minHeapInsert( H2, &heapsize2, H1[ left( i ) ] );
-      minHeapInsert( H2, &heapsize2, H1[ right( i ) ] );
-    } else if( ( 2 * i + 1 ) <= *heapsize){
-      minHeapInsert( H2, &heapsize2, H1[ left( i ) ] );
+        minHeapInsert( H2, &heapsize2, H1[ left( i ) ] );
+        minHeapInsert( H2, &heapsize2, H1[ right( i ) ] );
+      } 
+      else if ( ( 2 * i + 1 ) < *heapsize)
+        minHeapInsert( H2, &heapsize2, H1[ left( i ) ] );
+      
+      
     }
     
+    // k-esimo elemento
+    return H2[ 0 ];
   }
-  
-  // k-esimo elemento
-  return H2[ 0 ];
+
 }
 
 int main () {
