@@ -8,6 +8,10 @@
 #include <time.h>
 #include <stdlib.h>
 
+#define MAX_LEN_FOR_TEST 500000
+#define MALLOC_ARRAY(number, type) \
+    ((type *)malloc((number) * sizeof(type)))
+
 double duration(struct timespec start, struct timespec end) {
     return end.tv_sec - start.tv_sec
          + ((end.tv_nsec - start.tv_nsec ) / (double) 1000000000.0);
@@ -22,29 +26,20 @@ double getResolution(){
     return duration(start, end);
 }
 
-/**
- * @brief alloca un vettore di dimensione random (tra 0 e MAX_LEN) e lo popola di numeri pseudo-casuali anche negativi
- * 
- * @param A vettore da allocare e popolare
- * @return int lunghezza vettore
- */
-int randomVector( int A[] ){
-  free(A);
-  int len = (unsigned)rand() % 100;    // dimensione del vettore casuale (max MAX_LEN)
-  
-  A = ( ( int * )malloc( ( len ) * sizeof( int ) ) ); // allocazione dinamica memoria vettore
+void populate ( int A[], int len ) {
 
   for( int i = 0; i < len; i++) {
 
-      int j = rand();     // genera un numero casuale
-      A[ i ] = j;         // inserisce il numero casuale nel vettore
+      // ottenere anche numeri negativi
+      int j = rand() - (RAND_MAX/2);     
+      A[ i ] = j;         
   }
 
-  return len;
 }
 
 int main () {
   srand(time(NULL));
+  int *A = NULL;
 
   // risoluzione stimata
   double R = getResolution();
@@ -55,15 +50,16 @@ int main () {
   // tempo minimo misurabile
   double Tmin = R * ( 1/E + 1 );
 
+  int len = (unsigned)rand() % MAX_LEN_FOR_TEST;
+  A = MALLOC_ARRAY(len, int);
+  populate(A, len);
 
-  int *A = NULL;
-  int size = randomVector(A);
+  for (size_t i = 0; i < len; i++)
+  {
+    printf(" %i ", A[i]);
+  }
 
-   for (int i = 0; i < size; i++)
-   {
-     printf(" %i ", A[i]);
-   }
 
-  
+  free(A);
   return 0;
 }
