@@ -193,7 +193,9 @@ void minHeapInsert( int A[], int* heapsize, int k ) {
  * @return int valore del k-esimo elemento
  */
 int heapSelect( int H1[], int* heapsize, int k) {
+
   if ( k >= 0 && k < *heapsize ) {
+
     int heapsize2 = 0; 
     int H2[ MAX_LINE_SIZE ];
     
@@ -220,6 +222,9 @@ int heapSelect( int H1[], int* heapsize, int k) {
     
     // k-esimo elemento
     return H2[ 0 ];
+  } else {
+
+    return INT_MIN;
   }
 
 }

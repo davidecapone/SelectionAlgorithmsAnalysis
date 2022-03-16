@@ -4,6 +4,7 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 
 #define MAX_LINE_SIZE 1000   // maximum size of a line of input
 
@@ -90,7 +91,8 @@ int quickSelect( int A[], int i, int j, int k ) {
     else return quickSelect( A, perno+1, j, k );
   } 
   else {
-    return -1;
+    
+    return INT_MIN;
   }
 }
 
