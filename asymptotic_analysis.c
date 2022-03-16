@@ -10,6 +10,8 @@
 #include <math.h>
 
 #define MAX_LEN_FOR_TEST 500000
+
+// alloca number spazio al vettore di tipo int
 #define MALLOC_ARRAY(number, type) \
     ((type *)malloc((number) * sizeof(type)))
 
@@ -51,6 +53,7 @@ int[] generateSamples () {
 
   return n;
 }
+
 
 int main () {
   srand(time(NULL));
