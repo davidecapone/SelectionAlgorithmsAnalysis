@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
+#include <math.h>
 
 #define MAX_LEN_FOR_TEST 500000
 #define MALLOC_ARRAY(number, type) \
@@ -26,15 +27,29 @@ double getResolution(){
     return duration(start, end);
 }
 
-void populate ( int A[], int len ) {
+/**
+ * @brief genera dimensioni seguendo una distribuzione esponenziale
+ *        per i tra 0 ... 99, ni = A * 2^( B*i )
+ *        con A e B costanti e tali per cui:
+ *        n0 = 100, n99 = 50000000 
+ *        quindi posso prendere A = 100, B = 0.157673137
+ * 
+ * @return int[] vettore contenente 100 valori che indicano la dimensione
+ */
+int[] generateSamples () {
 
-  for( int i = 0; i < len; i++) {
+  int n[100];
+  int A = 100;
+  double B = 0.157673137;
 
-      // ottenere anche numeri negativi
-      int j = rand() - (RAND_MAX/2);     
-      A[ i ] = j;         
+  // 100 campioni
+  for (int i = 0; i <= 99; i++)
+  {
+    n[i] = A * pow(2, B * i);
+    // generare uno o più vettori di dimensione ni
   }
 
+  return n;
 }
 
 int main () {
@@ -50,16 +65,6 @@ int main () {
   // tempo minimo misurabile
   double Tmin = R * ( 1/E + 1 );
 
-  int len = (unsigned)rand() % MAX_LEN_FOR_TEST;
-  A = MALLOC_ARRAY(len, int);
-  populate(A, len);
-
-  for (size_t i = 0; i < len; i++)
-  {
-    printf(" %i ", A[i]);
-  }
-
-
-  free(A);
+  int[] samples = generateSamples();
   return 0;
 }
