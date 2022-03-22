@@ -96,6 +96,7 @@ int quickSelect( int A[], int i, int j, int k ) {
   }
 }
 
+/*
 int main () {
   // scan sullo standard input per definire il vettore
   int A[ MAX_LINE_SIZE ];
@@ -109,3 +110,4 @@ int main () {
 
   return 0;
 }
+*/
