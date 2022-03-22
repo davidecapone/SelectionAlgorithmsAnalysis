@@ -12,6 +12,8 @@
 #include <string.h>
 
 #include "quickSelect.c"
+#include "heapSelect.c"
+#include "medianMediansSelect.c"
 
 // alloca number spazio al vettore di tipo int
 #define MALLOC_ARRAY(number, type) \
@@ -32,7 +34,7 @@ double getResolution(){
 }
 
 /**
- * @brief Get the Tmin object
+ * @brief calcola il tempo minimo misurabile dalla macchina
  * 
  * @return double 
  */
@@ -43,6 +45,26 @@ double getTmin () {
   double E = 0.001;
   // tempo minimo misurabile
   return R * ( 1/E + 1 );
+}
+
+/**
+ * @brief calcola il tempo medio da un vettore di misurazioni di tempi
+ * 
+ * @param A vettore
+ * @param len dimensione vettore
+ * @return double media degli elementi del vettore
+ */
+double averageTime(double A[], int len){
+
+  double average = 0;
+
+  for (int i = 0; i < len; i++) {
+    average += A[i];
+  }
+
+  average = average / len;
+
+  return average;
 }
 
 /**
@@ -57,17 +79,37 @@ void populate ( int A[], int len ) {
   for (int i = 0; i < len; i++) {
 
     // il primo mebro fornisce il segno
-    random = (-1 + rand() % 2) * rand();
+    random = (-1 + rand() % 2) * rand(); // espediente per ottenere i numeri negativi (da risolvere)
     A[i] = random;
   }
 }
 
-void testAsymptotic ( int A[], int size, int k, int Tmin ) {
+/**
+ * @brief 
+ * 
+ * @param fptr 
+ * @param algorithm 
+ * @param size 
+ * @param time 
+ */
+void writeCSV(FILE* fptr, char algorithm[], int size, double time) {
+  
+}
+
+/**
+ * @brief 
+ * 
+ * @param A 
+ * @param size 
+ * @param k 
+ * @param Tmin 
+ */
+void testAsymptotic ( int A[], int size, int k, int Tmin, FILE* fptr) {
 
   int kSmallest;
   struct timespec start, end;
   int i = 0;
-  double B[5];
+  double times[5];
   double period = 0;
 
   clock_gettime(CLOCK_MONOTONIC, &start);
@@ -79,20 +121,12 @@ void testAsymptotic ( int A[], int size, int k, int Tmin ) {
     period = duration(start, end) - period;
 
     if (period > Tmin) {
-      B[i] = period;
+      times[i] = period;
       i++;
     }
   }
 
-  printf("dimension %d ", size);
-  double average = 0;
-  for (int i = 0; i < 5; i++)
-  {
-    average += B[i];
-  }
-  average = average / 5;
-  printf("average time: %f \n", average);
-
+  fprintf(fptr, "quickSelect, %d, %f\n", size, averageTime(times, 5));
 }
 
 /**
@@ -113,9 +147,12 @@ void generateSamples () {
   int nArray;
   int MAX_N_ARRAY = 10; // n.ro di array per ogni campione 
   double Tmin = getTmin();
+  FILE* fptr = NULL;
+
+  fptr = fopen("./asymptotic_times.csv", "a");
 
   // 100 campioni
-  for (int i = 0; i <= 99; i++) {
+  for (int i = 0; i <= 10; i++) {
     
     // dimensione del campione
     ni = A * pow(2, B * i);
@@ -132,33 +169,25 @@ void generateSamples () {
       populate(array, ni);
 
       // test tempi esecuzione algoritmi
-      testAsymptotic( array, ni, 0, getTmin() );
+      testAsymptotic( array, ni, 0, Tmin, fptr);
 
       // liberare spazio occupato da array
       free(array);
       array = NULL;
     }
   }
-}
 
+  fclose(fptr);
+}
 
 int main () {
   srand(time(NULL));
-  int *A = NULL;
 
-  //int[] samples = generateSamples();
-  //populate();
-  //generateSamples();
+  FILE *fptr = fopen("./asymptotic_times.csv", "w");
+  fprintf(fptr, "algorithm, size, time\n");
+  fclose(fptr);
   
-  /*
-  double b = clock(); 
-  printf("%d", 8);
-  double e = clock(); 
-
-  printf(" %f \n", (e-b)/CLOCKS_PER_SEC);
-  printf("tmin: %f \n", Tmin);
-  */
-
   generateSamples();
+
   return 0;
 }

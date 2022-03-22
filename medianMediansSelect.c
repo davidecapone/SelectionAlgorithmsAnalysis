@@ -13,7 +13,7 @@
 int MoM(int arr[], int p, int q); 
 void insertionSort(int arr[], int p, int q ); 
 int med5(int arr[], int p, int q); 
-int partition(int arr[], int k, int p, int q, int posPerno); 
+int MoMpartition(int arr[], int k, int p, int q, int posPerno); 
 int MoMPlace(int arr[], int p, int q);
 int scanArray(int *a);
 
@@ -74,7 +74,7 @@ int MoMSelect(int arr[], int k, int p, int q){
   } 
  
   int posPerno = MoMPlace(arr, p, q);
-  posPerno = partition(arr, k, p, q, posPerno); 
+  posPerno = MoMpartition(arr, k, p, q, posPerno); 
  
   /*posPerno a questo punto può essere:
   * uguale a k: ho finito
@@ -108,7 +108,7 @@ int MoMSelect(int arr[], int k, int p, int q){
  * @return int: posizione del perno (calcolato con MoM) rispetto a k
  *              
  */ 
-int partition(int arr[], int k, int p, int q, int posPerno){ 
+int MoMpartition(int arr[], int k, int p, int q, int posPerno){ 
  
   int perno = arr[posPerno];
   swap(arr, posPerno, q);      //sposto il perno in ultima posizione 
