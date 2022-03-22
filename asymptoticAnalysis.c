@@ -15,15 +15,17 @@
 #include "heapSelect.c"
 //#include "medianMediansSelect.c"
 
-// alloca number spazio al vettore di tipo int
+// alloca 'number' spazio al vettore di tipo int
 #define MALLOC_ARRAY(number, type) \
     ((type *)malloc((number) * sizeof(type)))
 
-enum Algorithm {
+typedef enum {
   QuickSelect,
   HeapSelect,
   MedianMediansSelect
-};
+} Algorithm;
+
+double Tmin;
 
 double duration(struct timespec start, struct timespec end) {
     return end.tv_sec - start.tv_sec
@@ -41,40 +43,33 @@ double getResolution(){
 
 /**
  * @brief calcola il tempo minimo misurabile dalla macchina
+ *        a partire dalla risoluzione stimata e dall'errore massimo ammissibile
  * 
- * @return double 
+ * @return double tempo minimo misurabile
  */
 double getTmin () {
-  // risoluzione stimata
   double R = getResolution();
-  // errore relativo massimo ammissibile
   double E = 0.001;
-  // tempo minimo misurabile
   return R * ( 1/E + 1 );
 }
 
 /**
- * @brief calcola il tempo medio da un vettore di misurazioni di tempi
+ * @brief tempo medio da un vettore di misurazioni
  * 
  * @param A vettore
  * @param len dimensione vettore
- * @return double media degli elementi del vettore
+ * @return double valore medio
  */
 double averageTime(double A[], int len){
 
   double average = 0;
-
-  for (int i = 0; i < len; i++) {
-    average += A[i];
-  }
-
+  for (int i = 0; i < len; i++) average += A[i];
   average = average / len;
-
   return average;
 }
 
 /**
- * @brief popola vettore di dimensione len con valori pseudo-casuali compresi tra [INT_MIN, INT_MAX]
+ * @brief popola vettore dimensione len con valori pseudocasuali compresi tra [INT_MIN, INT_MAX]
  * 
  * @param A vettore
  * @param len dimensione
@@ -93,90 +88,136 @@ void populate ( int A[], int len ) {
 /**
  * @brief 
  * 
+ * @param type 
  * @param A 
  * @param size 
  * @param k 
- * @param Tmin 
+ * @return double* 
  */
-void testAsymptotic ( int A[], int size, int k, int Tmin, FILE* fptr) {
+void getDurations ( Algorithm type, int A[], int size, int k, double times[] ) {
 
+  int i = 0;
+  double period = 0;
   int kSmallest;
   struct timespec start, end;
-  int i = 0;
-  double times[5];
-  double period = 0;
-
+  
+  /**
+   * PROBLEMA: ho notato che ci sono tempi di esecuzione medi inferiori a Tmin
+   * inoltre cosa succede se questa funzione ritorna direttamente average time?
+   */
   clock_gettime(CLOCK_MONOTONIC, &start);
   while ( i < 5 ) {
-    kSmallest = quickSelect(A, 0, size-1, k);
-    clock_gettime(CLOCK_MONOTONIC, &end);
 
+    switch (type) {
+
+      case QuickSelect:
+        kSmallest = quickSelect(A, 0, size-1, k);
+        break;
+      
+      case HeapSelect:
+        kSmallest = heapSelect(A, size, k);
+        break;
+
+      case MedianMediansSelect:
+        break;
+    }
+    
+    clock_gettime(CLOCK_MONOTONIC, &end);
     // tolgo tempo misurato precedentemente per ottenere intervallo attuale
     period = duration(start, end) - period;
-
-    if (period > Tmin) {
+    // sse period è maggiore del tempo minimo misurabile posso avanzare con l'analisi
+    if ( period > Tmin ) {
       times[i] = period;
       i++;
     }
   }
-
-  fprintf(fptr, "quickSelect, %d, %f\n", size, averageTime(times, 5));
 }
 
 /**
-* @brief genera dimensioni seguendo una distribuzione esponenziale
-*        per i tra 0 ... 99, ni = A * 2^( B*i )
-*        con A e B costanti e tali per cui:
-*        n0 = 100, n99 = 50000000 
-*        quindi posso prendere A = 100, B = 0.157673137
+ * @brief valuta 3 diversi algoritmi di selezione e scrive in rislutati ottenuti in un csv
+ * 
+ * @param A array di numeri pseudocasuali
+ * @param size dimensione array
+ * @param k 
+ * @param Tmin 
+ * nota: per questioni di efficienza il FILE viene aperto e chiuso NON QUA ma in generateSamples
+ */
+void testAsymptotic ( int A[], int size, FILE* fptr) {
+
+  // k-esimo elemento ( FISSATO ) da usare nei test
+  int k = 0;
+  double averageTimes;
+  Algorithm type;
+  double times[5];
+
+  type = QuickSelect;
+  getDurations ( type, A, size, k, times );
+  averageTimes = averageTime(times, 5);
+  fprintf(fptr, "quickSelect, %d, %f\n", size, averageTimes);
+  printf("quickSelect, size %d, average time %f\n", size, averageTimes);
+
+  type = HeapSelect;
+  getDurations ( type, A, size, k, times );
+  averageTimes = averageTime(times, 5);
+  fprintf(fptr, "heapSelect, %d, %f\n", size, averageTimes);
+  printf("heapSelect, size %d, average time %f\n", size, averageTimes);
+}
+
+/**
+* @brief DA RISCRIVERE
 * 
-* @return int[] vettore contenente 100 valori che indicano la dimensione
 */
 void generateSamples () {
 
-  int * array = NULL;
+  int * sample = NULL;
   int A = 100;
   double B = 0.157673137;
   int ni;
   int nArray;
-  int MAX_N_ARRAY = 10; // n.ro di array per ogni campione 
-  double Tmin = getTmin();
+  /* da chiedere: quanti ne generiamo per ogni campione al massimo? */
+  int MAX_N_ARRAY = 5;
   FILE* fptr = NULL;
 
   fptr = fopen("./asymptotic_times.csv", "a");
 
-  // 100 campioni
-  for (int i = 0; i <= 10; i++) {
-    
-    // dimensione del campione
-    ni = A * pow(2, B * i);
+  // 100 campioni di diverse dimensioni
+  /**
+   * - generare 100 campioni
+   * - dimensione crescente segue una distribuzione esponenziale
+   *   costanti A, B in modo tale che le dimensioni varino nell'intervallo [ 0, 5000000 ]
+   * - scelta pseudocasuale del numero di array da generare per ogni dimensione
+   */
+  for (int i = 0; i <= 99; i++) {
 
-    // q.ta array casuale (1..MAX_N_ARRAY)
+    ni = A * pow(2, B * i);
     nArray = (rand() % MAX_N_ARRAY) + 1;
 
+    /**
+     * - allocare lo spazio per nArray di dimensione ni ciascuno
+     * - popolare ciascuno di numeri pseudocasuali
+     * - valutare il tempo d'esecuzione
+     * - libeare lo spazio allocato
+     */
     for (int i = 0; i < nArray; i++) {
 
-      // allocare spazio per array dimensione ni
-      array = MALLOC_ARRAY(ni, int);
-
-      // popolo array numeri casuali
-      populate(array, ni);
-
-      // test tempi esecuzione algoritmi
-      testAsymptotic( array, ni, 0, Tmin, fptr);
-
-      // liberare spazio occupato da array
-      free(array);
-      array = NULL;
+      sample = MALLOC_ARRAY( ni, int );
+      populate( sample, ni );
+      testAsymptotic( sample, ni, fptr );
+      free( sample );
+      sample = NULL;
     }
   }
 
-  fclose(fptr);
+  fclose( fptr );
 }
 
 int main () {
   srand(time(NULL));
 
+  // istanzio la var. globale 
+  Tmin = getTmin();
+
+  // file dei tempi medi sovrascritto e aggiunte intestazioni
   FILE *fptr = fopen("./asymptotic_times.csv", "w");
   fprintf(fptr, "algorithm, size, time\n");
   fclose(fptr);

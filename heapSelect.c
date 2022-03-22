@@ -140,7 +140,7 @@ int extractMinHeap( int A[], int* heapsize ){
  * @param heapsize dimensione dell'heap (il valore viene modificato, quindi lo passo come riferimento)
  */
 void minHeapInsert( int A[], int* heapsize, int k ) {
-
+  
   *heapsize = *heapsize + 1;
   A[*heapsize-1] = k;
   int i = *heapsize-1; 
@@ -160,9 +160,12 @@ void minHeapInsert( int A[], int* heapsize, int k ) {
  * @param k k-esimo
  * @return int valore del k-esimo elemento
  */
-int heapSelect( int H1[], int* heapsize, int k) {
+int heapSelect( int H1[], int heapsize, int k) {
 
-  if ( k >= 0 && k < *heapsize ) {
+  // costruisco una min-heap a partire da H1
+  buildMinHeap(H1, heapsize);
+
+  if ( k >= 0 && k < heapsize ) {
 
     int heapsize2 = 0; 
     int H2[ MAX_LINE_SIZE ];
@@ -177,12 +180,12 @@ int heapSelect( int H1[], int* heapsize, int k) {
       root_h2 = extractMinHeap( H2, &heapsize2 );  
 
       // inserimento in H2 dei figli di i a partire da H1, se esistono
-      if ( ( 2 * i + 2 ) < *heapsize) {
+      if ( ( 2 * i + 2 ) < heapsize) {
 
         minHeapInsert( H2, &heapsize2, H1[ left( i ) ] );
         minHeapInsert( H2, &heapsize2, H1[ right( i ) ] );
       } 
-      else if ( ( 2 * i + 1 ) < *heapsize)
+      else if ( ( 2 * i + 1 ) < heapsize)
         minHeapInsert( H2, &heapsize2, H1[ left( i ) ] );
       
       
