@@ -2,56 +2,16 @@
  * @file medianMedians.c 
  * @author Capone, Della Rovere, Gortani, Fior 
  */ 
- 
-#include <stdio.h> 
-#include <stdlib.h>
 #include <math.h> 
 #include <limits.h>
-
-#define MAX_LINE_SIZE 1000   // maximum size of a line of input
+#include "scanArray.h"
+#include "swap.h"
 
 int MoM(int arr[], int p, int q); 
 void insertionSort(int arr[], int p, int q ); 
 int med5(int arr[], int p, int q); 
 int MoMpartition(int arr[], int k, int p, int q, int posPerno); 
 int MoMPlace(int arr[], int p, int q);
-int scanArray(int *a);
-
-/** 
- * @brief: lettura array
- *  
- * @param *a: puntatore ad array 
- */ 
-int scanArray(int *a) {
-    // scan line of text
-    char line[MAX_LINE_SIZE];
-    scanf("%[^\n]", line);
-
-    // convert text into array
-    int size = 0, offset = 0, numFilled, n;
-    do {
-        numFilled = sscanf(line + offset, "%d%n", &(a[size]), &n);
-        if (numFilled > 0) {
-            size++;
-            offset += n;
-        }
-    } while (numFilled > 0);
-
-    return size;
-}
-
-/** 
- * @brief: scambia due elementi dell'array 
- *  
- * @param A: array 
- * @param i: primo indice 
- * @param j: secondo indice 
- */ 
-void swap( int A[], int i, int j ){ 
-  int key = A[i]; 
-  A[i] = A[j]; 
-  A[j] = key; 
-} 
  
 /** 
  * @brief: trova arr[k] se arr fosse ordinato  

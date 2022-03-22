@@ -13,11 +13,17 @@
 
 #include "quickSelect.c"
 #include "heapSelect.c"
-#include "medianMediansSelect.c"
+//#include "medianMediansSelect.c"
 
 // alloca number spazio al vettore di tipo int
 #define MALLOC_ARRAY(number, type) \
     ((type *)malloc((number) * sizeof(type)))
+
+enum Algorithm {
+  QuickSelect,
+  HeapSelect,
+  MedianMediansSelect
+};
 
 double duration(struct timespec start, struct timespec end) {
     return end.tv_sec - start.tv_sec
@@ -82,18 +88,6 @@ void populate ( int A[], int len ) {
     random = (-1 + rand() % 2) * rand(); // espediente per ottenere i numeri negativi (da risolvere)
     A[i] = random;
   }
-}
-
-/**
- * @brief 
- * 
- * @param fptr 
- * @param algorithm 
- * @param size 
- * @param time 
- */
-void writeCSV(FILE* fptr, char algorithm[], int size, double time) {
-  
 }
 
 /**

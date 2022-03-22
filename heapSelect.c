@@ -1,42 +1,10 @@
 /**
  * @file heapSelect.c
- * @author Capone, Della Rovere, Gortani Fior
+ * @author Capone, Della Rovere, Gortani, Fior
  */
-#include <stdio.h>
-#define MAX_LINE_SIZE 1000   // maximum size of a line of input
 
-int scanArray(int *A) {
-    // scan line of text
-    char line[MAX_LINE_SIZE];
-    scanf("%[^\n]", line);
-
-    // convert text into array
-    int size = 0, offset = 0, numFilled, n;
-    do {
-        numFilled = sscanf(line + offset, "%d%n", &(A[size]), &n);
-        if (numFilled > 0) {
-            size++;
-            offset += n;
-        }
-    } while (numFilled > 0);
-    
-    return size;
-}
-
-/**
- * @brief scambia 2 elementi in A
- * 
- * @param A 
- * @param i indice primo elemento
- * @param j indice secondo elemento
- */
-void swap( int A[], int i, int j ){
-  
-  int key = A[ i ];
-  
-  A[ i ] = A[ j ];
-  A[ j ] = key;
-}
+#include "scanArray.h"
+#include "swap.h"
 
 /**
  * @brief posizione del figlio sinistro
@@ -227,26 +195,4 @@ int heapSelect( int H1[], int* heapsize, int k) {
     return INT_MIN;
   }
 
-}
-
-int main () {
-
-  // scan sullo standard input per definire il vettore
-  int A[MAX_LINE_SIZE];
-  int *p = &A[0];
-  printf("\033[2J");
-  int len = scanArray(p);
-
-  buildMinHeap(A, len);
-
-  printMinHeap(A, len);
-
-  int k;
-
-  while( k != -1 ){
-    printf("k = ");
-    scanf("%d", &k);
-    printf("\nk: %d, k-esimo elemento: %d\n", k, heapSelect(A, &len, k));
-  }
-  return 0;
 }
