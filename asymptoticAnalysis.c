@@ -134,6 +134,7 @@ double getMeanDuration ( Algorithm type, int A[], int size, int k ) {
   }
 
   return averageTime(times, 5);
+
 }
 
 /**
@@ -142,7 +143,6 @@ double getMeanDuration ( Algorithm type, int A[], int size, int k ) {
  * @param A array di numeri pseudocasuali
  * @param size dimensione array
  * @param k 
- * @param Tmin 
  * nota: per questioni di efficienza il FILE viene aperto e chiuso NON QUA ma in generateSamples
  */
 void testAsymptotic ( int A[], int size, FILE* fptr) {
