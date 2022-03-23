@@ -154,13 +154,13 @@ void testAsymptotic ( int A[], int size, FILE* fptr) {
   getDurations ( type, A, size, k, times );
   averageTimes = averageTime(times, 5);
   fprintf(fptr, "quickSelect, %d, %f\n", size, averageTimes);
-  printf("quickSelect, size %d, average time %f\n", size, averageTimes);
+  printf("quickSelect, size %d, average time %fs\n", size, averageTimes);
 
   type = HeapSelect;
   getDurations ( type, A, size, k, times );
   averageTimes = averageTime(times, 5);
   fprintf(fptr, "heapSelect, %d, %f\n", size, averageTimes);
-  printf("heapSelect, size %d, average time %f\n", size, averageTimes);
+  printf("heapSelect, size %d, average time %fs\n", size, averageTimes);
 }
 
 /**
