@@ -25,7 +25,7 @@ typedef enum {
   MedianMediansSelect
 } Algorithm;
 
-double Tmin;
+double Tmin = 0;
 
 double duration(struct timespec start, struct timespec end) {
     return end.tv_sec - start.tv_sec
