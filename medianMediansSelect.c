@@ -181,7 +181,7 @@ int MoMPlace(int arr[], int p, int q){
 int med5(int arr[], int p, int q){ 
  
   insertionSort(arr, p, q); 
-  return ceil( (p+q)/2 ); 
+  return ceil( (p+q)/2.0 ); 
 } 
  
  
@@ -230,10 +230,11 @@ int main () {
   int posizione = MoMSelect(arr, k, 0, size-1);
   
   if(posizione < 0){
-    printf("Valore: %ld. Posizione k cercata non valida.\n", posizione);
+    printf("Valore: %d. Posizione k cercata non valida.\n", posizione);
   }else{
    printf("L'elemento in posizione %d dell'array è: %d\n", k, arr[posizione] ); 
   }
   
   return 0; 
 }
+// 1 2 3 4 5 6 7 8 9
