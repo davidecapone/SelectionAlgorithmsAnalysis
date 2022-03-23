@@ -94,12 +94,13 @@ void populate ( int A[], int len ) {
  * @param k 
  * @return double* 
  */
-void getDurations ( Algorithm type, int A[], int size, int k, double times[] ) {
+double getMeanDuration ( Algorithm type, int A[], int size, int k ) {
 
   int i = 0;
   double period = 0;
   int kSmallest;
   struct timespec start, end;
+  double times[5];
   
   /**
    * PROBLEMA: ho notato che ci sono tempi di esecuzione medi inferiori a Tmin
@@ -131,6 +132,8 @@ void getDurations ( Algorithm type, int A[], int size, int k, double times[] ) {
       i++;
     }
   }
+
+  return averageTime(times, 5);
 }
 
 /**
@@ -146,21 +149,18 @@ void testAsymptotic ( int A[], int size, FILE* fptr) {
 
   // k-esimo elemento ( FISSATO ) da usare nei test
   int k = 0;
-  double averageTimes;
+  double averageTime;
   Algorithm type;
-  double times[5];
 
   type = QuickSelect;
-  getDurations ( type, A, size, k, times );
-  averageTimes = averageTime(times, 5);
-  fprintf(fptr, "quickSelect, %d, %f\n", size, averageTimes);
-  printf("quickSelect, size %d, average time %fs\n", size, averageTimes);
+  averageTime = getMeanDuration ( type, A, size, k );
+  fprintf(fptr, "quickSelect, %d, %f\n", size, averageTime);
+  printf("quickSelect, size %d, average time %fs\n", size, averageTime);
 
   type = HeapSelect;
-  getDurations ( type, A, size, k, times );
-  averageTimes = averageTime(times, 5);
-  fprintf(fptr, "heapSelect, %d, %f\n", size, averageTimes);
-  printf("heapSelect, size %d, average time %fs\n", size, averageTimes);
+  averageTime = getMeanDuration ( type, A, size, k);
+  fprintf(fptr, "heapSelect, %d, %f\n", size, averageTime);
+  printf("heapSelect, size %d, average time %fs\n", size, averageTime);
 }
 
 /**
@@ -216,13 +216,12 @@ int main () {
 
   // istanzio la var. globale 
   Tmin = getTmin();
-
+  printf("\nTmin = %fs\n", Tmin);
   // file dei tempi medi sovrascritto e aggiunte intestazioni
   FILE *fptr = fopen("./asymptotic_times.csv", "w");
   fprintf(fptr, "algorithm, size, time\n");
   fclose(fptr);
   
   generateSamples();
-
   return 0;
 }
