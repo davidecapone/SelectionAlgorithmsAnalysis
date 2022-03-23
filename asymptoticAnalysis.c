@@ -69,6 +69,23 @@ double averageTime(double A[], int len){
 }
 
 /**
+ * @brief genera un numero casuale compreso tra -RAND_MAX e RAND_MAX 
+ * 
+ * @return int numero random
+ */
+int generateRandomInt() {
+    
+    int randomUnsigned = rand();
+
+    int sign = rand() % 2;
+    if (sign == 0) {
+      sign = -1;
+    }
+
+    return randomUnsigned * sign;
+}
+
+/**
  * @brief popola vettore dimensione len con valori pseudocasuali compresi tra [INT_MIN, INT_MAX]
  * 
  * @param A vettore
