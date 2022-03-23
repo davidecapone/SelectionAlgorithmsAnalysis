@@ -156,12 +156,14 @@ void minHeapInsert( int A[], int* heapsize, int k ) {
  * @brief selezione del k-esimo elemento più piccolo
  * 
  * @param H1 una min heap
- * @param heapsize dimensione della min heap H1
+ * @param p indice inziale
+ * @param p indice inziale
  * @param k k-esimo
  * @return int valore del k-esimo elemento
  */
-int heapSelect( int H1[], int heapsize, int k) {
+int heapSelect( int H1[], int p, int q, int k) {
 
+  int heapsize = q - p + 1;
   // costruisco una min-heap a partire da H1
   buildMinHeap(H1, heapsize);
 
