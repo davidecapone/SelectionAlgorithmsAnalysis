@@ -190,24 +190,19 @@ void generateSamples () {
   int A = 100;
   double B = 0.157673137;
   int ni;
-  int nArray;
-  /* da chiedere: quanti ne generiamo per ogni campione al massimo? */
-  int MAX_N_ARRAY = 5;
+  int nArray = 100;
   FILE* fptr = NULL;
-
   fptr = fopen("./asymptotic_times.csv", "a");
 
-  // 100 campioni di diverse dimensioni
   /**
    * - generare 100 campioni
    * - dimensione crescente segue una distribuzione esponenziale
    *   costanti A, B in modo tale che le dimensioni varino nell'intervallo [ 0, 5000000 ]
-   * - scelta pseudocasuale del numero di array da generare per ogni dimensione
+   * - 100 array da generare per ogni dimensione
    */
   for (int i = 0; i <= 99; i++) {
 
     ni = A * pow(2, B * i);
-    nArray = (rand() % MAX_N_ARRAY) + 1;
 
     /**
      * - allocare lo spazio per nArray di dimensione ni ciascuno
@@ -215,8 +210,8 @@ void generateSamples () {
      * - valutare il tempo d'esecuzione
      * - libeare lo spazio allocato
      */
-    for (int i = 0; i < nArray; i++) {
-
+    for (int j = 1; j <= nArray; j++) {
+      
       sample = MALLOC_ARRAY( ni, int );
       populate( sample, ni );
       testAsymptotic( sample, ni, fptr );
