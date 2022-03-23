@@ -116,7 +116,7 @@ double getMeanDuration ( Algorithm type, int A[], int size, int k ) {
         break;
       
       case HeapSelect:
-        kSmallest = heapSelect(A, size, k);
+        kSmallest = heapSelect(A, 0, size-1, k);
         break;
 
       case MedianMediansSelect:
