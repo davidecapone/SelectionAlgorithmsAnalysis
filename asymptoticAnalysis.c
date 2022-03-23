@@ -93,12 +93,10 @@ int generateRandomInt() {
  */
 void populate ( int A[], int len ) {
 
-  int random;
   for (int i = 0; i < len; i++) {
 
-    // il primo mebro fornisce il segno
-    random = (-1 + rand() % 2) * rand(); // espediente per ottenere i numeri negativi (da risolvere)
-    A[i] = random;
+    A[i] = generateRandomInt();
+    
   }
 }
 
