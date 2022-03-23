@@ -1,0 +1,132 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+# caricamento librerie
+library("dplyr")
+library("ggplot2")
+library("tidyverse")
+```
+
+
+```{r}
+# caricamento dataset
+df <- read.csv("asymptotic_times.csv")
+
+df %>% 
+  filter(time < 0.001001)
+
+View(df)
+```
+
+
+```{r}
+# geom_smooth di heapSelect
+heapSelect <- 
+  df %>% 
+  filter(algorithm == "heapSelect")
+  
+View(heapSelect)
+
+heapSelectPlot <-
+  ggplot(data = heapSelect) +
+  geom_smooth(mapping = aes(x = size, y = time), fill = "orange", color = "orange")
+
+heapSelectPlot
+```
+
+
+```{r}
+# geom_smooth di quickSelect
+quickSelect <- 
+  df %>% 
+  filter(algorithm == "quickSelect")
+
+View(quickSelect)
+
+quickSelectPlot <-
+  ggplot(data = quickSelect) +
+  geom_smooth(mapping = aes(x = size, y = time), fill = "orange", color = "orange")
+
+quickSelectPlot
+```
+
+
+```{r}
+# Che varianza c'è tra i tempi d'esecuzione per una stessa size
+
+heapSelectTimeVariance <-
+heapSelect %>% 
+  group_by(size) %>% 
+  summarize(timeVariance = format(var(time), scientific=FALSE)) %>% 
+  drop_na(timeVariance)
+
+quickSelectTimeVariance <-
+quickSelect %>% 
+  group_by(size) %>% 
+  summarize(timeVariance = format(sd(time), scientific=FALSE)) %>% 
+  drop_na()
+
+heapSelectTimeVariance$timeVariance
+
+mean(heapSelectTimeVariance$timeVariance) > mean(quickSelectTimeVariance$timeVariance)
+```
+
+
+```{r}
+# geom_line di heapSelect
+heapSelect <- 
+  df %>% 
+  filter(algorithm == "heapSelect")
+  
+View(heapSelect)
+
+heapSelectPlot <-
+  ggplot(data = heapSelect) +
+  geom_line(mapping = aes(x = size, y = time), color = "orange")
+
+heapSelectPlot
+```
+
+
+```{r}
+# geom_line di quickSelect
+quickSelect <- 
+  df %>% 
+  filter(algorithm == "quickSelect")
+
+View(quickSelect)
+
+quickSelectPlot <-
+  ggplot(data = quickSelect) +
+  geom_line(mapping = aes(x = size, y = time), color = "orange")
+
+quickSelectPlot
+```
+
+
+```{r}
+# geom_line di heapSelect, senza ripetizioni (prendendo la media)
+```
+
+
+```{r}
+# geom_line di quickSelect, senza ripetizioni (prendendo la media)
+avgQuickSelectTimes <-
+quickSelect %>% 
+  group_by(size) %>% 
+  summarize(avg = mean(time))
+
+avgQuickSelectTimes
+
+meanQuickSelectPlot <-
+  ggplot(data = avgQuickSelectTimes) +
+  geom_line(mapping = aes(x = size, y = avg), color = "orange")
+
+meanQuickSelectPlot
+
+
+```
+
