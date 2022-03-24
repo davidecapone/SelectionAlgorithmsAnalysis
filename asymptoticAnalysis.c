@@ -226,8 +226,8 @@ int main () {
 
   // istanzio la var. globale 
   Tmin = getTmin();
-  printf("\nTmin = %fs\n", Tmin);
-  // file dei tempi medi sovrascritto e aggiunte intestazioni
+
+  // sovrascrivo CSV (tempi medi) e aggiungo le intestazioni
   FILE *fptr = fopen("./asymptotic_times.csv", "w");
   fprintf(fptr, "algorithm, size, time\n");
   fclose(fptr);
