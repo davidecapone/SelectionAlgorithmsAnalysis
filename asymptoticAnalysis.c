@@ -158,9 +158,10 @@ void executeSamples ( int ni ) {
   double quickSelectAvg = 0;
   double heapSelectAvg = 0;
   double medianSelectAvg = 0;
+  int nSamples = 1000;
 
   int * sample = NULL;
-  for ( int i = 1; i <= 100; i++ ) {
+  for ( int i = 1; i <= nSamples; i++ ) {
     sample = MALLOC_ARRAY( ni, int );
     populate( sample, ni );
 
@@ -173,9 +174,9 @@ void executeSamples ( int ni ) {
   }
 
   // calcolo media tempo esecuzione da 100 campioni di dimensione ni
-  quickSelectAvg = quickSelectAvg / 100;
-  heapSelectAvg = heapSelectAvg / 100;
-  medianSelectAvg = medianSelectAvg / 100;
+  quickSelectAvg = quickSelectAvg / nSamples;
+  heapSelectAvg = heapSelectAvg / nSamples;
+  medianSelectAvg = medianSelectAvg / nSamples;
 
   appendToCSV( QuickSelect, ni, quickSelectAvg );
   appendToCSV( HeapSelect, ni, heapSelectAvg );
