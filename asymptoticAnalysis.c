@@ -214,6 +214,8 @@ void generateSamples()
 
 int main()
 {
+	struct timespec program_start, program_end;
+	clock_gettime(CLOCK_MONOTONIC, &program_start);
 	srand(time(NULL));
 	Tmin = getTmin();
 
@@ -222,6 +224,10 @@ int main()
 	fprintf(fptr, "algorithm, size, time\n");
 	fclose(fptr);
 
+	printf("\e[1;1H\e[2J");
 	generateSamples();
+
+	clock_gettime(CLOCK_MONOTONIC, &program_end);
+	printf("[finish] analysis took %fs...\n\n", duration(program_start, program_end));
 	return EXIT_SUCCESS;
 }
