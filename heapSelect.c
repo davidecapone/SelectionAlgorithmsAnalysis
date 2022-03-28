@@ -163,11 +163,11 @@ void minHeapInsert( int A[], int* heapsize, int k ) {
  */
 int heapSelect( int H1[], int p, int q, int k) {
 
-  int heapsize = q - p + 1;
-  // costruisco una min-heap a partire da H1
-  buildMinHeap(H1, heapsize);
-
-  if ( k >= 0 && k < heapsize ) {
+  if ( k >= p && k <= q ) {
+    
+    int heapsize = q - p + 1;
+    // costruisco una min-heap a partire da H1
+    buildMinHeap(H1, heapsize);
 
     int heapsize2 = 0; 
     int H2[ MAX_LINE_SIZE ];

@@ -11,7 +11,7 @@
 #include <string.h>
 #include "quickSelect.c"
 #include "heapSelect.c"
-// #include "medianMediansSelect.c"
+#include "medianMediansSelect.c"
 
 // alloca 'number' spazio al vettore di tipo int
 #define MALLOC_ARRAY(number, type)\
@@ -108,6 +108,7 @@ double getExecutionTime( Algorithm type, int A[], int size, int k )
 				kSmallest = heapSelect(A, 0, size - 1, k);
 				break;
 			case MedianMediansSelect:
+				kSmallest = heapSelect(A, 0, size - 1, k);
 				break;
 		}
 
@@ -139,7 +140,9 @@ void appendToCSV( Algorithm type, int size, double average )
 			break;
 
 		case MedianMediansSelect:
-			printf("[appended CSV] medianMediansSelect coming soon...\n");
+			fprintf(fptr, "medianMediansSelect, %d, %f\n", size, average);
+			printf("[appended CSV] medianMediansSelect, size %d, average time %fs\n", size, average);
+			//printf("[appended CSV] medianMediansSelect coming soon...\n");
 			break;
 
 		default:
@@ -171,6 +174,7 @@ void executeSamples(int ni)
 	double heapSelectAvg = 0;
 	double medianSelectAvg = 0;
 	int nSamples = 100;
+	int k = 99;
 
 	int *sample = NULL;
 	for (int i = 1; i <= nSamples; i++)
@@ -179,17 +183,17 @@ void executeSamples(int ni)
 		populate(sample, ni);
 
 		// sommatoria tempi esecuzione
-		quickSelectAvg += getExecutionTime(QuickSelect, sample, ni, 0);
-		heapSelectAvg += getExecutionTime(HeapSelect, sample, ni, 0);
-		medianSelectAvg += getExecutionTime(MedianMediansSelect, sample, ni, 0);
+		quickSelectAvg += getExecutionTime(QuickSelect, sample, ni, k);
+		heapSelectAvg += getExecutionTime(HeapSelect, sample, ni, k);
+		medianSelectAvg += getExecutionTime(MedianMediansSelect, sample, ni, k);
 
 		free(sample);
 	}
 
 	// calcolo media tempo esecuzione da nSamples campioni
-	quickSelectAvg = quickSelectAvg / nSamples;
-	heapSelectAvg = heapSelectAvg / nSamples;
-	medianSelectAvg = medianSelectAvg / nSamples;
+	quickSelectAvg /= nSamples;
+	heapSelectAvg /= nSamples;
+	medianSelectAvg /= nSamples;
 
 	appendToCSV(QuickSelect, ni, quickSelectAvg);
 	appendToCSV(HeapSelect, ni, heapSelectAvg);
@@ -212,6 +216,55 @@ void generateSamples()
 	fclose(fptr);
 }
 
+void standard_deviation () {
+	// n fissato
+	int n = 1000;
+	int A[n];
+	int k = 50;
+
+	double quickSelectTimes[100], heapSelectTimes[100], medianSelectTimes[100];
+
+	for (int i = 0; i < 100; i++)
+	{
+		populate(A, n);
+		// tempi esecuzione
+		quickSelectTimes[i] = getExecutionTime(QuickSelect, A, n, k);
+		heapSelectTimes[i] = getExecutionTime(HeapSelect, A, n, k);
+		medianSelectTimes[i] = getExecutionTime(MedianMediansSelect, A, n, k);
+	}
+
+	double quickSelectAverage = 0, heapSelectAverage = 0, medianSelectAverage = 0;
+	for (int i = 0; i < 100; i++)
+	{
+		quickSelectAverage += quickSelectTimes[i];
+		heapSelectAverage += heapSelectTimes[i];
+		medianSelectAverage += medianSelectTimes[i];
+	}
+
+	quickSelectAverage /= 100;
+	heapSelectAverage /= 100;
+	medianSelectAverage /= 100;
+
+	// calcolo standard deviation dati i tempi medi
+	double quickSelectSTD = 0, heapSelectSTD = 0, medianSelectSTD = 0;
+	for (int i = 0; i < 100; i++)
+	{
+		quickSelectSTD += pow((quickSelectTimes[i] - quickSelectAverage), 2);
+		heapSelectSTD += pow((heapSelectTimes[i] - heapSelectAverage), 2);
+		medianSelectSTD += pow((medianSelectTimes[i] - medianSelectAverage), 2);
+	}
+
+	quickSelectSTD = pow((quickSelectSTD / (n-1)), 0.5);
+	heapSelectSTD = pow((heapSelectSTD / (n-1)), 0.5);
+	medianSelectSTD = pow((medianSelectSTD / (n-1)), 0.5);
+
+
+	printf("quick select std: %f \n", quickSelectSTD);
+	printf("heap select std: %f \n", heapSelectSTD);
+	printf("median select std: %f \n", medianSelectSTD);
+
+}
+
 int main()
 {
 	struct timespec program_start, program_end;
@@ -220,6 +273,7 @@ int main()
 	Tmin = getTmin();
 
 	// sovrascrivo file CSV tempi d'esecuzione (per eliminare storie passate) e aggiungo le intestazioni necessarie
+	/*
 	fptr = fopen("./asymptotic_times.csv", "w");
 	fprintf(fptr, "algorithm, size, time\n");
 	fclose(fptr);
@@ -229,5 +283,7 @@ int main()
 
 	clock_gettime(CLOCK_MONOTONIC, &program_end);
 	printf("[finish] analysis took %fs...\n\n", duration(program_start, program_end));
+	*/
+	standard_deviation();
 	return EXIT_SUCCESS;
 }

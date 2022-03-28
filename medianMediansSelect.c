@@ -190,10 +190,8 @@ int momSelect_noninplace(int A[], int k, int p, int q) {
   } 
 } 
 
+/*
 int main () { 
-  /** TODO  
-  - pulizia del codice 
-   */ 
  
   int A[ MAX_LINE_SIZE ];
   int *p = &A[0];
@@ -209,3 +207,4 @@ int main () {
   
   return 0; 
 }
+*/
