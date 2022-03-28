@@ -6,43 +6,43 @@
 #include <limits.h>
 #include "scanArray.h"
 #include "swap.h"
-
-int MoM(int A[], int p, int q); 
-void insertionSort(int A[], int p, int q ); 
-int medianOfFiveElement(int A[], int p, int q); 
-int momPartition(int A[], int k, int p, int q, int posPerno); 
-int MoMPlace(int A[], int p, int q);
  
 /** 
- * @brief: trova A[k] se A fosse ordinato  
+ * @brief: ordinare una porzione di array compresa tra p ... q
  *  
- * @param A: array
- * @param k: posizione data in input
- * @param p: prima posizione della parte di vettore considerata
- * @param q: ultima posizione della parte di vettore considerata
- * @return int: posizione di k se A fosse ordinato
+ * @param A: array da ordinare
+ * @param p: posizione di partenza
+ * @param q: posizione finale
  */ 
-int momSelect_noninplace(int A[], int k, int p, int q) { 
- 
-  // controllo se k appartiene all'intervallo [p, ..., q]
-  if( k < p || k > q) return INT_MIN;
-
-  // caso base
-  if(p == q) return A[p]; 
- 
-  int posPerno = MoMPlace(A, p, q);
-  posPerno = momPartition(A, k, p, q, posPerno); 
-
-  if(k == posPerno) 
-    return A[k]; 
-  
-  else if (k < posPerno) { 
-    q = posPerno - 1; 
-    return momSelect_noninplace(A, k, p, q); 
-  } else { 
-    p = posPerno + 1; 
-    return momSelect_noninplace(A, k, p, q); 
+void insertionSort(int A[], int p, int q ){
+   
+  int i = p+1; 
+  while( i <= q ){ 
+    int j = i; 
+    
+    while (j > p && A[j-1] > A[j] ){ 
+      swap(A, j-1, j); 
+      j = j-1; 
+    }
+    
+    i = i+1;     
   } 
+} 
+
+/** 
+ * @brief: posizione del mediano in una porzione di 5 elementi
+ *  - ordino utilizzando insertionSort
+ *  - restituisco la posizione centrale
+ *
+ * @param A: array
+ * @param p: posizione partenza
+ * @param q: posizione finale
+ * @return int: posizione del mediano del vettore  
+ */ 
+int medianOfFiveElement(int A[], int p, int q){ 
+ 
+  insertionSort(A, p, q); 
+  return ceil( (p+q)/2.0 ); 
 } 
 
 /** 
@@ -105,7 +105,7 @@ int momPartition(int A[], int k, int p, int q, int posPerno){
  * @param q: ultima posizione della parte di vettore considerata
  * @return int: posizione del mediano dei mediani
  */ 
-int MoM(int A[], int p, int q){ 
+int mom_noninplace(int A[], int p, int q){ 
  
   int quinti = ceil((q-p+1)/5); //numero di blocchetti di dimensione <= 5 che compongono A 
   int B[quinti]; 
@@ -134,16 +134,14 @@ int MoM(int A[], int p, int q){
  * @param q: ultima posizione della parte di vettore considerata
  * @return int: posizione del mediano dei mediani
  */ 
-int MoMPlace(int A[], int p, int q){ 
+int mom(int A[], int p, int q){ 
  
   //se il blocco è da meno di 5 elementi
   if( q-p < 5) return medianOfFiveElement(A, p, q);   
 
-  
   int quinti = ceil((q-p+1)/5); //numero di blocchetti di dimensione <= 5 che compongono A 
 
   //mettiamo i mediani delle sezioni nelle prime n/5 posizioni dello stesso array
-  
   for(int i = p; i <= q; i+=5){ 
     
     int sLimit = i+4;  //section limit: indice che definisce la sezione da 5 elementi
@@ -155,47 +153,40 @@ int MoMPlace(int A[], int p, int q){
     
     int mediano = medianOfFiveElement(A, i, sLimit);
     swap(A, mediano, p+floor((i-p)/5) );
-
   }
   
   return medianOfFiveElement(A, 0, quinti); 
 }  
 
 /** 
- * @brief: posizione del mediano in una porzione di 5 elementi
- *  - ordino utilizzando insertionSort
- *  - restituisco la posizione centrale
- *
- * @param A: array
- * @param p: posizione partenza
- * @param q: posizione finale
- * @return int: posizione del mediano del vettore  
- */ 
-int medianOfFiveElement(int A[], int p, int q){ 
- 
-  insertionSort(A, p, q); 
-  return ceil( (p+q)/2.0 ); 
-} 
-
-/** 
- * @brief: ordinare una porzione di array compresa tra p ... q
+ * @brief: trova A[k] se A fosse ordinato  
  *  
- * @param A: array da ordinare
- * @param p: posizione di partenza
- * @param q: posizione finale
+ * @param A: array
+ * @param k: posizione data in input
+ * @param p: prima posizione della parte di vettore considerata
+ * @param q: ultima posizione della parte di vettore considerata
+ * @return int: posizione di k se A fosse ordinato
  */ 
-void insertionSort(int A[], int p, int q ){
-   
-  int i = p+1; 
-  while( i <= q ){ 
-    int j = i; 
-    
-    while (j > p && A[j-1] > A[j] ){ 
-      swap(A, j-1, j); 
-      j = j-1; 
-    }
-    
-    i = i+1;     
+int momSelect_noninplace(int A[], int k, int p, int q) { 
+ 
+  // controllo se k appartiene all'intervallo [p, ..., q]
+  if( k < p || k > q) return INT_MIN;
+
+  // caso base
+  if(p == q) return A[p]; 
+ 
+  int posPerno = mom(A, p, q);
+  posPerno = momPartition(A, k, p, q, posPerno); 
+
+  if(k == posPerno) 
+    return A[k]; 
+  
+  else if (k < posPerno) { 
+    q = posPerno - 1; 
+    return momSelect_noninplace(A, k, p, q); 
+  } else { 
+    p = posPerno + 1; 
+    return momSelect_noninplace(A, k, p, q); 
   } 
 } 
 
