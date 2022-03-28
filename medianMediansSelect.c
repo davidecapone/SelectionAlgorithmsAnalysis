@@ -7,52 +7,43 @@
 #include "scanArray.h"
 #include "swap.h"
 
-int MoM(int arr[], int p, int q); 
-void insertionSort(int arr[], int p, int q ); 
-int med5(int arr[], int p, int q); 
-int MoMpartition(int arr[], int k, int p, int q, int posPerno); 
-int MoMPlace(int arr[], int p, int q);
+int MoM(int A[], int p, int q); 
+void insertionSort(int A[], int p, int q ); 
+int medianOfFiveElement(int A[], int p, int q); 
+int momPartition(int A[], int k, int p, int q, int posPerno); 
+int MoMPlace(int A[], int p, int q);
  
 /** 
- * @brief: trova arr[k] se arr fosse ordinato  
+ * @brief: trova A[k] se A fosse ordinato  
  *  
- * @param arr: array
+ * @param A: array
  * @param k: posizione data in input
  * @param p: prima posizione della parte di vettore considerata
  * @param q: ultima posizione della parte di vettore considerata
- * @return int: posizione di k se arr fosse ordinato
+ * @return int: posizione di k se A fosse ordinato
  */ 
-int MoMSelect(int arr[], int k, int p, int q){ 
+int momSelect_noninplace(int A[], int k, int p, int q) { 
  
-  if( k < p || k > q){
-    return INT_MIN;
-  }
+  // controllo se k appartiene all'intervallo [p, ..., q]
+  if( k < p || k > q) return INT_MIN;
 
-  //caso base della ricorsione: 1 elemento 
-  if(p == q){ 
-    return p; 
-  } 
+  // caso base
+  if(p == q) return A[p]; 
  
-  int posPerno = MoMPlace(arr, p, q);
-  posPerno = MoMpartition(arr, k, p, q, posPerno); 
- 
-  /*posPerno a questo punto può essere:
-  * uguale a k: ho finito
-  * minore/maggiore di k: ricorsione nella parte di array contentente k
-  *                       escludendo la posizione del perno
-  */ 
- 
-  if(k == posPerno){ 
-    return k; 
-  } else if(k < posPerno){ 
+  int posPerno = MoMPlace(A, p, q);
+  posPerno = momPartition(A, k, p, q, posPerno); 
+
+  if(k == posPerno) 
+    return A[k]; 
+  
+  else if (k < posPerno) { 
     q = posPerno - 1; 
-    return MoMSelect(arr, k, p, q); 
+    return momSelect_noninplace(A, k, p, q); 
   } else { 
     p = posPerno + 1; 
-    return MoMSelect(arr, k, p, q); 
+    return momSelect_noninplace(A, k, p, q); 
   } 
 } 
- 
 
 /** 
  * @brief: divide l'array in 3 sezioni: 
@@ -60,7 +51,7 @@ int MoMSelect(int arr[], int k, int p, int q){
  *         quella con elementi uguali a k
  *         quella con elementi maggiori di k 
  *  
- * @param arr: array  
+ * @param A: array  
  * @param k: posizione data in input
  * @param p: prima posizione della parte di vettore considerata
  * @param q: ultima posizione della parte di vettore considerata  
@@ -68,16 +59,16 @@ int MoMSelect(int arr[], int k, int p, int q){
  * @return int: posizione del perno (calcolato con MoM) rispetto a k
  *              
  */ 
-int MoMpartition(int arr[], int k, int p, int q, int posPerno){ 
+int momPartition(int A[], int k, int p, int q, int posPerno){ 
  
-  int perno = arr[posPerno];
-  swap(arr, posPerno, q);      //sposto il perno in ultima posizione 
+  int perno = A[posPerno];
+  swap(A, posPerno, q);      //sposto il perno in ultima posizione 
   int indice = p;
  
   //sezione di elementi minori del perno
   for(int i = p; i < q-1; i++){ 
-    if(arr[i] < perno){ 
-      swap(arr, indice, i); 
+    if(A[i] < perno){ 
+      swap(A, indice, i); 
       indice++; 
     } 
   } 
@@ -86,14 +77,14 @@ int MoMpartition(int arr[], int k, int p, int q, int posPerno){
  
   //sezione di elementi uguali al perno
   for(int i = indice; i < q-1; i++){ 
-    if(arr[i] == perno){ 
-      swap(arr, indiciEq, i); 
+    if(A[i] == perno){ 
+      swap(A, indiciEq, i); 
       indiciEq++; 
     } 
   } 
    
   //sistemo il perno in  modo da avere stabilità 
-  swap(arr, q, indiciEq); 
+  swap(A, q, indiciEq); 
  
   if(k < indice){ 
     return indice; 
@@ -109,14 +100,14 @@ int MoMpartition(int arr[], int k, int p, int q, int posPerno){
 /** 
  * @brief: trova la posizione del mediano dei mediani (versione NON in place)
  *  
- * @param arr: array  
+ * @param A: array  
  * @param p: prima posizione della parte di vettore considerata
  * @param q: ultima posizione della parte di vettore considerata
  * @return int: posizione del mediano dei mediani
  */ 
-int MoM(int arr[], int p, int q){ 
+int MoM(int A[], int p, int q){ 
  
-  int quinti = ceil((q-p+1)/5); //numero di blocchetti di dimensione <= 5 che compongono arr 
+  int quinti = ceil((q-p+1)/5); //numero di blocchetti di dimensione <= 5 che compongono A 
   int B[quinti]; 
   int j=0; 
  
@@ -124,31 +115,32 @@ int MoM(int arr[], int p, int q){
   for(int i = 0; i <= q; i = i+5){ 
      
     if( i+4 > q){ 
-      B[j] = med5(arr, i, q); 
+      B[j] = medianOfFiveElement(A, i, q); 
     } else { 
-      B[j] = med5(arr, i, i+4); 
+      B[j] = medianOfFiveElement(A, i, i+4); 
     } 
     j++; 
   } 
-  return med5(B, 0, quinti); 
+
+  int median = medianOfFiveElement(B, 0, quinti);
+  return median;
 } 
 
 /** 
  * @brief: trova la posizione del mediano dei mediani (versione in place)
  *  
- * @param arr: array  
+ * @param A: array  
  * @param p: prima posizione della parte di vettore considerata
  * @param q: ultima posizione della parte di vettore considerata
  * @return int: posizione del mediano dei mediani
  */ 
-int MoMPlace(int arr[], int p, int q){ 
+int MoMPlace(int A[], int p, int q){ 
  
   //se il blocco è da meno di 5 elementi
-  if( q-p < 5){
-    return med5(arr, p, q);   
-  }
+  if( q-p < 5) return medianOfFiveElement(A, p, q);   
+
   
-  int quinti = ceil((q-p+1)/5); //numero di blocchetti di dimensione <= 5 che compongono arr 
+  int quinti = ceil((q-p+1)/5); //numero di blocchetti di dimensione <= 5 che compongono A 
 
   //mettiamo i mediani delle sezioni nelle prime n/5 posizioni dello stesso array
   
@@ -161,80 +153,68 @@ int MoMPlace(int arr[], int p, int q){
       sLimit = q;
     } 
     
-    int mediano = med5(arr, i, sLimit);
-    swap(arr, mediano, p+floor((i-p)/5) );
+    int mediano = medianOfFiveElement(A, i, sLimit);
+    swap(A, mediano, p+floor((i-p)/5) );
 
   }
   
-  return med5(arr, 0, quinti); 
+  return medianOfFiveElement(A, 0, quinti); 
 }  
 
- 
 /** 
- * @brief: trovare il mediano di un vettore di dimensione 5 
- *  
- * @param arr: array
- * @param p: prima posizione della parte di vettore considerata 
- * @param q: ultima posizione della parte di vettore considerata
+ * @brief: posizione del mediano in una porzione di 5 elementi
+ *  - ordino utilizzando insertionSort
+ *  - restituisco la posizione centrale
+ *
+ * @param A: array
+ * @param p: posizione partenza
+ * @param q: posizione finale
  * @return int: posizione del mediano del vettore  
  */ 
-int med5(int arr[], int p, int q){ 
+int medianOfFiveElement(int A[], int p, int q){ 
  
-  insertionSort(arr, p, q); 
+  insertionSort(A, p, q); 
   return ceil( (p+q)/2.0 ); 
 } 
- 
- 
+
 /** 
- * @brief: ordina l'array da p a q 
+ * @brief: ordinare una porzione di array compresa tra p ... q
  *  
- * @param arr: array
- * @param p: prima posizione della parte di vettore considerata 
- * @param q: ultima posizione della parte di vettore considerata 
+ * @param A: array da ordinare
+ * @param p: posizione di partenza
+ * @param q: posizione finale
  */ 
-void insertionSort(int arr[], int p, int q ){
+void insertionSort(int A[], int p, int q ){
    
   int i = p+1; 
- 
-  while(i <= q){ 
+  while( i <= q ){ 
     int j = i; 
     
-    while (j > p && arr[j-1] > arr[j] ){ 
-      swap(arr, j-1, j); 
+    while (j > p && A[j-1] > A[j] ){ 
+      swap(A, j-1, j); 
       j = j-1; 
     }
     
     i = i+1;     
   } 
 } 
- 
 
 int main () { 
   /** TODO  
-  - Correttezza MoM NON in place
   - pulizia del codice 
    */ 
  
-  // scan sullo standard input per definire il vettore
-  int arr[ MAX_LINE_SIZE ];
-  int *p = &arr[0];
+  int A[ MAX_LINE_SIZE ];
+  int *p = &A[0];
   int k;
 
-  printf("Inserire gli elementi dell'array: ");
   int size = scanArray( p );
 
-
-  printf("Inserire la posizione cercata: ");
   scanf("%d", &k);
 
-  int posizione = MoMSelect(arr, k, 0, size-1);
+  int kSmallest = momSelect_noninplace(A, k, 0, size-1);
   
-  if(posizione < 0){
-    printf("Valore: %d. Posizione k cercata non valida.\n", posizione);
-  }else{
-   printf("L'elemento in posizione %d dell'array è: %d\n", k, arr[posizione] ); 
-  }
+  printf("elemento: %d\n", kSmallest);
   
   return 0; 
 }
-// 1 2 3 4 5 6 7 8 9
