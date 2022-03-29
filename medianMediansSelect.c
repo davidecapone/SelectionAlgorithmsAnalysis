@@ -139,6 +139,11 @@ int mom(int A[], int p, int q){
   //se il blocco è da meno di 5 elementi
   if( q-p < 5) return medianOfFiveElement(A, p, q);   
 
+  /*************BUG**********************************
+   * attenzione c'è un errore in mom:
+      nel caso in cui il vettore ha più di 5 elementi
+      ovvero caso non base, ovvero adesso:
+   */
   int quinti = ceil((q-p+1)/5); //numero di blocchetti di dimensione <= 5 che compongono A 
 
   //mettiamo i mediani delle sezioni nelle prime n/5 posizioni dello stesso array
