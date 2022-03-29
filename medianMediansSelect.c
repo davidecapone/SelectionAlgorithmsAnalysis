@@ -42,7 +42,7 @@ void insertionSort(int A[], int p, int q ){
 int medianOfFiveElement(int A[], int p, int q){ 
  
   insertionSort(A, p, q); 
-  return ceil( (p+q)/2.0 ); 
+  return (p+q)/2; 
 } 
 
 /** 
@@ -175,6 +175,7 @@ int momSelect_noninplace(int A[], int k, int p, int q) {
   // caso base
   if(p == q) return A[p]; 
  
+  // partizionamento intorno al mediano
   int posPerno = mom(A, p, q);
   posPerno = momPartition(A, k, p, q, posPerno); 
 
@@ -190,7 +191,7 @@ int momSelect_noninplace(int A[], int k, int p, int q) {
   } 
 } 
 
-/*
+
 int main () { 
  
   int A[ MAX_LINE_SIZE ];
@@ -207,4 +208,3 @@ int main () {
   
   return 0; 
 }
-*/
