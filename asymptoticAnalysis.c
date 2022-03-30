@@ -24,21 +24,18 @@ double Tmin = 0;
 const int A = 100;
 const double B = 0.157673137;
 
-typedef enum
-{
+typedef enum {
 	QuickSelect,
 	HeapSelect,
 	MedianMediansSelect
 } Algorithm;
 
-double duration(struct timespec start, struct timespec end)
-{
+double duration(struct timespec start, struct timespec end) {
 	return end.tv_sec - start.tv_sec +
 		((end.tv_nsec - start.tv_nsec) / (double) 1000000000.0);
 }
 
-double getResolution()
-{
+double getResolution() {
 	struct timespec start, end;
 	clock_gettime(CLOCK_MONOTONIC, &start);
 	do {
@@ -52,8 +49,7 @@ double getResolution()
  *        a partire dalla risoluzione stimata e dall'errore massimo ammissibile
  * @return double tempo minimo misurabile
 */
-double getTmin()
-{
+double getTmin() {
 	double R = getResolution();
 	double E = 0.001;
 	return R *(1 / E + 1);
@@ -66,8 +62,7 @@ double getTmin()
  *        altrimenti: moltiplico 1 per numero random generato (non modificando quindi il segno)
  * @return int numero random compreso tra[-RAND_MAX ... RAND_MAX]
 */
-int getRandomInt()
-{
+int getRandomInt() {
 	int randomUnsigned = rand();
 	int sign = rand() % 2;
   return ( sign == 0 ) ? ( -1 * randomUnsigned ) : randomUnsigned;
@@ -78,8 +73,7 @@ int getRandomInt()
  * @param A vettore
  * @param len dimensione
 */
-void populate(int A[], int len)
-{
+void populate(int A[], int len) {
 	for (int i = 0; i < len; i++) A[i] = getRandomInt();
 }
 
@@ -91,8 +85,7 @@ void populate(int A[], int len)
  * @param k indice di selzione
  * @return double tempo (secondi)
 */
-double getExecutionTime( Algorithm type, int A[], int size, int k )
-{
+double getExecutionTime( Algorithm type, int A[], int size, int k ) {
 	double period = 0;
 	struct timespec start, end;
 	int kSmallest;
@@ -125,8 +118,7 @@ double getExecutionTime( Algorithm type, int A[], int size, int k )
  * @param size dimensione del vettore o campione
  * @param average tempo (medio, in questo caso)
 */
-void appendToCSV( Algorithm type, int size, double average )
-{
+void appendToCSV( Algorithm type, int size, double average ) {
 	switch (type)
 	{
 		case QuickSelect:
@@ -156,8 +148,7 @@ void appendToCSV( Algorithm type, int size, double average )
  * @param i indice
  * @return int dimensione dei campioni
 */
-int expDistribution(int i)
-{
+int expDistribution(int i) {
 	return A* pow(2, B *i);
 }
 
@@ -167,8 +158,8 @@ int expDistribution(int i)
  *        calcola il tempo d'esecuzione medio
  * @param ni dimensione dei campioni
 */
-void executeSamples(int ni)
-{
+void executeSamples(int ni) {
+
 	double quickSelectAvg = 0;
 	double heapSelectAvg = 0;
 	double medianSelectAvg = 0;
@@ -202,8 +193,8 @@ void executeSamples(int ni)
 /**
  * @brief genera 100 dimensioni seguendo una distribuzione esponenziale
  */
-void generateSamples()
-{
+void generateSamples() {
+
 	fptr = fopen("./asymptotic_times.csv", "a");
 	int ni;
 	for (int i = 0; i <= 99; i++)
@@ -216,8 +207,9 @@ void generateSamples()
 }
 
 void standard_deviation () {
+
 	// n fissato
-	int n = 1000;
+	int n = 100;
 	int A[n];
 	int k = 50;
 
@@ -261,11 +253,9 @@ void standard_deviation () {
 	printf("quick select std: %f \n", quickSelectSTD);
 	printf("heap select std: %f \n", heapSelectSTD);
 	printf("median select std: %f \n", medianSelectSTD);
-
 }
 
-int main()
-{
+int main() {
 	struct timespec program_start, program_end;
 	clock_gettime(CLOCK_MONOTONIC, &program_start);
 	srand(time(NULL));
