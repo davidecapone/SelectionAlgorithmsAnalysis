@@ -195,7 +195,7 @@ void executeSamples(int ni) {
  */
 void generateSamples() {
 
-	fptr = fopen("./asymptotic_times.csv", "a");
+	fptr = fopen("./dataset/asymptotic_times.csv", "a");
 	int ni;
 	for (int i = 0; i <= 99; i++)
 	{
@@ -262,7 +262,7 @@ int main() {
 	Tmin = getTmin();
 
 	// sovrascrivo file CSV tempi d'esecuzione (per eliminare storie passate) e aggiungo le intestazioni necessarie
-	fptr = fopen("./asymptotic_times.csv", "w");
+	fptr = fopen("./dataset/asymptotic_times.csv", "w");
 	fprintf(fptr, "algorithm, size, time\n");
 	fclose(fptr);
 
