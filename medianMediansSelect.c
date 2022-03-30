@@ -197,22 +197,4 @@ int med(int arr[], int p, int q){
  
   insertionSort(arr, p, q); 
   return ceil( (p+q)/2.0 ); 
-} 
-
-
-int main () { 
-
-  int arr[] = {3, 7, 213, 86, 45, 2, 9, 11, 3, 234, 958, 33, 245, 24};
-  size_t n = sizeof(arr)/sizeof(arr[0]);
-  int k;
-  printf("Di quale indice vuoi sapere l'elemento? ");
-  scanf("%d", &k);
-
-  int posizione = MoMSelect(arr, k, 0, n-1);
-  
-  if(posizione < 0){
-    printf("Valore: %d. Posizione k cercata non valida.\n", posizione);
-  }else{
-   printf("L'elemento in posizione %d dell'array è: %d\n", k, arr[posizione] ); 
-  }
-} 
+}
