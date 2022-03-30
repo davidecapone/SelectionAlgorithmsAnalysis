@@ -8,6 +8,7 @@ output: html_notebook
 library("dplyr")
 library("ggplot2")
 library("tidyverse")
+library("scales")
 ```
 
 
@@ -18,115 +19,266 @@ df <- read.csv("asymptotic_times.csv")
 df %>% 
   filter(time < 0.001001)
 
-View(df)
+#View(df)
 ```
 
 
 ```{r}
-# geom_smooth di heapSelect
-heapSelect <- 
+#heapSelect
+heap_select <- 
   df %>% 
   filter(algorithm == "heapSelect")
   
-View(heapSelect)
-
-heapSelectPlot <-
-  ggplot(data = heapSelect) +
-  geom_smooth(mapping = aes(x = size, y = time), fill = "orange", color = "orange")
-
-heapSelectPlot
+#View(heap_select)
 ```
 
 
 ```{r}
-# geom_smooth di quickSelect
-quickSelect <- 
+# quickSelect
+quick_select <- 
   df %>% 
   filter(algorithm == "quickSelect")
 
-View(quickSelect)
-
-quickSelectPlot <-
-  ggplot(data = quickSelect) +
-  geom_smooth(mapping = aes(x = size, y = time), fill = "orange", color = "orange")
-
-quickSelectPlot
+#View(quick_select)
 ```
 
 
 ```{r}
-# Che varianza c'è tra i tempi d'esecuzione per una stessa size
-
-heapSelectTimeVariance <-
-heapSelect %>% 
-  group_by(size) %>% 
-  summarize(timeVariance = format(var(time), scientific=FALSE)) %>% 
-  drop_na(timeVariance)
-
-quickSelectTimeVariance <-
-quickSelect %>% 
-  group_by(size) %>% 
-  summarize(timeVariance = format(sd(time), scientific=FALSE)) %>% 
-  drop_na()
-
-heapSelectTimeVariance$timeVariance
-
-mean(heapSelectTimeVariance$timeVariance) > mean(quickSelectTimeVariance$timeVariance)
-```
-
-
-```{r}
-# geom_line di heapSelect
-heapSelect <- 
+# medianMedianSelect
+median_select <- 
   df %>% 
-  filter(algorithm == "heapSelect")
-  
-View(heapSelect)
+  filter(algorithm == "medianMediansSelect")
 
-heapSelectPlot <-
-  ggplot(data = heapSelect) +
-  geom_line(mapping = aes(x = size, y = time), color = "orange")
-
-heapSelectPlot
+#View(median_select)
 ```
 
 
 ```{r}
-# geom_line di quickSelect
-quickSelect <- 
-  df %>% 
-  filter(algorithm == "quickSelect")
+# geom_line di heap_select
+heap_select_plot <-
+  ggplot(data = heap_select) +
+  geom_line(mapping = aes(x = size, y = time, colour = "heapSelect")) +
+  scale_color_manual("", values = c("heapSelect" = "orange2")) +
+  scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M")) +
+  theme_get()
 
-View(quickSelect)
-
-quickSelectPlot <-
-  ggplot(data = quickSelect) +
-  geom_line(mapping = aes(x = size, y = time), color = "orange")
-
-quickSelectPlot
+heap_select_plot
 ```
 
 
 ```{r}
-# geom_line di heapSelect, senza ripetizioni (prendendo la media)
+# geom_line di quick_select
+quick_select_plot <-
+  ggplot(data = quick_select) +
+  geom_line(mapping = aes(x = size, y = time, colour = "quickSelect")) +
+  scale_color_manual("", values = c("quickSelect" = "orange2")) +
+  scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M")) +
+  theme_get()
+
+quick_select_plot
 ```
 
 
 ```{r}
-# geom_line di quickSelect, senza ripetizioni (prendendo la media)
-avgQuickSelectTimes <-
-quickSelect %>% 
-  group_by(size) %>% 
-  summarize(avg = mean(time))
+# geom_line di medianMediansSelect
+median_select_plot <-
+  ggplot(data = median_select) +
+  geom_line(mapping = aes(x = size, y = time, colour = "medianMediansSelect")) +
+  scale_color_manual("", values = c("medianMediansSelect" = "orange2")) +
+  scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M")) +
+  theme_get()
 
-avgQuickSelectTimes
+median_select_plot
+```
 
-meanQuickSelectPlot <-
-  ggplot(data = avgQuickSelectTimes) +
-  geom_line(mapping = aes(x = size, y = avg), color = "orange")
 
-meanQuickSelectPlot
+```{r}
+# Confronto heapSelect con curva n + k log k (k = 99)
+x <- heap_select$size
+y <- x + (99 * log2(99))
 
+heap_n_klogk <-
+  ggplot(data = heap_select) +
+  geom_line(mapping = aes(x = size, y = time, colour = "heapSelect")) +
+  geom_line(mapping = aes(x, y, colour = "n + k log k")) +
+  scale_color_manual("", values = c("heapSelect" = "orange2", "n + k log k" = "red2")) +
+  labs() +
+  theme(axis.text.x=element_blank(),
+    axis.ticks.x=element_blank(),
+    axis.text.y=element_blank(),
+    axis.ticks.y=element_blank()) +
+  scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M")) +
+  theme_get()
+
+heap_n_klogk
+```
+
+
+```{r}
+# Confronto heapSelect con curva n + k log k (k = 99) in scala logaritmica
+heap_n_klogk_log <-
+  ggplot(data = heap_select) +
+  geom_line(mapping = aes(x = size, y = time, colour = "heapSelect")) +
+  geom_line(mapping = aes(x, y, colour = "n + k log k")) +
+  scale_color_manual("Scala logaritmica", values = c("heapSelect" = "orange2", "n + k log k" = "red2")) +
+  labs() +
+  theme_test() +
+  theme(axis.text.x=element_blank(),
+    axis.ticks.x=element_blank(),
+    axis.text.y=element_blank(),
+    axis.ticks.y=element_blank()) +
+  scale_x_continuous(trans = "log2", 
+    breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), 
+    labels = c("100", "1M", "2M", "3M", "4M", "5M")
+  ) +
+  theme(axis.text.x = element_text(angle = 90), axis.text.y = element_blank()) +
+  scale_y_continuous(trans = "log2") +
+  theme_get()
+
+quick_quad_log
+```
+
+
+```{r}
+# Confronto con curva quadratica per quickSelect
+x <- quick_select$size
+y <- x^2
+
+quick_quad <-
+  ggplot(data = quick_select) +
+  geom_line(mapping = aes(x = size, y = time, colour = "quickSelect")) +
+  geom_line(mapping = aes(x, y, colour = "n^2")) +
+  scale_color_manual("", values = c("quickSelect" = "orange2", "n^2" = "red2")) +
+  labs() +
+  theme(axis.text.x=element_blank(),
+    axis.ticks.x=element_blank(),
+    axis.text.y=element_blank(),
+    axis.ticks.y=element_blank()) +
+  scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M")) +
+  theme_get()
+
+quick_quad
+```
+
+
+```{r}
+# confronto con n^2 in scala logaritmica
+quick_quad_log <-
+  ggplot(data = quick_select) +
+  geom_line(mapping = aes(x = size, y = time, colour = "quickSelect")) +
+  geom_line(mapping = aes(x, y, colour = "n^2")) +
+  scale_color_manual("Scala logaritmica", values = c("quickSelect" = "orange2", "n^2" = "red2")) +
+  labs() +
+  theme_test() +
+  theme(axis.text.x=element_blank(),
+    axis.ticks.x=element_blank(),
+    axis.text.y=element_blank(),
+    axis.ticks.y=element_blank()) +
+  scale_x_continuous(trans = "log2", 
+    breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), 
+    labels = c("100", "1M", "2M", "3M", "4M", "5M")
+  ) +
+  theme(axis.text.x = element_text(angle = 90), axis.text.y = element_blank()) +
+  scale_y_continuous(trans = "log2") +
+  theme_get()
+
+quick_quad_log
+```
+
+
+```{r}
+# Confronto con O(n) per medianMediansSelect
+x <- median_select$size
+y <- x
+
+median_linear <-
+  ggplot(data =  median_select) +
+  geom_line(mapping = aes(x = size, y = time, colour = "medianMediansSelect")) +
+  geom_line(mapping = aes(x, y, colour = "n")) +
+  scale_color_manual("", values = c("medianMediansSelect" = "orange2", "n" = "red2")) +
+  labs() +
+  theme(axis.text.x=element_blank(),
+    axis.ticks.x=element_blank(),
+    axis.text.y=element_blank(),
+    axis.ticks.y=element_blank()) +
+  scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M")) +
+  theme_get()
+
+median_linear
+```
+
+
+```{r}
+# confronto con =(n) in scala logaritmica
+median_linear_log <-
+  ggplot(data = median_select) +
+  geom_line(mapping = aes(x = size, y = time, colour = "medianMediansSelect")) +
+  geom_line(mapping = aes(x, y, colour = "n")) +
+  scale_color_manual("Scala logaritmica", values = c("medianMediansSelect" = "orange2", "n" = "red2")) +
+  labs() +
+  theme_test() +
+  theme(axis.text.x=element_blank(),
+    axis.ticks.x=element_blank(),
+    axis.text.y=element_blank(),
+    axis.ticks.y=element_blank()) +
+  scale_x_continuous(trans = "log2", 
+    breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), 
+    labels = c("100", "1M", "2M", "3M", "4M", "5M")
+  ) +
+  theme(axis.text.x = element_text(angle = 90), axis.text.y = element_blank()) +
+  scale_y_continuous(trans = "log2") +
+  theme_get()
+
+median_linear_log
+```
+
+
+```{r}
+heap_select_plotLog <-
+  ggplot(data = heap_select) +
+  geom_line(mapping = aes(x = size, y = time), color = "orange") +
+  scale_x_continuous(trans = "log2", 
+    breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), 
+    labels = c("100", "1M", "2M", "3M", "4M", "5M")
+  ) +
+  theme(axis.text.x = element_text(angle = 90), axis.text.y = element_blank()) +
+  scale_y_continuous(trans='log2')
+
+heap_select_plotLog
+```
+
+
+```{r}
+quick_select_plotLog <-
+  ggplot(data = quick_select) +
+  geom_line(mapping = aes(x = size, y = time), color = "orange") +
+  scale_x_continuous(trans = "log2", 
+    breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), 
+    labels = c("100", "1M", "2M", "3M", "4M", "5M")
+  ) +
+  theme(axis.text.x = element_text(angle = 90), axis.text.y = element_blank()) +
+  scale_y_continuous(trans='log2')
+
+quick_select_plotLog
+```
+
+
+```{r}
+median_select_plotLog <-
+  ggplot(data = median_select) +
+  geom_line(mapping = aes(x = size, y = time), color = "orange") +
+  scale_x_continuous(trans = "log2", 
+    breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), 
+    labels = c("100", "1M", "2M", "3M", "4M", "5M")
+  ) +
+  theme(axis.text.x = element_text(angle = 90), axis.text.y = element_blank()) +
+  scale_y_continuous(trans='log2')
+
+median_select_plotLog
+```
+
+
+```{r}
 
 ```
 
