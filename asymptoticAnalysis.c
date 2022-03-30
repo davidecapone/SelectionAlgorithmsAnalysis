@@ -108,7 +108,7 @@ double getExecutionTime( Algorithm type, int A[], int size, int k )
 				kSmallest = heapSelect(A, 0, size - 1, k);
 				break;
 			case MedianMediansSelect:
-				kSmallest = heapSelect(A, 0, size - 1, k);
+				kSmallest = MoMSelect(A, k, 0, size - 1);
 				break;
 		}
 
@@ -142,7 +142,6 @@ void appendToCSV( Algorithm type, int size, double average )
 		case MedianMediansSelect:
 			fprintf(fptr, "medianMediansSelect, %d, %f\n", size, average);
 			printf("[appended CSV] medianMediansSelect, size %d, average time %fs\n", size, average);
-			//printf("[appended CSV] medianMediansSelect coming soon...\n");
 			break;
 
 		default:
