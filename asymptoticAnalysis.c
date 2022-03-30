@@ -164,7 +164,7 @@ void appendData( Algorithm type, Case which, int size, double average ) {
  * @return int dimensione dei campioni
 */
 int expDistribution(int i) {
-	return A* pow(2, B *i);
+	return ( A * pow(2, B*i) );
 }
 
 /**
@@ -179,7 +179,7 @@ void evaluateAverageOfSamples(int ni) {
 	double heapSelectAvg = 0;
 	double medianSelectAvg = 0;
 	int nSamples = 100;
-	int k = 99;
+	int k = 0;
 
 	int *sample = NULL;
 	for (int i = 1; i <= nSamples; i++)
