@@ -272,7 +272,6 @@ int main()
 	Tmin = getTmin();
 
 	// sovrascrivo file CSV tempi d'esecuzione (per eliminare storie passate) e aggiungo le intestazioni necessarie
-	/*
 	fptr = fopen("./asymptotic_times.csv", "w");
 	fprintf(fptr, "algorithm, size, time\n");
 	fclose(fptr);
@@ -282,7 +281,9 @@ int main()
 
 	clock_gettime(CLOCK_MONOTONIC, &program_end);
 	printf("[finish] analysis took %fs...\n\n", duration(program_start, program_end));
-	*/
+	
+	
+	printf("\nanalisi deviazione standard:\n");
 	standard_deviation();
 	return EXIT_SUCCESS;
 }
