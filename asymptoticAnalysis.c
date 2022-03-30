@@ -30,6 +30,18 @@ typedef enum {
 	MedianMediansSelect
 } Algorithm;
 
+// definisce come devono essere popolati gli elementi in un array, utile per lo studio caso peggiore di quickselect
+typedef enum {
+	Random,
+	Sort
+} Generation;
+
+// siccome i dati possono essere appesi in file diversi e dipende dall'analisi che sto effettuando:
+typedef enum {
+	AverageTimes,
+	WorstCase
+} Case;
+
 double duration(struct timespec start, struct timespec end) {
 	return end.tv_sec - start.tv_sec +
 		((end.tv_nsec - start.tv_nsec) / (double) 1000000000.0);
@@ -62,19 +74,17 @@ double getTmin() {
  *        altrimenti: moltiplico 1 per numero random generato (non modificando quindi il segno)
  * @return int numero random compreso tra[-RAND_MAX ... RAND_MAX]
 */
-int getRandomInt() {
+int randomInteger() {
 	int randomUnsigned = rand();
 	int sign = rand() % 2;
   return ( sign == 0 ) ? ( -1 * randomUnsigned ) : randomUnsigned;
 }
 
-/**
- * @brief popola vettore dimensione len con valori pseudocasuali compresi tra [INT_MIN, INT_MAX]
- * @param A vettore
- * @param len dimensione
-*/
-void populate(int A[], int len) {
-	for (int i = 0; i < len; i++) A[i] = getRandomInt();
+void populate(int A[], int len, Generation generationType) {
+	if (generationType == Random)
+		for (int i = 0; i < len; i++) A[i] = randomInteger();
+	else
+		for (int i = 0; i < len; i++) A[i] = i;
 }
 
 /**
@@ -85,7 +95,7 @@ void populate(int A[], int len) {
  * @param k indice di selzione
  * @return double tempo (secondi)
 */
-double getExecutionTime( Algorithm type, int A[], int size, int k ) {
+double executionTimeEvaluation( Algorithm type, int A[], int size, int k ) {
 	double period = 0;
 	struct timespec start, end;
 	int kSmallest;
@@ -118,26 +128,31 @@ double getExecutionTime( Algorithm type, int A[], int size, int k ) {
  * @param size dimensione del vettore o campione
  * @param average tempo (medio, in questo caso)
 */
-void appendToCSV( Algorithm type, int size, double average ) {
-	switch (type)
-	{
-		case QuickSelect:
-			fprintf(fptr, "quickSelect, %d, %f\n", size, average);
-			printf("[appended CSV] quickSelect, size %d, average time %fs\n", size, average);
-			break;
+void appendData( Algorithm type, Case which, int size, double average ) {
+	if ( which == AverageTimes ) {
+		switch (type) {
+			case QuickSelect:
+				fprintf(fptr, "quickSelect, %d, %f\n", size, average);
+				printf("[appended CSV] quickSelect, size %d, average time %fs\n", size, average);
+				break;
 
-		case HeapSelect:
-			fprintf(fptr, "heapSelect, %d, %f\n", size, average);
-			printf("[appended CSV] heapSelect, size %d, average time %fs\n", size, average);
-			break;
+			case HeapSelect:
+				fprintf(fptr, "heapSelect, %d, %f\n", size, average);
+				printf("[appended CSV] heapSelect, size %d, average time %fs\n", size, average);
+				break;
 
-		case MedianMediansSelect:
-			fprintf(fptr, "medianMediansSelect, %d, %f\n", size, average);
-			printf("[appended CSV] medianMediansSelect, size %d, average time %fs\n", size, average);
-			break;
+			case MedianMediansSelect:
+				fprintf(fptr, "medianMediansSelect, %d, %f\n", size, average);
+				printf("[appended CSV] medianMediansSelect, size %d, average time %fs\n", size, average);
+				break;
 
-		default:
-			break;
+			default:
+				break;
+		}
+	} else {
+		// file analisi caso peggiore di quickSelect
+		fprintf(fptrWC, "quickSelect, %d, %f\n", size, average);
+		printf("[appended CSV] quickSelect, size %d, average time %fs\n", size, average);
 	}
 }
 
@@ -158,7 +173,7 @@ int expDistribution(int i) {
  *        calcola il tempo d'esecuzione medio
  * @param ni dimensione dei campioni
 */
-void executeSamples(int ni) {
+void evaluateAverageOfSamples(int ni) {
 
 	double quickSelectAvg = 0;
 	double heapSelectAvg = 0;
@@ -170,12 +185,12 @@ void executeSamples(int ni) {
 	for (int i = 1; i <= nSamples; i++)
 	{
 		sample = MALLOC_ARRAY(ni, int);
-		populate(sample, ni);
+		populate(sample, ni, Random);
 
 		// sommatoria tempi esecuzione
-		quickSelectAvg += getExecutionTime(QuickSelect, sample, ni, k);
-		heapSelectAvg += getExecutionTime(HeapSelect, sample, ni, k);
-		medianSelectAvg += getExecutionTime(MedianMediansSelect, sample, ni, k);
+		quickSelectAvg += executionTimeEvaluation(QuickSelect, sample, ni, k);
+		heapSelectAvg += executionTimeEvaluation(HeapSelect, sample, ni, k);
+		medianSelectAvg += executionTimeEvaluation(MedianMediansSelect, sample, ni, k);
 
 		free(sample);
 	}
@@ -185,22 +200,59 @@ void executeSamples(int ni) {
 	heapSelectAvg /= nSamples;
 	medianSelectAvg /= nSamples;
 
-	appendToCSV(QuickSelect, ni, quickSelectAvg);
-	appendToCSV(HeapSelect, ni, heapSelectAvg);
-	appendToCSV(MedianMediansSelect, ni, medianSelectAvg);
+	appendData(QuickSelect, AverageTimes, ni, quickSelectAvg);
+	appendData(HeapSelect, AverageTimes, ni, heapSelectAvg);
+	appendData(MedianMediansSelect, AverageTimes, ni, medianSelectAvg);
+}
+
+void evaluateAverageOfSamples_worstcase(int ni) {
+
+	double quickSelectAvg = 0;
+	int nSamples = 100;
+	int k = 0;
+
+	int *sample = NULL;
+	for (int i = 1; i <= nSamples; i++)
+	{
+		sample = MALLOC_ARRAY(ni, int);
+		populate(sample, ni, Sort);
+
+		// sommatoria tempi esecuzione
+		quickSelectAvg += executionTimeEvaluation(QuickSelect, sample, ni, k);
+
+		free(sample);
+	}
+
+	// calcolo media tempo esecuzione da nSamples campioni
+	quickSelectAvg /= nSamples;
+
+	appendData(QuickSelect, WorstCase, ni, quickSelectAvg);
 }
 
 /**
  * @brief genera 100 dimensioni seguendo una distribuzione esponenziale
  */
-void generateSamples() {
+void asymptoticTimes() {
 
-	fptr = fopen("./dataset/asymptotic_times.csv", "a");
+	fptr = fopen("asymptotic_times.csv", "a");
 	int ni;
 	for (int i = 0; i <= 99; i++)
 	{
 		ni = expDistribution(i);
-		executeSamples(ni);
+		evaluateAverageOfSamples(ni);
+	}
+
+	fclose(fptr);
+}
+
+void asymptoticTimes_worstcase() {
+
+	fptr = fopen("asymptotic_times_wc.csv", "a");
+	int ni;
+	for (int i = 0; i <= 99; i++)
+	{
+		ni = expDistribution(i);
+		evaluateAverageOfSamples_worstcase(ni);
 	}
 
 	fclose(fptr);
@@ -208,8 +260,10 @@ void generateSamples() {
 
 void standard_deviation () {
 
+	FILE * fptrSTD = fopen("asymptotic_standard_deviation.csv", "w");
+	fprintf(fptrSTD, "algorithm, stanard_deviation\n");
 	// n fissato
-	int n = 100;
+	const int n = 100;
 	int A[n];
 	int k = 50;
 
@@ -217,11 +271,11 @@ void standard_deviation () {
 
 	for (int i = 0; i < 100; i++)
 	{
-		populate(A, n);
+		populate(A, n, Random);
 		// tempi esecuzione
-		quickSelectTimes[i] = getExecutionTime(QuickSelect, A, n, k);
-		heapSelectTimes[i] = getExecutionTime(HeapSelect, A, n, k);
-		medianSelectTimes[i] = getExecutionTime(MedianMediansSelect, A, n, k);
+		quickSelectTimes[i] = executionTimeEvaluation(QuickSelect, A, n, k);
+		heapSelectTimes[i] = executionTimeEvaluation(HeapSelect, A, n, k);
+		medianSelectTimes[i] = executionTimeEvaluation(MedianMediansSelect, A, n, k);
 	}
 
 	double quickSelectAverage = 0, heapSelectAverage = 0, medianSelectAverage = 0;
@@ -250,9 +304,12 @@ void standard_deviation () {
 	medianSelectSTD = pow((medianSelectSTD / (n-1)), 0.5);
 
 
-	printf("quick select std: %f \n", quickSelectSTD);
-	printf("heap select std: %f \n", heapSelectSTD);
-	printf("median select std: %f \n", medianSelectSTD);
+	
+	fprintf(fptrSTD, "algorithm, stanard_deviation\n");
+	fprintf(fptrSTD, "quickSelect, %f\n", quickSelectSTD);
+	fprintf(fptrSTD, "heapSelect, %f\n", heapSelectSTD);
+	fprintf(fptrSTD, "medianMediansSelect, %f\n", medianSelectSTD);
+	fclose(fptrSTD);
 }
 
 int main() {
@@ -261,19 +318,22 @@ int main() {
 	srand(time(NULL));
 	Tmin = getTmin();
 
-	// sovrascrivo file CSV tempi d'esecuzione (per eliminare storie passate) e aggiungo le intestazioni necessarie
-	fptr = fopen("./dataset/asymptotic_times.csv", "w");
+	fptr = fopen("asymptotic_times.csv", "w");
 	fprintf(fptr, "algorithm, size, time\n");
 	fclose(fptr);
 
-	printf("\e[1;1H\e[2J");
-	generateSamples();
+	// analisi asintotica tempi medi 3 algoritmi di selezione
+	asymptoticTimes();
 
-	clock_gettime(CLOCK_MONOTONIC, &program_end);
-	printf("[finish] analysis took %fs...\n\n", duration(program_start, program_end));
-	
-	
-	printf("\nanalisi deviazione standard:\n");
+	fptrWC = fopen("asymptotic_times_wc.csv", "w");
+	fprintf(fptrWC, "algorithm, size, time\n");
+	fclose(fptrWC);
+
+	// analisi asintotica tempi medi quickselect caso peggiore
+	asymptoticTimes_worstcase();
+
+	// analisi deviazione standard
 	standard_deviation();
-	return EXIT_SUCCESS;
+
+	return (EXIT_SUCCESS);
 }
