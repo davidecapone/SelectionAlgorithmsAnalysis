@@ -4,9 +4,9 @@
 #include <math.h>
 #include <limits.h>
 #include <string.h>
-#include "quickSelect.c"
-#include "heapSelect.c"
-#include "medianMediansSelect.c"
+#include "implementations/quickSelect.c"
+#include "implementations/heapSelect.c"
+#include "implementations/medianMediansSelect.c"
 
 #define MALLOC_ARRAY(number, type)\
 	((type*) malloc((number) *sizeof(type)))
