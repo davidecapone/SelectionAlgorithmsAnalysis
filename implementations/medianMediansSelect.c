@@ -33,11 +33,11 @@ int MoMSelect(int arr[], int k, int p, int q){
 
   //caso base della ricorsione: 1 elemento 
   if(p == q){ 
-    return p; 
+    return arr[p]; 
   } 
   
   //calcolo la posizione del perno (MoM) e partiziono l'array
-  int posPerno = MoM(arr, p, q);
+  int posPerno = MoMPlace(arr, p, q);
   posPerno = MoMPartition(arr, k, p, q, posPerno); 
  
   /*posPerno a questo punto può essere:
@@ -47,7 +47,7 @@ int MoMSelect(int arr[], int k, int p, int q){
   */ 
  
   if(k == posPerno){ 
-    return k; 
+    return arr[k]; 
   } else if(k < posPerno){ 
     q = posPerno - 1; 
     return MoMSelect(arr, k, p, q); 
