@@ -1,5 +1,33 @@
+```{r}
+library(dplyr)
+library(ggplot2)
+```
+
 
 ```{r}
+# importare da folder dataset/
+fixed_k <- read.csv("dataset/fixed_k_times.csv")
+random_k <- read.csv("dataset/random_k_times.csv")
+worst_case <- read.csv("dataset/worst_case_qk.csv")
+```
 
+```{r}
+# statistiche (media, varianza) algoritmi con k fissato
+fixed_k_stats <- fixed_k %>%
+  group_by( size, algorithm ) %>%
+  summarise( average_time = mean(time), variance = var(time) ) %>%
+  arrange( size )
+
+# statistiche (media, varianza) algoritmi con k random
+random_k_stats <- random_k %>%
+  group_by( size, algorithm ) %>%
+  summarise( average_time = mean(time), variance = var(time) ) %>%
+  arrange( size )
+
+# statistiche (media, varianza) per il caso peggiore quickSelect
+word_case_stats <- worst_case %>%
+  group_by( size ) %>%
+  summarise( average_time = mean(time), variance = var(time) ) %>%
+  arrange( size )
 ```
 
