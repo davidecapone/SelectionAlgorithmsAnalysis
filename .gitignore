@@ -1,11 +1,4 @@
-heapSelect.exe
-heapSelect
-quickSelect.exe
-quickSelect
-medianMediansSelect
-medianMediansSelect.exe
-asymptoticAnalysis
-asymptoticAnalysis.exe
-~$lazioni_giornaliere.docx
+selectionAnalysis
+dataset/
 analysis.nb.html
 .Rproj.user
