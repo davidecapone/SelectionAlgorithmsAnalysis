@@ -180,12 +180,16 @@ double timeExecution( Algorithm type, int A[], int size, int k ) {
  * @param k posizione da determinare
  * @param ptr puntatore al file
  */
-void executeSamples( Analysis analysisType, int size, int nSamples, int k, ArrayType type, FILE * ptr ) {
+void executeSamples( Analysis analysisType, int size, int nSamples, ArrayType type, FILE * ptr ) {
   
 	int *sample = NULL;
+  int k;
   double quickSelectTime;
   double heapSelectTime;
   double medianSelectTime;
+
+  if (analysisType == FixedK || analysisType == QuickSelectWorst) k = 0; 
+  else k = rand() % size;
 
   // creare 100 campioni dimensione size, calcolare tempo medio esecuzione
   for (int i = 1; i <= nSamples; i++) {
@@ -221,46 +225,68 @@ void executeSamples( Analysis analysisType, int size, int nSamples, int k, Array
  */
 void analysis( Analysis type, int nSamples ) {
 
-  int size, k;
+  int size, k, final_index = 99;
   FILE * ptr;
   ArrayType populationMode;
 
-  if (type == QuickSelectWorst) { 
-    populationMode = Sorted;
-    ptr = fopen(worst_case_qk, "w");
-    fprintf(ptr, "algorithm, size, time\n");
-	  fclose(ptr);
-    ptr = fopen(worst_case_qk, "a");
-  } 
-  else { 
-    populationMode = Random; 
-    if (type == FixedK) {
+  switch (type) {
+
+    /* Caso peggiore di quickSelect */
+    case QuickSelectWorst:
+      populationMode = Sorted;
+      ptr = fopen(worst_case_qk, "w");
+      fprintf(ptr, "algorithm, size, time\n");
+      fclose(ptr);
+      ptr = fopen(worst_case_qk, "a");
+      break;
+
+    /* k fissato = 0 */
+    case FixedK:
+      populationMode = Random;
       ptr = fopen(fixed_k_file, "w");
       fprintf(ptr, "algorithm, size, time\n");
 	    fclose(ptr);
       ptr = fopen(fixed_k_file, "a");
-    } 
-    else {
+      break;
+
+    /* k randomico */
+    case RandomK:
+      populationMode = Random;
       ptr = fopen(random_k_file, "w");
       fprintf(ptr, "algorithm, size, time\n");
 	    fclose(ptr);
       ptr = fopen(random_k_file, "a");
-    }
+      break;
+
+    default:
+      break;
   }
+
   
-  for (int i = 0; i <= 99; i++) {
+  for (int i = 0; i <= final_index; i++) {
     // dimensione dei campioni (segue dist. exp. al variare di i)
     size = expDistribution( i );
 
-    if (type == FixedK || type == QuickSelectWorst) k = 0; 
-    else k = rand() % 100;
-
     // tempi d'esecuzione su nSamples campioni di dimensione size
-    executeSamples( type, size, nSamples, k, populationMode, ptr );
+    executeSamples( type, size, nSamples, populationMode, ptr );
   }
 
   fclose(ptr);
 }
+
+/* obbiettivi dell'analisi
+- tempi di esecuzione su 3 algoritmi di selezione
+- come varia heap select in base alla grandezza di k
+  - k piccolo
+  - k molto grande
+  - k random (sarà importante la sua variabilità)
+  - (eventualmente) implementare una max heap e vedere come si comporta con k grande o piccolo
+- tempi d'esecuzione quickselect nel caso peggiore
+    caso peggiore quando l'array è già ordinato
+                        la partizione viene effettuata sull'ultimo elemento
+                        seleziono k = 0
+- la scelta di k non influenza l'andamento di medianMediansSelect... 
+*/
 
 int main () {
 	
@@ -272,12 +298,12 @@ int main () {
   con k = 0, fisso
   20 campioni per ogni dimensione generata
   */
-  printf("[starting analysis] fixed k, %d samples for each dimension\n", nSamples);
-  analysis( FixedK, nSamples );
+  //printf("[starting analysis] fixed k, %d samples for each dimension\n", nSamples);
+  //analysis( FixedK, nSamples );
 
   /**
   Analisi asintotica degli algoritmi di selezione
-  con k variabile tra 0 e 99
+  con k variabile tra 0 e size
   20 campioni per ogni dimensione generata
   */
   printf("[starting analysis] random k, %d samples for each dimension\n", nSamples);
@@ -288,8 +314,8 @@ int main () {
   con k = 0, fisso, vettore ordinato
   20 campioni per ogni dimensione generata
   */
-  printf("[starting analysis] quick select worst case, %d samples for each dimension\n", nSamples);
-  analysis( QuickSelectWorst, nSamples );
+  //printf("[starting analysis] quick select worst case, %d samples for each dimension\n", nSamples);
+  //analysis( QuickSelectWorst, nSamples );
 
   return (EXIT_SUCCESS);
 }
