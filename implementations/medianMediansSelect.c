@@ -8,10 +8,10 @@
 #include "scanArray.h"
 #include "swap.h"
 
-int MoMSelect(int arr[], int k, int p, int q);
+int MoMSelect(int arr[], int p, int q, int k);
 int MoM(int arr[], int p, int q);
 int MoMPlace(int arr[], int p, int q);
-int MoMPartition(int arr[], int k, int p, int q, int posPerno);
+int MoMPartition(int arr[], int p, int q, int k, int posPerno);
 int med(int arr[], int p, int q);
 void insertionSort(int arr[], int p, int q );
 
@@ -25,7 +25,7 @@ void insertionSort(int arr[], int p, int q );
  * @param q: ultima posizione della parte di vettore considerata
  * @return int: posizione di k se arr fosse ordinato
  */ 
-int MoMSelect(int arr[], int k, int p, int q){ 
+int MoMSelect(int arr[], int p, int q, int k){
  
   if( k < p || k > q){
     return INT_MIN;
@@ -38,7 +38,7 @@ int MoMSelect(int arr[], int k, int p, int q){
   
   //calcolo la posizione del perno (MoM) e partiziono l'array
   int posPerno = MoMPlace(arr, p, q);
-  posPerno = MoMPartition(arr, k, p, q, posPerno); 
+  posPerno = MoMPartition(arr, p, q, k, posPerno); 
  
   /*posPerno a questo punto può essere:
   * -uguale a k: ho finito
@@ -50,10 +50,10 @@ int MoMSelect(int arr[], int k, int p, int q){
     return arr[k]; 
   } else if(k < posPerno){ 
     q = posPerno - 1; 
-    return MoMSelect(arr, k, p, q); 
+    return MoMSelect(arr, p, q, k); 
   } else { 
     p = posPerno + 1; 
-    return MoMSelect(arr, k, p, q); 
+    return MoMSelect(arr, p, q, k); 
   } 
 } 
 
@@ -129,7 +129,7 @@ int MoM(int arr[], int p, int q){
  * @return int: posizione del perno (calcolato con MoM) rispetto a k
  *              
  */ 
-int MoMPartition(int arr[], int k, int p, int q, int posPerno){ 
+int MoMPartition(int arr[], int p, int q, int k, int posPerno){ 
  
   int perno = arr[posPerno];
   swap(arr, posPerno, q);      //sposto il perno in ultima posizione 
