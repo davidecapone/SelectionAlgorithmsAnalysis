@@ -55,24 +55,47 @@ double getResolution() {
 	return duration(start, end);
 }
 
+/**
+ * @brief Ottenere il tempo minimo misurabile dalla macchina in base al'errore minimo ammissibile
+ * 
+ * @return double : tempo minimo misurabile in secondi
+ */
 double getTmin() {
 
 	double R = getResolution();
 	return (R*(1/E+1));
 }
 
+/**
+ * @brief Generare dimensioni per array che crescono esponenzialmente
+ * 
+ * @param i numero da usare come esponente
+ * @return int : dimensione 
+ */
 int expDistribution(int i) {
 
 	return ( A * pow(2, B*i) );
 }
 
+/**
+ * @brief Generare numeri interi pseudocasuali
+ * 
+ * @return int : numero compreso tra -INT_MAX e +INT_MAX
+ */
 int randomInt() {
 
-	int randomUnsigned = rand();
-	int sign = rand() % 2;
+  int randomUnsigned = rand();
+  int sign = rand() % 2;
   return ( sign == 0 ) ? ( -1 * randomUnsigned ) : randomUnsigned;
 }
 
+/**
+ * @brief Popola l'array di interi
+ * 
+ * @param A array da popolare
+ * @param size dimensione array
+ * @param type tipo di riempimento
+ */
 void populate( int A[], int size, ArrayType type ) {
 
   if ( type == Sorted ) {
@@ -86,14 +109,23 @@ void populate( int A[], int size, ArrayType type ) {
   }
 }
 
+/**
+ * @brief Calcola il tempo di esecuzione del campione
+ * 
+ * @param type tipo di algoritmo
+ * @param A array
+ * @param size dimensione array
+ * @param k posizione da determinare
+ * @return int : Tempo di esecuzione in secondi
+ */
 double timeExecution( Algorithm type, int A[], int size, int k ) {
 
   struct timespec start, end;
   struct timespec backup_start, backup_end;
   double period;
   double backupTime = 0;
-	int count = 0;
-	int kSmallest;
+  int count = 0;
+  int kSmallest;
 
   /*
   creo una copia di backup dell'array A
@@ -108,8 +140,7 @@ double timeExecution( Algorithm type, int A[], int size, int k ) {
 
 	clock_gettime(CLOCK_MONOTONIC, &start);
 	do {
-		switch (type) 
-    {
+		switch (type) {
 			case QuickSelect:
 				kSmallest = quickSelect(A, 0, size-1, k);
 				break;
@@ -140,6 +171,15 @@ double timeExecution( Algorithm type, int A[], int size, int k ) {
 	return ((double) ((period - backupTime) / count));
 }
 
+/**
+ * @brief Compila il file con i dati 
+ * 
+ * @param analysisType tipo di analisi
+ * @param size dimensione degli array
+ * @param nSamples numero di array
+ * @param k posizione da determinare
+ * @param ptr puntatore al file
+ */
 void executeSamples( Analysis analysisType, int size, int nSamples, int k, ArrayType type, FILE * ptr ) {
   
 	int *sample = NULL;
@@ -164,6 +204,7 @@ void executeSamples( Analysis analysisType, int size, int nSamples, int k, Array
       medianSelectTime = timeExecution( MedianMediansSelect, sample, size, k );
 
       printf("\t size: %d, quickselect %f, heapselect %f, medianmediansselect %f\n", size, quickSelectTime, heapSelectTime, medianSelectTime);
+      fprintf(ptr, "quickSelect, %d, %f\n", size, quickSelectTime);
       fprintf(ptr, "heapSelect, %d, %f\n", size, heapSelectTime);
       fprintf(ptr, "medianMediansSelect, %d, %f\n", size, medianSelectTime);
     }
@@ -172,6 +213,12 @@ void executeSamples( Analysis analysisType, int size, int nSamples, int k, Array
   }
 }
 
+/**
+ * @brief Inizializza il file dei dati e lo compila
+ * 
+ * @param type tipo di analisi
+ * @param nSamples numero di array
+ */
 void analysis( Analysis type, int nSamples ) {
 
   int size, k;
