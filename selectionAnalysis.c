@@ -148,7 +148,7 @@ double timeExecution( Algorithm type, int A[], int size, int k ) {
 				kSmallest = heapSelect(A, 0, size-1, k);
 				break;
 			case MedianMediansSelect:
-				kSmallest = MoMSelect(A, k, 0, size-1);
+				kSmallest = MoMSelect(A, 0, size-1, k);
 				break;
 		}
 
