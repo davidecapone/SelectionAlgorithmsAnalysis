@@ -176,7 +176,7 @@ int heapSelect( int H1[], int p, int q, int k) {
     minHeapInsert( H2, &heapsize2, H1[0] );
 
     int root_h2;
-    for ( int i = 0; i < k; i++ ) {
+    for ( int i = 0; i <= k; i++ ) {
 
       // estrazione radice H2
       root_h2 = extractMinHeap( H2, &heapsize2 );  
