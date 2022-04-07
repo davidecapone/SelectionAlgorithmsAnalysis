@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX_LINE_SIZE 1000   // maximum size of a line of input
+#define MAX_LINE_SIZE 5000   // maximum size of a line of input
 
 int scanArray(int *A) {
     // scan line of text
