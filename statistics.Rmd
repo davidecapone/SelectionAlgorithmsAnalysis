@@ -17,17 +17,66 @@ fixed_k_stats <- fixed_k %>%
   group_by( size, algorithm ) %>%
   summarise( average_time = mean(time), variance = var(time) ) %>%
   arrange( size )
+# View(fixed_k_stats)
 
 # statistiche (media, varianza) algoritmi con k random
 random_k_stats <- random_k %>%
   group_by( size, algorithm ) %>%
   summarise( average_time = mean(time), variance = var(time) ) %>%
   arrange( size )
+# View(random_k_stats)
 
 # statistiche (media, varianza) per il caso peggiore quickSelect
-word_case_stats <- worst_case %>%
+worst_case_stats <- worst_case %>%
   group_by( size ) %>%
   summarise( average_time = mean(time), variance = var(time) ) %>%
   arrange( size )
+# View(worst_case_stats)
+```
+
+
+```{r}
+plot_algorithm <- function(algorithm_df, algorithm_name){
+  algorithm_df %>% 
+    filter(algorithm == algorithm_name) %>% 
+    ggplot(aes(x = size, y = average_time)) +
+    geom_ribbon(aes(ymin = (average_time - (variance/2)), ymax = (average_time + (variance/2))), color = "red", fill = "lightgray", alpha = .3) +
+    geom_line(color = "blue") +
+    labs(x = "Dimensione", y = "Tempo", title = algorithm_name) +
+    scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M")) +
+    theme_light()+
+    theme(axis.text.y = element_blank(),
+          plot.title = element_text(face = "bold"))
+}
+
+plot_algorithm_log <- function(algorithm_df, algorithm_name){
+  algorithm_df %>% 
+    filter(algorithm == algorithm_name) %>% 
+    ggplot(aes(x = size, y = average_time)) + 
+    scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M"), trans = 'log2') + 
+    scale_y_continuous(trans = 'log2') + 
+    geom_ribbon(aes(ymin = (average_time - (variance/2)), ymax = (average_time + (variance/2))), color = "red", fill = "lightgray", alpha = .3) +
+    geom_line(color = "blue") +
+    labs(x = "Dimensione", y = "Tempo", title = algorithm_name, subtitle = "scala logaritmica") +
+    theme_light() +
+    theme(axis.text.y = element_blank(),
+          plot.title = element_text(face = "bold"),
+          axis.text.x=element_text(angle = 90))
+}
+```
+
+
+```{r}
+plot_algorithm(fixed_k_stats, "heapSelect")
+plot_algorithm_log(fixed_k_stats, "heapSelect")
+
+plot_algorithm(fixed_k_stats, "medianMediansSelect")
+plot_algorithm_log(fixed_k_stats, "medianMediansSelect")
+
+plot_algorithm(random_k_stats, "heapSelect")
+plot_algorithm_log(random_k_stats, "heapSelect")
+
+plot_algorithm(random_k_stats, "medianMediansSelect")
+plot_algorithm_log(random_k_stats, "medianMediansSelect")
 ```
 
