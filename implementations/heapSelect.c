@@ -121,7 +121,7 @@ void heapify(Node A[], int heapsize, int i)
 
         if (smallest != i)
         { // se serve lo scambio,qui viene eseguito, altrimenti la procedura termina
-            swapNodesNodes(A, i, smallest);
+            swapNodes(A, i, smallest);
             i = smallest;
         }
         else

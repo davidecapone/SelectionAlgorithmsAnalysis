@@ -127,6 +127,14 @@ double timeExecution( Algorithm type, int A[], int size, int k ) {
   int count = 0;
   int kSmallest;
 
+  // unicamente per heap select
+  Node B[size];
+  if ( type == HeapSelect ) {
+    for (int i = 0; i < size; i++) {
+      B[i].key = A[i];
+    }
+  }
+
   /*
   creo una copia di backup dell'array A
   in questo modo, se il ciclo effettua più iterazioni:
@@ -145,7 +153,8 @@ double timeExecution( Algorithm type, int A[], int size, int k ) {
 				kSmallest = quickSelect(A, 0, size-1, k);
 				break;
 			case HeapSelect:
-				kSmallest = heapSelect(A, 0, size-1, k);
+        // da risolvere
+				kSmallest = heapSelect(B, 0, size-1, k);
 				break;
 			case MedianMediansSelect:
 				kSmallest = MoMSelect(A, 0, size-1, k);

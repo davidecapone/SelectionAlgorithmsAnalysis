@@ -2,11 +2,13 @@
  * @file medianMedians.c 
  * @author Capone, Della Rovere, Gortani, Fior 
  */ 
-#include <stdio.h>
 #include <math.h> 
 #include <limits.h>
+#include <stdlib.h>
 #include "scanArray.h"
 #include "swap.h"
+
+#define MAX_LINE_SIZE 5000   // maximum size of a line of input
 
 int MoMSelect(int arr[], int p, int q, int k);
 int MoM(int arr[], int p, int q);
@@ -14,7 +16,6 @@ int MoMPlace(int arr[], int p, int q);
 int MoMPartition(int arr[], int p, int q, int k, int posPerno);
 int med(int arr[], int p, int q);
 void insertionSort(int arr[], int p, int q );
-
 
 /** 
  * @brief: trova l'indice di k in arr se arr fosse ordinato  
@@ -67,13 +68,9 @@ int MoMSelect(int arr[], int p, int q, int k){
  */ 
 int MoMPlace(int arr[], int p, int q){
 
-  if( q-p < 5){
-    return med(arr, p, q);   
-  } 
-
   //mettiamo i mediani dei blocchi da 5 nelle prime n/5 posizioni dello stesso array
   int sLimit; //section limit: indice che definisce il blocco da 5 elementi
-
+  int j = p;
   for(int i = p; i <= q; i = i+5){ 
     sLimit = i+4;  
     //controllo di non andare oltre l'ultima posizione del vettore
@@ -82,12 +79,11 @@ int MoMPlace(int arr[], int p, int q){
     } 
     
     int mediano = med(arr, i, sLimit);
-    swap(arr, mediano, p + (i-p)/5 );
+    swap(arr, mediano, j );
+    j++;
   }
 
-  int dim = q-p+1;
-  return med(arr, 0, ceil(dim/5.0)-1 );
-
+  return med(arr, p, j-1 );
 }
 
 int MoM(int arr[], int p, int q){
@@ -172,18 +168,22 @@ int MoMPartition(int arr[], int p, int q, int k, int posPerno){
  * @param p: prima posizione della parte di vettore considerata 
  * @param q: ultima posizione della parte di vettore considerata 
  */ 
-void insertionSort(int arr[], int p, int q ){
+void insertionSort(int A[], int p, int q ){
    
-  int i = p+1; 
-  while(i <= q){ 
-    int j = i; 
-    while (j > p && arr[j-1] > arr[j] ){ 
-      swap(arr, j-1, j); 
-      j = j-1; 
+    int key;
+    int i;
+    for (int j = p+1; j < q; j++) {
+        key = A[j];
+        i = j-1;
+        
+        while ((i >= p) && (A[i] > key)) {
+            A[i+1] = A[i];
+            i = i-1;
+        }
+    
+        A[i+1] = key;
     }
-    i = i+1;     
-  } 
-} 
+}
 
 /** 
  * @brief: trova il mediano di un vettore
