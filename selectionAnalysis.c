@@ -11,21 +11,16 @@
 #define MALLOC_ARRAY(number, type)\
 	((type*) malloc((number) *sizeof(type)))
 
-// filename
-char random_k_file[] = {"dataset/random_k_times.csv"};
-char fixed_k_file[] = {"dataset/fixed_k_times.csv"};
-char worst_case_qk[] = {"dataset/worst_case_qk.csv"};
-
-double E = 0.001;
+const double E = 0.001;
 double Tmin;
 
-const int A = 100;
-const double B = 0.157673137;
+int A = 100;
+double B = 0.157673137;
 
 typedef enum {
-  Sorted,
-  Random
-} ArrayType;
+  True,
+  False
+} ArrayOrdered;
 
 typedef enum {
 	QuickSelect,
@@ -34,9 +29,10 @@ typedef enum {
 } Algorithm;
 
 typedef enum {
-  QuickSelectWorst,
-  FixedK,
-  RandomK
+  square_n,     // k = sqrt(n)
+  divided_n,    // k = n/2
+  random_k,
+  quickselect_worstcase   // k = 0
 } Analysis;
 
 double duration(struct timespec start, struct timespec end) {
@@ -60,7 +56,7 @@ double getResolution() {
  * 
  * @return double : tempo minimo misurabile in secondi
  */
-double getTmin() {
+double get_t_min() {
 
 	double R = getResolution();
 	return (R*(1/E+1));
@@ -72,7 +68,7 @@ double getTmin() {
  * @param i numero da usare come esponente
  * @return int : dimensione 
  */
-int expDistribution(int i) {
+int exp_distribution(int i) {
 
 	return ( A * pow(2, B*i) );
 }
@@ -82,7 +78,7 @@ int expDistribution(int i) {
  * 
  * @return int : numero compreso tra -INT_MAX e +INT_MAX
  */
-int randomInt() {
+int get_random_int() {
 
   int randomUnsigned = rand();
   int sign = rand() % 2;
@@ -94,55 +90,39 @@ int randomInt() {
  * 
  * @param A array da popolare
  * @param size dimensione array
- * @param type tipo di riempimento
+ * @param order tipo di riempimento (True: ordinato, False: random)
  */
-void populate( int A[], int size, ArrayType type ) {
+void populate( int A[], int size, ArrayOrdered order ) {
 
-  if ( type == Sorted ) {
-    for (int i = 0; i < size; i++) {
-      A[i] = i;
-    }
+  if ( order == True ) {
+    for (int i = 0; i < size; i++) A[i] = i;
+    
   } else {
-    for (int i = 0; i < size; i++) {
-      A[i] = randomInt();
-    }
+    for (int i = 0; i < size; i++) A[i] = get_random_int();
+
   }
 }
 
 /**
- * @brief Calcola il tempo di esecuzione del campione
+ * @brief Calcola tempo di esecuzione di un campione A di interi
  * 
- * @param type tipo di algoritmo
- * @param A array
+ * @param type quale algoritmo utilizzare
+ * @param A campione
  * @param size dimensione array
  * @param k posizione da determinare
- * @return int : Tempo di esecuzione in secondi
+ * @return int : tempo di esecuzione (in secondi)
  */
-double timeExecution( Algorithm type, int A[], int size, int k ) {
+double get_execution_time( Algorithm type, int A[], int size, int k ) {
 
   struct timespec start, end;
   struct timespec backup_start, backup_end;
-  double period;
+  double period = 0.0;
   double backupTime = 0;
   int count = 0;
   int kSmallest;
 
-  // unicamente per heap select
-  Node B[size];
-  if ( type == HeapSelect ) {
-    for (int i = 0; i < size; i++) {
-      B[i].key = A[i];
-    }
-  }
-
-  /*
-  creo una copia di backup dell'array A
-  in questo modo, se il ciclo effettua più iterazioni:
-  applico gli algoritmi di selezione sull'istanza di vettore originale
-  per evitare di calcolare i tempi di esecuzione su istanze più ordinate
-  */
-
-  int * copy = NULL;
+  // Backup del campione in 'copy':
+  int *copy = NULL;
   copy = MALLOC_ARRAY(size, int);
   memcpy(copy, A, size*sizeof(int));
 
@@ -153,22 +133,25 @@ double timeExecution( Algorithm type, int A[], int size, int k ) {
 				kSmallest = quickSelect(A, 0, size-1, k);
 				break;
 			case HeapSelect:
-        // da risolvere
-				kSmallest = heapSelect(B, 0, size-1, k);
+				kSmallest = heapSelect(A, 0, size-1, k);
 				break;
 			case MedianMediansSelect:
 				kSmallest = MoMSelect(A, 0, size-1, k);
 				break;
+      default:
+        break;
 		}
 
 		clock_gettime(CLOCK_MONOTONIC, &end);
 		period = duration(start, end);
 
+    // A sarà la vecchia istanza di A (vecchia copia):
     if (period <= Tmin) {
-      // A sarà la vecchia istanza di A (di cui abbiamo fatto il backup)
       clock_gettime(CLOCK_MONOTONIC, &backup_start);
       memcpy(A, copy, size*sizeof(int));
       clock_gettime(CLOCK_MONOTONIC, &backup_end);
+
+      // tempo di backup da sottrarre al termine:
       backupTime += duration(backup_start, backup_end);
     }
     
@@ -185,11 +168,11 @@ double timeExecution( Algorithm type, int A[], int size, int k ) {
  * 
  * @param analysisType tipo di analisi
  * @param size dimensione degli array
- * @param nSamples numero di array
+ * @param n_samples numero di array
  * @param k posizione da determinare
  * @param ptr puntatore al file
  */
-void executeSamples( Analysis analysisType, int size, int nSamples, ArrayType type, FILE * ptr ) {
+void execute_samples( Analysis type, int size, int n_samples, ArrayOrdered order, FILE * ptr ) {
   
 	int *sample = NULL;
   int k;
@@ -197,134 +180,138 @@ void executeSamples( Analysis analysisType, int size, int nSamples, ArrayType ty
   double heapSelectTime;
   double medianSelectTime;
 
-  if (analysisType == FixedK || analysisType == QuickSelectWorst) k = 0; 
-  else k = rand() % size;
+  if (type == quickselect_worstcase) k = 0;
+  else if (type == divided_n) k = size / 2;
+  else if (type == square_n) k = sqrt(size);
+
 
   // creare 100 campioni dimensione size, calcolare tempo medio esecuzione
-  for (int i = 1; i <= nSamples; i++) {
+  printf("\texecuting %d samples, size: %d\n", n_samples, size);
+  for (int i = 1; i <= n_samples; i++) {
+
     sample = MALLOC_ARRAY(size, int);
+    populate(sample, size, order);
 
-    // popolamento ordinato o pseudocasuale del vettore
-    populate(sample, size, type);
+    if (type == random_k) k = rand() % size;
 
-    if (analysisType == QuickSelectWorst) {
-      quickSelectTime = timeExecution( QuickSelect, sample, size, k );
-      printf("\t size: %d, quickselect %f\n", size, quickSelectTime);
+    if (type == quickselect_worstcase) {
+
+      quickSelectTime = get_execution_time( QuickSelect, sample, size, k );
       fprintf(ptr, "quickSelect, %d, %f\n", size, quickSelectTime);
     } else {
-      quickSelectTime = timeExecution( QuickSelect, sample, size, k );
-      heapSelectTime = timeExecution( HeapSelect, sample, size, k );
-      medianSelectTime = timeExecution( MedianMediansSelect, sample, size, k );
-
-      printf("\t size: %d, quickselect %f, heapselect %f, medianmediansselect %f\n", size, quickSelectTime, heapSelectTime, medianSelectTime);
+      quickSelectTime = get_execution_time( QuickSelect, sample, size, k );
+      heapSelectTime = get_execution_time( HeapSelect, sample, size, k );
+      medianSelectTime = get_execution_time( MedianMediansSelect, sample, size, k );
       fprintf(ptr, "quickSelect, %d, %f\n", size, quickSelectTime);
       fprintf(ptr, "heapSelect, %d, %f\n", size, heapSelectTime);
       fprintf(ptr, "medianMediansSelect, %d, %f\n", size, medianSelectTime);
+      
     }
-    
+
     free(sample);
   }
 }
 
-/**
- * @brief Inizializza il file dei dati e lo compila
- * 
- * @param type tipo di analisi
- * @param nSamples numero di array
- */
-void analysis( Analysis type, int nSamples ) {
+FILE * setup_csv ( Analysis type ) {
 
-  int size, k, final_index = 99;
+  /*
+  square_n.csv
+  divided_n.csv
+  random_k.csv
+  quickselect_worst.csv
+  */
+
   FILE * ptr;
-  ArrayType populationMode;
-
   switch (type) {
-
-    /* Caso peggiore di quickSelect */
-    case QuickSelectWorst:
-      populationMode = Sorted;
-      ptr = fopen(worst_case_qk, "w");
-      fprintf(ptr, "algorithm, size, time\n");
+    case square_n:
+      ptr = fopen("dataset/square_n.csv", "w");
       fclose(ptr);
-      ptr = fopen(worst_case_qk, "a");
+      ptr = fopen("dataset/square_n.csv", "a");
+      printf("Start k = sqrt(n) analysis, writing in dataset/square_n.csv.\n");
       break;
 
-    /* k fissato = 0 */
-    case FixedK:
-      populationMode = Random;
-      ptr = fopen(fixed_k_file, "w");
-      fprintf(ptr, "algorithm, size, time\n");
-	    fclose(ptr);
-      ptr = fopen(fixed_k_file, "a");
+    case fixed_k:
+      ptr = fopen("dataset/fixed_k.csv", "w");
+      fclose(ptr);
+      ptr = fopen("dataset/fixed_k.csv", "a");
+      printf("Start k = fixed analysis, writing in dataset/fixed_k.csv.\n");
       break;
 
-    /* k randomico */
-    case RandomK:
-      populationMode = Random;
-      ptr = fopen(random_k_file, "w");
-      fprintf(ptr, "algorithm, size, time\n");
-	    fclose(ptr);
-      ptr = fopen(random_k_file, "a");
+    case divided_n:
+      ptr = fopen("dataset/divided_n.csv", "w");
+      fclose(ptr);
+      ptr = fopen("dataset/divided_n.csv", "a");
+      printf("Start k = n/2 analysis, writing in dataset/divided_n.csv.\n");
       break;
 
+    case random_k:
+      ptr = fopen("dataset/random_k.csv", "w");
+      fclose(ptr);
+      ptr = fopen("dataset/random_k.csv", "a");
+      printf("Start k = random analysis, writing in dataset/random_k.csv.\n");
+      break;
+
+    case quickselect_worstcase:
+      ptr = fopen("dataset/quickselect_worst.csv", "w");
+      fclose(ptr);
+      ptr = fopen("dataset/quickselect_worst.csv", "a");
+      printf("Start k = 0 analysis (quick select worst case), writing in dataset/quickselect_worst.csv.\n");
+      break;
+    
     default:
+      printf("Cannot setup CSV, check if analysis type exist\n");
       break;
   }
+  return ptr;
+}
 
-  
-  for (int i = 0; i <= final_index; i++) {
-    // dimensione dei campioni (segue dist. exp. al variare di i)
-    size = expDistribution( i );
+/**
+ * @brief esecuzione dell'analisi su n_samples campioni per ogni dimensione
+ * 
+ * @param type tipo di analisi da effettuare
+ * @param n_samples quanti campioni generare per ogni dimensione exp.
+ */
+void analysis( Analysis type, int n_samples ) {
 
-    // tempi d'esecuzione su nSamples campioni di dimensione size
-    executeSamples( type, size, nSamples, populationMode, ptr );
+  // dimensione finale (default) da raggiungere 5 milioni
+  int size, k, final = 99;
+
+  FILE * ptr = setup_csv(type);
+  ArrayOrdered order = False ;
+
+  if (type == quickselect_worstcase) {
+    order = True;
+    // riduciamo la dimensione massima da raggiungere a 7097:
+    final = 39;
+  }
+
+  for (int i = 0; i <= final; i++) {
+    // dimensione exp. dei campioni
+    size = exp_distribution( i );
+    execute_samples( type, size, n_samples, order, ptr );
   }
 
   fclose(ptr);
 }
 
-/* obbiettivi dell'analisi
-- tempi di esecuzione su 3 algoritmi di selezione
-- come varia heap select in base alla grandezza di k
-  - k piccolo
-  - k molto grande
-  - k random (sarà importante la sua variabilità)
-  - (eventualmente) implementare una max heap e vedere come si comporta con k grande o piccolo
-- tempi d'esecuzione quickselect nel caso peggiore
-    caso peggiore quando l'array è già ordinato
-                        la partizione viene effettuata sull'ultimo elemento
-                        seleziono k = 0
-- la scelta di k non influenza l'andamento di medianMediansSelect... 
-*/
 
 int main () {
-	
   srand(time(NULL));
-  Tmin = getTmin();
-  int nSamples = 20;
-  /**
-  Analisi asintotica degli algoritmi di selezione
-  con k = 0, fisso
-  20 campioni per ogni dimensione generata
-  */
-  //printf("[starting analysis] fixed k, %d samples for each dimension\n", nSamples);
-  //analysis( FixedK, nSamples );
+  Tmin = get_t_min();
+  int n_samples = 20;
+  printf("\e[1;1H\e[2J");
 
-  /**
-  Analisi asintotica degli algoritmi di selezione
-  con k variabile tra 0 e size
-  20 campioni per ogni dimensione generata
-  */
-  printf("[starting analysis] random k, %d samples for each dimension\n", nSamples);
-  analysis( RandomK, nSamples );
+  // analisi k = sqrt(n)
+  analysis(square_n, n_samples);
 
-  /**
-  Analisi asintotica quickSelect nel caso peggiore
-  con k = 0, fisso, vettore ordinato
-  20 campioni per ogni dimensione generata
-  */
-  //printf("[starting analysis] quick select worst case, %d samples for each dimension\n", nSamples);
-  //analysis( QuickSelectWorst, nSamples );
+  // analisi k = n/2
+  //analysis(divided_n, n_samples);
 
+  // aumentiamo la numerosità dei campioni per evidenziare maggiormente la varianza:
+  //analysis(random_k, 35);
+  // da risolvere: l'analisi si ferma a dimensione 10989
+
+  // numerosità dei campioni minore, per evitare di impiegarci troppo tempo:
+  //analysis(quickselect_worstcase, 10);
   return (EXIT_SUCCESS);
 }
