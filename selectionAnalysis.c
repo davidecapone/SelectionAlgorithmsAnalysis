@@ -199,9 +199,12 @@ void execute_samples( Analysis type, int size, int n_samples, ArrayOrdered order
       quickSelectTime = get_execution_time( QuickSelect, sample, size, k );
       fprintf(ptr, "quickSelect, %d, %f\n", size, quickSelectTime);
     } else {
+
       quickSelectTime = get_execution_time( QuickSelect, sample, size, k );
       heapSelectTime = get_execution_time( HeapSelect, sample, size, k );
       medianSelectTime = get_execution_time( MedianMediansSelect, sample, size, k );
+
+      // scrittura su file csv:
       fprintf(ptr, "quickSelect, %d, %f\n", size, quickSelectTime);
       fprintf(ptr, "heapSelect, %d, %f\n", size, heapSelectTime);
       fprintf(ptr, "medianMediansSelect, %d, %f\n", size, medianSelectTime);
@@ -228,13 +231,6 @@ FILE * setup_csv ( Analysis type ) {
       fclose(ptr);
       ptr = fopen("dataset/square_n.csv", "a");
       printf("Start k = sqrt(n) analysis, writing in dataset/square_n.csv.\n");
-      break;
-
-    case fixed_k:
-      ptr = fopen("dataset/fixed_k.csv", "w");
-      fclose(ptr);
-      ptr = fopen("dataset/fixed_k.csv", "a");
-      printf("Start k = fixed analysis, writing in dataset/fixed_k.csv.\n");
       break;
 
     case divided_n:
@@ -302,14 +298,14 @@ int main () {
   printf("\e[1;1H\e[2J");
 
   // analisi k = sqrt(n)
-  analysis(square_n, n_samples);
+  //analysis(square_n, n_samples);
 
-  // analisi k = n/2
-  //analysis(divided_n, n_samples);
+  // analisi k = n/2 (si blocca a 10989 size ?? da verificare ora)
+  analysis(divided_n, n_samples);
 
   // aumentiamo la numerosità dei campioni per evidenziare maggiormente la varianza:
-  //analysis(random_k, 35);
-  // da risolvere: l'analisi si ferma a dimensione 10989
+  analysis(random_k, 35);
+  // da risolvere: (si blocca a 10989 size ?? da verificare ora)
 
   // numerosità dei campioni minore, per evitare di impiegarci troppo tempo:
   //analysis(quickselect_worstcase, 10);
