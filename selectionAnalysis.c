@@ -35,6 +35,11 @@ typedef enum {
   quickselect_worstcase   // k = 0
 } Analysis;
 
+typedef enum {
+  testing,
+  release
+} VControl;
+
 double duration(struct timespec start, struct timespec end) {
 
 	return end.tv_sec - start.tv_sec +
@@ -117,15 +122,17 @@ double get_execution_time( Algorithm type, int A[], int size, int k ) {
   struct timespec start, end;
   struct timespec backup_start, backup_end;
   double period = 0.0;
-  double backupTime = 0;
-  int count = 0;
-  int kSmallest;
+  double backupTime = 0.0;
 
-  // Backup del campione in 'copy':
+  // n.ro di iterazioni (misurazioni) effettuate sul campione:
+  int count = 0;
+
+  // backup del campione in 'copy':
   int *copy = NULL;
   copy = MALLOC_ARRAY(size, int);
   memcpy(copy, A, size*sizeof(int));
 
+  int kSmallest;
 	clock_gettime(CLOCK_MONOTONIC, &start);
 	do {
 		switch (type) {
@@ -175,18 +182,17 @@ double get_execution_time( Algorithm type, int A[], int size, int k ) {
 void execute_samples( Analysis type, int size, int n_samples, ArrayOrdered order, FILE * ptr ) {
   
 	int *sample = NULL;
-  int k;
-  double quickSelectTime;
-  double heapSelectTime;
-  double medianSelectTime;
+  double quickSelectTime = 0;
+  double heapSelectTime = 0;
+  double medianSelectTime = 0;
 
+  int k;
+  // quale k scegliere?
   if (type == quickselect_worstcase) k = 0;
   else if (type == divided_n) k = size / 2;
   else if (type == square_n) k = sqrt(size);
 
-
   // creare 100 campioni dimensione size, calcolare tempo medio esecuzione
-  printf("\texecuting %d samples, size: %d\n", n_samples, size);
   for (int i = 1; i <= n_samples; i++) {
 
     sample = MALLOC_ARRAY(size, int);
@@ -195,20 +201,15 @@ void execute_samples( Analysis type, int size, int n_samples, ArrayOrdered order
     if (type == random_k) k = rand() % size;
 
     if (type == quickselect_worstcase) {
-
       quickSelectTime = get_execution_time( QuickSelect, sample, size, k );
-      fprintf(ptr, "quickSelect, %d, %f\n", size, quickSelectTime);
+      fprintf(ptr, "%d, %f\n", size, quickSelectTime);
+      printf("SIZE: %d, quickSelect: %f\n", size, quickSelectTime, heapSelectTime, medianSelectTime);
     } else {
-
       quickSelectTime = get_execution_time( QuickSelect, sample, size, k );
       heapSelectTime = get_execution_time( HeapSelect, sample, size, k );
       medianSelectTime = get_execution_time( MedianMediansSelect, sample, size, k );
-
-      // scrittura su file csv:
-      fprintf(ptr, "quickSelect, %d, %f\n", size, quickSelectTime);
-      fprintf(ptr, "heapSelect, %d, %f\n", size, heapSelectTime);
-      fprintf(ptr, "medianMediansSelect, %d, %f\n", size, medianSelectTime);
-      
+      fprintf(ptr, "%d, %f, %f, %f\n", size, quickSelectTime, heapSelectTime, medianSelectTime);
+      printf("SIZE: %d, quickSelect: %f - heapSelect: %f - medianMediansSelect: %f \n", size, quickSelectTime, heapSelectTime, medianSelectTime);
     }
 
     free(sample);
@@ -216,48 +217,30 @@ void execute_samples( Analysis type, int size, int n_samples, ArrayOrdered order
 }
 
 FILE * setup_csv ( Analysis type ) {
-
-  /*
-  square_n.csv
-  divided_n.csv
-  random_k.csv
-  quickselect_worst.csv
-  */
-
+  char filename[50];
   FILE * ptr;
   switch (type) {
     case square_n:
-      ptr = fopen("dataset/square_n.csv", "w");
-      fclose(ptr);
-      ptr = fopen("dataset/square_n.csv", "a");
-      printf("Start k = sqrt(n) analysis, writing in dataset/square_n.csv.\n");
+      strcpy(filename, "dataset/square_n.csv");
       break;
-
     case divided_n:
-      ptr = fopen("dataset/divided_n.csv", "w");
-      fclose(ptr);
-      ptr = fopen("dataset/divided_n.csv", "a");
-      printf("Start k = n/2 analysis, writing in dataset/divided_n.csv.\n");
+      strcpy(filename, "dataset/divided_n.csv");
       break;
-
     case random_k:
-      ptr = fopen("dataset/random_k.csv", "w");
-      fclose(ptr);
-      ptr = fopen("dataset/random_k.csv", "a");
-      printf("Start k = random analysis, writing in dataset/random_k.csv.\n");
+      strcpy(filename, "dataset/random_k.csv");
       break;
-
     case quickselect_worstcase:
-      ptr = fopen("dataset/quickselect_worst.csv", "w");
-      fclose(ptr);
-      ptr = fopen("dataset/quickselect_worst.csv", "a");
-      printf("Start k = 0 analysis (quick select worst case), writing in dataset/quickselect_worst.csv.\n");
+      strcpy(filename, "dataset/quickselect_worst.csv");
       break;
-    
     default:
-      printf("Cannot setup CSV, check if analysis type exist\n");
       break;
   }
+
+  ptr = fopen(filename, "w");
+  if (type == quickselect_worstcase) fprintf(ptr, "size,quickselect\n");
+  else fprintf(ptr, "size,quickselect,heapselect,medianmediansselect\n");
+  fclose(ptr);
+  ptr = fopen(filename, "a");
   return ptr;
 }
 
@@ -290,7 +273,6 @@ void analysis( Analysis type, int n_samples ) {
   fclose(ptr);
 }
 
-
 int main () {
   srand(time(NULL));
   Tmin = get_t_min();
@@ -298,16 +280,16 @@ int main () {
   printf("\e[1;1H\e[2J");
 
   // analisi k = sqrt(n)
-  //analysis(square_n, n_samples);
+  //analysis(square_n, 20);
 
-  // analisi k = n/2 (si blocca a 10989 size ?? da verificare ora)
-  analysis(divided_n, n_samples);
+  // analisi k = n/2
+  //analysis(divided_n, 20);
 
   // aumentiamo la numerosità dei campioni per evidenziare maggiormente la varianza:
   analysis(random_k, 35);
-  // da risolvere: (si blocca a 10989 size ?? da verificare ora)
 
-  // numerosità dei campioni minore, per evitare di impiegarci troppo tempo:
-  //analysis(quickselect_worstcase, 10);
+  // a partire da test effettuati si evidenzia maggiormente l'andamento con 50 campioni per dimensione:
+  //analysis(quickselect_worstcase, 50);
+
   return (EXIT_SUCCESS);
 }

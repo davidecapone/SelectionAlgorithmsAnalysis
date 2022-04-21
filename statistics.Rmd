@@ -6,9 +6,62 @@ library(ggplot2)
 
 ```{r}
 # importare da folder dataset/
-fixed_k <- read.csv("dataset/fixed_k_times.csv")
-random_k <- read.csv("dataset/random_k_times.csv")
-worst_case <- read.csv("dataset/worst_case_qk.csv")
+fixed_k <- read.csv("dataset/divided_n.csv")
+#random_k <- read.csv("dataset/random_k_times.csv")
+#worst_case <- read.csv("dataset/worst_case_qk.csv")
+
+
+
+mm = read.csv("dataset/divided_n.csv")
+
+mm %>%
+  select(size, medianmediansselect) %>%
+  group_by(size) %>%
+  summarise(average = mean(medianmediansselect)) %>%
+  ggplot(aes(x = size, y = average)) +
+    geom_line(color = "blue") +
+    labs(x = "Dimensione", y = "Tempo", title = "lol")
+
+
+randk = read.csv("dataset/random_k.csv")
+
+randk %>%
+  select(size, quickselect) %>%
+  group_by(size) %>%
+  summarise(average = mean(quickselect), variance = var(quickselect)) %>%
+  ggplot(aes(x = size, y = average)) +
+    geom_line(color = "blue") +
+    labs(x = "Dimensione", y = "Tempo", title = "quick select random k")
+
+
+randk %>%
+  select(size, heapselect) %>%
+  group_by(size) %>%
+  summarise(average = mean(heapselect), variance = var(heapselect)) %>%
+  ggplot(aes(x = size, y = average)) +
+    geom_line() +
+    labs(x = "Dimensione", y = "Tempo", title = "heap select random k") + geom_smooth()
+
+
+randk %>%
+  select(size, medianmediansselect) %>%
+  group_by(size) %>%
+  summarise(average = mean(medianmediansselect), variance = var(medianmediansselect)) %>%
+  ggplot(aes(x = size, y = average)) +
+    geom_line(color = "blue") +
+    labs(x = "Dimensione", y = "Tempo", title = "median select random k")+ geom_smooth()
+
+
+
+mm = read.csv("dataset/divided_n.csv")
+
+mm %>%
+  select(size, medianmediansselect) %>%
+  group_by(size) %>%
+  summarise(average = mean(medianmediansselect), variance = var(medianmediansselect)) %>%
+  ggplot(aes(x = size, y = average)) +
+    geom_line() +
+    labs(x = "Dimensione", y = "Tempo", title = "lol") + geom_smooth()
 ```
 
 ```{r}
@@ -32,6 +85,8 @@ worst_case_stats <- worst_case %>%
   summarise( average_time = mean(time), variance = var(time) ) %>%
   arrange( size )
 # View(worst_case_stats)
+
+View(fixed_k_stats)
 ```
 
 
@@ -67,6 +122,10 @@ plot_algorithm_log <- function(algorithm_df, algorithm_name){
 
 
 ```{r}
+
+
+
+
 plot_algorithm(fixed_k_stats, "heapSelect")
 plot_algorithm_log(fixed_k_stats, "heapSelect")
 

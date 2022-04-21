@@ -211,6 +211,10 @@ void toNode(int H1[], int size, Node H1_node[]) {
  * @param k indice del k-esimo elemento
  * @return int chiave del k-esimo elemento
  */
+
+#define MALLOC_ARRAY(number, type)\
+	((type*) malloc((number) *sizeof(type)))
+
 int heapSelect(int H1[], int p, int q, int k)
 {
     if (k < p || k > q) return INT_MIN;
@@ -225,8 +229,9 @@ int heapSelect(int H1[], int p, int q, int k)
 
         // heapsize viene incrementato da minHeapInsert
         int heapsize2 = 0;
-
-        Node H2[ heapsize ];
+        
+        Node * H2 = NULL;
+        H2 = MALLOC_ARRAY(5000000, Node);
 
         // inizialmente H2 contiene solamente la radice di H1
         minHeapInsert(H2, &heapsize2, H1_node[0].key, H1_node[0].index);
@@ -255,6 +260,8 @@ int heapSelect(int H1[], int p, int q, int k)
         }
 
         // k-esimo elemento
-        return H2[0].key;
+        int key = H2[0].key;
+        free(H2);
+        return key;
     }
 }
