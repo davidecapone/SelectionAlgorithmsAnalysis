@@ -34,11 +34,12 @@ int MoMSelect(int arr[], int p, int q, int k){
 
   //caso base della ricorsione: 1 elemento 
   if(p == q){ 
-    return arr[p]; 
+    return p; 
   } 
   
   //calcolo la posizione del perno (MoM) e partiziono l'array
-  int posPerno = MoMPlace(arr, p, q);
+  int posPerno = 0;
+  posPerno = MoMPlace(arr, p, q);
   posPerno = MoMPartition(arr, p, q, k, posPerno); 
  
   /*posPerno a questo punto può essere:
@@ -48,7 +49,7 @@ int MoMSelect(int arr[], int p, int q, int k){
   */ 
  
   if(k == posPerno){ 
-    return arr[k]; 
+    return k; 
   } else if(k < posPerno){ 
     q = posPerno - 1; 
     return MoMSelect(arr, p, q, k); 
@@ -68,9 +69,14 @@ int MoMSelect(int arr[], int p, int q, int k){
  */ 
 int MoMPlace(int arr[], int p, int q){
 
+  if( q-p < 5){
+     return med(arr, p, q);
+  }
+
   //mettiamo i mediani dei blocchi da 5 nelle prime n/5 posizioni dello stesso array
   int sLimit; //section limit: indice che definisce il blocco da 5 elementi
-  int j = p;
+
+
   for(int i = p; i <= q; i = i+5){ 
     sLimit = i+4;  
     //controllo di non andare oltre l'ultima posizione del vettore
@@ -79,17 +85,20 @@ int MoMPlace(int arr[], int p, int q){
     } 
     
     int mediano = med(arr, i, sLimit);
-    swap(arr, mediano, j );
-    j++;
+    swap(arr, mediano, p+floor( (i-p)/5) );
   }
 
-  return med(arr, p, j-1 );
+  int tempQ = p + floor( (q-p)/5 );
+  int mid = 0;
+  mid = (tempQ-p+1)/2;
+
+  return MoMSelect(arr, p, tempQ, p+mid-1 );
 }
 
 int MoM(int arr[], int p, int q){
 
   if( q-p < 5){
-      return med(arr, p, q);
+     return med(arr, p, q);
   }
 
   int j=0;
