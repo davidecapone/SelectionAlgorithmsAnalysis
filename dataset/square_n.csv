@@ -1,4293 +1,1399 @@
-quickSelect, 100, 0.000008
-heapSelect, 100, 0.000011
-medianMediansSelect, 100, 0.000025
-quickSelect, 100, 0.000004
-heapSelect, 100, 0.000021
-medianMediansSelect, 100, 0.000047
-quickSelect, 100, 0.000004
-heapSelect, 100, 0.000011
-medianMediansSelect, 100, 0.000019
-quickSelect, 100, 0.000005
-heapSelect, 100, 0.000015
-medianMediansSelect, 100, 0.000036
-quickSelect, 100, 0.000013
-heapSelect, 100, 0.000009
-medianMediansSelect, 100, 0.000019
-quickSelect, 100, 0.000010
-heapSelect, 100, 0.000021
-medianMediansSelect, 100, 0.000028
-quickSelect, 100, 0.000011
-heapSelect, 100, 0.000017
-medianMediansSelect, 100, 0.000029
-quickSelect, 100, 0.000005
-heapSelect, 100, 0.000012
-medianMediansSelect, 100, 0.000026
-quickSelect, 100, 0.000008
-heapSelect, 100, 0.000012
-medianMediansSelect, 100, 0.000024
-quickSelect, 100, 0.000005
-heapSelect, 100, 0.000011
-medianMediansSelect, 100, 0.000022
-quickSelect, 100, 0.000006
-heapSelect, 100, 0.000009
-medianMediansSelect, 100, 0.000021
-quickSelect, 100, 0.000006
-heapSelect, 100, 0.000012
-medianMediansSelect, 100, 0.000032
-quickSelect, 100, 0.000007
-heapSelect, 100, 0.000010
-medianMediansSelect, 100, 0.000023
-quickSelect, 100, 0.000008
-heapSelect, 100, 0.000012
-medianMediansSelect, 100, 0.000032
-quickSelect, 100, 0.000003
-heapSelect, 100, 0.000010
-medianMediansSelect, 100, 0.000020
-quickSelect, 100, 0.000005
-heapSelect, 100, 0.000009
-medianMediansSelect, 100, 0.000015
-quickSelect, 100, 0.000006
-heapSelect, 100, 0.000010
-medianMediansSelect, 100, 0.000030
-quickSelect, 100, 0.000003
-heapSelect, 100, 0.000010
-medianMediansSelect, 100, 0.000016
-quickSelect, 100, 0.000004
-heapSelect, 100, 0.000009
-medianMediansSelect, 100, 0.000019
-quickSelect, 100, 0.000007
-heapSelect, 100, 0.000009
-medianMediansSelect, 100, 0.000017
-quickSelect, 111, 0.000010
-heapSelect, 111, 0.000009
-medianMediansSelect, 111, 0.000022
-quickSelect, 111, 0.000009
-heapSelect, 111, 0.000011
-medianMediansSelect, 111, 0.000031
-quickSelect, 111, 0.000010
-heapSelect, 111, 0.000013
-medianMediansSelect, 111, 0.000030
-quickSelect, 111, 0.000009
-heapSelect, 111, 0.000010
-medianMediansSelect, 111, 0.000028
-quickSelect, 111, 0.000011
-heapSelect, 111, 0.000010
-medianMediansSelect, 111, 0.000039
-quickSelect, 111, 0.000007
-heapSelect, 111, 0.000010
-medianMediansSelect, 111, 0.000022
-quickSelect, 111, 0.000010
-heapSelect, 111, 0.000009
-medianMediansSelect, 111, 0.000022
-quickSelect, 111, 0.000005
-heapSelect, 111, 0.000010
-medianMediansSelect, 111, 0.000024
-quickSelect, 111, 0.000007
-heapSelect, 111, 0.000009
-medianMediansSelect, 111, 0.000021
-quickSelect, 111, 0.000004
-heapSelect, 111, 0.000010
-medianMediansSelect, 111, 0.000025
-quickSelect, 111, 0.000004
-heapSelect, 111, 0.000010
-medianMediansSelect, 111, 0.000022
-quickSelect, 111, 0.000006
-heapSelect, 111, 0.000010
-medianMediansSelect, 111, 0.000023
-quickSelect, 111, 0.000007
-heapSelect, 111, 0.000010
-medianMediansSelect, 111, 0.000022
-quickSelect, 111, 0.000005
-heapSelect, 111, 0.000009
-medianMediansSelect, 111, 0.000019
-quickSelect, 111, 0.000004
-heapSelect, 111, 0.000010
-medianMediansSelect, 111, 0.000023
-quickSelect, 111, 0.000006
-heapSelect, 111, 0.000010
-medianMediansSelect, 111, 0.000021
-quickSelect, 111, 0.000008
-heapSelect, 111, 0.000012
-medianMediansSelect, 111, 0.000023
-quickSelect, 111, 0.000005
-heapSelect, 111, 0.000010
-medianMediansSelect, 111, 0.000025
-quickSelect, 111, 0.000006
-heapSelect, 111, 0.000010
-medianMediansSelect, 111, 0.000025
-quickSelect, 111, 0.000006
-heapSelect, 111, 0.000009
-medianMediansSelect, 111, 0.000020
-quickSelect, 124, 0.000007
-heapSelect, 124, 0.000011
-medianMediansSelect, 124, 0.000022
-quickSelect, 124, 0.000011
-heapSelect, 124, 0.000010
-medianMediansSelect, 124, 0.000026
-quickSelect, 124, 0.000010
-heapSelect, 124, 0.000011
-medianMediansSelect, 124, 0.000020
-quickSelect, 124, 0.000008
-heapSelect, 124, 0.000011
-medianMediansSelect, 124, 0.000036
-quickSelect, 124, 0.000003
-heapSelect, 124, 0.000016
-medianMediansSelect, 124, 0.000039
-quickSelect, 124, 0.000012
-heapSelect, 124, 0.000014
-medianMediansSelect, 124, 0.000028
-quickSelect, 124, 0.000003
-heapSelect, 124, 0.000014
-medianMediansSelect, 124, 0.000020
-quickSelect, 124, 0.000004
-heapSelect, 124, 0.000008
-medianMediansSelect, 124, 0.000023
-quickSelect, 124, 0.000005
-heapSelect, 124, 0.000008
-medianMediansSelect, 124, 0.000020
-quickSelect, 124, 0.000004
-heapSelect, 124, 0.000008
-medianMediansSelect, 124, 0.000019
-quickSelect, 124, 0.000005
-heapSelect, 124, 0.000009
-medianMediansSelect, 124, 0.000020
-quickSelect, 124, 0.000005
-heapSelect, 124, 0.000008
-medianMediansSelect, 124, 0.000017
-quickSelect, 124, 0.000005
-heapSelect, 124, 0.000009
-medianMediansSelect, 124, 0.000018
-quickSelect, 124, 0.000007
-heapSelect, 124, 0.000009
-medianMediansSelect, 124, 0.000018
-quickSelect, 124, 0.000005
-heapSelect, 124, 0.000008
-medianMediansSelect, 124, 0.000019
-quickSelect, 124, 0.000004
-heapSelect, 124, 0.000009
-medianMediansSelect, 124, 0.000021
-quickSelect, 124, 0.000005
-heapSelect, 124, 0.000009
-medianMediansSelect, 124, 0.000020
-quickSelect, 124, 0.000004
-heapSelect, 124, 0.000008
-medianMediansSelect, 124, 0.000018
-quickSelect, 124, 0.000006
-heapSelect, 124, 0.000008
-medianMediansSelect, 124, 0.000017
-quickSelect, 124, 0.000004
-heapSelect, 124, 0.000010
-medianMediansSelect, 124, 0.000019
-quickSelect, 138, 0.000013
-heapSelect, 138, 0.000009
-medianMediansSelect, 138, 0.000020
-quickSelect, 138, 0.000006
-heapSelect, 138, 0.000014
-medianMediansSelect, 138, 0.000031
-quickSelect, 138, 0.000009
-heapSelect, 138, 0.000013
-medianMediansSelect, 138, 0.000041
-quickSelect, 138, 0.000005
-heapSelect, 138, 0.000021
-medianMediansSelect, 138, 0.000036
-quickSelect, 138, 0.000016
-heapSelect, 138, 0.000024
-medianMediansSelect, 138, 0.000028
-quickSelect, 138, 0.000007
-heapSelect, 138, 0.000011
-medianMediansSelect, 138, 0.000025
-quickSelect, 138, 0.000013
-heapSelect, 138, 0.000011
-medianMediansSelect, 138, 0.000025
-quickSelect, 138, 0.000006
-heapSelect, 138, 0.000010
-medianMediansSelect, 138, 0.000024
-quickSelect, 138, 0.000008
-heapSelect, 138, 0.000010
-medianMediansSelect, 138, 0.000021
-quickSelect, 138, 0.000005
-heapSelect, 138, 0.000010
-medianMediansSelect, 138, 0.000019
-quickSelect, 138, 0.000006
-heapSelect, 138, 0.000009
-medianMediansSelect, 138, 0.000020
-quickSelect, 138, 0.000006
-heapSelect, 138, 0.000009
-medianMediansSelect, 138, 0.000028
-quickSelect, 138, 0.000005
-heapSelect, 138, 0.000013
-medianMediansSelect, 138, 0.000030
-quickSelect, 138, 0.000009
-heapSelect, 138, 0.000011
-medianMediansSelect, 138, 0.000046
-quickSelect, 138, 0.000010
-heapSelect, 138, 0.000019
-medianMediansSelect, 138, 0.000038
-quickSelect, 138, 0.000013
-heapSelect, 138, 0.000016
-medianMediansSelect, 138, 0.000026
-quickSelect, 138, 0.000013
-heapSelect, 138, 0.000011
-medianMediansSelect, 138, 0.000026
-quickSelect, 138, 0.000008
-heapSelect, 138, 0.000012
-medianMediansSelect, 138, 0.000030
-quickSelect, 138, 0.000013
-heapSelect, 138, 0.000011
-medianMediansSelect, 138, 0.000023
-quickSelect, 138, 0.000007
-heapSelect, 138, 0.000012
-medianMediansSelect, 138, 0.000060
-quickSelect, 154, 0.000019
-heapSelect, 154, 0.000021
-medianMediansSelect, 154, 0.000036
-quickSelect, 154, 0.000014
-heapSelect, 154, 0.000029
-medianMediansSelect, 154, 0.000041
-quickSelect, 154, 0.000006
-heapSelect, 154, 0.000014
-medianMediansSelect, 154, 0.000030
-quickSelect, 154, 0.000007
-heapSelect, 154, 0.000036
-medianMediansSelect, 154, 0.000083
-quickSelect, 154, 0.000007
-heapSelect, 154, 0.000025
-medianMediansSelect, 154, 0.000046
-quickSelect, 154, 0.000004
-heapSelect, 154, 0.000020
-medianMediansSelect, 154, 0.000050
-quickSelect, 154, 0.000017
-heapSelect, 154, 0.000020
-medianMediansSelect, 154, 0.000044
-quickSelect, 154, 0.000013
-heapSelect, 154, 0.000021
-medianMediansSelect, 154, 0.000047
-quickSelect, 154, 0.000014
-heapSelect, 154, 0.000012
-medianMediansSelect, 154, 0.000026
-quickSelect, 154, 0.000008
-heapSelect, 154, 0.000015
-medianMediansSelect, 154, 0.000041
-quickSelect, 154, 0.000026
-heapSelect, 154, 0.000018
-medianMediansSelect, 154, 0.000027
-quickSelect, 154, 0.000007
-heapSelect, 154, 0.000015
-medianMediansSelect, 154, 0.000030
-quickSelect, 154, 0.000005
-heapSelect, 154, 0.000013
-medianMediansSelect, 154, 0.000028
-quickSelect, 154, 0.000017
-heapSelect, 154, 0.000012
-medianMediansSelect, 154, 0.000028
-quickSelect, 154, 0.000006
-heapSelect, 154, 0.000012
-medianMediansSelect, 154, 0.000034
-quickSelect, 154, 0.000008
-heapSelect, 154, 0.000012
-medianMediansSelect, 154, 0.000030
-quickSelect, 154, 0.000004
-heapSelect, 154, 0.000019
-medianMediansSelect, 154, 0.000032
-quickSelect, 154, 0.000013
-heapSelect, 154, 0.000012
-medianMediansSelect, 154, 0.000027
-quickSelect, 154, 0.000007
-heapSelect, 154, 0.000013
-medianMediansSelect, 154, 0.000033
-quickSelect, 154, 0.000011
-heapSelect, 154, 0.000012
-medianMediansSelect, 154, 0.000038
-quickSelect, 172, 0.000012
-heapSelect, 172, 0.000016
-medianMediansSelect, 172, 0.000041
-quickSelect, 172, 0.000008
-heapSelect, 172, 0.000026
-medianMediansSelect, 172, 0.000054
-quickSelect, 172, 0.000009
-heapSelect, 172, 0.000014
-medianMediansSelect, 172, 0.000034
-quickSelect, 172, 0.000008
-heapSelect, 172, 0.000014
-medianMediansSelect, 172, 0.000030
-quickSelect, 172, 0.000011
-heapSelect, 172, 0.000013
-medianMediansSelect, 172, 0.000028
-quickSelect, 172, 0.000008
-heapSelect, 172, 0.000015
-medianMediansSelect, 172, 0.000034
-quickSelect, 172, 0.000006
-heapSelect, 172, 0.000014
-medianMediansSelect, 172, 0.000033
-quickSelect, 172, 0.000009
-heapSelect, 172, 0.000016
-medianMediansSelect, 172, 0.000035
-quickSelect, 172, 0.000011
-heapSelect, 172, 0.000017
-medianMediansSelect, 172, 0.000033
-quickSelect, 172, 0.000005
-heapSelect, 172, 0.000014
-medianMediansSelect, 172, 0.000038
-quickSelect, 172, 0.000010
-heapSelect, 172, 0.000013
-medianMediansSelect, 172, 0.000031
-quickSelect, 172, 0.000010
-heapSelect, 172, 0.000014
-medianMediansSelect, 172, 0.000032
-quickSelect, 172, 0.000009
-heapSelect, 172, 0.000015
-medianMediansSelect, 172, 0.000035
-quickSelect, 172, 0.000009
-heapSelect, 172, 0.000022
-medianMediansSelect, 172, 0.000033
-quickSelect, 172, 0.000004
-heapSelect, 172, 0.000017
-medianMediansSelect, 172, 0.000034
-quickSelect, 172, 0.000010
-heapSelect, 172, 0.000013
-medianMediansSelect, 172, 0.000030
-quickSelect, 172, 0.000008
-heapSelect, 172, 0.000013
-medianMediansSelect, 172, 0.000030
-quickSelect, 172, 0.000006
-heapSelect, 172, 0.000014
-medianMediansSelect, 172, 0.000036
-quickSelect, 172, 0.000004
-heapSelect, 172, 0.000016
-medianMediansSelect, 172, 0.000038
-quickSelect, 172, 0.000010
-heapSelect, 172, 0.000013
-medianMediansSelect, 172, 0.000034
-quickSelect, 192, 0.000005
-heapSelect, 192, 0.000017
-medianMediansSelect, 192, 0.000039
-quickSelect, 192, 0.000010
-heapSelect, 192, 0.000013
-medianMediansSelect, 192, 0.000036
-quickSelect, 192, 0.000008
-heapSelect, 192, 0.000014
-medianMediansSelect, 192, 0.000036
-quickSelect, 192, 0.000013
-heapSelect, 192, 0.000016
-medianMediansSelect, 192, 0.000035
-quickSelect, 192, 0.000013
-heapSelect, 192, 0.000014
-medianMediansSelect, 192, 0.000036
-quickSelect, 192, 0.000009
-heapSelect, 192, 0.000014
-medianMediansSelect, 192, 0.000033
-quickSelect, 192, 0.000008
-heapSelect, 192, 0.000015
-medianMediansSelect, 192, 0.000034
-quickSelect, 192, 0.000007
-heapSelect, 192, 0.000015
-medianMediansSelect, 192, 0.000036
-quickSelect, 192, 0.000009
-heapSelect, 192, 0.000013
-medianMediansSelect, 192, 0.000038
-quickSelect, 192, 0.000005
-heapSelect, 192, 0.000016
-medianMediansSelect, 192, 0.000039
-quickSelect, 192, 0.000009
-heapSelect, 192, 0.000014
-medianMediansSelect, 192, 0.000039
-quickSelect, 192, 0.000004
-heapSelect, 192, 0.000016
-medianMediansSelect, 192, 0.000038
-quickSelect, 192, 0.000004
-heapSelect, 192, 0.000017
-medianMediansSelect, 192, 0.000041
-quickSelect, 192, 0.000005
-heapSelect, 192, 0.000016
-medianMediansSelect, 192, 0.000039
-quickSelect, 192, 0.000009
-heapSelect, 192, 0.000014
-medianMediansSelect, 192, 0.000035
-quickSelect, 192, 0.000011
-heapSelect, 192, 0.000014
-medianMediansSelect, 192, 0.000034
-quickSelect, 192, 0.000005
-heapSelect, 192, 0.000017
-medianMediansSelect, 192, 0.000040
-quickSelect, 192, 0.000012
-heapSelect, 192, 0.000013
-medianMediansSelect, 192, 0.000035
-quickSelect, 192, 0.000009
-heapSelect, 192, 0.000016
-medianMediansSelect, 192, 0.000035
-quickSelect, 192, 0.000012
-heapSelect, 192, 0.000014
-medianMediansSelect, 192, 0.000033
-quickSelect, 214, 0.000022
-heapSelect, 214, 0.000015
-medianMediansSelect, 214, 0.000039
-quickSelect, 214, 0.000010
-heapSelect, 214, 0.000016
-medianMediansSelect, 214, 0.000037
-quickSelect, 214, 0.000009
-heapSelect, 214, 0.000017
-medianMediansSelect, 214, 0.000062
-quickSelect, 214, 0.000010
-heapSelect, 214, 0.000015
-medianMediansSelect, 214, 0.000043
-quickSelect, 214, 0.000017
-heapSelect, 214, 0.000016
-medianMediansSelect, 214, 0.000046
-quickSelect, 214, 0.000011
-heapSelect, 214, 0.000016
-medianMediansSelect, 214, 0.000037
-quickSelect, 214, 0.000008
-heapSelect, 214, 0.000017
-medianMediansSelect, 214, 0.000039
-quickSelect, 214, 0.000009
-heapSelect, 214, 0.000016
-medianMediansSelect, 214, 0.000042
-quickSelect, 214, 0.000008
-heapSelect, 214, 0.000017
-medianMediansSelect, 214, 0.000042
-quickSelect, 214, 0.000012
-heapSelect, 214, 0.000016
-medianMediansSelect, 214, 0.000035
-quickSelect, 214, 0.000007
-heapSelect, 214, 0.000016
-medianMediansSelect, 214, 0.000043
-quickSelect, 214, 0.000007
-heapSelect, 214, 0.000018
-medianMediansSelect, 214, 0.000042
-quickSelect, 214, 0.000006
-heapSelect, 214, 0.000018
-medianMediansSelect, 214, 0.000043
-quickSelect, 214, 0.000010
-heapSelect, 214, 0.000015
-medianMediansSelect, 214, 0.000042
-quickSelect, 214, 0.000014
-heapSelect, 214, 0.000015
-medianMediansSelect, 214, 0.000038
-quickSelect, 214, 0.000007
-heapSelect, 214, 0.000018
-medianMediansSelect, 214, 0.000044
-quickSelect, 214, 0.000008
-heapSelect, 214, 0.000018
-medianMediansSelect, 214, 0.000034
-quickSelect, 214, 0.000014
-heapSelect, 214, 0.000015
-medianMediansSelect, 214, 0.000037
-quickSelect, 214, 0.000016
-heapSelect, 214, 0.000017
-medianMediansSelect, 214, 0.000036
-quickSelect, 214, 0.000015
-heapSelect, 214, 0.000016
-medianMediansSelect, 214, 0.000040
-quickSelect, 239, 0.000016
-heapSelect, 239, 0.000017
-medianMediansSelect, 239, 0.000040
-quickSelect, 239, 0.000011
-heapSelect, 239, 0.000019
-medianMediansSelect, 239, 0.000058
-quickSelect, 239, 0.000011
-heapSelect, 239, 0.000024
-medianMediansSelect, 239, 0.000069
-quickSelect, 239, 0.000015
-heapSelect, 239, 0.000026
-medianMediansSelect, 239, 0.000076
-quickSelect, 239, 0.000034
-heapSelect, 239, 0.000025
-medianMediansSelect, 239, 0.000052
-quickSelect, 239, 0.000010
-heapSelect, 239, 0.000019
-medianMediansSelect, 239, 0.000053
-quickSelect, 239, 0.000005
-heapSelect, 239, 0.000023
-medianMediansSelect, 239, 0.000050
-quickSelect, 239, 0.000008
-heapSelect, 239, 0.000020
-medianMediansSelect, 239, 0.000044
-quickSelect, 239, 0.000008
-heapSelect, 239, 0.000017
-medianMediansSelect, 239, 0.000046
-quickSelect, 239, 0.000024
-heapSelect, 239, 0.000017
-medianMediansSelect, 239, 0.000038
-quickSelect, 239, 0.000007
-heapSelect, 239, 0.000018
-medianMediansSelect, 239, 0.000052
-quickSelect, 239, 0.000005
-heapSelect, 239, 0.000021
-medianMediansSelect, 239, 0.000047
-quickSelect, 239, 0.000010
-heapSelect, 239, 0.000018
-medianMediansSelect, 239, 0.000047
-quickSelect, 239, 0.000016
-heapSelect, 239, 0.000017
-medianMediansSelect, 239, 0.000050
-quickSelect, 239, 0.000009
-heapSelect, 239, 0.000021
-medianMediansSelect, 239, 0.000043
-quickSelect, 239, 0.000006
-heapSelect, 239, 0.000020
-medianMediansSelect, 239, 0.000049
-quickSelect, 239, 0.000016
-heapSelect, 239, 0.000017
-medianMediansSelect, 239, 0.000051
-quickSelect, 239, 0.000004
-heapSelect, 239, 0.000022
-medianMediansSelect, 239, 0.000051
-quickSelect, 239, 0.000010
-heapSelect, 239, 0.000018
-medianMediansSelect, 239, 0.000044
-quickSelect, 239, 0.000016
-heapSelect, 239, 0.000017
-medianMediansSelect, 239, 0.000054
-quickSelect, 267, 0.000025
-heapSelect, 267, 0.000020
-medianMediansSelect, 267, 0.000053
-quickSelect, 267, 0.000019
-heapSelect, 267, 0.000020
-medianMediansSelect, 267, 0.000055
-quickSelect, 267, 0.000010
-heapSelect, 267, 0.000019
-medianMediansSelect, 267, 0.000044
-quickSelect, 267, 0.000010
-heapSelect, 267, 0.000019
-medianMediansSelect, 267, 0.000060
-quickSelect, 267, 0.000009
-heapSelect, 267, 0.000023
-medianMediansSelect, 267, 0.000072
-quickSelect, 267, 0.000028
-heapSelect, 267, 0.000021
-medianMediansSelect, 267, 0.000078
-quickSelect, 267, 0.000006
-heapSelect, 267, 0.000023
-medianMediansSelect, 267, 0.000063
-quickSelect, 267, 0.000008
-heapSelect, 267, 0.000019
-medianMediansSelect, 267, 0.000056
-quickSelect, 267, 0.000006
-heapSelect, 267, 0.000021
-medianMediansSelect, 267, 0.000058
-quickSelect, 267, 0.000009
-heapSelect, 267, 0.000020
-medianMediansSelect, 267, 0.000057
-quickSelect, 267, 0.000007
-heapSelect, 267, 0.000023
-medianMediansSelect, 267, 0.000053
-quickSelect, 267, 0.000015
-heapSelect, 267, 0.000018
-medianMediansSelect, 267, 0.000048
-quickSelect, 267, 0.000008
-heapSelect, 267, 0.000024
-medianMediansSelect, 267, 0.000056
-quickSelect, 267, 0.000007
-heapSelect, 267, 0.000021
-medianMediansSelect, 267, 0.000060
-quickSelect, 267, 0.000022
-heapSelect, 267, 0.000019
-medianMediansSelect, 267, 0.000044
-quickSelect, 267, 0.000011
-heapSelect, 267, 0.000019
-medianMediansSelect, 267, 0.000049
-quickSelect, 267, 0.000010
-heapSelect, 267, 0.000020
-medianMediansSelect, 267, 0.000055
-quickSelect, 267, 0.000012
-heapSelect, 267, 0.000019
-medianMediansSelect, 267, 0.000049
-quickSelect, 267, 0.000004
-heapSelect, 267, 0.000026
-medianMediansSelect, 267, 0.000059
-quickSelect, 267, 0.000010
-heapSelect, 267, 0.000020
-medianMediansSelect, 267, 0.000058
-quickSelect, 298, 0.000006
-heapSelect, 298, 0.000027
-medianMediansSelect, 298, 0.000067
-quickSelect, 298, 0.000014
-heapSelect, 298, 0.000030
-medianMediansSelect, 298, 0.000099
-quickSelect, 298, 0.000030
-heapSelect, 298, 0.000025
-medianMediansSelect, 298, 0.000059
-quickSelect, 298, 0.000013
-heapSelect, 298, 0.000028
-medianMediansSelect, 298, 0.000051
-quickSelect, 298, 0.000023
-heapSelect, 298, 0.000020
-medianMediansSelect, 298, 0.000051
-quickSelect, 298, 0.000010
-heapSelect, 298, 0.000022
-medianMediansSelect, 298, 0.000062
-quickSelect, 298, 0.000013
-heapSelect, 298, 0.000019
-medianMediansSelect, 298, 0.000050
-quickSelect, 298, 0.000017
-heapSelect, 298, 0.000020
-medianMediansSelect, 298, 0.000049
-quickSelect, 298, 0.000018
-heapSelect, 298, 0.000020
-medianMediansSelect, 298, 0.000058
-quickSelect, 298, 0.000010
-heapSelect, 298, 0.000023
-medianMediansSelect, 298, 0.000053
-quickSelect, 298, 0.000017
-heapSelect, 298, 0.000023
-medianMediansSelect, 298, 0.000053
-quickSelect, 298, 0.000027
-heapSelect, 298, 0.000019
-medianMediansSelect, 298, 0.000050
-quickSelect, 298, 0.000011
-heapSelect, 298, 0.000022
-medianMediansSelect, 298, 0.000063
-quickSelect, 298, 0.000014
-heapSelect, 298, 0.000020
-medianMediansSelect, 298, 0.000054
-quickSelect, 298, 0.000012
-heapSelect, 298, 0.000021
-medianMediansSelect, 298, 0.000057
-quickSelect, 298, 0.000019
-heapSelect, 298, 0.000020
-medianMediansSelect, 298, 0.000060
-quickSelect, 298, 0.000018
-heapSelect, 298, 0.000020
-medianMediansSelect, 298, 0.000048
-quickSelect, 298, 0.000018
-heapSelect, 298, 0.000024
-medianMediansSelect, 298, 0.000058
-quickSelect, 298, 0.000018
-heapSelect, 298, 0.000020
-medianMediansSelect, 298, 0.000047
-quickSelect, 298, 0.000010
-heapSelect, 298, 0.000031
-medianMediansSelect, 298, 0.000092
-quickSelect, 332, 0.000007
-heapSelect, 332, 0.000039
-medianMediansSelect, 332, 0.000105
-quickSelect, 332, 0.000022
-heapSelect, 332, 0.000022
-medianMediansSelect, 332, 0.000065
-quickSelect, 332, 0.000019
-heapSelect, 332, 0.000023
-medianMediansSelect, 332, 0.000074
-quickSelect, 332, 0.000007
-heapSelect, 332, 0.000026
-medianMediansSelect, 332, 0.000073
-quickSelect, 332, 0.000010
-heapSelect, 332, 0.000023
-medianMediansSelect, 332, 0.000069
-quickSelect, 332, 0.000012
-heapSelect, 332, 0.000024
-medianMediansSelect, 332, 0.000076
-quickSelect, 332, 0.000009
-heapSelect, 332, 0.000028
-medianMediansSelect, 332, 0.000079
-quickSelect, 332, 0.000012
-heapSelect, 332, 0.000028
-medianMediansSelect, 332, 0.000067
-quickSelect, 332, 0.000020
-heapSelect, 332, 0.000023
-medianMediansSelect, 332, 0.000074
-quickSelect, 332, 0.000013
-heapSelect, 332, 0.000024
-medianMediansSelect, 332, 0.000069
-quickSelect, 332, 0.000016
-heapSelect, 332, 0.000023
-medianMediansSelect, 332, 0.000056
-quickSelect, 332, 0.000007
-heapSelect, 332, 0.000024
-medianMediansSelect, 332, 0.000071
-quickSelect, 332, 0.000016
-heapSelect, 332, 0.000022
-medianMediansSelect, 332, 0.000076
-quickSelect, 332, 0.000009
-heapSelect, 332, 0.000025
-medianMediansSelect, 332, 0.000073
-quickSelect, 332, 0.000017
-heapSelect, 332, 0.000022
-medianMediansSelect, 332, 0.000063
-quickSelect, 332, 0.000012
-heapSelect, 332, 0.000022
-medianMediansSelect, 332, 0.000062
-quickSelect, 332, 0.000016
-heapSelect, 332, 0.000022
-medianMediansSelect, 332, 0.000063
-quickSelect, 332, 0.000007
-heapSelect, 332, 0.000028
-medianMediansSelect, 332, 0.000074
-quickSelect, 332, 0.000018
-heapSelect, 332, 0.000022
-medianMediansSelect, 332, 0.000061
-quickSelect, 332, 0.000011
-heapSelect, 332, 0.000023
-medianMediansSelect, 332, 0.000071
-quickSelect, 371, 0.000011
-heapSelect, 371, 0.000042
-medianMediansSelect, 371, 0.000086
-quickSelect, 371, 0.000018
-heapSelect, 371, 0.000028
-medianMediansSelect, 371, 0.000075
-quickSelect, 371, 0.000009
-heapSelect, 371, 0.000028
-medianMediansSelect, 371, 0.000078
-quickSelect, 371, 0.000013
-heapSelect, 371, 0.000031
-medianMediansSelect, 371, 0.000083
-quickSelect, 371, 0.000022
-heapSelect, 371, 0.000023
-medianMediansSelect, 371, 0.000088
-quickSelect, 371, 0.000013
-heapSelect, 371, 0.000026
-medianMediansSelect, 371, 0.000081
-quickSelect, 371, 0.000006
-heapSelect, 371, 0.000030
-medianMediansSelect, 371, 0.000087
-quickSelect, 371, 0.000032
-heapSelect, 371, 0.000025
-medianMediansSelect, 371, 0.000072
-quickSelect, 371, 0.000008
-heapSelect, 371, 0.000030
-medianMediansSelect, 371, 0.000088
-quickSelect, 371, 0.000008
-heapSelect, 371, 0.000028
-medianMediansSelect, 371, 0.000086
-quickSelect, 371, 0.000016
-heapSelect, 371, 0.000025
-medianMediansSelect, 371, 0.000069
-quickSelect, 371, 0.000008
-heapSelect, 371, 0.000029
-medianMediansSelect, 371, 0.000087
-quickSelect, 371, 0.000012
-heapSelect, 371, 0.000027
-medianMediansSelect, 371, 0.000085
-quickSelect, 371, 0.000018
-heapSelect, 371, 0.000026
-medianMediansSelect, 371, 0.000079
-quickSelect, 371, 0.000022
-heapSelect, 371, 0.000025
-medianMediansSelect, 371, 0.000079
-quickSelect, 371, 0.000015
-heapSelect, 371, 0.000025
-medianMediansSelect, 371, 0.000087
-quickSelect, 371, 0.000038
-heapSelect, 371, 0.000026
-medianMediansSelect, 371, 0.000077
-quickSelect, 371, 0.000015
-heapSelect, 371, 0.000026
-medianMediansSelect, 371, 0.000077
-quickSelect, 371, 0.000017
-heapSelect, 371, 0.000026
-medianMediansSelect, 371, 0.000073
-quickSelect, 371, 0.000007
-heapSelect, 371, 0.000030
-medianMediansSelect, 371, 0.000088
-quickSelect, 414, 0.000034
-heapSelect, 414, 0.000034
-medianMediansSelect, 414, 0.000099
-quickSelect, 414, 0.000014
-heapSelect, 414, 0.000044
-medianMediansSelect, 414, 0.000098
-quickSelect, 414, 0.000009
-heapSelect, 414, 0.000033
-medianMediansSelect, 414, 0.000111
-quickSelect, 414, 0.000020
-heapSelect, 414, 0.000036
-medianMediansSelect, 414, 0.000090
-quickSelect, 414, 0.000010
-heapSelect, 414, 0.000040
-medianMediansSelect, 414, 0.000108
-quickSelect, 414, 0.000013
-heapSelect, 414, 0.000035
-medianMediansSelect, 414, 0.000101
-quickSelect, 414, 0.000033
-heapSelect, 414, 0.000025
-medianMediansSelect, 414, 0.000086
-quickSelect, 414, 0.000019
-heapSelect, 414, 0.000026
-medianMediansSelect, 414, 0.000080
-quickSelect, 414, 0.000017
-heapSelect, 414, 0.000036
-medianMediansSelect, 414, 0.000098
-quickSelect, 414, 0.000020
-heapSelect, 414, 0.000028
-medianMediansSelect, 414, 0.000086
-quickSelect, 414, 0.000023
-heapSelect, 414, 0.000031
-medianMediansSelect, 414, 0.000075
-quickSelect, 414, 0.000014
-heapSelect, 414, 0.000032
-medianMediansSelect, 414, 0.000089
-quickSelect, 414, 0.000018
-heapSelect, 414, 0.000026
-medianMediansSelect, 414, 0.000085
-quickSelect, 414, 0.000013
-heapSelect, 414, 0.000028
-medianMediansSelect, 414, 0.000085
-quickSelect, 414, 0.000023
-heapSelect, 414, 0.000026
-medianMediansSelect, 414, 0.000083
-quickSelect, 414, 0.000031
-heapSelect, 414, 0.000026
-medianMediansSelect, 414, 0.000079
-quickSelect, 414, 0.000008
-heapSelect, 414, 0.000034
-medianMediansSelect, 414, 0.000089
-quickSelect, 414, 0.000017
-heapSelect, 414, 0.000027
-medianMediansSelect, 414, 0.000080
-quickSelect, 414, 0.000026
-heapSelect, 414, 0.000027
-medianMediansSelect, 414, 0.000087
-quickSelect, 414, 0.000016
-heapSelect, 414, 0.000028
-medianMediansSelect, 414, 0.000103
-quickSelect, 461, 0.000013
-heapSelect, 461, 0.000035
-medianMediansSelect, 461, 0.000122
-quickSelect, 461, 0.000028
-heapSelect, 461, 0.000032
-medianMediansSelect, 461, 0.000109
-quickSelect, 461, 0.000044
-heapSelect, 461, 0.000041
-medianMediansSelect, 461, 0.000146
-quickSelect, 461, 0.000018
-heapSelect, 461, 0.000033
-medianMediansSelect, 461, 0.000123
-quickSelect, 461, 0.000013
-heapSelect, 461, 0.000033
-medianMediansSelect, 461, 0.000104
-quickSelect, 461, 0.000018
-heapSelect, 461, 0.000028
-medianMediansSelect, 461, 0.000110
-quickSelect, 461, 0.000022
-heapSelect, 461, 0.000028
-medianMediansSelect, 461, 0.000109
-quickSelect, 461, 0.000021
-heapSelect, 461, 0.000031
-medianMediansSelect, 461, 0.000116
-quickSelect, 461, 0.000021
-heapSelect, 461, 0.000031
-medianMediansSelect, 461, 0.000091
-quickSelect, 461, 0.000020
-heapSelect, 461, 0.000032
-medianMediansSelect, 461, 0.000103
-quickSelect, 461, 0.000013
-heapSelect, 461, 0.000034
-medianMediansSelect, 461, 0.000090
-quickSelect, 461, 0.000024
-heapSelect, 461, 0.000031
-medianMediansSelect, 461, 0.000114
-quickSelect, 461, 0.000023
-heapSelect, 461, 0.000032
-medianMediansSelect, 461, 0.000106
-quickSelect, 461, 0.000012
-heapSelect, 461, 0.000033
-medianMediansSelect, 461, 0.000122
-quickSelect, 461, 0.000013
-heapSelect, 461, 0.000031
-medianMediansSelect, 461, 0.000108
-quickSelect, 461, 0.000013
-heapSelect, 461, 0.000031
-medianMediansSelect, 461, 0.000100
-quickSelect, 461, 0.000039
-heapSelect, 461, 0.000029
-medianMediansSelect, 461, 0.000083
-quickSelect, 461, 0.000023
-heapSelect, 461, 0.000028
-medianMediansSelect, 461, 0.000086
-quickSelect, 461, 0.000024
-heapSelect, 461, 0.000028
-medianMediansSelect, 461, 0.000107
-quickSelect, 461, 0.000014
-heapSelect, 461, 0.000029
-medianMediansSelect, 461, 0.000104
-quickSelect, 515, 0.000022
-heapSelect, 515, 0.000045
-medianMediansSelect, 515, 0.000150
-quickSelect, 515, 0.000030
-heapSelect, 515, 0.000034
-medianMediansSelect, 515, 0.000108
-quickSelect, 515, 0.000015
-heapSelect, 515, 0.000034
-medianMediansSelect, 515, 0.000137
-quickSelect, 515, 0.000013
-heapSelect, 515, 0.000039
-medianMediansSelect, 515, 0.000140
-quickSelect, 515, 0.000010
-heapSelect, 515, 0.000039
-medianMediansSelect, 515, 0.000137
-quickSelect, 515, 0.000025
-heapSelect, 515, 0.000031
-medianMediansSelect, 515, 0.000127
-quickSelect, 515, 0.000010
-heapSelect, 515, 0.000044
-medianMediansSelect, 515, 0.000139
-quickSelect, 515, 0.000013
-heapSelect, 515, 0.000039
-medianMediansSelect, 515, 0.000133
-quickSelect, 515, 0.000012
-heapSelect, 515, 0.000037
-medianMediansSelect, 515, 0.000126
-quickSelect, 515, 0.000030
-heapSelect, 515, 0.000033
-medianMediansSelect, 515, 0.000104
-quickSelect, 515, 0.000009
-heapSelect, 515, 0.000044
-medianMediansSelect, 515, 0.000168
-quickSelect, 515, 0.000025
-heapSelect, 515, 0.000035
-medianMediansSelect, 515, 0.000100
-quickSelect, 515, 0.000010
-heapSelect, 515, 0.000042
-medianMediansSelect, 515, 0.000153
-quickSelect, 515, 0.000021
-heapSelect, 515, 0.000033
-medianMediansSelect, 515, 0.000126
-quickSelect, 515, 0.000012
-heapSelect, 515, 0.000036
-medianMediansSelect, 515, 0.000126
-quickSelect, 515, 0.000010
-heapSelect, 515, 0.000039
-medianMediansSelect, 515, 0.000124
-quickSelect, 515, 0.000025
-heapSelect, 515, 0.000032
-medianMediansSelect, 515, 0.000116
-quickSelect, 515, 0.000012
-heapSelect, 515, 0.000037
-medianMediansSelect, 515, 0.000130
-quickSelect, 515, 0.000030
-heapSelect, 515, 0.000035
-medianMediansSelect, 515, 0.000092
-quickSelect, 515, 0.000038
-heapSelect, 515, 0.000031
-medianMediansSelect, 515, 0.000092
-quickSelect, 574, 0.000029
-heapSelect, 574, 0.000034
-medianMediansSelect, 574, 0.000142
-quickSelect, 574, 0.000021
-heapSelect, 574, 0.000038
-medianMediansSelect, 574, 0.000142
-quickSelect, 574, 0.000036
-heapSelect, 574, 0.000041
-medianMediansSelect, 574, 0.000124
-quickSelect, 574, 0.000037
-heapSelect, 574, 0.000033
-medianMediansSelect, 574, 0.000132
-quickSelect, 574, 0.000031
-heapSelect, 574, 0.000033
-medianMediansSelect, 574, 0.000139
-quickSelect, 574, 0.000043
-heapSelect, 574, 0.000033
-medianMediansSelect, 574, 0.000113
-quickSelect, 574, 0.000015
-heapSelect, 574, 0.000039
-medianMediansSelect, 574, 0.000157
-quickSelect, 574, 0.000036
-heapSelect, 574, 0.000039
-medianMediansSelect, 574, 0.000110
-quickSelect, 574, 0.000021
-heapSelect, 574, 0.000035
-medianMediansSelect, 574, 0.000149
-quickSelect, 574, 0.000015
-heapSelect, 574, 0.000044
-medianMediansSelect, 574, 0.000148
-quickSelect, 574, 0.000015
-heapSelect, 574, 0.000039
-medianMediansSelect, 574, 0.000157
-quickSelect, 574, 0.000010
-heapSelect, 574, 0.000053
-medianMediansSelect, 574, 0.000160
-quickSelect, 574, 0.000011
-heapSelect, 574, 0.000050
-medianMediansSelect, 574, 0.000156
-quickSelect, 574, 0.000021
-heapSelect, 574, 0.000037
-medianMediansSelect, 574, 0.000143
-quickSelect, 574, 0.000031
-heapSelect, 574, 0.000038
-medianMediansSelect, 574, 0.000144
-quickSelect, 574, 0.000022
-heapSelect, 574, 0.000035
-medianMediansSelect, 574, 0.000123
-quickSelect, 574, 0.000033
-heapSelect, 574, 0.000035
-medianMediansSelect, 574, 0.000133
-quickSelect, 574, 0.000017
-heapSelect, 574, 0.000038
-medianMediansSelect, 574, 0.000159
-quickSelect, 574, 0.000012
-heapSelect, 574, 0.000042
-medianMediansSelect, 574, 0.000157
-quickSelect, 574, 0.000038
-heapSelect, 574, 0.000033
-medianMediansSelect, 574, 0.000153
-quickSelect, 641, 0.000056
-heapSelect, 641, 0.000043
-medianMediansSelect, 641, 0.000139
-quickSelect, 641, 0.000033
-heapSelect, 641, 0.000040
-medianMediansSelect, 641, 0.000148
-quickSelect, 641, 0.000023
-heapSelect, 641, 0.000044
-medianMediansSelect, 641, 0.000164
-quickSelect, 641, 0.000025
-heapSelect, 641, 0.000041
-medianMediansSelect, 641, 0.000148
-quickSelect, 641, 0.000054
-heapSelect, 641, 0.000037
-medianMediansSelect, 641, 0.000135
-quickSelect, 641, 0.000010
-heapSelect, 641, 0.000059
-medianMediansSelect, 641, 0.000182
-quickSelect, 641, 0.000042
-heapSelect, 641, 0.000039
-medianMediansSelect, 641, 0.000130
-quickSelect, 641, 0.000049
-heapSelect, 641, 0.000041
-medianMediansSelect, 641, 0.000134
-quickSelect, 641, 0.000011
-heapSelect, 641, 0.000058
-medianMediansSelect, 641, 0.000178
-quickSelect, 641, 0.000016
-heapSelect, 641, 0.000042
-medianMediansSelect, 641, 0.000180
-quickSelect, 641, 0.000051
-heapSelect, 641, 0.000037
-medianMediansSelect, 641, 0.000139
-quickSelect, 641, 0.000020
-heapSelect, 641, 0.000044
-medianMediansSelect, 641, 0.000175
-quickSelect, 641, 0.000030
-heapSelect, 641, 0.000051
-medianMediansSelect, 641, 0.000174
-quickSelect, 641, 0.000010
-heapSelect, 641, 0.000053
-medianMediansSelect, 641, 0.000184
-quickSelect, 641, 0.000047
-heapSelect, 641, 0.000044
-medianMediansSelect, 641, 0.000137
-quickSelect, 641, 0.000019
-heapSelect, 641, 0.000040
-medianMediansSelect, 641, 0.000164
-quickSelect, 641, 0.000018
-heapSelect, 641, 0.000043
-medianMediansSelect, 641, 0.000176
-quickSelect, 641, 0.000048
-heapSelect, 641, 0.000038
-medianMediansSelect, 641, 0.000134
-quickSelect, 641, 0.000025
-heapSelect, 641, 0.000052
-medianMediansSelect, 641, 0.000162
-quickSelect, 641, 0.000051
-heapSelect, 641, 0.000039
-medianMediansSelect, 641, 0.000143
-quickSelect, 715, 0.000051
-heapSelect, 715, 0.000045
-medianMediansSelect, 715, 0.000162
-quickSelect, 715, 0.000012
-heapSelect, 715, 0.000065
-medianMediansSelect, 715, 0.000217
-quickSelect, 715, 0.000045
-heapSelect, 715, 0.000043
-medianMediansSelect, 715, 0.000170
-quickSelect, 715, 0.000026
-heapSelect, 715, 0.000052
-medianMediansSelect, 715, 0.000211
-quickSelect, 715, 0.000043
-heapSelect, 715, 0.000042
-medianMediansSelect, 715, 0.000193
-quickSelect, 715, 0.000015
-heapSelect, 715, 0.000053
-medianMediansSelect, 715, 0.000202
-quickSelect, 715, 0.000035
-heapSelect, 715, 0.000040
-medianMediansSelect, 715, 0.000148
-quickSelect, 715, 0.000063
-heapSelect, 715, 0.000049
-medianMediansSelect, 715, 0.000184
-quickSelect, 715, 0.000060
-heapSelect, 715, 0.000042
-medianMediansSelect, 715, 0.000164
-quickSelect, 715, 0.000017
-heapSelect, 715, 0.000051
-medianMediansSelect, 715, 0.000208
-quickSelect, 715, 0.000018
-heapSelect, 715, 0.000048
-medianMediansSelect, 715, 0.000198
-quickSelect, 715, 0.000043
-heapSelect, 715, 0.000042
-medianMediansSelect, 715, 0.000161
-quickSelect, 715, 0.000027
-heapSelect, 715, 0.000042
-medianMediansSelect, 715, 0.000192
-quickSelect, 715, 0.000015
-heapSelect, 715, 0.000058
-medianMediansSelect, 715, 0.000211
-quickSelect, 715, 0.000040
-heapSelect, 715, 0.000042
-medianMediansSelect, 715, 0.000170
-quickSelect, 715, 0.000056
-heapSelect, 715, 0.000046
-medianMediansSelect, 715, 0.000156
-quickSelect, 715, 0.000041
-heapSelect, 715, 0.000048
-medianMediansSelect, 715, 0.000155
-quickSelect, 715, 0.000017
-heapSelect, 715, 0.000048
-medianMediansSelect, 715, 0.000211
-quickSelect, 715, 0.000047
-heapSelect, 715, 0.000050
-medianMediansSelect, 715, 0.000177
-quickSelect, 715, 0.000044
-heapSelect, 715, 0.000043
-medianMediansSelect, 715, 0.000192
-quickSelect, 797, 0.000045
-heapSelect, 797, 0.000100
-medianMediansSelect, 797, 0.000280
-quickSelect, 797, 0.000017
-heapSelect, 797, 0.000058
-medianMediansSelect, 797, 0.000251
-quickSelect, 797, 0.000016
-heapSelect, 797, 0.000082
-medianMediansSelect, 797, 0.000290
-quickSelect, 797, 0.000050
-heapSelect, 797, 0.000055
-medianMediansSelect, 797, 0.000239
-quickSelect, 797, 0.000012
-heapSelect, 797, 0.000080
-medianMediansSelect, 797, 0.000272
-quickSelect, 797, 0.000038
-heapSelect, 797, 0.000048
-medianMediansSelect, 797, 0.000223
-quickSelect, 797, 0.000060
-heapSelect, 797, 0.000050
-medianMediansSelect, 797, 0.000211
-quickSelect, 797, 0.000019
-heapSelect, 797, 0.000059
-medianMediansSelect, 797, 0.000240
-quickSelect, 797, 0.000023
-heapSelect, 797, 0.000051
-medianMediansSelect, 797, 0.000235
-quickSelect, 797, 0.000012
-heapSelect, 797, 0.000071
-medianMediansSelect, 797, 0.000248
-quickSelect, 797, 0.000039
-heapSelect, 797, 0.000044
-medianMediansSelect, 797, 0.000218
-quickSelect, 797, 0.000052
-heapSelect, 797, 0.000047
-medianMediansSelect, 797, 0.000194
-quickSelect, 797, 0.000017
-heapSelect, 797, 0.000066
-medianMediansSelect, 797, 0.000243
-quickSelect, 797, 0.000027
-heapSelect, 797, 0.000059
-medianMediansSelect, 797, 0.000192
-quickSelect, 797, 0.000044
-heapSelect, 797, 0.000051
-medianMediansSelect, 797, 0.000173
-quickSelect, 797, 0.000034
-heapSelect, 797, 0.000045
-medianMediansSelect, 797, 0.000202
-quickSelect, 797, 0.000016
-heapSelect, 797, 0.000056
-medianMediansSelect, 797, 0.000234
-quickSelect, 797, 0.000016
-heapSelect, 797, 0.000066
-medianMediansSelect, 797, 0.000242
-quickSelect, 797, 0.000047
-heapSelect, 797, 0.000045
-medianMediansSelect, 797, 0.000180
-quickSelect, 797, 0.000012
-heapSelect, 797, 0.000071
-medianMediansSelect, 797, 0.000255
-quickSelect, 889, 0.000079
-heapSelect, 889, 0.000056
-medianMediansSelect, 889, 0.000223
-quickSelect, 889, 0.000084
-heapSelect, 889, 0.000050
-medianMediansSelect, 889, 0.000214
-quickSelect, 889, 0.000042
-heapSelect, 889, 0.000074
-medianMediansSelect, 889, 0.000284
-quickSelect, 889, 0.000063
-heapSelect, 889, 0.000058
-medianMediansSelect, 889, 0.000289
-quickSelect, 889, 0.000019
-heapSelect, 889, 0.000067
-medianMediansSelect, 889, 0.000281
-quickSelect, 889, 0.000043
-heapSelect, 889, 0.000059
-medianMediansSelect, 889, 0.000361
-quickSelect, 889, 0.000061
-heapSelect, 889, 0.000058
-medianMediansSelect, 889, 0.000215
-quickSelect, 889, 0.000046
-heapSelect, 889, 0.000053
-medianMediansSelect, 889, 0.000279
-quickSelect, 889, 0.000050
-heapSelect, 889, 0.000054
-medianMediansSelect, 889, 0.000228
-quickSelect, 889, 0.000053
-heapSelect, 889, 0.000050
-medianMediansSelect, 889, 0.000231
-quickSelect, 889, 0.000017
-heapSelect, 889, 0.000080
-medianMediansSelect, 889, 0.000301
-quickSelect, 889, 0.000056
-heapSelect, 889, 0.000052
-medianMediansSelect, 889, 0.000216
-quickSelect, 889, 0.000059
-heapSelect, 889, 0.000056
-medianMediansSelect, 889, 0.000182
-quickSelect, 889, 0.000037
-heapSelect, 889, 0.000055
-medianMediansSelect, 889, 0.000285
-quickSelect, 889, 0.000053
-heapSelect, 889, 0.000055
-medianMediansSelect, 889, 0.000247
-quickSelect, 889, 0.000051
-heapSelect, 889, 0.000059
-medianMediansSelect, 889, 0.000329
-quickSelect, 889, 0.000056
-heapSelect, 889, 0.000054
-medianMediansSelect, 889, 0.000244
-quickSelect, 889, 0.000074
-heapSelect, 889, 0.000052
-medianMediansSelect, 889, 0.000227
-quickSelect, 889, 0.000028
-heapSelect, 889, 0.000064
-medianMediansSelect, 889, 0.000267
-quickSelect, 889, 0.000034
-heapSelect, 889, 0.000069
-medianMediansSelect, 889, 0.000285
-quickSelect, 992, 0.000044
-heapSelect, 992, 0.000067
-medianMediansSelect, 992, 0.000266
-quickSelect, 992, 0.000068
-heapSelect, 992, 0.000066
-medianMediansSelect, 992, 0.000432
-quickSelect, 992, 0.000073
-heapSelect, 992, 0.000057
-medianMediansSelect, 992, 0.000297
-quickSelect, 992, 0.000065
-heapSelect, 992, 0.000064
-medianMediansSelect, 992, 0.000312
-quickSelect, 992, 0.000037
-heapSelect, 992, 0.000110
-medianMediansSelect, 992, 0.000346
-quickSelect, 992, 0.000080
-heapSelect, 992, 0.000060
-medianMediansSelect, 992, 0.000238
-quickSelect, 992, 0.000039
-heapSelect, 992, 0.000067
-medianMediansSelect, 992, 0.000369
-quickSelect, 992, 0.000018
-heapSelect, 992, 0.000088
-medianMediansSelect, 992, 0.000363
-quickSelect, 992, 0.000090
-heapSelect, 992, 0.000059
-medianMediansSelect, 992, 0.000261
-quickSelect, 992, 0.000122
-heapSelect, 992, 0.000054
-medianMediansSelect, 992, 0.000222
-quickSelect, 992, 0.000072
-heapSelect, 992, 0.000062
-medianMediansSelect, 992, 0.000301
-quickSelect, 992, 0.000046
-heapSelect, 992, 0.000060
-medianMediansSelect, 992, 0.000305
-quickSelect, 992, 0.000022
-heapSelect, 992, 0.000073
-medianMediansSelect, 992, 0.000341
-quickSelect, 992, 0.000081
-heapSelect, 992, 0.000088
-medianMediansSelect, 992, 0.000516
-quickSelect, 992, 0.000061
-heapSelect, 992, 0.000059
-medianMediansSelect, 992, 0.000241
-quickSelect, 992, 0.000050
-heapSelect, 992, 0.000098
-medianMediansSelect, 992, 0.000423
-quickSelect, 992, 0.000054
-heapSelect, 992, 0.000061
-medianMediansSelect, 992, 0.000372
-quickSelect, 992, 0.000021
-heapSelect, 992, 0.000076
-medianMediansSelect, 992, 0.000343
-quickSelect, 992, 0.000017
-heapSelect, 992, 0.000085
-medianMediansSelect, 992, 0.000319
-quickSelect, 992, 0.000026
-heapSelect, 992, 0.000073
-medianMediansSelect, 992, 0.000358
-quickSelect, 1107, 0.000018
-heapSelect, 1107, 0.000096
-medianMediansSelect, 1107, 0.000386
-quickSelect, 1107, 0.000024
-heapSelect, 1107, 0.000089
-medianMediansSelect, 1107, 0.000402
-quickSelect, 1107, 0.000076
-heapSelect, 1107, 0.000065
-medianMediansSelect, 1107, 0.000351
-quickSelect, 1107, 0.000058
-heapSelect, 1107, 0.000098
-medianMediansSelect, 1107, 0.000517
-quickSelect, 1107, 0.000044
-heapSelect, 1107, 0.000125
-medianMediansSelect, 1107, 0.000433
-quickSelect, 1107, 0.000044
-heapSelect, 1107, 0.000115
-medianMediansSelect, 1107, 0.000419
-quickSelect, 1107, 0.000094
-heapSelect, 1107, 0.000064
-medianMediansSelect, 1107, 0.000287
-quickSelect, 1107, 0.000019
-heapSelect, 1107, 0.000100
-medianMediansSelect, 1107, 0.000405
-quickSelect, 1107, 0.000027
-heapSelect, 1107, 0.000072
-medianMediansSelect, 1107, 0.000381
-quickSelect, 1107, 0.000074
-heapSelect, 1107, 0.000070
-medianMediansSelect, 1107, 0.000331
-quickSelect, 1107, 0.000060
-heapSelect, 1107, 0.000071
-medianMediansSelect, 1107, 0.000582
-quickSelect, 1107, 0.000056
-heapSelect, 1107, 0.000068
-medianMediansSelect, 1107, 0.000368
-quickSelect, 1107, 0.000044
-heapSelect, 1107, 0.000074
-medianMediansSelect, 1107, 0.000421
-quickSelect, 1107, 0.000094
-heapSelect, 1107, 0.000060
-medianMediansSelect, 1107, 0.000296
-quickSelect, 1107, 0.000020
-heapSelect, 1107, 0.000111
-medianMediansSelect, 1107, 0.000409
-quickSelect, 1107, 0.000050
-heapSelect, 1107, 0.000066
-medianMediansSelect, 1107, 0.000596
-quickSelect, 1107, 0.000053
-heapSelect, 1107, 0.000116
-medianMediansSelect, 1107, 0.000388
-quickSelect, 1107, 0.000046
-heapSelect, 1107, 0.000084
-medianMediansSelect, 1107, 0.000401
-quickSelect, 1107, 0.000039
-heapSelect, 1107, 0.000077
-medianMediansSelect, 1107, 0.000393
-quickSelect, 1107, 0.000097
-heapSelect, 1107, 0.000068
-medianMediansSelect, 1107, 0.000283
-quickSelect, 1235, 0.000168
-heapSelect, 1235, 0.000070
-medianMediansSelect, 1235, 0.000336
-quickSelect, 1235, 0.000025
-heapSelect, 1235, 0.000093
-medianMediansSelect, 1235, 0.000494
-quickSelect, 1235, 0.000045
-heapSelect, 1235, 0.000090
-medianMediansSelect, 1235, 0.000543
-quickSelect, 1235, 0.000024
-heapSelect, 1235, 0.000125
-medianMediansSelect, 1235, 0.000543
-quickSelect, 1235, 0.000027
-heapSelect, 1235, 0.000105
-medianMediansSelect, 1235, 0.000439
-quickSelect, 1235, 0.000088
-heapSelect, 1235, 0.000092
-medianMediansSelect, 1235, 0.000447
-quickSelect, 1235, 0.000042
-heapSelect, 1235, 0.000121
-medianMediansSelect, 1235, 0.000346
-quickSelect, 1235, 0.000066
-heapSelect, 1235, 0.000081
-medianMediansSelect, 1235, 0.000410
-quickSelect, 1235, 0.000091
-heapSelect, 1235, 0.000074
-medianMediansSelect, 1235, 0.000391
-quickSelect, 1235, 0.000096
-heapSelect, 1235, 0.000073
-medianMediansSelect, 1235, 0.000592
-quickSelect, 1235, 0.000074
-heapSelect, 1235, 0.000072
-medianMediansSelect, 1235, 0.000393
-quickSelect, 1235, 0.000053
-heapSelect, 1235, 0.000078
-medianMediansSelect, 1235, 0.000425
-quickSelect, 1235, 0.000097
-heapSelect, 1235, 0.000074
-medianMediansSelect, 1235, 0.000408
-quickSelect, 1235, 0.000070
-heapSelect, 1235, 0.000069
-medianMediansSelect, 1235, 0.000387
-quickSelect, 1235, 0.000083
-heapSelect, 1235, 0.000080
-medianMediansSelect, 1235, 0.000362
-quickSelect, 1235, 0.000094
-heapSelect, 1235, 0.000112
-medianMediansSelect, 1235, 0.000425
-quickSelect, 1235, 0.000059
-heapSelect, 1235, 0.000078
-medianMediansSelect, 1235, 0.000377
-quickSelect, 1235, 0.000019
-heapSelect, 1235, 0.000118
-medianMediansSelect, 1235, 0.000480
-quickSelect, 1235, 0.000061
-heapSelect, 1235, 0.000070
-medianMediansSelect, 1235, 0.000368
-quickSelect, 1235, 0.000079
-heapSelect, 1235, 0.000076
-medianMediansSelect, 1235, 0.000370
-quickSelect, 1377, 0.000049
-heapSelect, 1377, 0.000106
-medianMediansSelect, 1377, 0.000558
-quickSelect, 1377, 0.000165
-heapSelect, 1377, 0.000127
-medianMediansSelect, 1377, 0.000524
-quickSelect, 1377, 0.000093
-heapSelect, 1377, 0.000134
-medianMediansSelect, 1377, 0.000490
-quickSelect, 1377, 0.000041
-heapSelect, 1377, 0.000134
-medianMediansSelect, 1377, 0.000610
-quickSelect, 1377, 0.000070
-heapSelect, 1377, 0.000155
-medianMediansSelect, 1377, 0.000574
-quickSelect, 1377, 0.000182
-heapSelect, 1377, 0.000109
-medianMediansSelect, 1377, 0.000461
-quickSelect, 1377, 0.000066
-heapSelect, 1377, 0.000107
-medianMediansSelect, 1377, 0.000726
-quickSelect, 1377, 0.000155
-heapSelect, 1377, 0.000090
-medianMediansSelect, 1377, 0.000434
-quickSelect, 1377, 0.000073
-heapSelect, 1377, 0.000083
-medianMediansSelect, 1377, 0.000486
-quickSelect, 1377, 0.000122
-heapSelect, 1377, 0.000073
-medianMediansSelect, 1377, 0.000389
-quickSelect, 1377, 0.000045
-heapSelect, 1377, 0.000135
-medianMediansSelect, 1377, 0.000757
-quickSelect, 1377, 0.000072
-heapSelect, 1377, 0.000119
-medianMediansSelect, 1377, 0.000520
-quickSelect, 1377, 0.000044
-heapSelect, 1377, 0.000090
-medianMediansSelect, 1377, 0.000468
-quickSelect, 1377, 0.000050
-heapSelect, 1377, 0.000125
-medianMediansSelect, 1377, 0.000481
-quickSelect, 1377, 0.000079
-heapSelect, 1377, 0.000092
-medianMediansSelect, 1377, 0.000447
-quickSelect, 1377, 0.000076
-heapSelect, 1377, 0.000090
-medianMediansSelect, 1377, 0.000505
-quickSelect, 1377, 0.000073
-heapSelect, 1377, 0.000080
-medianMediansSelect, 1377, 0.000434
-quickSelect, 1377, 0.000025
-heapSelect, 1377, 0.000106
-medianMediansSelect, 1377, 0.000544
-quickSelect, 1377, 0.000166
-heapSelect, 1377, 0.000090
-medianMediansSelect, 1377, 0.000511
-quickSelect, 1377, 0.000051
-heapSelect, 1377, 0.000088
-medianMediansSelect, 1377, 0.000451
-quickSelect, 1536, 0.000027
-heapSelect, 1536, 0.000151
-medianMediansSelect, 1536, 0.000668
-quickSelect, 1536, 0.000043
-heapSelect, 1536, 0.000117
-medianMediansSelect, 1536, 0.000526
-quickSelect, 1536, 0.000031
-heapSelect, 1536, 0.000136
-medianMediansSelect, 1536, 0.000633
-quickSelect, 1536, 0.000029
-heapSelect, 1536, 0.000121
-medianMediansSelect, 1536, 0.000627
-quickSelect, 1536, 0.000035
-heapSelect, 1536, 0.000171
-medianMediansSelect, 1536, 0.000716
-quickSelect, 1536, 0.000047
-heapSelect, 1536, 0.000103
-medianMediansSelect, 1536, 0.000646
-quickSelect, 1536, 0.000028
-heapSelect, 1536, 0.000119
-medianMediansSelect, 1536, 0.000746
-quickSelect, 1536, 0.000111
-heapSelect, 1536, 0.000115
-medianMediansSelect, 1536, 0.000464
-quickSelect, 1536, 0.000052
-heapSelect, 1536, 0.000150
-medianMediansSelect, 1536, 0.000934
-quickSelect, 1536, 0.000023
-heapSelect, 1536, 0.000150
-medianMediansSelect, 1536, 0.000660
-quickSelect, 1536, 0.000075
-heapSelect, 1536, 0.000096
-medianMediansSelect, 1536, 0.000584
-quickSelect, 1536, 0.000053
-heapSelect, 1536, 0.000094
-medianMediansSelect, 1536, 0.000569
-quickSelect, 1536, 0.000043
-heapSelect, 1536, 0.000107
-medianMediansSelect, 1536, 0.000648
-quickSelect, 1536, 0.000068
-heapSelect, 1536, 0.000091
-medianMediansSelect, 1536, 0.000577
-quickSelect, 1536, 0.000065
-heapSelect, 1536, 0.000092
-medianMediansSelect, 1536, 0.000573
-quickSelect, 1536, 0.000040
-heapSelect, 1536, 0.000113
-medianMediansSelect, 1536, 0.000640
-quickSelect, 1536, 0.000054
-heapSelect, 1536, 0.000094
-medianMediansSelect, 1536, 0.000574
-quickSelect, 1536, 0.000042
-heapSelect, 1536, 0.000099
-medianMediansSelect, 1536, 0.000719
-quickSelect, 1536, 0.000023
-heapSelect, 1536, 0.000153
-medianMediansSelect, 1536, 0.000724
-quickSelect, 1536, 0.000038
-heapSelect, 1536, 0.000128
-medianMediansSelect, 1536, 0.000846
-quickSelect, 1714, 0.000125
-heapSelect, 1714, 0.000126
-medianMediansSelect, 1714, 0.000604
-quickSelect, 1714, 0.000072
-heapSelect, 1714, 0.000158
-medianMediansSelect, 1714, 0.000666
-quickSelect, 1714, 0.000070
-heapSelect, 1714, 0.000137
-medianMediansSelect, 1714, 0.000650
-quickSelect, 1714, 0.000095
-heapSelect, 1714, 0.000129
-medianMediansSelect, 1714, 0.000698
-quickSelect, 1714, 0.000075
-heapSelect, 1714, 0.000113
-medianMediansSelect, 1714, 0.000694
-quickSelect, 1714, 0.000199
-heapSelect, 1714, 0.000134
-medianMediansSelect, 1714, 0.000697
-quickSelect, 1714, 0.000162
-heapSelect, 1714, 0.000088
-medianMediansSelect, 1714, 0.000538
-quickSelect, 1714, 0.000166
-heapSelect, 1714, 0.000119
-medianMediansSelect, 1714, 0.000719
-quickSelect, 1714, 0.000032
-heapSelect, 1714, 0.000162
-medianMediansSelect, 1714, 0.000845
-quickSelect, 1714, 0.000170
-heapSelect, 1714, 0.000093
-medianMediansSelect, 1714, 0.000520
-quickSelect, 1714, 0.000078
-heapSelect, 1714, 0.000124
-medianMediansSelect, 1714, 0.000647
-quickSelect, 1714, 0.000134
-heapSelect, 1714, 0.000095
-medianMediansSelect, 1714, 0.000518
-quickSelect, 1714, 0.000124
-heapSelect, 1714, 0.000092
-medianMediansSelect, 1714, 0.000508
-quickSelect, 1714, 0.000049
-heapSelect, 1714, 0.000122
-medianMediansSelect, 1714, 0.000746
-quickSelect, 1714, 0.000109
-heapSelect, 1714, 0.000091
-medianMediansSelect, 1714, 0.000511
-quickSelect, 1714, 0.000055
-heapSelect, 1714, 0.000140
-medianMediansSelect, 1714, 0.000746
-quickSelect, 1714, 0.000075
-heapSelect, 1714, 0.000106
-medianMediansSelect, 1714, 0.000701
-quickSelect, 1714, 0.000104
-heapSelect, 1714, 0.000131
-medianMediansSelect, 1714, 0.000559
-quickSelect, 1714, 0.000023
-heapSelect, 1714, 0.000181
-medianMediansSelect, 1714, 0.000933
-quickSelect, 1714, 0.000134
-heapSelect, 1714, 0.000140
-medianMediansSelect, 1714, 0.000746
-quickSelect, 1912, 0.000173
-heapSelect, 1912, 0.000153
-medianMediansSelect, 1912, 0.000696
-quickSelect, 1912, 0.000050
-heapSelect, 1912, 0.000149
-medianMediansSelect, 1912, 0.000846
-quickSelect, 1912, 0.000067
-heapSelect, 1912, 0.000140
-medianMediansSelect, 1912, 0.000838
-quickSelect, 1912, 0.000166
-heapSelect, 1912, 0.000132
-medianMediansSelect, 1912, 0.000658
-quickSelect, 1912, 0.000096
-heapSelect, 1912, 0.000211
-medianMediansSelect, 1912, 0.000966
-quickSelect, 1912, 0.000030
-heapSelect, 1912, 0.000213
-medianMediansSelect, 1912, 0.000913
-quickSelect, 1912, 0.000187
-heapSelect, 1912, 0.000127
-medianMediansSelect, 1912, 0.000591
-quickSelect, 1912, 0.000142
-heapSelect, 1912, 0.000110
-medianMediansSelect, 1912, 0.000635
-quickSelect, 1912, 0.000055
-heapSelect, 1912, 0.000134
-medianMediansSelect, 1912, 0.000769
-quickSelect, 1912, 0.000102
-heapSelect, 1912, 0.000115
-medianMediansSelect, 1912, 0.000776
-quickSelect, 1912, 0.000243
-heapSelect, 1912, 0.000097
-medianMediansSelect, 1912, 0.000574
-quickSelect, 1912, 0.000133
-heapSelect, 1912, 0.000110
-medianMediansSelect, 1912, 0.000763
-quickSelect, 1912, 0.000071
-heapSelect, 1912, 0.000146
-medianMediansSelect, 1912, 0.000632
-quickSelect, 1912, 0.000095
-heapSelect, 1912, 0.000116
-medianMediansSelect, 1912, 0.000747
-quickSelect, 1912, 0.000065
-heapSelect, 1912, 0.000122
-medianMediansSelect, 1912, 0.000752
-quickSelect, 1912, 0.000175
-heapSelect, 1912, 0.000105
-medianMediansSelect, 1912, 0.000672
-quickSelect, 1912, 0.000153
-heapSelect, 1912, 0.000125
-medianMediansSelect, 1912, 0.000709
-quickSelect, 1912, 0.000056
-heapSelect, 1912, 0.000197
-medianMediansSelect, 1912, 0.001316
-quickSelect, 1912, 0.000055
-heapSelect, 1912, 0.000220
-medianMediansSelect, 1912, 0.001097
-quickSelect, 1912, 0.000045
-heapSelect, 1912, 0.000142
-medianMediansSelect, 1912, 0.000967
-quickSelect, 2133, 0.000116
-heapSelect, 2133, 0.000177
-medianMediansSelect, 2133, 0.001312
-quickSelect, 2133, 0.000173
-heapSelect, 2133, 0.000144
-medianMediansSelect, 2133, 0.000734
-quickSelect, 2133, 0.000098
-heapSelect, 2133, 0.000155
-medianMediansSelect, 2133, 0.001247
-quickSelect, 2133, 0.000133
-heapSelect, 2133, 0.000214
-medianMediansSelect, 2133, 0.001158
-quickSelect, 2133, 0.000029
-heapSelect, 2133, 0.000331
-medianMediansSelect, 2133, 0.001838
-quickSelect, 2133, 0.000158
-heapSelect, 2133, 0.000127
-medianMediansSelect, 2133, 0.000866
-quickSelect, 2133, 0.000097
-heapSelect, 2133, 0.000242
-medianMediansSelect, 2133, 0.001423
-quickSelect, 2133, 0.000193
-heapSelect, 2133, 0.000118
-medianMediansSelect, 2133, 0.000698
-quickSelect, 2133, 0.000088
-heapSelect, 2133, 0.000149
-medianMediansSelect, 2133, 0.001024
-quickSelect, 2133, 0.000158
-heapSelect, 2133, 0.000128
-medianMediansSelect, 2133, 0.000976
-quickSelect, 2133, 0.000211
-heapSelect, 2133, 0.000131
-medianMediansSelect, 2133, 0.000768
-quickSelect, 2133, 0.000052
-heapSelect, 2133, 0.000169
-medianMediansSelect, 2133, 0.001086
-quickSelect, 2133, 0.000066
-heapSelect, 2133, 0.000149
-medianMediansSelect, 2133, 0.000945
-quickSelect, 2133, 0.000067
-heapSelect, 2133, 0.000138
-medianMediansSelect, 2133, 0.000945
-quickSelect, 2133, 0.000112
-heapSelect, 2133, 0.000123
-medianMediansSelect, 2133, 0.000890
-quickSelect, 2133, 0.000033
-heapSelect, 2133, 0.000211
-medianMediansSelect, 2133, 0.001091
-quickSelect, 2133, 0.000057
-heapSelect, 2133, 0.000152
-medianMediansSelect, 2133, 0.000949
-quickSelect, 2133, 0.000181
-heapSelect, 2133, 0.000150
-medianMediansSelect, 2133, 0.000735
-quickSelect, 2133, 0.000034
-heapSelect, 2133, 0.000218
-medianMediansSelect, 2133, 0.001103
-quickSelect, 2133, 0.000111
-heapSelect, 2133, 0.000139
-medianMediansSelect, 2133, 0.000727
-quickSelect, 2379, 0.000186
-heapSelect, 2379, 0.000191
-medianMediansSelect, 2379, 0.001045
-quickSelect, 2379, 0.000192
-heapSelect, 2379, 0.000219
-medianMediansSelect, 2379, 0.001124
-quickSelect, 2379, 0.000031
-heapSelect, 2379, 0.000261
-medianMediansSelect, 2379, 0.001363
-quickSelect, 2379, 0.000091
-heapSelect, 2379, 0.000218
-medianMediansSelect, 2379, 0.001032
-quickSelect, 2379, 0.000041
-heapSelect, 2379, 0.000205
-medianMediansSelect, 2379, 0.001193
-quickSelect, 2379, 0.000192
-heapSelect, 2379, 0.000130
-medianMediansSelect, 2379, 0.001215
-quickSelect, 2379, 0.000123
-heapSelect, 2379, 0.000198
-medianMediansSelect, 2379, 0.001041
-quickSelect, 2379, 0.000075
-heapSelect, 2379, 0.000178
-medianMediansSelect, 2379, 0.001462
-quickSelect, 2379, 0.000224
-heapSelect, 2379, 0.000123
-medianMediansSelect, 2379, 0.000958
-quickSelect, 2379, 0.000177
-heapSelect, 2379, 0.000141
-medianMediansSelect, 2379, 0.000897
-quickSelect, 2379, 0.000081
-heapSelect, 2379, 0.000157
-medianMediansSelect, 2379, 0.001092
-quickSelect, 2379, 0.000104
-heapSelect, 2379, 0.000209
-medianMediansSelect, 2379, 0.001032
-quickSelect, 2379, 0.000039
-heapSelect, 2379, 0.000216
-medianMediansSelect, 2379, 0.001232
-quickSelect, 2379, 0.000171
-heapSelect, 2379, 0.000138
-medianMediansSelect, 2379, 0.000809
-quickSelect, 2379, 0.000123
-heapSelect, 2379, 0.000143
-medianMediansSelect, 2379, 0.000847
-quickSelect, 2379, 0.000178
-heapSelect, 2379, 0.000146
-medianMediansSelect, 2379, 0.000995
-quickSelect, 2379, 0.000122
-heapSelect, 2379, 0.000144
-medianMediansSelect, 2379, 0.001073
-quickSelect, 2379, 0.000194
-heapSelect, 2379, 0.000122
-medianMediansSelect, 2379, 0.000829
-quickSelect, 2379, 0.000073
-heapSelect, 2379, 0.000171
-medianMediansSelect, 2379, 0.001087
-quickSelect, 2379, 0.000136
-heapSelect, 2379, 0.000141
-medianMediansSelect, 2379, 0.001029
-quickSelect, 2654, 0.000278
-heapSelect, 2654, 0.000157
-medianMediansSelect, 2654, 0.001146
-quickSelect, 2654, 0.000271
-heapSelect, 2654, 0.000152
-medianMediansSelect, 2654, 0.001085
-quickSelect, 2654, 0.000109
-heapSelect, 2654, 0.000222
-medianMediansSelect, 2654, 0.002016
-quickSelect, 2654, 0.000139
-heapSelect, 2654, 0.000235
-medianMediansSelect, 2654, 0.001467
-quickSelect, 2654, 0.000196
-heapSelect, 2654, 0.000191
-medianMediansSelect, 2654, 0.001491
-quickSelect, 2654, 0.000066
-heapSelect, 2654, 0.000213
-medianMediansSelect, 2654, 0.001410
-quickSelect, 2654, 0.000252
-heapSelect, 2654, 0.000191
-medianMediansSelect, 2654, 0.001809
-quickSelect, 2654, 0.000120
-heapSelect, 2654, 0.000178
-medianMediansSelect, 2654, 0.001377
-quickSelect, 2654, 0.000098
-heapSelect, 2654, 0.000186
-medianMediansSelect, 2654, 0.001267
-quickSelect, 2654, 0.000322
-heapSelect, 2654, 0.000135
-medianMediansSelect, 2654, 0.001075
-quickSelect, 2654, 0.000113
-heapSelect, 2654, 0.000172
-medianMediansSelect, 2654, 0.001395
-quickSelect, 2654, 0.000188
-heapSelect, 2654, 0.000144
-medianMediansSelect, 2654, 0.000991
-quickSelect, 2654, 0.000226
-heapSelect, 2654, 0.000157
-medianMediansSelect, 2654, 0.001075
-quickSelect, 2654, 0.000105
-heapSelect, 2654, 0.000336
-medianMediansSelect, 2654, 0.001603
-quickSelect, 2654, 0.000187
-heapSelect, 2654, 0.000140
-medianMediansSelect, 2654, 0.000955
-quickSelect, 2654, 0.000109
-heapSelect, 2654, 0.000177
-medianMediansSelect, 2654, 0.001257
-quickSelect, 2654, 0.000066
-heapSelect, 2654, 0.000214
-medianMediansSelect, 2654, 0.001440
-quickSelect, 2654, 0.000043
-heapSelect, 2654, 0.000244
-medianMediansSelect, 2654, 0.001485
-quickSelect, 2654, 0.000302
-heapSelect, 2654, 0.000139
-medianMediansSelect, 2654, 0.000996
-quickSelect, 2654, 0.000188
-heapSelect, 2654, 0.000138
-medianMediansSelect, 2654, 0.000917
-quickSelect, 2960, 0.000227
-heapSelect, 2960, 0.000172
-medianMediansSelect, 2960, 0.001286
-quickSelect, 2960, 0.000206
-heapSelect, 2960, 0.000156
-medianMediansSelect, 2960, 0.001166
-quickSelect, 2960, 0.000263
-heapSelect, 2960, 0.000192
-medianMediansSelect, 2960, 0.001684
-quickSelect, 2960, 0.000208
-heapSelect, 2960, 0.000187
-medianMediansSelect, 2960, 0.001405
-quickSelect, 2960, 0.000324
-heapSelect, 2960, 0.000188
-medianMediansSelect, 2960, 0.001075
-quickSelect, 2960, 0.000195
-heapSelect, 2960, 0.000165
-medianMediansSelect, 2960, 0.001274
-quickSelect, 2960, 0.000144
-heapSelect, 2960, 0.000188
-medianMediansSelect, 2960, 0.001581
-quickSelect, 2960, 0.000069
-heapSelect, 2960, 0.000238
-medianMediansSelect, 2960, 0.001669
-quickSelect, 2960, 0.000178
-heapSelect, 2960, 0.000200
-medianMediansSelect, 2960, 0.001434
-quickSelect, 2960, 0.000360
-heapSelect, 2960, 0.000182
-medianMediansSelect, 2960, 0.001207
-quickSelect, 2960, 0.000130
-heapSelect, 2960, 0.000284
-medianMediansSelect, 2960, 0.002305
-quickSelect, 2960, 0.000307
-heapSelect, 2960, 0.000297
-medianMediansSelect, 2960, 0.001529
-quickSelect, 2960, 0.000114
-heapSelect, 2960, 0.000218
-medianMediansSelect, 2960, 0.001945
-quickSelect, 2960, 0.000149
-heapSelect, 2960, 0.000214
-medianMediansSelect, 2960, 0.001268
-quickSelect, 2960, 0.000136
-heapSelect, 2960, 0.000184
-medianMediansSelect, 2960, 0.001964
-quickSelect, 2960, 0.000227
-heapSelect, 2960, 0.000301
-medianMediansSelect, 2960, 0.001271
-quickSelect, 2960, 0.000156
-heapSelect, 2960, 0.000195
-medianMediansSelect, 2960, 0.001525
-quickSelect, 2960, 0.000247
-heapSelect, 2960, 0.000211
-medianMediansSelect, 2960, 0.001184
-quickSelect, 2960, 0.000208
-heapSelect, 2960, 0.000182
-medianMediansSelect, 2960, 0.001857
-quickSelect, 2960, 0.000096
-heapSelect, 2960, 0.000256
-medianMediansSelect, 2960, 0.002594
-quickSelect, 3302, 0.000454
-heapSelect, 3302, 0.000165
-medianMediansSelect, 3302, 0.001295
-quickSelect, 3302, 0.000227
-heapSelect, 3302, 0.000222
-medianMediansSelect, 3302, 0.001826
-quickSelect, 3302, 0.000079
-heapSelect, 3302, 0.000424
-medianMediansSelect, 3302, 0.002249
-quickSelect, 3302, 0.000303
-heapSelect, 3302, 0.000277
-medianMediansSelect, 3302, 0.001763
-quickSelect, 3302, 0.000184
-heapSelect, 3302, 0.000331
-medianMediansSelect, 3302, 0.003111
-quickSelect, 3302, 0.000618
-heapSelect, 3302, 0.000259
-medianMediansSelect, 3302, 0.001769
-quickSelect, 3302, 0.000208
-heapSelect, 3302, 0.000385
-medianMediansSelect, 3302, 0.003162
-quickSelect, 3302, 0.000366
-heapSelect, 3302, 0.000173
-medianMediansSelect, 3302, 0.001287
-quickSelect, 3302, 0.000229
-heapSelect, 3302, 0.000216
-medianMediansSelect, 3302, 0.002765
-quickSelect, 3302, 0.000314
-heapSelect, 3302, 0.000283
-medianMediansSelect, 3302, 0.001736
-quickSelect, 3302, 0.000145
-heapSelect, 3302, 0.000231
-medianMediansSelect, 3302, 0.002459
-quickSelect, 3302, 0.000140
-heapSelect, 3302, 0.000291
-medianMediansSelect, 3302, 0.001767
-quickSelect, 3302, 0.000175
-heapSelect, 3302, 0.000219
-medianMediansSelect, 3302, 0.001852
-quickSelect, 3302, 0.000053
-heapSelect, 3302, 0.000364
-medianMediansSelect, 3302, 0.002193
-quickSelect, 3302, 0.000294
-heapSelect, 3302, 0.000192
-medianMediansSelect, 3302, 0.001458
-quickSelect, 3302, 0.000201
-heapSelect, 3302, 0.000358
-medianMediansSelect, 3302, 0.002988
-quickSelect, 3302, 0.000256
-heapSelect, 3302, 0.000263
-medianMediansSelect, 3302, 0.001726
-quickSelect, 3302, 0.000104
-heapSelect, 3302, 0.000288
-medianMediansSelect, 3302, 0.002072
-quickSelect, 3302, 0.000216
-heapSelect, 3302, 0.000207
-medianMediansSelect, 3302, 0.001443
-quickSelect, 3302, 0.000188
-heapSelect, 3302, 0.000266
-medianMediansSelect, 3302, 0.001412
-quickSelect, 3684, 0.000440
-heapSelect, 3684, 0.000231
-medianMediansSelect, 3684, 0.001613
-quickSelect, 3684, 0.000388
-heapSelect, 3684, 0.000233
-medianMediansSelect, 3684, 0.001963
-quickSelect, 3684, 0.000428
-heapSelect, 3684, 0.000193
-medianMediansSelect, 3684, 0.002022
-quickSelect, 3684, 0.000459
-heapSelect, 3684, 0.000275
-medianMediansSelect, 3684, 0.001440
-quickSelect, 3684, 0.000060
-heapSelect, 3684, 0.000365
-medianMediansSelect, 3684, 0.003057
-quickSelect, 3684, 0.000191
-heapSelect, 3684, 0.000326
-medianMediansSelect, 3684, 0.003131
-quickSelect, 3684, 0.000384
-heapSelect, 3684, 0.000328
-medianMediansSelect, 3684, 0.002545
-quickSelect, 3684, 0.000412
-heapSelect, 3684, 0.000303
-medianMediansSelect, 3684, 0.002508
-quickSelect, 3684, 0.000151
-heapSelect, 3684, 0.000427
-medianMediansSelect, 3684, 0.002552
-quickSelect, 3684, 0.000181
-heapSelect, 3684, 0.000327
-medianMediansSelect, 3684, 0.003199
-quickSelect, 3684, 0.000350
-heapSelect, 3684, 0.000224
-medianMediansSelect, 3684, 0.001628
-quickSelect, 3684, 0.000198
-heapSelect, 3684, 0.000215
-medianMediansSelect, 3684, 0.001734
-quickSelect, 3684, 0.000198
-heapSelect, 3684, 0.000281
-medianMediansSelect, 3684, 0.002378
-quickSelect, 3684, 0.000186
-heapSelect, 3684, 0.000242
-medianMediansSelect, 3684, 0.002041
-quickSelect, 3684, 0.000269
-heapSelect, 3684, 0.000187
-medianMediansSelect, 3684, 0.001557
-quickSelect, 3684, 0.000077
-heapSelect, 3684, 0.000370
-medianMediansSelect, 3684, 0.002677
-quickSelect, 3684, 0.000354
-heapSelect, 3684, 0.000182
-medianMediansSelect, 3684, 0.001547
-quickSelect, 3684, 0.000196
-heapSelect, 3684, 0.000220
-medianMediansSelect, 3684, 0.001908
-quickSelect, 3684, 0.000083
-heapSelect, 3684, 0.000333
-medianMediansSelect, 3684, 0.002716
-quickSelect, 3684, 0.000302
-heapSelect, 3684, 0.000207
-medianMediansSelect, 3684, 0.001728
-quickSelect, 4109, 0.000187
-heapSelect, 4109, 0.000282
-medianMediansSelect, 4109, 0.002404
-quickSelect, 4109, 0.000112
-heapSelect, 4109, 0.000332
-medianMediansSelect, 4109, 0.002977
-quickSelect, 4109, 0.000077
-heapSelect, 4109, 0.000436
-medianMediansSelect, 4109, 0.003967
-quickSelect, 4109, 0.000203
-heapSelect, 4109, 0.000302
-medianMediansSelect, 4109, 0.002735
-quickSelect, 4109, 0.000178
-heapSelect, 4109, 0.000293
-medianMediansSelect, 4109, 0.002663
-quickSelect, 4109, 0.000303
-heapSelect, 4109, 0.000242
-medianMediansSelect, 4109, 0.001958
-quickSelect, 4109, 0.000211
-heapSelect, 4109, 0.000274
-medianMediansSelect, 4109, 0.002626
-quickSelect, 4109, 0.000167
-heapSelect, 4109, 0.000284
-medianMediansSelect, 4109, 0.002528
-quickSelect, 4109, 0.000162
-heapSelect, 4109, 0.000371
-medianMediansSelect, 4109, 0.002366
-quickSelect, 4109, 0.000317
-heapSelect, 4109, 0.000214
-medianMediansSelect, 4109, 0.001952
-quickSelect, 4109, 0.000212
-heapSelect, 4109, 0.000250
-medianMediansSelect, 4109, 0.002422
-quickSelect, 4109, 0.000400
-heapSelect, 4109, 0.000203
-medianMediansSelect, 4109, 0.002059
-quickSelect, 4109, 0.000442
-heapSelect, 4109, 0.000207
-medianMediansSelect, 4109, 0.001592
-quickSelect, 4109, 0.000087
-heapSelect, 4109, 0.000348
-medianMediansSelect, 4109, 0.003029
-quickSelect, 4109, 0.000132
-heapSelect, 4109, 0.000306
-medianMediansSelect, 4109, 0.002567
-quickSelect, 4109, 0.000227
-heapSelect, 4109, 0.000418
-medianMediansSelect, 4109, 0.003265
-quickSelect, 4109, 0.000503
-heapSelect, 4109, 0.000277
-medianMediansSelect, 4109, 0.001889
-quickSelect, 4109, 0.000066
-heapSelect, 4109, 0.000403
-medianMediansSelect, 4109, 0.003230
-quickSelect, 4109, 0.000414
-heapSelect, 4109, 0.000233
-medianMediansSelect, 4109, 0.002240
-quickSelect, 4109, 0.000066
-heapSelect, 4109, 0.000389
-medianMediansSelect, 4109, 0.003137
-quickSelect, 4584, 0.000088
-heapSelect, 4584, 0.000417
-medianMediansSelect, 4584, 0.003568
-quickSelect, 4584, 0.000188
-heapSelect, 4584, 0.000313
-medianMediansSelect, 4584, 0.003102
-quickSelect, 4584, 0.000315
-heapSelect, 4584, 0.000362
-medianMediansSelect, 4584, 0.002433
-quickSelect, 4584, 0.000395
-heapSelect, 4584, 0.000278
-medianMediansSelect, 4584, 0.002736
-quickSelect, 4584, 0.000168
-heapSelect, 4584, 0.000339
-medianMediansSelect, 4584, 0.003517
-quickSelect, 4584, 0.000388
-heapSelect, 4584, 0.000326
-medianMediansSelect, 4584, 0.002415
-quickSelect, 4584, 0.000304
-heapSelect, 4584, 0.000324
-medianMediansSelect, 4584, 0.002625
-quickSelect, 4584, 0.000268
-heapSelect, 4584, 0.000274
-medianMediansSelect, 4584, 0.002331
-quickSelect, 4584, 0.000405
-heapSelect, 4584, 0.000249
-medianMediansSelect, 4584, 0.002100
-quickSelect, 4584, 0.000311
-heapSelect, 4584, 0.000260
-medianMediansSelect, 4584, 0.002313
-quickSelect, 4584, 0.000326
-heapSelect, 4584, 0.000231
-medianMediansSelect, 4584, 0.002291
-quickSelect, 4584, 0.000170
-heapSelect, 4584, 0.000314
-medianMediansSelect, 4584, 0.003233
-quickSelect, 4584, 0.000181
-heapSelect, 4584, 0.000326
-medianMediansSelect, 4584, 0.003437
-quickSelect, 4584, 0.000188
-heapSelect, 4584, 0.000320
-medianMediansSelect, 4584, 0.003267
-quickSelect, 4584, 0.000204
-heapSelect, 4584, 0.000384
-medianMediansSelect, 4584, 0.002777
-quickSelect, 4584, 0.000173
-heapSelect, 4584, 0.000341
-medianMediansSelect, 4584, 0.002848
-quickSelect, 4584, 0.000330
-heapSelect, 4584, 0.000294
-medianMediansSelect, 4584, 0.002980
-quickSelect, 4584, 0.000265
-heapSelect, 4584, 0.000270
-medianMediansSelect, 4584, 0.002453
-quickSelect, 4584, 0.000171
-heapSelect, 4584, 0.000306
-medianMediansSelect, 4584, 0.003150
-quickSelect, 4584, 0.000340
-heapSelect, 4584, 0.000233
-medianMediansSelect, 4584, 0.002293
-quickSelect, 5113, 0.000289
-heapSelect, 5113, 0.000365
-medianMediansSelect, 5113, 0.003286
-quickSelect, 5113, 0.000382
-heapSelect, 5113, 0.000279
-medianMediansSelect, 5113, 0.003111
-quickSelect, 5113, 0.000407
-heapSelect, 5113, 0.000370
-medianMediansSelect, 5113, 0.004672
-quickSelect, 5113, 0.000134
-heapSelect, 5113, 0.000484
-medianMediansSelect, 5113, 0.005040
-quickSelect, 5113, 0.000528
-heapSelect, 5113, 0.000295
-medianMediansSelect, 5113, 0.002443
-quickSelect, 5113, 0.000268
-heapSelect, 5113, 0.000360
-medianMediansSelect, 5113, 0.002906
-quickSelect, 5113, 0.000373
-heapSelect, 5113, 0.000302
-medianMediansSelect, 5113, 0.002729
-quickSelect, 5113, 0.000347
-heapSelect, 5113, 0.000312
-medianMediansSelect, 5113, 0.002833
-quickSelect, 5113, 0.000115
-heapSelect, 5113, 0.000445
-medianMediansSelect, 5113, 0.004348
-quickSelect, 5113, 0.000321
-heapSelect, 5113, 0.000297
-medianMediansSelect, 5113, 0.002938
-quickSelect, 5113, 0.000411
-heapSelect, 5113, 0.000283
-medianMediansSelect, 5113, 0.002886
-quickSelect, 5113, 0.000218
-heapSelect, 5113, 0.000355
-medianMediansSelect, 5113, 0.003863
-quickSelect, 5113, 0.000448
-heapSelect, 5113, 0.000260
-medianMediansSelect, 5113, 0.002651
-quickSelect, 5113, 0.000066
-heapSelect, 5113, 0.000566
-medianMediansSelect, 5113, 0.004911
-quickSelect, 5113, 0.000265
-heapSelect, 5113, 0.000408
-medianMediansSelect, 5113, 0.003954
-quickSelect, 5113, 0.000165
-heapSelect, 5113, 0.000388
-medianMediansSelect, 5113, 0.004277
-quickSelect, 5113, 0.000273
-heapSelect, 5113, 0.000342
-medianMediansSelect, 5113, 0.003028
-quickSelect, 5113, 0.000344
-heapSelect, 5113, 0.000289
-medianMediansSelect, 5113, 0.003089
-quickSelect, 5113, 0.000073
-heapSelect, 5113, 0.000521
-medianMediansSelect, 5113, 0.004713
-quickSelect, 5113, 0.000624
-heapSelect, 5113, 0.000306
-medianMediansSelect, 5113, 0.002575
-quickSelect, 5704, 0.000431
-heapSelect, 5704, 0.000315
-medianMediansSelect, 5704, 0.003428
-quickSelect, 5704, 0.000235
-heapSelect, 5704, 0.000465
-medianMediansSelect, 5704, 0.005239
-quickSelect, 5704, 0.000459
-heapSelect, 5704, 0.000389
-medianMediansSelect, 5704, 0.004559
-quickSelect, 5704, 0.000080
-heapSelect, 5704, 0.000642
-medianMediansSelect, 5704, 0.008045
-quickSelect, 5704, 0.000190
-heapSelect, 5704, 0.000625
-medianMediansSelect, 5704, 0.007975
-quickSelect, 5704, 0.000695
-heapSelect, 5704, 0.000468
-medianMediansSelect, 5704, 0.005078
-quickSelect, 5704, 0.000452
-heapSelect, 5704, 0.000329
-medianMediansSelect, 5704, 0.003425
-quickSelect, 5704, 0.000173
-heapSelect, 5704, 0.000453
-medianMediansSelect, 5704, 0.005651
-quickSelect, 5704, 0.000435
-heapSelect, 5704, 0.000415
-medianMediansSelect, 5704, 0.003253
-quickSelect, 5704, 0.000500
-heapSelect, 5704, 0.000355
-medianMediansSelect, 5704, 0.004446
-quickSelect, 5704, 0.000161
-heapSelect, 5704, 0.000457
-medianMediansSelect, 5704, 0.005172
-quickSelect, 5704, 0.000228
-heapSelect, 5704, 0.000394
-medianMediansSelect, 5704, 0.004901
-quickSelect, 5704, 0.000239
-heapSelect, 5704, 0.000380
-medianMediansSelect, 5704, 0.004817
-quickSelect, 5704, 0.000247
-heapSelect, 5704, 0.000562
-medianMediansSelect, 5704, 0.005748
-quickSelect, 5704, 0.000483
-heapSelect, 5704, 0.000316
-medianMediansSelect, 5704, 0.002698
-quickSelect, 5704, 0.000275
-heapSelect, 5704, 0.000380
-medianMediansSelect, 5704, 0.003963
-quickSelect, 5704, 0.000449
-heapSelect, 5704, 0.000326
-medianMediansSelect, 5704, 0.003557
-quickSelect, 5704, 0.000414
-heapSelect, 5704, 0.000357
-medianMediansSelect, 5704, 0.003312
-quickSelect, 5704, 0.000118
-heapSelect, 5704, 0.000515
-medianMediansSelect, 5704, 0.005337
-quickSelect, 5704, 0.000076
-heapSelect, 5704, 0.000606
-medianMediansSelect, 5704, 0.005835
-quickSelect, 6362, 0.000263
-heapSelect, 6362, 0.000456
-medianMediansSelect, 6362, 0.005552
-quickSelect, 6362, 0.000303
-heapSelect, 6362, 0.000526
-medianMediansSelect, 6362, 0.006108
-quickSelect, 6362, 0.000156
-heapSelect, 6362, 0.000534
-medianMediansSelect, 6362, 0.007540
-quickSelect, 6362, 0.000211
-heapSelect, 6362, 0.000655
-medianMediansSelect, 6362, 0.008332
-quickSelect, 6362, 0.000595
-heapSelect, 6362, 0.000333
-medianMediansSelect, 6362, 0.003812
-quickSelect, 6362, 0.000325
-heapSelect, 6362, 0.000410
-medianMediansSelect, 6362, 0.005289
-quickSelect, 6362, 0.000321
-heapSelect, 6362, 0.000461
-medianMediansSelect, 6362, 0.004828
-quickSelect, 6362, 0.000449
-heapSelect, 6362, 0.000410
-medianMediansSelect, 6362, 0.004396
-quickSelect, 6362, 0.000293
-heapSelect, 6362, 0.000411
-medianMediansSelect, 6362, 0.005343
-quickSelect, 6362, 0.000570
-heapSelect, 6362, 0.000299
-medianMediansSelect, 6362, 0.003959
-quickSelect, 6362, 0.000504
-heapSelect, 6362, 0.000350
-medianMediansSelect, 6362, 0.004573
-quickSelect, 6362, 0.000145
-heapSelect, 6362, 0.000596
-medianMediansSelect, 6362, 0.006816
-quickSelect, 6362, 0.000233
-heapSelect, 6362, 0.000449
-medianMediansSelect, 6362, 0.005918
-quickSelect, 6362, 0.000500
-heapSelect, 6362, 0.000416
-medianMediansSelect, 6362, 0.004134
-quickSelect, 6362, 0.000364
-heapSelect, 6362, 0.000367
-medianMediansSelect, 6362, 0.004166
-quickSelect, 6362, 0.000298
-heapSelect, 6362, 0.000422
-medianMediansSelect, 6362, 0.005523
-quickSelect, 6362, 0.000426
-heapSelect, 6362, 0.000414
-medianMediansSelect, 6362, 0.003823
-quickSelect, 6362, 0.000766
-heapSelect, 6362, 0.000298
-medianMediansSelect, 6362, 0.003388
-quickSelect, 6362, 0.000392
-heapSelect, 6362, 0.000388
-medianMediansSelect, 6362, 0.004275
-quickSelect, 6362, 0.000239
-heapSelect, 6362, 0.000671
-medianMediansSelect, 6362, 0.005917
-quickSelect, 7097, 0.000491
-heapSelect, 7097, 0.000410
-medianMediansSelect, 7097, 0.005533
-quickSelect, 7097, 0.000617
-heapSelect, 7097, 0.000350
-medianMediansSelect, 7097, 0.005027
-quickSelect, 7097, 0.000339
-heapSelect, 7097, 0.000449
-medianMediansSelect, 7097, 0.007612
-quickSelect, 7097, 0.000191
-heapSelect, 7097, 0.000581
-medianMediansSelect, 7097, 0.008212
-quickSelect, 7097, 0.000255
-heapSelect, 7097, 0.000545
-medianMediansSelect, 7097, 0.007514
-quickSelect, 7097, 0.000301
-heapSelect, 7097, 0.000470
-medianMediansSelect, 7097, 0.006476
-quickSelect, 7097, 0.000299
-heapSelect, 7097, 0.000537
-medianMediansSelect, 7097, 0.007518
-quickSelect, 7097, 0.000662
-heapSelect, 7097, 0.000339
-medianMediansSelect, 7097, 0.004781
-quickSelect, 7097, 0.000391
-heapSelect, 7097, 0.000442
-medianMediansSelect, 7097, 0.006220
-quickSelect, 7097, 0.000248
-heapSelect, 7097, 0.000515
-medianMediansSelect, 7097, 0.007439
-quickSelect, 7097, 0.000296
-heapSelect, 7097, 0.000517
-medianMediansSelect, 7097, 0.006575
-quickSelect, 7097, 0.000173
-heapSelect, 7097, 0.000634
-medianMediansSelect, 7097, 0.007989
-quickSelect, 7097, 0.000659
-heapSelect, 7097, 0.000479
-medianMediansSelect, 7097, 0.004891
-quickSelect, 7097, 0.000572
-heapSelect, 7097, 0.000411
-medianMediansSelect, 7097, 0.005034
-quickSelect, 7097, 0.000288
-heapSelect, 7097, 0.000684
-medianMediansSelect, 7097, 0.007350
-quickSelect, 7097, 0.000496
-heapSelect, 7097, 0.000419
-medianMediansSelect, 7097, 0.004196
-quickSelect, 7097, 0.000678
-heapSelect, 7097, 0.000487
-medianMediansSelect, 7097, 0.004633
-quickSelect, 7097, 0.000220
-heapSelect, 7097, 0.000569
-medianMediansSelect, 7097, 0.007676
-quickSelect, 7097, 0.000386
-heapSelect, 7097, 0.000451
-medianMediansSelect, 7097, 0.003987
-quickSelect, 7097, 0.000395
-heapSelect, 7097, 0.000325
-medianMediansSelect, 7097, 0.004887
-quickSelect, 7917, 0.000232
-heapSelect, 7917, 0.000472
-medianMediansSelect, 7917, 0.007154
-quickSelect, 7917, 0.000417
-heapSelect, 7917, 0.000393
-medianMediansSelect, 7917, 0.004592
-quickSelect, 7917, 0.000542
-heapSelect, 7917, 0.000313
-medianMediansSelect, 7917, 0.004493
-quickSelect, 7917, 0.000504
-heapSelect, 7917, 0.000331
-medianMediansSelect, 7917, 0.004958
-quickSelect, 7917, 0.000266
-heapSelect, 7917, 0.000460
-medianMediansSelect, 7917, 0.005969
-quickSelect, 7917, 0.000580
-heapSelect, 7917, 0.000296
-medianMediansSelect, 7917, 0.004222
-quickSelect, 7917, 0.000288
-heapSelect, 7917, 0.000452
-medianMediansSelect, 7917, 0.006446
-quickSelect, 7917, 0.000190
-heapSelect, 7917, 0.000486
-medianMediansSelect, 7917, 0.007379
-quickSelect, 7917, 0.000360
-heapSelect, 7917, 0.000392
-medianMediansSelect, 7917, 0.005465
-quickSelect, 7917, 0.000593
-heapSelect, 7917, 0.000359
-medianMediansSelect, 7917, 0.004883
-quickSelect, 7917, 0.000590
-heapSelect, 7917, 0.000296
-medianMediansSelect, 7917, 0.004817
-quickSelect, 7917, 0.000278
-heapSelect, 7917, 0.000420
-medianMediansSelect, 7917, 0.006571
-quickSelect, 7917, 0.000308
-heapSelect, 7917, 0.000404
-medianMediansSelect, 7917, 0.006124
-quickSelect, 7917, 0.000386
-heapSelect, 7917, 0.000487
-medianMediansSelect, 7917, 0.006687
-quickSelect, 7917, 0.000418
-heapSelect, 7917, 0.000379
-medianMediansSelect, 7917, 0.004406
-quickSelect, 7917, 0.000509
-heapSelect, 7917, 0.000428
-medianMediansSelect, 7917, 0.006844
-quickSelect, 7917, 0.000494
-heapSelect, 7917, 0.000560
-medianMediansSelect, 7917, 0.007676
-quickSelect, 7917, 0.000332
-heapSelect, 7917, 0.000566
-medianMediansSelect, 7917, 0.008533
-quickSelect, 7917, 0.000644
-heapSelect, 7917, 0.000431
-medianMediansSelect, 7917, 0.005621
-quickSelect, 7917, 0.000358
-heapSelect, 7917, 0.000631
-medianMediansSelect, 7917, 0.006470
-quickSelect, 8831, 0.000609
-heapSelect, 8831, 0.000493
-medianMediansSelect, 8831, 0.008107
-quickSelect, 8831, 0.000468
-heapSelect, 8831, 0.000593
-medianMediansSelect, 8831, 0.011251
-quickSelect, 8831, 0.000542
-heapSelect, 8831, 0.000505
-medianMediansSelect, 8831, 0.009390
-quickSelect, 8831, 0.000843
-heapSelect, 8831, 0.000506
-medianMediansSelect, 8831, 0.006113
-quickSelect, 8831, 0.000570
-heapSelect, 8831, 0.000548
-medianMediansSelect, 8831, 0.008416
-quickSelect, 8831, 0.000326
-heapSelect, 8831, 0.000608
-medianMediansSelect, 8831, 0.010447
-quickSelect, 8831, 0.000585
-heapSelect, 8831, 0.000546
-medianMediansSelect, 8831, 0.008769
-quickSelect, 8831, 0.000672
-heapSelect, 8831, 0.000450
-medianMediansSelect, 8831, 0.006325
-quickSelect, 8831, 0.000566
-heapSelect, 8831, 0.000546
-medianMediansSelect, 8831, 0.009493
-quickSelect, 8831, 0.000802
-heapSelect, 8831, 0.000474
-medianMediansSelect, 8831, 0.005993
-quickSelect, 8831, 0.000515
-heapSelect, 8831, 0.000519
-medianMediansSelect, 8831, 0.008659
-quickSelect, 8831, 0.000456
-heapSelect, 8831, 0.000554
-medianMediansSelect, 8831, 0.009229
-quickSelect, 8831, 0.000457
-heapSelect, 8831, 0.000567
-medianMediansSelect, 8831, 0.008126
-quickSelect, 8831, 0.000196
-heapSelect, 8831, 0.000788
-medianMediansSelect, 8831, 0.011867
-quickSelect, 8831, 0.000360
-heapSelect, 8831, 0.000860
-medianMediansSelect, 8831, 0.010911
-quickSelect, 8831, 0.000156
-heapSelect, 8831, 0.000847
-medianMediansSelect, 8831, 0.012015
-quickSelect, 8831, 0.000460
-heapSelect, 8831, 0.000547
-medianMediansSelect, 8831, 0.007717
-quickSelect, 8831, 0.000518
-heapSelect, 8831, 0.000570
-medianMediansSelect, 8831, 0.006630
-quickSelect, 8831, 0.000634
-heapSelect, 8831, 0.000547
-medianMediansSelect, 8831, 0.007350
-quickSelect, 8831, 0.000406
-heapSelect, 8831, 0.000577
-medianMediansSelect, 8831, 0.009037
-quickSelect, 9851, 0.000408
-heapSelect, 9851, 0.000984
-medianMediansSelect, 9851, 0.015317
-quickSelect, 9851, 0.001150
-heapSelect, 9851, 0.000632
-medianMediansSelect, 9851, 0.009665
-quickSelect, 9851, 0.000600
-heapSelect, 9851, 0.000702
-medianMediansSelect, 9851, 0.011147
-quickSelect, 9851, 0.000548
-heapSelect, 9851, 0.000660
-medianMediansSelect, 9851, 0.012107
-quickSelect, 9851, 0.000892
-heapSelect, 9851, 0.000464
-medianMediansSelect, 9851, 0.007501
-quickSelect, 9851, 0.000139
-heapSelect, 9851, 0.001050
-medianMediansSelect, 9851, 0.016106
-quickSelect, 9851, 0.000571
-heapSelect, 9851, 0.000591
-medianMediansSelect, 9851, 0.011306
-quickSelect, 9851, 0.000539
-heapSelect, 9851, 0.000612
-medianMediansSelect, 9851, 0.008584
-quickSelect, 9851, 0.000201
-heapSelect, 9851, 0.000861
-medianMediansSelect, 9851, 0.014143
-quickSelect, 9851, 0.001029
-heapSelect, 9851, 0.000676
-medianMediansSelect, 9851, 0.007619
-quickSelect, 9851, 0.000986
-heapSelect, 9851, 0.000501
-medianMediansSelect, 9851, 0.007970
-quickSelect, 9851, 0.000354
-heapSelect, 9851, 0.000735
-medianMediansSelect, 9851, 0.011630
-quickSelect, 9851, 0.000566
-heapSelect, 9851, 0.000641
-medianMediansSelect, 9851, 0.008806
-quickSelect, 9851, 0.000394
-heapSelect, 9851, 0.000801
-medianMediansSelect, 9851, 0.013769
-quickSelect, 9851, 0.000566
-heapSelect, 9851, 0.000660
-medianMediansSelect, 9851, 0.009751
-quickSelect, 9851, 0.000585
-heapSelect, 9851, 0.000614
-medianMediansSelect, 9851, 0.008878
-quickSelect, 9851, 0.000635
-heapSelect, 9851, 0.000549
-medianMediansSelect, 9851, 0.008604
-quickSelect, 9851, 0.000550
-heapSelect, 9851, 0.000675
-medianMediansSelect, 9851, 0.010163
-quickSelect, 9851, 0.001077
-heapSelect, 9851, 0.000458
-medianMediansSelect, 9851, 0.006607
-quickSelect, 9851, 0.000846
-heapSelect, 9851, 0.000557
-medianMediansSelect, 9851, 0.007528
-quickSelect, 10989, 0.000628
-heapSelect, 10989, 0.000684
-medianMediansSelect, 10989, 0.013511
-quickSelect, 10989, 0.000654
-heapSelect, 10989, 0.000690
-medianMediansSelect, 10989, 0.012331
-quickSelect, 10989, 0.000679
-heapSelect, 10989, 0.000616
-medianMediansSelect, 10989, 0.010539
-quickSelect, 10989, 0.000407
-heapSelect, 10989, 0.000856
-medianMediansSelect, 10989, 0.017106
-quickSelect, 10989, 0.000941
-heapSelect, 10989, 0.000825
-medianMediansSelect, 10989, 0.009748
-quickSelect, 10989, 0.000923
-heapSelect, 10989, 0.000607
-medianMediansSelect, 10989, 0.012087
-quickSelect, 10989, 0.000651
-heapSelect, 10989, 0.000662
-medianMediansSelect, 10989, 0.010711
-quickSelect, 10989, 0.000166
-heapSelect, 10989, 0.001120
-medianMediansSelect, 10989, 0.019374
-quickSelect, 10989, 0.000732
-heapSelect, 10989, 0.000839
-medianMediansSelect, 10989, 0.010466
-quickSelect, 10989, 0.000664
-heapSelect, 10989, 0.000685
-medianMediansSelect, 10989, 0.010625
-quickSelect, 10989, 0.000609
-heapSelect, 10989, 0.000803
-medianMediansSelect, 10989, 0.012597
-quickSelect, 10989, 0.000696
-heapSelect, 10989, 0.000656
-medianMediansSelect, 10989, 0.011246
-quickSelect, 10989, 0.000868
-heapSelect, 10989, 0.000697
-medianMediansSelect, 10989, 0.009916
-quickSelect, 10989, 0.000543
-heapSelect, 10989, 0.000698
-medianMediansSelect, 10989, 0.013514
-quickSelect, 10989, 0.000557
-heapSelect, 10989, 0.000700
-medianMediansSelect, 10989, 0.014056
-quickSelect, 10989, 0.000610
-heapSelect, 10989, 0.000686
-medianMediansSelect, 10989, 0.013940
-quickSelect, 10989, 0.000304
-heapSelect, 10989, 0.000919
-medianMediansSelect, 10989, 0.017257
-quickSelect, 10989, 0.000338
-heapSelect, 10989, 0.000851
-medianMediansSelect, 10989, 0.016256
-quickSelect, 10989, 0.000812
-heapSelect, 10989, 0.000612
-medianMediansSelect, 10989, 0.012810
-quickSelect, 10989, 0.001283
-heapSelect, 10989, 0.000536
-medianMediansSelect, 10989, 0.007708
-quickSelect, 12258, 0.000397
-heapSelect, 12258, 0.000951
-medianMediansSelect, 12258, 0.021086
-quickSelect, 12258, 0.000627
-heapSelect, 12258, 0.000769
-medianMediansSelect, 12258, 0.019107
-quickSelect, 12258, 0.000450
-heapSelect, 12258, 0.000970
-medianMediansSelect, 12258, 0.020596
-quickSelect, 12258, 0.000375
-heapSelect, 12258, 0.000960
-medianMediansSelect, 12258, 0.019773
-quickSelect, 12258, 0.001184
-heapSelect, 12258, 0.000663
-medianMediansSelect, 12258, 0.011880
-quickSelect, 12258, 0.000946
-heapSelect, 12258, 0.000651
-medianMediansSelect, 12258, 0.012326
-quickSelect, 12258, 0.000966
-heapSelect, 12258, 0.000643
-medianMediansSelect, 12258, 0.011482
-quickSelect, 12258, 0.000148
-heapSelect, 12258, 0.001339
-medianMediansSelect, 12258, 0.024071
-quickSelect, 12258, 0.000925
-heapSelect, 12258, 0.000746
-medianMediansSelect, 12258, 0.012034
-quickSelect, 12258, 0.000901
-heapSelect, 12258, 0.000629
-medianMediansSelect, 12258, 0.012087
-quickSelect, 12258, 0.000555
-heapSelect, 12258, 0.000819
-medianMediansSelect, 12258, 0.017335
-quickSelect, 12258, 0.000356
-heapSelect, 12258, 0.000696
-medianMediansSelect, 12258, 0.014538
-quickSelect, 12258, 0.001073
-heapSelect, 12258, 0.000472
-medianMediansSelect, 12258, 0.009280
-quickSelect, 12258, 0.000521
-heapSelect, 12258, 0.000707
-medianMediansSelect, 12258, 0.011909
-quickSelect, 12258, 0.000388
-heapSelect, 12258, 0.000715
-medianMediansSelect, 12258, 0.013409
-quickSelect, 12258, 0.000609
-heapSelect, 12258, 0.000770
-medianMediansSelect, 12258, 0.010726
-quickSelect, 12258, 0.000364
-heapSelect, 12258, 0.000755
-medianMediansSelect, 12258, 0.016398
-quickSelect, 12258, 0.000762
-heapSelect, 12258, 0.000701
-medianMediansSelect, 12258, 0.010738
-quickSelect, 12258, 0.000811
-heapSelect, 12258, 0.000535
-medianMediansSelect, 12258, 0.010330
-quickSelect, 12258, 0.000491
-heapSelect, 12258, 0.000628
-medianMediansSelect, 12258, 0.013956
-quickSelect, 13673, 0.000316
-heapSelect, 13673, 0.000896
-medianMediansSelect, 13673, 0.020140
-quickSelect, 13673, 0.000552
-heapSelect, 13673, 0.000835
-medianMediansSelect, 13673, 0.015933
-quickSelect, 13673, 0.000863
-heapSelect, 13673, 0.000640
-medianMediansSelect, 13673, 0.012977
-quickSelect, 13673, 0.000384
-heapSelect, 13673, 0.000801
-medianMediansSelect, 13673, 0.019338
-quickSelect, 13673, 0.000652
-heapSelect, 13673, 0.000641
-medianMediansSelect, 13673, 0.016884
-quickSelect, 13673, 0.000855
-heapSelect, 13673, 0.000640
-medianMediansSelect, 13673, 0.013835
-quickSelect, 13673, 0.000269
-heapSelect, 13673, 0.000997
-medianMediansSelect, 13673, 0.020732
-quickSelect, 13673, 0.000354
-heapSelect, 13673, 0.000805
-medianMediansSelect, 13673, 0.019247
-quickSelect, 13673, 0.000745
-heapSelect, 13673, 0.000650
-medianMediansSelect, 13673, 0.012170
-quickSelect, 13673, 0.000577
-heapSelect, 13673, 0.001030
-medianMediansSelect, 13673, 0.026072
-quickSelect, 13673, 0.000541
-heapSelect, 13673, 0.000980
-medianMediansSelect, 13673, 0.024237
-quickSelect, 13673, 0.001180
-heapSelect, 13673, 0.000884
-medianMediansSelect, 13673, 0.017056
-quickSelect, 13673, 0.001093
-heapSelect, 13673, 0.001045
-medianMediansSelect, 13673, 0.021244
-quickSelect, 13673, 0.000219
-heapSelect, 13673, 0.001791
-medianMediansSelect, 13673, 0.030052
-quickSelect, 13673, 0.001378
-heapSelect, 13673, 0.000683
-medianMediansSelect, 13673, 0.013701
-quickSelect, 13673, 0.000893
-heapSelect, 13673, 0.000833
-medianMediansSelect, 13673, 0.019064
-quickSelect, 13673, 0.000499
-heapSelect, 13673, 0.001080
-medianMediansSelect, 13673, 0.025054
-quickSelect, 13673, 0.001090
-heapSelect, 13673, 0.000760
-medianMediansSelect, 13673, 0.013883
-quickSelect, 13673, 0.000182
-heapSelect, 13673, 0.001520
-medianMediansSelect, 13673, 0.030557
-quickSelect, 13673, 0.000635
-heapSelect, 13673, 0.000930
-medianMediansSelect, 13673, 0.023946
-quickSelect, 15253, 0.000777
-heapSelect, 15253, 0.000978
-medianMediansSelect, 15253, 0.023540
-quickSelect, 15253, 0.000296
-heapSelect, 15253, 0.001432
-medianMediansSelect, 15253, 0.034646
-quickSelect, 15253, 0.001187
-heapSelect, 15253, 0.000830
-medianMediansSelect, 15253, 0.018747
-quickSelect, 15253, 0.001228
-heapSelect, 15253, 0.000745
-medianMediansSelect, 15253, 0.017731
-quickSelect, 15253, 0.001675
-heapSelect, 15253, 0.000747
-medianMediansSelect, 15253, 0.018027
-quickSelect, 15253, 0.000602
-heapSelect, 15253, 0.001072
-medianMediansSelect, 15253, 0.027670
-quickSelect, 15253, 0.000911
-heapSelect, 15253, 0.000884
-medianMediansSelect, 15253, 0.024551
-quickSelect, 15253, 0.001044
-heapSelect, 15253, 0.000871
-medianMediansSelect, 15253, 0.019970
-quickSelect, 15253, 0.001010
-heapSelect, 15253, 0.000841
-medianMediansSelect, 15253, 0.018203
-quickSelect, 15253, 0.001081
-heapSelect, 15253, 0.000837
-medianMediansSelect, 15253, 0.020927
-quickSelect, 15253, 0.001367
-heapSelect, 15253, 0.000706
-medianMediansSelect, 15253, 0.016886
-quickSelect, 15253, 0.001472
-heapSelect, 15253, 0.000717
-medianMediansSelect, 15253, 0.018312
-quickSelect, 15253, 0.001875
-heapSelect, 15253, 0.000799
-medianMediansSelect, 15253, 0.015779
-quickSelect, 15253, 0.001265
-heapSelect, 15253, 0.000766
-medianMediansSelect, 15253, 0.018686
-quickSelect, 15253, 0.001362
-heapSelect, 15253, 0.000912
-medianMediansSelect, 15253, 0.018510
-quickSelect, 15253, 0.001088
-heapSelect, 15253, 0.000952
-medianMediansSelect, 15253, 0.020604
-quickSelect, 15253, 0.001235
-heapSelect, 15253, 0.000842
-medianMediansSelect, 15253, 0.020752
-quickSelect, 15253, 0.000625
-heapSelect, 15253, 0.001050
-medianMediansSelect, 15253, 0.030931
-quickSelect, 15253, 0.000903
-heapSelect, 15253, 0.001007
-medianMediansSelect, 15253, 0.025267
-quickSelect, 15253, 0.001282
-heapSelect, 15253, 0.000961
-medianMediansSelect, 15253, 0.019513
-quickSelect, 17014, 0.001857
-heapSelect, 17014, 0.001116
-medianMediansSelect, 17014, 0.026468
-quickSelect, 17014, 0.000598
-heapSelect, 17014, 0.001324
-medianMediansSelect, 17014, 0.038648
-quickSelect, 17014, 0.002550
-heapSelect, 17014, 0.000769
-medianMediansSelect, 17014, 0.021698
-quickSelect, 17014, 0.000957
-heapSelect, 17014, 0.001143
-medianMediansSelect, 17014, 0.027473
-quickSelect, 17014, 0.000522
-heapSelect, 17014, 0.001348
-medianMediansSelect, 17014, 0.043522
-quickSelect, 17014, 0.001280
-heapSelect, 17014, 0.000952
-medianMediansSelect, 17014, 0.023174
-quickSelect, 17014, 0.000283
-heapSelect, 17014, 0.001622
-medianMediansSelect, 17014, 0.044491
-quickSelect, 17014, 0.001690
-heapSelect, 17014, 0.000797
-medianMediansSelect, 17014, 0.018711
-quickSelect, 17014, 0.001068
-heapSelect, 17014, 0.001064
-medianMediansSelect, 17014, 0.028137
-quickSelect, 17014, 0.001484
-heapSelect, 17014, 0.000984
-medianMediansSelect, 17014, 0.019802
-quickSelect, 17014, 0.001165
-heapSelect, 17014, 0.000968
-medianMediansSelect, 17014, 0.023707
-quickSelect, 17014, 0.001747
-heapSelect, 17014, 0.000840
-medianMediansSelect, 17014, 0.020360
-quickSelect, 17014, 0.001530
-heapSelect, 17014, 0.000797
-medianMediansSelect, 17014, 0.021455
-quickSelect, 17014, 0.001202
-heapSelect, 17014, 0.001031
-medianMediansSelect, 17014, 0.025561
-quickSelect, 17014, 0.001359
-heapSelect, 17014, 0.000867
-medianMediansSelect, 17014, 0.023407
-quickSelect, 17014, 0.001467
-heapSelect, 17014, 0.001029
-medianMediansSelect, 17014, 0.021199
-quickSelect, 17014, 0.000605
-heapSelect, 17014, 0.001237
-medianMediansSelect, 17014, 0.037567
-quickSelect, 17014, 0.000243
-heapSelect, 17014, 0.001744
-medianMediansSelect, 17014, 0.049032
-quickSelect, 17014, 0.001615
-heapSelect, 17014, 0.001427
-medianMediansSelect, 17014, 0.022858
-quickSelect, 17014, 0.001387
-heapSelect, 17014, 0.001111
-medianMediansSelect, 17014, 0.023434
-quickSelect, 18979, 0.001396
-heapSelect, 18979, 0.001248
-medianMediansSelect, 18979, 0.029269
-quickSelect, 18979, 0.001502
-heapSelect, 18979, 0.001142
-medianMediansSelect, 18979, 0.028377
-quickSelect, 18979, 0.001909
-heapSelect, 18979, 0.000874
-medianMediansSelect, 18979, 0.025364
-quickSelect, 18979, 0.000225
-heapSelect, 18979, 0.002122
-medianMediansSelect, 18979, 0.057268
-quickSelect, 18979, 0.001359
-heapSelect, 18979, 0.001185
-medianMediansSelect, 18979, 0.037415
-quickSelect, 18979, 0.001133
-heapSelect, 18979, 0.001206
-medianMediansSelect, 18979, 0.033789
-quickSelect, 18979, 0.000557
-heapSelect, 18979, 0.001472
-medianMediansSelect, 18979, 0.046767
-quickSelect, 18979, 0.001108
-heapSelect, 18979, 0.001101
-medianMediansSelect, 18979, 0.030057
-quickSelect, 18979, 0.000527
-heapSelect, 18979, 0.001550
-medianMediansSelect, 18979, 0.049208
-quickSelect, 18979, 0.001489
-heapSelect, 18979, 0.001148
-medianMediansSelect, 18979, 0.027690
-quickSelect, 18979, 0.000964
-heapSelect, 18979, 0.001240
-medianMediansSelect, 18979, 0.035262
-quickSelect, 18979, 0.000641
-heapSelect, 18979, 0.001475
-medianMediansSelect, 18979, 0.042165
-quickSelect, 18979, 0.000860
-heapSelect, 18979, 0.001314
-medianMediansSelect, 18979, 0.045065
-quickSelect, 18979, 0.002209
-heapSelect, 18979, 0.000961
-medianMediansSelect, 18979, 0.022635
-quickSelect, 18979, 0.001027
-heapSelect, 18979, 0.001208
-medianMediansSelect, 18979, 0.029492
-quickSelect, 18979, 0.000634
-heapSelect, 18979, 0.001461
-medianMediansSelect, 18979, 0.045636
-quickSelect, 18979, 0.001287
-heapSelect, 18979, 0.000722
-medianMediansSelect, 18979, 0.021648
-quickSelect, 18979, 0.000619
-heapSelect, 18979, 0.001011
-medianMediansSelect, 18979, 0.032581
-quickSelect, 18979, 0.001030
-heapSelect, 18979, 0.000963
-medianMediansSelect, 18979, 0.025678
-quickSelect, 18979, 0.001612
-heapSelect, 18979, 0.000681
-medianMediansSelect, 18979, 0.019109
-quickSelect, 21171, 0.001296
-heapSelect, 21171, 0.000989
-medianMediansSelect, 21171, 0.028229
-quickSelect, 21171, 0.000378
-heapSelect, 21171, 0.001637
-medianMediansSelect, 21171, 0.052157
-quickSelect, 21171, 0.000860
-heapSelect, 21171, 0.001049
-medianMediansSelect, 21171, 0.039882
-quickSelect, 21171, 0.001487
-heapSelect, 21171, 0.000875
-medianMediansSelect, 21171, 0.025352
-quickSelect, 21171, 0.001194
-heapSelect, 21171, 0.000950
-medianMediansSelect, 21171, 0.028490
-quickSelect, 21171, 0.001534
-heapSelect, 21171, 0.000916
-medianMediansSelect, 21171, 0.024648
-quickSelect, 21171, 0.000954
-heapSelect, 21171, 0.001057
-medianMediansSelect, 21171, 0.041828
-quickSelect, 21171, 0.000595
-heapSelect, 21171, 0.001708
-medianMediansSelect, 21171, 0.056592
-quickSelect, 21171, 0.000524
-heapSelect, 21171, 0.001869
-medianMediansSelect, 21171, 0.061239
-quickSelect, 21171, 0.000677
-heapSelect, 21171, 0.001599
-medianMediansSelect, 21171, 0.057788
-quickSelect, 21171, 0.002486
-heapSelect, 21171, 0.001131
-medianMediansSelect, 21171, 0.029537
-quickSelect, 21171, 0.001161
-heapSelect, 21171, 0.001482
-medianMediansSelect, 21171, 0.038411
-quickSelect, 21171, 0.001377
-heapSelect, 21171, 0.001394
-medianMediansSelect, 21171, 0.044138
-quickSelect, 21171, 0.001671
-heapSelect, 21171, 0.001175
-medianMediansSelect, 21171, 0.036770
-quickSelect, 21171, 0.001060
-heapSelect, 21171, 0.001345
-medianMediansSelect, 21171, 0.056898
-quickSelect, 21171, 0.002099
-heapSelect, 21171, 0.001155
-medianMediansSelect, 21171, 0.044343
-quickSelect, 21171, 0.000761
-heapSelect, 21171, 0.002552
-medianMediansSelect, 21171, 0.072348
-quickSelect, 21171, 0.001265
-heapSelect, 21171, 0.001281
-medianMediansSelect, 21171, 0.047013
-quickSelect, 21171, 0.001685
-heapSelect, 21171, 0.001011
-medianMediansSelect, 21171, 0.032758
-quickSelect, 21171, 0.000969
-heapSelect, 21171, 0.001791
-medianMediansSelect, 21171, 0.046441
-quickSelect, 23616, 0.001501
-heapSelect, 23616, 0.001824
-medianMediansSelect, 23616, 0.059171
-quickSelect, 23616, 0.001005
-heapSelect, 23616, 0.002055
-medianMediansSelect, 23616, 0.067793
-quickSelect, 23616, 0.001147
-heapSelect, 23616, 0.001652
-medianMediansSelect, 23616, 0.066132
-quickSelect, 23616, 0.002045
-heapSelect, 23616, 0.001366
-medianMediansSelect, 23616, 0.045183
-quickSelect, 23616, 0.001302
-heapSelect, 23616, 0.001544
-medianMediansSelect, 23616, 0.060718
-quickSelect, 23616, 0.001925
-heapSelect, 23616, 0.001210
-medianMediansSelect, 23616, 0.039673
-quickSelect, 23616, 0.001349
-heapSelect, 23616, 0.001421
-medianMediansSelect, 23616, 0.044348
-quickSelect, 23616, 0.001104
-heapSelect, 23616, 0.001859
-medianMediansSelect, 23616, 0.053435
-quickSelect, 23616, 0.001796
-heapSelect, 23616, 0.001533
-medianMediansSelect, 23616, 0.042438
-quickSelect, 23616, 0.001958
-heapSelect, 23616, 0.001227
-medianMediansSelect, 23616, 0.045489
-quickSelect, 23616, 0.001787
-heapSelect, 23616, 0.001522
-medianMediansSelect, 23616, 0.043482
-quickSelect, 23616, 0.001989
-heapSelect, 23616, 0.001291
-medianMediansSelect, 23616, 0.045385
-quickSelect, 23616, 0.001091
-heapSelect, 23616, 0.002064
-medianMediansSelect, 23616, 0.068067
-quickSelect, 23616, 0.002272
-heapSelect, 23616, 0.001197
-medianMediansSelect, 23616, 0.041426
-quickSelect, 23616, 0.002106
-heapSelect, 23616, 0.001207
-medianMediansSelect, 23616, 0.045491
-quickSelect, 23616, 0.001237
-heapSelect, 23616, 0.001415
-medianMediansSelect, 23616, 0.055444
-quickSelect, 23616, 0.001705
-heapSelect, 23616, 0.001185
-medianMediansSelect, 23616, 0.036943
-quickSelect, 23616, 0.000711
-heapSelect, 23616, 0.001391
-medianMediansSelect, 23616, 0.055295
-quickSelect, 23616, 0.000752
-heapSelect, 23616, 0.001862
-medianMediansSelect, 23616, 0.058928
-quickSelect, 23616, 0.000624
-heapSelect, 23616, 0.001367
-medianMediansSelect, 23616, 0.059600
-quickSelect, 26343, 0.001987
-heapSelect, 26343, 0.001445
-medianMediansSelect, 26343, 0.055087
-quickSelect, 26343, 0.001190
-heapSelect, 26343, 0.001696
-medianMediansSelect, 26343, 0.076568
-quickSelect, 26343, 0.001168
-heapSelect, 26343, 0.002320
-medianMediansSelect, 26343, 0.064031
-quickSelect, 26343, 0.000842
-heapSelect, 26343, 0.001911
-medianMediansSelect, 26343, 0.088407
-quickSelect, 26343, 0.000530
-heapSelect, 26343, 0.002537
-medianMediansSelect, 26343, 0.097534
-quickSelect, 26343, 0.003147
-heapSelect, 26343, 0.001334
-medianMediansSelect, 26343, 0.041994
-quickSelect, 26343, 0.003152
-heapSelect, 26343, 0.001376
-medianMediansSelect, 26343, 0.045482
-quickSelect, 26343, 0.001538
-heapSelect, 26343, 0.001762
-medianMediansSelect, 26343, 0.048752
-quickSelect, 26343, 0.002065
-heapSelect, 26343, 0.001104
-medianMediansSelect, 26343, 0.036681
-quickSelect, 26343, 0.001264
-heapSelect, 26343, 0.001339
-medianMediansSelect, 26343, 0.056707
-quickSelect, 26343, 0.001480
-heapSelect, 26343, 0.001507
-medianMediansSelect, 26343, 0.051280
-quickSelect, 26343, 0.000527
-heapSelect, 26343, 0.001692
-medianMediansSelect, 26343, 0.070976
-quickSelect, 26343, 0.001855
-heapSelect, 26343, 0.001108
-medianMediansSelect, 26343, 0.039108
-quickSelect, 26343, 0.001415
-heapSelect, 26343, 0.001599
-medianMediansSelect, 26343, 0.042643
-quickSelect, 26343, 0.001448
-heapSelect, 26343, 0.001663
-medianMediansSelect, 26343, 0.065665
-quickSelect, 26343, 0.002374
-heapSelect, 26343, 0.001525
-medianMediansSelect, 26343, 0.065133
-quickSelect, 26343, 0.001213
-heapSelect, 26343, 0.001796
-medianMediansSelect, 26343, 0.073112
-quickSelect, 26343, 0.001628
-heapSelect, 26343, 0.001577
-medianMediansSelect, 26343, 0.066500
-quickSelect, 26343, 0.001075
-heapSelect, 26343, 0.002568
-medianMediansSelect, 26343, 0.082974
-quickSelect, 26343, 0.001803
-heapSelect, 26343, 0.001782
-medianMediansSelect, 26343, 0.068871
-quickSelect, 29386, 0.002346
-heapSelect, 29386, 0.001501
-medianMediansSelect, 29386, 0.060459
-quickSelect, 29386, 0.002407
-heapSelect, 29386, 0.002135
-medianMediansSelect, 29386, 0.081660
-quickSelect, 29386, 0.001530
-heapSelect, 29386, 0.001807
-medianMediansSelect, 29386, 0.078964
-quickSelect, 29386, 0.003175
-heapSelect, 29386, 0.001829
-medianMediansSelect, 29386, 0.058657
-quickSelect, 29386, 0.001322
-heapSelect, 29386, 0.001491
-medianMediansSelect, 29386, 0.057292
-quickSelect, 29386, 0.001288
-heapSelect, 29386, 0.001579
-medianMediansSelect, 29386, 0.059459
-quickSelect, 29386, 0.000812
-heapSelect, 29386, 0.001659
-medianMediansSelect, 29386, 0.079755
-quickSelect, 29386, 0.001406
-heapSelect, 29386, 0.002100
-medianMediansSelect, 29386, 0.060650
-quickSelect, 29386, 0.001914
-heapSelect, 29386, 0.001247
-medianMediansSelect, 29386, 0.056030
-quickSelect, 29386, 0.000364
-heapSelect, 29386, 0.002378
-medianMediansSelect, 29386, 0.102642
-quickSelect, 29386, 0.000295
-heapSelect, 29386, 0.002556
-medianMediansSelect, 29386, 0.104826
-quickSelect, 29386, 0.001637
-heapSelect, 29386, 0.000972
-medianMediansSelect, 29386, 0.041462
-quickSelect, 29386, 0.001652
-heapSelect, 29386, 0.001012
-medianMediansSelect, 29386, 0.043809
-quickSelect, 29386, 0.001745
-heapSelect, 29386, 0.000955
-medianMediansSelect, 29386, 0.037648
-quickSelect, 29386, 0.001776
-heapSelect, 29386, 0.001111
-medianMediansSelect, 29386, 0.041536
-quickSelect, 29386, 0.000996
-heapSelect, 29386, 0.001206
-medianMediansSelect, 29386, 0.047767
-quickSelect, 29386, 0.000766
-heapSelect, 29386, 0.001321
-medianMediansSelect, 29386, 0.067749
-quickSelect, 29386, 0.000583
-heapSelect, 29386, 0.001591
-medianMediansSelect, 29386, 0.072019
-quickSelect, 29386, 0.000547
-heapSelect, 29386, 0.001629
-medianMediansSelect, 29386, 0.076577
-quickSelect, 29386, 0.001082
-heapSelect, 29386, 0.001417
-medianMediansSelect, 29386, 0.058425
-quickSelect, 32780, 0.001401
-heapSelect, 32780, 0.001256
-medianMediansSelect, 32780, 0.067495
-quickSelect, 32780, 0.000273
-heapSelect, 32780, 0.002346
-medianMediansSelect, 32780, 0.107931
-quickSelect, 32780, 0.001204
-heapSelect, 32780, 0.001440
-medianMediansSelect, 32780, 0.072512
-quickSelect, 32780, 0.001266
-heapSelect, 32780, 0.002000
-medianMediansSelect, 32780, 0.078109
-quickSelect, 32780, 0.001210
-heapSelect, 32780, 0.001847
-medianMediansSelect, 32780, 0.074451
-quickSelect, 32780, 0.002091
-heapSelect, 32780, 0.001406
-medianMediansSelect, 32780, 0.066571
-quickSelect, 32780, 0.001966
-heapSelect, 32780, 0.001588
-medianMediansSelect, 32780, 0.073203
-quickSelect, 32780, 0.001821
-heapSelect, 32780, 0.001453
-medianMediansSelect, 32780, 0.067956
-quickSelect, 32780, 0.000899
-heapSelect, 32780, 0.001908
-medianMediansSelect, 32780, 0.106147
-quickSelect, 32780, 0.002578
-heapSelect, 32780, 0.001166
-medianMediansSelect, 32780, 0.051129
-quickSelect, 32780, 0.000394
-heapSelect, 32780, 0.001965
-medianMediansSelect, 32780, 0.093994
-quickSelect, 32780, 0.000874
-heapSelect, 32780, 0.001552
-medianMediansSelect, 32780, 0.071748
-quickSelect, 32780, 0.001702
-heapSelect, 32780, 0.001103
-medianMediansSelect, 32780, 0.053062
-quickSelect, 32780, 0.001838
-heapSelect, 32780, 0.001159
-medianMediansSelect, 32780, 0.046378
-quickSelect, 32780, 0.001505
-heapSelect, 32780, 0.001231
-medianMediansSelect, 32780, 0.062551
-quickSelect, 32780, 0.001357
-heapSelect, 32780, 0.002190
-medianMediansSelect, 32780, 0.122486
-quickSelect, 32780, 0.002345
-heapSelect, 32780, 0.002018
-medianMediansSelect, 32780, 0.093134
-quickSelect, 32780, 0.000425
-heapSelect, 32780, 0.003441
-medianMediansSelect, 32780, 0.164401
-quickSelect, 32780, 0.001969
-heapSelect, 32780, 0.002009
-medianMediansSelect, 32780, 0.083343
-quickSelect, 32780, 0.001394
-heapSelect, 32780, 0.002242
-medianMediansSelect, 32780, 0.125835
-quickSelect, 36565, 0.003039
-heapSelect, 36565, 0.001943
-medianMediansSelect, 36565, 0.098307
-quickSelect, 36565, 0.002397
-heapSelect, 36565, 0.002238
-medianMediansSelect, 36565, 0.111095
-quickSelect, 36565, 0.003281
-heapSelect, 36565, 0.001720
-medianMediansSelect, 36565, 0.088233
-quickSelect, 36565, 0.003165
-heapSelect, 36565, 0.001594
-medianMediansSelect, 36565, 0.091721
-quickSelect, 36565, 0.001209
-heapSelect, 36565, 0.002169
-medianMediansSelect, 36565, 0.125027
-quickSelect, 36565, 0.003848
-heapSelect, 36565, 0.001879
-medianMediansSelect, 36565, 0.096353
-quickSelect, 36565, 0.002599
-heapSelect, 36565, 0.002206
-medianMediansSelect, 36565, 0.130546
-quickSelect, 36565, 0.001855
-heapSelect, 36565, 0.002383
-medianMediansSelect, 36565, 0.120741
-quickSelect, 36565, 0.002501
-heapSelect, 36565, 0.002222
-medianMediansSelect, 36565, 0.106206
-quickSelect, 36565, 0.001921
-heapSelect, 36565, 0.002302
-medianMediansSelect, 36565, 0.142971
-quickSelect, 36565, 0.001361
-heapSelect, 36565, 0.004023
-medianMediansSelect, 36565, 0.148461
-quickSelect, 36565, 0.002331
-heapSelect, 36565, 0.001602
-medianMediansSelect, 36565, 0.086018
-quickSelect, 36565, 0.001904
-heapSelect, 36565, 0.001812
-medianMediansSelect, 36565, 0.107908
-quickSelect, 36565, 0.001681
-heapSelect, 36565, 0.002522
-medianMediansSelect, 36565, 0.149923
-quickSelect, 36565, 0.004405
-heapSelect, 36565, 0.001785
-medianMediansSelect, 36565, 0.085987
-quickSelect, 36565, 0.001884
-heapSelect, 36565, 0.002399
-medianMediansSelect, 36565, 0.132181
-quickSelect, 36565, 0.002034
-heapSelect, 36565, 0.002160
-medianMediansSelect, 36565, 0.098199
-quickSelect, 36565, 0.002302
-heapSelect, 36565, 0.001453
-medianMediansSelect, 36565, 0.071094
-quickSelect, 36565, 0.002113
-heapSelect, 36565, 0.001540
-medianMediansSelect, 36565, 0.070419
-quickSelect, 36565, 0.000870
-heapSelect, 36565, 0.002286
-medianMediansSelect, 36565, 0.135196
-quickSelect, 40788, 0.001712
-heapSelect, 40788, 0.002984
-medianMediansSelect, 40788, 0.158009
-quickSelect, 40788, 0.000903
-heapSelect, 40788, 0.002532
-medianMediansSelect, 40788, 0.167901
-quickSelect, 40788, 0.000723
-heapSelect, 40788, 0.002763
-medianMediansSelect, 40788, 0.156323
-quickSelect, 40788, 0.000719
-heapSelect, 40788, 0.002096
-medianMediansSelect, 40788, 0.135979
-quickSelect, 40788, 0.002225
-heapSelect, 40788, 0.002221
-medianMediansSelect, 40788, 0.138886
-quickSelect, 40788, 0.000662
-heapSelect, 40788, 0.004063
-medianMediansSelect, 40788, 0.244219
-quickSelect, 40788, 0.002422
-heapSelect, 40788, 0.002502
-medianMediansSelect, 40788, 0.142774
-quickSelect, 40788, 0.002257
-heapSelect, 40788, 0.002470
-medianMediansSelect, 40788, 0.127467
-quickSelect, 40788, 0.001673
-heapSelect, 40788, 0.002656
-medianMediansSelect, 40788, 0.154371
-quickSelect, 40788, 0.001636
-heapSelect, 40788, 0.002073
-medianMediansSelect, 40788, 0.103132
-quickSelect, 40788, 0.000694
-heapSelect, 40788, 0.002861
-medianMediansSelect, 40788, 0.176283
-quickSelect, 40788, 0.000702
-heapSelect, 40788, 0.002776
-medianMediansSelect, 40788, 0.171699
-quickSelect, 40788, 0.001695
-heapSelect, 40788, 0.002048
-medianMediansSelect, 40788, 0.100352
-quickSelect, 40788, 0.002069
-heapSelect, 40788, 0.001309
-medianMediansSelect, 40788, 0.084831
-quickSelect, 40788, 0.002158
-heapSelect, 40788, 0.001313
-medianMediansSelect, 40788, 0.088912
-quickSelect, 40788, 0.002070
-heapSelect, 40788, 0.001750
-medianMediansSelect, 40788, 0.070016
-quickSelect, 40788, 0.002025
-heapSelect, 40788, 0.001628
-medianMediansSelect, 40788, 0.086804
-quickSelect, 40788, 0.001444
-heapSelect, 40788, 0.001635
-medianMediansSelect, 40788, 0.117156
-quickSelect, 40788, 0.001765
-heapSelect, 40788, 0.001821
-medianMediansSelect, 40788, 0.081461
-quickSelect, 40788, 0.001451
-heapSelect, 40788, 0.002142
-medianMediansSelect, 40788, 0.093220
-quickSelect, 45499, 0.001542
-heapSelect, 45499, 0.001599
-medianMediansSelect, 45499, 0.115356
-quickSelect, 45499, 0.000839
-heapSelect, 45499, 0.001931
-medianMediansSelect, 45499, 0.180263
-quickSelect, 45499, 0.005177
-heapSelect, 45499, 0.002243
-medianMediansSelect, 45499, 0.153432
-quickSelect, 45499, 0.001530
-heapSelect, 45499, 0.003233
-medianMediansSelect, 45499, 0.248091
-quickSelect, 45499, 0.004796
-heapSelect, 45499, 0.002556
-medianMediansSelect, 45499, 0.127327
-quickSelect, 45499, 0.001670
-heapSelect, 45499, 0.002258
-medianMediansSelect, 45499, 0.165968
-quickSelect, 45499, 0.002035
-heapSelect, 45499, 0.002411
-medianMediansSelect, 45499, 0.154238
-quickSelect, 45499, 0.003134
-heapSelect, 45499, 0.002603
-medianMediansSelect, 45499, 0.139667
-quickSelect, 45499, 0.002079
-heapSelect, 45499, 0.002164
-medianMediansSelect, 45499, 0.172132
-quickSelect, 45499, 0.001813
-heapSelect, 45499, 0.002205
-medianMediansSelect, 45499, 0.139650
-quickSelect, 45499, 0.003278
-heapSelect, 45499, 0.001360
-medianMediansSelect, 45499, 0.087634
-quickSelect, 45499, 0.000709
-heapSelect, 45499, 0.002447
-medianMediansSelect, 45499, 0.170602
-quickSelect, 45499, 0.002348
-heapSelect, 45499, 0.001667
-medianMediansSelect, 45499, 0.089701
-quickSelect, 45499, 0.001350
-heapSelect, 45499, 0.002382
-medianMediansSelect, 45499, 0.111771
-quickSelect, 45499, 0.001879
-heapSelect, 45499, 0.001498
-medianMediansSelect, 45499, 0.091524
-quickSelect, 45499, 0.001462
-heapSelect, 45499, 0.001552
-medianMediansSelect, 45499, 0.090880
-quickSelect, 45499, 0.002751
-heapSelect, 45499, 0.001145
-medianMediansSelect, 45499, 0.071867
-quickSelect, 45499, 0.000688
-heapSelect, 45499, 0.002136
-medianMediansSelect, 45499, 0.195535
-quickSelect, 45499, 0.002296
-heapSelect, 45499, 0.003518
-medianMediansSelect, 45499, 0.251348
-quickSelect, 45499, 0.000600
-heapSelect, 45499, 0.004799
-medianMediansSelect, 45499, 0.306475
-quickSelect, 50753, 0.004626
-heapSelect, 50753, 0.002802
-medianMediansSelect, 50753, 0.173081
-quickSelect, 50753, 0.004466
-heapSelect, 50753, 0.002733
-medianMediansSelect, 50753, 0.163008
-quickSelect, 50753, 0.002423
-heapSelect, 50753, 0.002305
-medianMediansSelect, 50753, 0.182527
-quickSelect, 50753, 0.003136
-heapSelect, 50753, 0.002162
-medianMediansSelect, 50753, 0.150180
-quickSelect, 50753, 0.002551
-heapSelect, 50753, 0.002466
-medianMediansSelect, 50753, 0.175311
-quickSelect, 50753, 0.001766
-heapSelect, 50753, 0.003801
-medianMediansSelect, 50753, 0.283822
-quickSelect, 50753, 0.001819
-heapSelect, 50753, 0.002804
-medianMediansSelect, 50753, 0.168961
-quickSelect, 50753, 0.000775
-heapSelect, 50753, 0.002841
-medianMediansSelect, 50753, 0.280236
-quickSelect, 50753, 0.000981
-heapSelect, 50753, 0.004751
-medianMediansSelect, 50753, 0.358397
-quickSelect, 50753, 0.002784
-heapSelect, 50753, 0.003675
-medianMediansSelect, 50753, 0.199151
-quickSelect, 50753, 0.002001
-heapSelect, 50753, 0.002669
-medianMediansSelect, 50753, 0.192095
-quickSelect, 50753, 0.003425
-heapSelect, 50753, 0.002687
-medianMediansSelect, 50753, 0.203747
-quickSelect, 50753, 0.002143
-heapSelect, 50753, 0.003348
-medianMediansSelect, 50753, 0.278848
-quickSelect, 50753, 0.002990
-heapSelect, 50753, 0.003103
-medianMediansSelect, 50753, 0.207909
-quickSelect, 50753, 0.002008
-heapSelect, 50753, 0.002517
-medianMediansSelect, 50753, 0.192651
-quickSelect, 50753, 0.005256
-heapSelect, 50753, 0.002074
-medianMediansSelect, 50753, 0.152195
-quickSelect, 50753, 0.001069
-heapSelect, 50753, 0.003130
-medianMediansSelect, 50753, 0.253592
-quickSelect, 50753, 0.003663
-heapSelect, 50753, 0.002149
-medianMediansSelect, 50753, 0.156929
-quickSelect, 50753, 0.001463
-heapSelect, 50753, 0.002644
-medianMediansSelect, 50753, 0.205871
-quickSelect, 50753, 0.001109
-heapSelect, 50753, 0.002683
-medianMediansSelect, 50753, 0.210025
-quickSelect, 56615, 0.001757
-heapSelect, 56615, 0.003103
-medianMediansSelect, 56615, 0.181400
-quickSelect, 56615, 0.001909
-heapSelect, 56615, 0.002963
-medianMediansSelect, 56615, 0.301447
-quickSelect, 56615, 0.002081
-heapSelect, 56615, 0.002822
-medianMediansSelect, 56615, 0.307939
-quickSelect, 56615, 0.006052
-heapSelect, 56615, 0.002883
-medianMediansSelect, 56615, 0.198575
-quickSelect, 56615, 0.002153
-heapSelect, 56615, 0.004440
-medianMediansSelect, 56615, 0.279496
-quickSelect, 56615, 0.002083
-heapSelect, 56615, 0.003652
-medianMediansSelect, 56615, 0.300248
-quickSelect, 56615, 0.005665
-heapSelect, 56615, 0.002627
-medianMediansSelect, 56615, 0.197047
-quickSelect, 56615, 0.002880
-heapSelect, 56615, 0.003701
-medianMediansSelect, 56615, 0.224618
-quickSelect, 56615, 0.003930
-heapSelect, 56615, 0.002658
-medianMediansSelect, 56615, 0.209579
-quickSelect, 56615, 0.003639
-heapSelect, 56615, 0.003499
-medianMediansSelect, 56615, 0.226729
-quickSelect, 56615, 0.003335
-heapSelect, 56615, 0.003415
-medianMediansSelect, 56615, 0.255164
-quickSelect, 56615, 0.004209
-heapSelect, 56615, 0.003029
-medianMediansSelect, 56615, 0.221522
-quickSelect, 56615, 0.004332
-heapSelect, 56615, 0.002570
-medianMediansSelect, 56615, 0.208142
-quickSelect, 56615, 0.001296
-heapSelect, 56615, 0.004783
-medianMediansSelect, 56615, 0.411040
-quickSelect, 56615, 0.006391
-heapSelect, 56615, 0.002898
-medianMediansSelect, 56615, 0.171817
-quickSelect, 56615, 0.003516
-heapSelect, 56615, 0.003000
-medianMediansSelect, 56615, 0.231807
-quickSelect, 56615, 0.005106
-heapSelect, 56615, 0.002173
-medianMediansSelect, 56615, 0.153091
-quickSelect, 56615, 0.000692
-heapSelect, 56615, 0.004418
-medianMediansSelect, 56615, 0.313729
-quickSelect, 56615, 0.002792
-heapSelect, 56615, 0.001881
-medianMediansSelect, 56615, 0.149470
-quickSelect, 56615, 0.001819
-heapSelect, 56615, 0.002308
-medianMediansSelect, 56615, 0.194960
-quickSelect, 63153, 0.001922
-heapSelect, 63153, 0.002283
-medianMediansSelect, 63153, 0.209154
-quickSelect, 63153, 0.004711
-heapSelect, 63153, 0.003572
-medianMediansSelect, 63153, 0.292747
-quickSelect, 63153, 0.004787
-heapSelect, 63153, 0.003768
-medianMediansSelect, 63153, 0.266807
-quickSelect, 63153, 0.001370
-heapSelect, 63153, 0.003898
-medianMediansSelect, 63153, 0.390011
-quickSelect, 63153, 0.002693
-heapSelect, 63153, 0.002998
-medianMediansSelect, 63153, 0.254983
-quickSelect, 63153, 0.000596
-heapSelect, 63153, 0.004417
-medianMediansSelect, 63153, 0.384896
-quickSelect, 63153, 0.004366
-heapSelect, 63153, 0.002035
-medianMediansSelect, 63153, 0.156958
-quickSelect, 63153, 0.002329
-heapSelect, 63153, 0.002472
-medianMediansSelect, 63153, 0.229644
-quickSelect, 63153, 0.004080
-heapSelect, 63153, 0.001634
-medianMediansSelect, 63153, 0.125786
-quickSelect, 63153, 0.002182
-heapSelect, 63153, 0.002091
-medianMediansSelect, 63153, 0.166429
-quickSelect, 63153, 0.000552
-heapSelect, 63153, 0.002905
-medianMediansSelect, 63153, 0.271037
-quickSelect, 63153, 0.002921
-heapSelect, 63153, 0.001668
-medianMediansSelect, 63153, 0.253840
-quickSelect, 63153, 0.001338
-heapSelect, 63153, 0.005747
-medianMediansSelect, 63153, 0.546952
-quickSelect, 63153, 0.004581
-heapSelect, 63153, 0.003012
-medianMediansSelect, 63153, 0.262727
-quickSelect, 63153, 0.000641
-heapSelect, 63153, 0.005453
-medianMediansSelect, 63153, 0.491218
-quickSelect, 63153, 0.002900
-heapSelect, 63153, 0.004550
-medianMediansSelect, 63153, 0.344998
-quickSelect, 63153, 0.003753
-heapSelect, 63153, 0.004033
-medianMediansSelect, 63153, 0.313467
-quickSelect, 63153, 0.000947
-heapSelect, 63153, 0.004466
-medianMediansSelect, 63153, 0.421781
-quickSelect, 63153, 0.002933
-heapSelect, 63153, 0.004068
-medianMediansSelect, 63153, 0.356257
-quickSelect, 63153, 0.006263
-heapSelect, 63153, 0.003362
-medianMediansSelect, 63153, 0.239121
-quickSelect, 70446, 0.002957
-heapSelect, 70446, 0.004206
-medianMediansSelect, 70446, 0.434906
-quickSelect, 70446, 0.004698
-heapSelect, 70446, 0.004410
-medianMediansSelect, 70446, 0.330678
-quickSelect, 70446, 0.001567
-heapSelect, 70446, 0.004300
-medianMediansSelect, 70446, 0.533404
-quickSelect, 70446, 0.004578
-heapSelect, 70446, 0.004558
-medianMediansSelect, 70446, 0.359704
-quickSelect, 70446, 0.005282
-heapSelect, 70446, 0.002807
-medianMediansSelect, 70446, 0.302924
-quickSelect, 70446, 0.003072
-heapSelect, 70446, 0.003232
-medianMediansSelect, 70446, 0.415930
-quickSelect, 70446, 0.003075
-heapSelect, 70446, 0.006092
-medianMediansSelect, 70446, 0.502297
-quickSelect, 70446, 0.003953
-heapSelect, 70446, 0.004922
-medianMediansSelect, 70446, 0.474560
-quickSelect, 70446, 0.002308
-heapSelect, 70446, 0.003272
-medianMediansSelect, 70446, 0.488173
-quickSelect, 70446, 0.003867
-heapSelect, 70446, 0.005005
-medianMediansSelect, 70446, 0.409957
-quickSelect, 70446, 0.004653
-heapSelect, 70446, 0.002629
-medianMediansSelect, 70446, 0.270537
-quickSelect, 70446, 0.001372
-heapSelect, 70446, 0.004898
-medianMediansSelect, 70446, 0.609241
-quickSelect, 70446, 0.006932
-heapSelect, 70446, 0.003210
-medianMediansSelect, 70446, 0.270273
-quickSelect, 70446, 0.002631
-heapSelect, 70446, 0.003706
-medianMediansSelect, 70446, 0.401870
-quickSelect, 70446, 0.004119
-heapSelect, 70446, 0.003174
-medianMediansSelect, 70446, 0.381205
-quickSelect, 70446, 0.005507
-heapSelect, 70446, 0.004104
-medianMediansSelect, 70446, 0.345959
-quickSelect, 70446, 0.004077
-heapSelect, 70446, 0.004186
-medianMediansSelect, 70446, 0.324436
-quickSelect, 70446, 0.000705
-heapSelect, 70446, 0.005916
-medianMediansSelect, 70446, 0.535595
-quickSelect, 70446, 0.004738
-heapSelect, 70446, 0.004492
-medianMediansSelect, 70446, 0.408615
-quickSelect, 70446, 0.002276
-heapSelect, 70446, 0.005044
-medianMediansSelect, 70446, 0.486842
-quickSelect, 78582, 0.005052
-heapSelect, 78582, 0.003511
-medianMediansSelect, 78582, 0.334996
-quickSelect, 78582, 0.006748
-heapSelect, 78582, 0.004734
-medianMediansSelect, 78582, 0.522647
-quickSelect, 78582, 0.002997
-heapSelect, 78582, 0.005099
-medianMediansSelect, 78582, 0.555644
-quickSelect, 78582, 0.002633
-heapSelect, 78582, 0.006031
-medianMediansSelect, 78582, 0.707890
-quickSelect, 78582, 0.003472
-heapSelect, 78582, 0.003669
-medianMediansSelect, 78582, 0.365530
-quickSelect, 78582, 0.003843
-heapSelect, 78582, 0.003571
-medianMediansSelect, 78582, 0.382865
-quickSelect, 78582, 0.000811
-heapSelect, 78582, 0.005248
-medianMediansSelect, 78582, 0.814843
-quickSelect, 78582, 0.001680
-heapSelect, 78582, 0.004934
-medianMediansSelect, 78582, 0.568358
-quickSelect, 78582, 0.000721
-heapSelect, 78582, 0.005339
-medianMediansSelect, 78582, 0.778507
-quickSelect, 78582, 0.000882
-heapSelect, 78582, 0.008819
-medianMediansSelect, 78582, 0.713099
-quickSelect, 78582, 0.001133
-heapSelect, 78582, 0.004582
-medianMediansSelect, 78582, 0.528860
-quickSelect, 78582, 0.001810
-heapSelect, 78582, 0.003150
-medianMediansSelect, 78582, 0.345515
-quickSelect, 78582, 0.007070
-heapSelect, 78582, 0.004092
-medianMediansSelect, 78582, 0.415950
-quickSelect, 78582, 0.005837
-heapSelect, 78582, 0.003901
-medianMediansSelect, 78582, 0.379762
-quickSelect, 78582, 0.004232
-heapSelect, 78582, 0.003829
-medianMediansSelect, 78582, 0.381533
-quickSelect, 78582, 0.003390
-heapSelect, 78582, 0.003546
-medianMediansSelect, 78582, 0.276429
-quickSelect, 78582, 0.003535
-heapSelect, 78582, 0.003839
-medianMediansSelect, 78582, 0.308194
-quickSelect, 78582, 0.002733
-heapSelect, 78582, 0.002986
-medianMediansSelect, 78582, 0.421143
-quickSelect, 78582, 0.005553
-heapSelect, 78582, 0.005261
-medianMediansSelect, 78582, 0.595686
-quickSelect, 78582, 0.002522
-heapSelect, 78582, 0.006278
-medianMediansSelect, 78582, 0.714051
-quickSelect, 87657, 0.004882
-heapSelect, 87657, 0.005357
-medianMediansSelect, 87657, 0.541317
-quickSelect, 87657, 0.005004
-heapSelect, 87657, 0.005448
-medianMediansSelect, 87657, 0.565241
-quickSelect, 87657, 0.003191
-heapSelect, 87657, 0.005346
-medianMediansSelect, 87657, 0.563588
-quickSelect, 87657, 0.004624
-heapSelect, 87657, 0.005511
-medianMediansSelect, 87657, 0.572738
-quickSelect, 87657, 0.003830
-heapSelect, 87657, 0.005446
-medianMediansSelect, 87657, 0.644726
-quickSelect, 87657, 0.002251
-heapSelect, 87657, 0.004993
-medianMediansSelect, 87657, 0.833891
-quickSelect, 87657, 0.007744
-heapSelect, 87657, 0.005453
-medianMediansSelect, 87657, 0.425693
-quickSelect, 87657, 0.008082
-heapSelect, 87657, 0.004680
-medianMediansSelect, 87657, 0.501423
-quickSelect, 87657, 0.007529
-heapSelect, 87657, 0.003228
-medianMediansSelect, 87657, 0.447174
-quickSelect, 87657, 0.003508
-heapSelect, 87657, 0.006307
-medianMediansSelect, 87657, 0.803866
-quickSelect, 87657, 0.003041
-heapSelect, 87657, 0.006180
-medianMediansSelect, 87657, 0.835407
-quickSelect, 87657, 0.007762
-heapSelect, 87657, 0.005211
-medianMediansSelect, 87657, 0.635787
-quickSelect, 87657, 0.002139
-heapSelect, 87657, 0.007326
-medianMediansSelect, 87657, 0.921744
-quickSelect, 87657, 0.006385
-heapSelect, 87657, 0.005275
-medianMediansSelect, 87657, 0.674263
-quickSelect, 87657, 0.005067
-heapSelect, 87657, 0.004329
-medianMediansSelect, 87657, 0.719603
-quickSelect, 87657, 0.006283
-heapSelect, 87657, 0.004964
-medianMediansSelect, 87657, 0.543740
-quickSelect, 87657, 0.005029
-heapSelect, 87657, 0.004963
-medianMediansSelect, 87657, 0.549640
-quickSelect, 87657, 0.003200
-heapSelect, 87657, 0.004305
-medianMediansSelect, 87657, 0.624550
-quickSelect, 87657, 0.000797
-heapSelect, 87657, 0.006036
-medianMediansSelect, 87657, 1.021352
-quickSelect, 87657, 0.007468
-heapSelect, 87657, 0.003310
-medianMediansSelect, 87657, 0.405270
-quickSelect, 97780, 0.008298
-heapSelect, 97780, 0.004778
-medianMediansSelect, 97780, 0.609118
-quickSelect, 97780, 0.003117
-heapSelect, 97780, 0.006869
-medianMediansSelect, 97780, 1.043716
-quickSelect, 97780, 0.003201
-heapSelect, 97780, 0.007099
-medianMediansSelect, 97780, 0.961100
-quickSelect, 97780, 0.001969
-heapSelect, 97780, 0.005213
-medianMediansSelect, 97780, 0.746575
-quickSelect, 97780, 0.003955
-heapSelect, 97780, 0.004024
-medianMediansSelect, 97780, 0.499062
-quickSelect, 97780, 0.004735
-heapSelect, 97780, 0.003248
-medianMediansSelect, 97780, 0.345830
-quickSelect, 97780, 0.002621
-heapSelect, 97780, 0.003792
-medianMediansSelect, 97780, 0.513030
-quickSelect, 97780, 0.001748
-heapSelect, 97780, 0.002839
-medianMediansSelect, 97780, 0.398373
-quickSelect, 97780, 0.001277
-heapSelect, 97780, 0.002980
-medianMediansSelect, 97780, 0.444308
-quickSelect, 97780, 0.000491
-heapSelect, 97780, 0.003650
-medianMediansSelect, 97780, 0.493810
-quickSelect, 97780, 0.002524
-heapSelect, 97780, 0.002019
-medianMediansSelect, 97780, 0.365131
-quickSelect, 97780, 0.004868
-heapSelect, 97780, 0.005384
-medianMediansSelect, 97780, 0.550565
-quickSelect, 97780, 0.001125
-heapSelect, 97780, 0.005938
-medianMediansSelect, 97780, 1.060589
-quickSelect, 97780, 0.004467
-heapSelect, 97780, 0.005176
-medianMediansSelect, 97780, 0.745818
-quickSelect, 97780, 0.004059
-heapSelect, 97780, 0.004907
-medianMediansSelect, 97780, 0.737759
-quickSelect, 97780, 0.010397
-heapSelect, 97780, 0.004536
-medianMediansSelect, 97780, 0.528911
-quickSelect, 97780, 0.003845
-heapSelect, 97780, 0.004742
-medianMediansSelect, 97780, 0.712528
-quickSelect, 97780, 0.005331
-heapSelect, 97780, 0.002980
-medianMediansSelect, 97780, 0.439613
-quickSelect, 97780, 0.006194
-heapSelect, 97780, 0.002970
-medianMediansSelect, 97780, 0.270703
-quickSelect, 97780, 0.004117
-heapSelect, 97780, 0.002448
-medianMediansSelect, 97780, 0.355831
-quickSelect, 109073, 0.001958
-heapSelect, 109073, 0.003991
-medianMediansSelect, 109073, 1.090233
-quickSelect, 109073, 0.002462
-heapSelect, 109073, 0.009081
-medianMediansSelect, 109073, 1.411688
-quickSelect, 109073, 0.005653
-heapSelect, 109073, 0.008216
-medianMediansSelect, 109073, 1.292797
-quickSelect, 109073, 0.004140
-heapSelect, 109073, 0.007223
-medianMediansSelect, 109073, 1.338478
-quickSelect, 109073, 0.001435
-heapSelect, 109073, 0.012714
-medianMediansSelect, 109073, 1.877199
-quickSelect, 109073, 0.008111
-heapSelect, 109073, 0.006333
-medianMediansSelect, 109073, 0.657711
-quickSelect, 109073, 0.009627
-heapSelect, 109073, 0.005979
-medianMediansSelect, 109073, 1.084909
-quickSelect, 109073, 0.011016
-heapSelect, 109073, 0.005344
-medianMediansSelect, 109073, 0.947052
-quickSelect, 109073, 0.004422
-heapSelect, 109073, 0.006505
-medianMediansSelect, 109073, 0.943239
-quickSelect, 109073, 0.004234
-heapSelect, 109073, 0.030225
-medianMediansSelect, 109073, 1.627139
-quickSelect, 109073, 0.003317
-heapSelect, 109073, 0.006119
-medianMediansSelect, 109073, 1.722296
-quickSelect, 109073, 0.007134
-heapSelect, 109073, 0.015963
-medianMediansSelect, 109073, 1.101198
-quickSelect, 109073, 0.002548
-heapSelect, 109073, 0.004770
-medianMediansSelect, 109073, 1.362347
-quickSelect, 109073, 0.004011
-heapSelect, 109073, 0.005348
-medianMediansSelect, 109073, 1.420426
-quickSelect, 109073, 0.006972
-heapSelect, 109073, 0.003535
-medianMediansSelect, 109073, 0.990813
-quickSelect, 109073, 0.003098
-heapSelect, 109073, 0.006316
-medianMediansSelect, 109073, 1.756265
-quickSelect, 109073, 0.012148
-heapSelect, 109073, 0.006430
-medianMediansSelect, 109073, 0.832064
-quickSelect, 109073, 0.006032
-heapSelect, 109073, 0.004470
-medianMediansSelect, 109073, 0.608410
-quickSelect, 109073, 0.005580
-heapSelect, 109073, 0.002173
-medianMediansSelect, 109073, 0.517568
-quickSelect, 109073, 0.001476
-heapSelect, 109073, 0.004609
-medianMediansSelect, 109073, 0.782434
-quickSelect, 121669, 0.002117
-heapSelect, 121669, 0.003662
-medianMediansSelect, 121669, 1.281394
-quickSelect, 121669, 0.011989
-heapSelect, 121669, 0.010097
-medianMediansSelect, 121669, 1.185158
-quickSelect, 121669, 0.013320
-heapSelect, 121669, 0.010083
-medianMediansSelect, 121669, 1.172622
-quickSelect, 121669, 0.007880
-heapSelect, 121669, 0.012643
-medianMediansSelect, 121669, 1.152951
-quickSelect, 121669, 0.008786
-heapSelect, 121669, 0.007917
-medianMediansSelect, 121669, 0.999082
-quickSelect, 121669, 0.004795
-heapSelect, 121669, 0.009767
-medianMediansSelect, 121669, 1.479623
-quickSelect, 121669, 0.004889
-heapSelect, 121669, 0.004827
-medianMediansSelect, 121669, 0.905458
-quickSelect, 121669, 0.003107
-heapSelect, 121669, 0.004587
-medianMediansSelect, 121669, 1.024056
-quickSelect, 121669, 0.013106
-heapSelect, 121669, 0.007346
-medianMediansSelect, 121669, 1.161243
-quickSelect, 121669, 0.008951
-heapSelect, 121669, 0.006915
-medianMediansSelect, 121669, 1.532241
-quickSelect, 121669, 0.010325
-heapSelect, 121669, 0.006393
-medianMediansSelect, 121669, 0.963509
-quickSelect, 121669, 0.001890
-heapSelect, 121669, 0.015236
-medianMediansSelect, 121669, 2.185778
-quickSelect, 121669, 0.001397
-heapSelect, 121669, 0.013369
-medianMediansSelect, 121669, 2.268773
-quickSelect, 121669, 0.003956
-heapSelect, 121669, 0.008949
-medianMediansSelect, 121669, 1.687533
-quickSelect, 121669, 0.009354
-heapSelect, 121669, 0.008541
-medianMediansSelect, 121669, 1.634073
-quickSelect, 121669, 0.003121
-heapSelect, 121669, 0.007088
-medianMediansSelect, 121669, 1.525847
-quickSelect, 121669, 0.009403
-heapSelect, 121669, 0.007069
-medianMediansSelect, 121669, 1.171513
-quickSelect, 121669, 0.005448
-heapSelect, 121669, 0.007834
-medianMediansSelect, 121669, 1.423114
-quickSelect, 121669, 0.013329
-heapSelect, 121669, 0.006110
-medianMediansSelect, 121669, 1.030685
-quickSelect, 121669, 0.006978
-heapSelect, 121669, 0.007503
-medianMediansSelect, 121669, 1.497629
-quickSelect, 135720, 0.003060
-heapSelect, 135720, 0.009794
-medianMediansSelect, 135720, 2.220684
-quickSelect, 135720, 0.012026
-heapSelect, 135720, 0.006301
-medianMediansSelect, 135720, 1.303311
-quickSelect, 135720, 0.007153
-heapSelect, 135720, 0.008056
-medianMediansSelect, 135720, 1.379604
-quickSelect, 135720, 0.006236
-heapSelect, 135720, 0.006188
-medianMediansSelect, 135720, 1.470010
-quickSelect, 135720, 0.008469
-heapSelect, 135720, 0.009204
-medianMediansSelect, 135720, 1.501837
-quickSelect, 135720, 0.006023
-heapSelect, 135720, 0.009090
-medianMediansSelect, 135720, 1.609603
-quickSelect, 135720, 0.011842
-heapSelect, 135720, 0.007441
-medianMediansSelect, 135720, 1.421774
-quickSelect, 135720, 0.004577
-heapSelect, 135720, 0.007281
-medianMediansSelect, 135720, 1.891284
-quickSelect, 135720, 0.011662
-heapSelect, 135720, 0.006453
-medianMediansSelect, 135720, 1.231677
-quickSelect, 135720, 0.008577
-heapSelect, 135720, 0.006918
-medianMediansSelect, 135720, 1.310640
-quickSelect, 135720, 0.006808
-heapSelect, 135720, 0.012992
-medianMediansSelect, 135720, 1.690470
-quickSelect, 135720, 0.009757
-heapSelect, 135720, 0.005345
-medianMediansSelect, 135720, 1.098745
-quickSelect, 135720, 0.007252
-heapSelect, 135720, 0.008341
-medianMediansSelect, 135720, 1.401334
-quickSelect, 135720, 0.008641
-heapSelect, 135720, 0.008054
-medianMediansSelect, 135720, 1.737741
-quickSelect, 135720, 0.007537
-heapSelect, 135720, 0.005902
-medianMediansSelect, 135720, 1.118508
-quickSelect, 135720, 0.006216
-heapSelect, 135720, 0.012903
-medianMediansSelect, 135720, 2.225349
-quickSelect, 135720, 0.011320
-heapSelect, 135720, 0.010201
-medianMediansSelect, 135720, 1.201131
-quickSelect, 135720, 0.006996
-heapSelect, 135720, 0.010504
-medianMediansSelect, 135720, 2.163669
-quickSelect, 135720, 0.005255
-heapSelect, 135720, 0.009047
-medianMediansSelect, 135720, 2.178628
-quickSelect, 135720, 0.005272
-heapSelect, 135720, 0.009874
-medianMediansSelect, 135720, 2.119834
-quickSelect, 151394, 0.012463
-heapSelect, 151394, 0.008530
-medianMediansSelect, 151394, 1.365564
-quickSelect, 151394, 0.007333
-heapSelect, 151394, 0.009632
-medianMediansSelect, 151394, 1.823219
-quickSelect, 151394, 0.004678
-heapSelect, 151394, 0.011674
-medianMediansSelect, 151394, 2.535281
-quickSelect, 151394, 0.004472
-heapSelect, 151394, 0.011482
-medianMediansSelect, 151394, 2.595563
-quickSelect, 151394, 0.001920
-heapSelect, 151394, 0.011831
-medianMediansSelect, 151394, 2.963836
-quickSelect, 151394, 0.015753
-heapSelect, 151394, 0.008488
-medianMediansSelect, 151394, 1.475705
-quickSelect, 151394, 0.005095
-heapSelect, 151394, 0.008221
-medianMediansSelect, 151394, 2.212454
-quickSelect, 151394, 0.008440
-heapSelect, 151394, 0.006262
-medianMediansSelect, 151394, 1.927254
-quickSelect, 151394, 0.003256
-heapSelect, 151394, 0.013662
-medianMediansSelect, 151394, 2.954882
-quickSelect, 151394, 0.015764
-heapSelect, 151394, 0.007199
-medianMediansSelect, 151394, 1.256355
-quickSelect, 151394, 0.011770
-heapSelect, 151394, 0.007457
-medianMediansSelect, 151394, 1.686154
-quickSelect, 151394, 0.005927
-heapSelect, 151394, 0.011047
-medianMediansSelect, 151394, 2.289994
-quickSelect, 151394, 0.006496
-heapSelect, 151394, 0.007291
-medianMediansSelect, 151394, 2.159599
-quickSelect, 151394, 0.005667
-heapSelect, 151394, 0.007476
-medianMediansSelect, 151394, 2.288354
-quickSelect, 151394, 0.009438
-heapSelect, 151394, 0.006572
-medianMediansSelect, 151394, 1.477562
-quickSelect, 151394, 0.004259
-heapSelect, 151394, 0.011995
-medianMediansSelect, 151394, 2.726616
-quickSelect, 151394, 0.008550
-heapSelect, 151394, 0.009006
-medianMediansSelect, 151394, 1.522422
-quickSelect, 151394, 0.004022
-heapSelect, 151394, 0.008941
-medianMediansSelect, 151394, 2.435509
-quickSelect, 151394, 0.004179
-heapSelect, 151394, 0.009181
-medianMediansSelect, 151394, 2.509737
-quickSelect, 151394, 0.005817
-heapSelect, 151394, 0.010426
-medianMediansSelect, 151394, 2.612465
-quickSelect, 168878, 0.002578
-heapSelect, 168878, 0.013856
-medianMediansSelect, 168878, 3.492222
-quickSelect, 168878, 0.013282
-heapSelect, 168878, 0.008940
-medianMediansSelect, 168878, 1.787507
-quickSelect, 168878, 0.006823
-heapSelect, 168878, 0.006311
-medianMediansSelect, 168878, 1.938430
-quickSelect, 168878, 0.005211
-heapSelect, 168878, 0.008727
-medianMediansSelect, 168878, 2.796487
-quickSelect, 168878, 0.002647
-heapSelect, 168878, 0.016319
-medianMediansSelect, 168878, 3.796439
-quickSelect, 168878, 0.007587
-heapSelect, 168878, 0.010497
-medianMediansSelect, 168878, 2.608085
-quickSelect, 168878, 0.010312
-heapSelect, 168878, 0.006680
-medianMediansSelect, 168878, 2.035788
-quickSelect, 168878, 0.006834
-heapSelect, 168878, 0.010827
-medianMediansSelect, 168878, 2.781653
-quickSelect, 168878, 0.007870
-heapSelect, 168878, 0.009612
-medianMediansSelect, 168878, 2.951208
-quickSelect, 168878, 0.008202
-heapSelect, 168878, 0.011493
-medianMediansSelect, 168878, 1.942065
-quickSelect, 168878, 0.004857
-heapSelect, 168878, 0.009167
-medianMediansSelect, 168878, 1.556214
-quickSelect, 168878, 0.001616
-heapSelect, 168878, 0.006516
-medianMediansSelect, 168878, 2.806851
-quickSelect, 168878, 0.012559
-heapSelect, 168878, 0.012674
-medianMediansSelect, 168878, 2.768587
-quickSelect, 168878, 0.011609
-heapSelect, 168878, 0.011806
-medianMediansSelect, 168878, 2.143516
-quickSelect, 168878, 0.003417
-heapSelect, 168878, 0.010720
-medianMediansSelect, 168878, 3.234611
-quickSelect, 168878, 0.008722
-heapSelect, 168878, 0.011478
-medianMediansSelect, 168878, 2.020312
-quickSelect, 168878, 0.005885
-heapSelect, 168878, 0.008315
-medianMediansSelect, 168878, 1.864079
-quickSelect, 168878, 0.013785
-heapSelect, 168878, 0.009725
-medianMediansSelect, 168878, 1.946957
-quickSelect, 168878, 0.007768
-heapSelect, 168878, 0.007925
-medianMediansSelect, 168878, 1.969949
-quickSelect, 168878, 0.019737
-heapSelect, 168878, 0.007615
-medianMediansSelect, 168878, 1.223692
-quickSelect, 188382, 0.007717
-heapSelect, 188382, 0.007879
-medianMediansSelect, 188382, 3.254584
-quickSelect, 188382, 0.003746
-heapSelect, 188382, 0.016623
-medianMediansSelect, 188382, 4.211709
-quickSelect, 188382, 0.006286
-heapSelect, 188382, 0.009527
-medianMediansSelect, 188382, 3.179392
-quickSelect, 188382, 0.011191
-heapSelect, 188382, 0.007527
-medianMediansSelect, 188382, 2.249030
-quickSelect, 188382, 0.006636
-heapSelect, 188382, 0.010297
-medianMediansSelect, 188382, 3.102132
-quickSelect, 188382, 0.015661
-heapSelect, 188382, 0.009444
-medianMediansSelect, 188382, 1.706325
-quickSelect, 188382, 0.013215
-heapSelect, 188382, 0.009867
-medianMediansSelect, 188382, 2.311143
-quickSelect, 188382, 0.011326
-heapSelect, 188382, 0.010347
-medianMediansSelect, 188382, 2.888109
-quickSelect, 188382, 0.017812
-heapSelect, 188382, 0.006500
-medianMediansSelect, 188382, 2.114092
-quickSelect, 188382, 0.008113
-heapSelect, 188382, 0.014527
-medianMediansSelect, 188382, 2.780366
-quickSelect, 188382, 0.005777
-heapSelect, 188382, 0.011138
-medianMediansSelect, 188382, 3.797383
-quickSelect, 188382, 0.014160
-heapSelect, 188382, 0.011405
-medianMediansSelect, 188382, 2.305128
-quickSelect, 188382, 0.003093
-heapSelect, 188382, 0.013507
-medianMediansSelect, 188382, 4.589765
-quickSelect, 188382, 0.012308
-heapSelect, 188382, 0.010592
-medianMediansSelect, 188382, 2.497867
-quickSelect, 188382, 0.009650
-heapSelect, 188382, 0.010999
-medianMediansSelect, 188382, 3.149561
-quickSelect, 188382, 0.010498
-heapSelect, 188382, 0.010997
-medianMediansSelect, 188382, 3.224686
-quickSelect, 188382, 0.006932
-heapSelect, 188382, 0.009188
-medianMediansSelect, 188382, 3.105144
-quickSelect, 188382, 0.007050
-heapSelect, 188382, 0.008994
-medianMediansSelect, 188382, 3.502796
-quickSelect, 188382, 0.005979
-heapSelect, 188382, 0.009982
-medianMediansSelect, 188382, 3.355446
-quickSelect, 188382, 0.015439
-heapSelect, 188382, 0.008658
-medianMediansSelect, 188382, 2.125568
-quickSelect, 210137, 0.008436
-heapSelect, 210137, 0.015927
-medianMediansSelect, 210137, 3.584103
-quickSelect, 210137, 0.009817
-heapSelect, 210137, 0.010223
-medianMediansSelect, 210137, 3.244602
-quickSelect, 210137, 0.008144
-heapSelect, 210137, 0.007654
-medianMediansSelect, 210137, 3.350368
-quickSelect, 210137, 0.012157
-heapSelect, 210137, 0.011757
-medianMediansSelect, 210137, 3.685005
-quickSelect, 210137, 0.009920
-heapSelect, 210137, 0.015758
-medianMediansSelect, 210137, 3.410806
-quickSelect, 210137, 0.009343
-heapSelect, 210137, 0.010771
-medianMediansSelect, 210137, 2.926016
-quickSelect, 210137, 0.016601
-heapSelect, 210137, 0.012231
-medianMediansSelect, 210137, 2.982924
-quickSelect, 210137, 0.017376
-heapSelect, 210137, 0.009806
-medianMediansSelect, 210137, 2.502744
-quickSelect, 210137, 0.006338
-heapSelect, 210137, 0.011366
-medianMediansSelect, 210137, 4.387986
-quickSelect, 210137, 0.013459
-heapSelect, 210137, 0.011257
-medianMediansSelect, 210137, 3.574432
-quickSelect, 210137, 0.012683
-heapSelect, 210137, 0.013177
-medianMediansSelect, 210137, 3.306239
-quickSelect, 210137, 0.010257
-heapSelect, 210137, 0.013735
-medianMediansSelect, 210137, 3.724270
-quickSelect, 210137, 0.013594
-heapSelect, 210137, 0.013790
-medianMediansSelect, 210137, 3.335592
-quickSelect, 210137, 0.016925
-heapSelect, 210137, 0.013296
-medianMediansSelect, 210137, 2.743639
-quickSelect, 210137, 0.005132
-heapSelect, 210137, 0.009523
-medianMediansSelect, 210137, 4.232229
-quickSelect, 210137, 0.004428
-heapSelect, 210137, 0.017782
-medianMediansSelect, 210137, 4.488749
-quickSelect, 210137, 0.014642
-heapSelect, 210137, 0.010346
-medianMediansSelect, 210137, 2.512475
-quickSelect, 210137, 0.006562
-heapSelect, 210137, 0.015397
-medianMediansSelect, 210137, 4.856941
-quickSelect, 210137, 0.020842
-heapSelect, 210137, 0.010319
-medianMediansSelect, 210137, 2.725818
-quickSelect, 210137, 0.014331
-heapSelect, 210137, 0.011646
-medianMediansSelect, 210137, 3.753524
-quickSelect, 234405, 0.012176
-heapSelect, 234405, 0.011223
-medianMediansSelect, 234405, 5.212995
-quickSelect, 234405, 0.012381
-heapSelect, 234405, 0.016684
-medianMediansSelect, 234405, 5.367252
-quickSelect, 234405, 0.016460
-heapSelect, 234405, 0.011459
-medianMediansSelect, 234405, 3.328289
-quickSelect, 234405, 0.012478
-heapSelect, 234405, 0.009177
-medianMediansSelect, 234405, 4.421493
-quickSelect, 234405, 0.017109
-heapSelect, 234405, 0.010778
-medianMediansSelect, 234405, 3.866569
-quickSelect, 234405, 0.007235
-heapSelect, 234405, 0.011270
-medianMediansSelect, 234405, 4.053828
-quickSelect, 234405, 0.017345
-heapSelect, 234405, 0.008542
-medianMediansSelect, 234405, 3.860386
-quickSelect, 234405, 0.018898
-heapSelect, 234405, 0.011235
-medianMediansSelect, 234405, 4.346450
-quickSelect, 234405, 0.003697
-heapSelect, 234405, 0.022468
-medianMediansSelect, 234405, 7.128333
-quickSelect, 234405, 0.015856
-heapSelect, 234405, 0.012246
-medianMediansSelect, 234405, 3.559117
-quickSelect, 234405, 0.003440
-heapSelect, 234405, 0.022837
-medianMediansSelect, 234405, 7.361541
+size,quickselect,heapselect,medianmediansselect
+100, 0.000001, 0.000123, 0.000004
+100, 0.000001, 0.000120, 0.000004
+100, 0.000003, 0.000128, 0.000004
+100, 0.000001, 0.000130, 0.000005
+100, 0.000001, 0.000141, 0.000008
+100, 0.000001, 0.000127, 0.000004
+100, 0.000001, 0.000121, 0.000004
+100, 0.000001, 0.000121, 0.000005
+100, 0.000002, 0.000127, 0.000004
+100, 0.000000, 0.000147, 0.000004
+100, 0.000002, 0.000125, 0.000004
+100, 0.000001, 0.000127, 0.000005
+100, 0.000001, 0.000130, 0.000004
+100, 0.000001, 0.000137, 0.000005
+100, 0.000002, 0.000122, 0.000003
+100, 0.000002, 0.000126, 0.000004
+100, 0.000001, 0.000134, 0.000005
+100, 0.000001, 0.000121, 0.000005
+100, 0.000001, 0.000126, 0.000004
+100, 0.000002, 0.000135, 0.000004
+111, 0.000001, 0.000127, 0.000004
+111, 0.000001, 0.000125, 0.000005
+111, 0.000002, 0.000130, 0.000005
+111, 0.000001, 0.000126, 0.000005
+111, 0.000002, 0.000136, 0.000004
+111, 0.000001, 0.000127, 0.000005
+111, 0.000002, 0.000148, 0.000006
+111, 0.000002, 0.000123, 0.000005
+111, 0.000001, 0.000134, 0.000004
+111, 0.000002, 0.000128, 0.000005
+111, 0.000001, 0.000129, 0.000005
+111, 0.000002, 0.000134, 0.000005
+111, 0.000001, 0.000136, 0.000006
+111, 0.000001, 0.000125, 0.000005
+111, 0.000001, 0.000131, 0.000005
+111, 0.000001, 0.000128, 0.000006
+111, 0.000002, 0.000131, 0.000005
+111, 0.000002, 0.000129, 0.000004
+111, 0.000001, 0.000123, 0.000004
+111, 0.000001, 0.000138, 0.000005
+124, 0.000002, 0.000363, 0.000006
+124, 0.000001, 0.000166, 0.000005
+124, 0.000003, 0.000127, 0.000005
+124, 0.000002, 0.000129, 0.000005
+124, 0.000001, 0.000127, 0.000006
+124, 0.000001, 0.000134, 0.000006
+124, 0.000002, 0.000134, 0.000005
+124, 0.000001, 0.000127, 0.000005
+124, 0.000001, 0.000128, 0.000007
+124, 0.000003, 0.000125, 0.000004
+124, 0.000002, 0.000133, 0.000005
+124, 0.000002, 0.000140, 0.000006
+124, 0.000001, 0.000143, 0.000006
+124, 0.000001, 0.000139, 0.000006
+124, 0.000001, 0.000134, 0.000006
+124, 0.000002, 0.000129, 0.000006
+124, 0.000002, 0.000144, 0.000006
+124, 0.000002, 0.000171, 0.000005
+124, 0.000003, 0.000133, 0.000005
+124, 0.000001, 0.000153, 0.000006
+138, 0.000002, 0.000129, 0.000006
+138, 0.000001, 0.000145, 0.000006
+138, 0.000001, 0.000153, 0.000009
+138, 0.000001, 0.000131, 0.000009
+138, 0.000002, 0.000126, 0.000006
+138, 0.000001, 0.000130, 0.000006
+138, 0.000003, 0.000140, 0.000008
+138, 0.000002, 0.000130, 0.000007
+138, 0.000002, 0.000138, 0.000007
+138, 0.000001, 0.000178, 0.000007
+138, 0.000001, 0.000145, 0.000007
+138, 0.000001, 0.000125, 0.000007
+138, 0.000001, 0.000143, 0.000006
+138, 0.000001, 0.000132, 0.000006
+138, 0.000003, 0.000149, 0.000006
+138, 0.000001, 0.000144, 0.000007
+138, 0.000002, 0.000124, 0.000006
+138, 0.000001, 0.000126, 0.000007
+138, 0.000001, 0.000126, 0.000007
+138, 0.000002, 0.000156, 0.000006
+154, 0.000001, 0.000192, 0.000008
+154, 0.000004, 0.000128, 0.000006
+154, 0.000002, 0.000122, 0.000006
+154, 0.000002, 0.000130, 0.000006
+154, 0.000002, 0.000154, 0.000006
+154, 0.000003, 0.000171, 0.000007
+154, 0.000001, 0.000156, 0.000008
+154, 0.000003, 0.000148, 0.000006
+154, 0.000001, 0.000234, 0.000007
+154, 0.000002, 0.000137, 0.000007
+154, 0.000002, 0.000205, 0.000007
+154, 0.000001, 0.000152, 0.000008
+154, 0.000002, 0.000132, 0.000007
+154, 0.000002, 0.000127, 0.000007
+154, 0.000003, 0.000123, 0.000006
+154, 0.000003, 0.000143, 0.000007
+154, 0.000003, 0.000187, 0.000005
+154, 0.000001, 0.000127, 0.000008
+154, 0.000002, 0.000122, 0.000007
+154, 0.000001, 0.000125, 0.000007
+172, 0.000002, 0.000162, 0.000009
+172, 0.000002, 0.000173, 0.000009
+172, 0.000002, 0.000150, 0.000007
+172, 0.000002, 0.000138, 0.000007
+172, 0.000004, 0.000127, 0.000007
+172, 0.000001, 0.000139, 0.000009
+172, 0.000004, 0.000156, 0.000008
+172, 0.000003, 0.000176, 0.000007
+172, 0.000002, 0.000135, 0.000008
+172, 0.000002, 0.000131, 0.000008
+172, 0.000002, 0.000126, 0.000007
+172, 0.000001, 0.000156, 0.000010
+172, 0.000002, 0.000160, 0.000009
+172, 0.000004, 0.000129, 0.000007
+172, 0.000003, 0.000122, 0.000008
+172, 0.000002, 0.000128, 0.000009
+172, 0.000002, 0.000145, 0.000007
+172, 0.000001, 0.000186, 0.000010
+172, 0.000003, 0.000131, 0.000008
+172, 0.000001, 0.000123, 0.000006
+192, 0.000002, 0.000122, 0.000011
+192, 0.000001, 0.000140, 0.000010
+192, 0.000004, 0.000157, 0.000009
+192, 0.000001, 0.000170, 0.000010
+192, 0.000001, 0.000135, 0.000010
+192, 0.000002, 0.000127, 0.000010
+192, 0.000002, 0.000126, 0.000010
+192, 0.000003, 0.000150, 0.000009
+192, 0.000005, 0.000266, 0.000009
+192, 0.000002, 0.000133, 0.000008
+192, 0.000002, 0.000121, 0.000009
+192, 0.000001, 0.000127, 0.000009
+192, 0.000002, 0.000185, 0.000011
+192, 0.000004, 0.000233, 0.000012
+192, 0.000004, 0.000212, 0.000010
+192, 0.000001, 0.000133, 0.000009
+192, 0.000004, 0.000135, 0.000010
+192, 0.000005, 0.000148, 0.000009
+192, 0.000002, 0.000188, 0.000011
+192, 0.000002, 0.000229, 0.000014
+214, 0.000006, 0.000211, 0.000012
+214, 0.000003, 0.000190, 0.000014
+214, 0.000006, 0.000158, 0.000013
+214, 0.000002, 0.000162, 0.000010
+214, 0.000004, 0.000190, 0.000010
+214, 0.000004, 0.000176, 0.000011
+214, 0.000003, 0.000129, 0.000011
+214, 0.000003, 0.000206, 0.000013
+214, 0.000002, 0.000209, 0.000013
+214, 0.000005, 0.000253, 0.000019
+214, 0.000003, 0.000258, 0.000010
+214, 0.000004, 0.000149, 0.000008
+214, 0.000003, 0.000144, 0.000012
+214, 0.000004, 0.000186, 0.000014
+214, 0.000005, 0.000255, 0.000016
+214, 0.000005, 0.000242, 0.000011
+214, 0.000003, 0.000223, 0.000012
+214, 0.000005, 0.000128, 0.000014
+214, 0.000005, 0.000144, 0.000010
+214, 0.000002, 0.000164, 0.000012
+239, 0.000006, 0.000202, 0.000012
+239, 0.000005, 0.000149, 0.000011
+239, 0.000003, 0.000124, 0.000012
+239, 0.000006, 0.000154, 0.000013
+239, 0.000006, 0.000196, 0.000013
+239, 0.000005, 0.000212, 0.000013
+239, 0.000002, 0.000217, 0.000014
+239, 0.000002, 0.000134, 0.000015
+239, 0.000004, 0.000184, 0.000012
+239, 0.000002, 0.000230, 0.000016
+239, 0.000003, 0.000237, 0.000014
+239, 0.000003, 0.000204, 0.000014
+239, 0.000004, 0.000176, 0.000013
+239, 0.000006, 0.000207, 0.000018
+239, 0.000003, 0.000179, 0.000015
+239, 0.000002, 0.000255, 0.000017
+239, 0.000002, 0.000187, 0.000013
+239, 0.000005, 0.000146, 0.000012
+239, 0.000001, 0.000133, 0.000012
+239, 0.000003, 0.000142, 0.000013
+267, 0.000004, 0.000218, 0.000013
+267, 0.000005, 0.000228, 0.000013
+267, 0.000003, 0.000153, 0.000012
+267, 0.000003, 0.000130, 0.000012
+267, 0.000002, 0.000162, 0.000015
+267, 0.000003, 0.000195, 0.000017
+267, 0.000007, 0.000205, 0.000019
+267, 0.000003, 0.000141, 0.000012
+267, 0.000002, 0.000125, 0.000016
+267, 0.000006, 0.000140, 0.000015
+267, 0.000002, 0.000176, 0.000013
+267, 0.000003, 0.000205, 0.000020
+267, 0.000006, 0.000150, 0.000012
+267, 0.000002, 0.000128, 0.000014
+267, 0.000004, 0.000136, 0.000016
+267, 0.000003, 0.000159, 0.000014
+267, 0.000001, 0.000205, 0.000021
+267, 0.000003, 0.000185, 0.000015
+267, 0.000006, 0.000146, 0.000012
+267, 0.000002, 0.000139, 0.000014
+298, 0.000006, 0.000145, 0.000015
+298, 0.000002, 0.000176, 0.000017
+298, 0.000003, 0.000231, 0.000021
+298, 0.000005, 0.000156, 0.000014
+298, 0.000005, 0.000128, 0.000015
+298, 0.000009, 0.000132, 0.000017
+298, 0.000002, 0.000167, 0.000021
+298, 0.000002, 0.000219, 0.000031
+298, 0.000009, 0.000177, 0.000014
+298, 0.000003, 0.000132, 0.000013
+298, 0.000004, 0.000153, 0.000016
+298, 0.000004, 0.000167, 0.000018
+298, 0.000007, 0.000175, 0.000015
+298, 0.000004, 0.000259, 0.000016
+298, 0.000007, 0.000166, 0.000015
+298, 0.000002, 0.000137, 0.000019
+298, 0.000002, 0.000177, 0.000024
+298, 0.000004, 0.000224, 0.000024
+298, 0.000008, 0.000266, 0.000023
+298, 0.000010, 0.000241, 0.000015
+332, 0.000001, 0.000183, 0.000019
+332, 0.000004, 0.000143, 0.000022
+332, 0.000005, 0.000174, 0.000027
+332, 0.000002, 0.000223, 0.000042
+332, 0.000003, 0.000159, 0.000022
+332, 0.000008, 0.000133, 0.000022
+332, 0.000005, 0.000142, 0.000015
+332, 0.000002, 0.000203, 0.000021
+332, 0.000007, 0.000273, 0.000024
+332, 0.000007, 0.000151, 0.000020
+332, 0.000008, 0.000192, 0.000018
+332, 0.000007, 0.000173, 0.000027
+332, 0.000004, 0.000220, 0.000029
+332, 0.000005, 0.000243, 0.000025
+332, 0.000005, 0.000223, 0.000023
+332, 0.000005, 0.000187, 0.000018
+332, 0.000006, 0.000186, 0.000022
+332, 0.000003, 0.000219, 0.000027
+332, 0.000002, 0.000235, 0.000022
+332, 0.000002, 0.000625, 0.000023
+371, 0.000009, 0.000229, 0.000025
+371, 0.000004, 0.000143, 0.000031
+371, 0.000004, 0.000216, 0.000029
+371, 0.000004, 0.000196, 0.000029
+371, 0.000003, 0.000205, 0.000023
+371, 0.000009, 0.000158, 0.000018
+371, 0.000006, 0.000137, 0.000024
+371, 0.000004, 0.000180, 0.000024
+371, 0.000006, 0.000275, 0.000029
+371, 0.000003, 0.000228, 0.000038
+371, 0.000012, 0.000176, 0.000023
+371, 0.000002, 0.000152, 0.000026
+371, 0.000017, 0.000179, 0.000019
+371, 0.000004, 0.000227, 0.000029
+371, 0.000002, 0.000184, 0.000033
+371, 0.000006, 0.000252, 0.000030
+371, 0.000008, 0.000218, 0.000021
+371, 0.000007, 0.000145, 0.000029
+371, 0.000005, 0.000224, 0.000025
+371, 0.000003, 0.000222, 0.000029
+414, 0.000010, 0.000228, 0.000023
+414, 0.000004, 0.000261, 0.000038
+414, 0.000005, 0.000151, 0.000031
+414, 0.000002, 0.000157, 0.000034
+414, 0.000008, 0.000163, 0.000029
+414, 0.000003, 0.000234, 0.000030
+414, 0.000007, 0.000173, 0.000021
+414, 0.000009, 0.000141, 0.000025
+414, 0.000003, 0.000142, 0.000026
+414, 0.000003, 0.000257, 0.000028
+414, 0.000010, 0.000313, 0.000030
+414, 0.000004, 0.000159, 0.000022
+414, 0.000003, 0.000126, 0.000020
+414, 0.000004, 0.000141, 0.000026
+414, 0.000005, 0.000174, 0.000025
+414, 0.000003, 0.000189, 0.000033
+414, 0.000002, 0.000139, 0.000027
+414, 0.000002, 0.000128, 0.000025
+414, 0.000006, 0.000130, 0.000029
+414, 0.000008, 0.000157, 0.000021
+461, 0.000009, 0.000212, 0.000035
+461, 0.000011, 0.000153, 0.000026
+461, 0.000012, 0.000158, 0.000025
+461, 0.000008, 0.000144, 0.000026
+461, 0.000003, 0.000147, 0.000032
+461, 0.000008, 0.000191, 0.000053
+461, 0.000007, 0.000360, 0.000026
+461, 0.000004, 0.000174, 0.000028
+461, 0.000009, 0.000139, 0.000035
+461, 0.000010, 0.000143, 0.000023
+461, 0.000002, 0.000173, 0.000034
+461, 0.000003, 0.000194, 0.000044
+461, 0.000007, 0.000147, 0.000029
+461, 0.000005, 0.000126, 0.000030
+461, 0.000002, 0.000131, 0.000032
+461, 0.000002, 0.000172, 0.000036
+461, 0.000003, 0.000249, 0.000044
+461, 0.000010, 0.000146, 0.000028
+461, 0.000006, 0.000128, 0.000023
+461, 0.000009, 0.000135, 0.000026
+515, 0.000006, 0.000157, 0.000037
+515, 0.000004, 0.000200, 0.000044
+515, 0.000005, 0.000179, 0.000035
+515, 0.000012, 0.000168, 0.000040
+515, 0.000006, 0.001094, 0.000044
+515, 0.000004, 0.000236, 0.000100
+515, 0.000005, 0.000250, 0.000048
+515, 0.000006, 0.000205, 0.000046
+515, 0.000007, 0.000164, 0.000040
+515, 0.000005, 0.000203, 0.000042
+515, 0.000044, 0.000217, 0.000035
+515, 0.000010, 0.000205, 0.000043
+515, 0.000004, 0.000206, 0.000064
+515, 0.000003, 0.000259, 0.001927
+515, 0.000018, 0.000156, 0.000030
+515, 0.000004, 0.000146, 0.000041
+515, 0.000009, 0.000129, 0.000032
+515, 0.000002, 0.000263, 0.003271
+515, 0.000012, 0.000278, 0.000055
+515, 0.000067, 0.000291, 0.000048
+574, 0.000033, 0.000200, 0.000051
+574, 0.000003, 0.000216, 0.000081
+574, 0.000017, 0.000285, 0.000036
+574, 0.000003, 0.000414, 0.000066
+574, 0.000019, 0.000178, 0.000042
+574, 0.000003, 0.000219, 0.000049
+574, 0.000006, 0.000157, 0.000039
+574, 0.000013, 0.000196, 0.000030
+574, 0.000008, 0.000216, 0.000042
+574, 0.000012, 0.000143, 0.000033
+574, 0.000004, 0.000133, 0.000038
+574, 0.000018, 0.000149, 0.000078
+574, 0.000014, 0.000204, 0.000040
+574, 0.000010, 0.000189, 0.000037
+574, 0.000012, 0.000157, 0.000035
+574, 0.000014, 0.000127, 0.000036
+574, 0.000006, 0.000152, 0.000046
+574, 0.000005, 0.000169, 0.000046
+574, 0.000005, 0.000213, 0.000053
+574, 0.000013, 0.000170, 0.000038
+641, 0.000005, 0.000133, 0.000060
+641, 0.000014, 0.000171, 0.000048
+641, 0.000013, 0.000273, 0.000081
+641, 0.000033, 0.000259, 0.000057
+641, 0.000011, 0.000189, 0.000054
+641, 0.000008, 0.000131, 0.000061
+641, 0.000006, 0.000175, 0.000052
+641, 0.000009, 0.000207, 0.000043
+641, 0.000006, 0.000176, 0.000065
+641, 0.000017, 0.000145, 0.000044
+641, 0.000004, 0.000135, 0.000048
+641, 0.000010, 0.000147, 0.000041
+641, 0.000002, 0.000204, 0.000069
+641, 0.000016, 0.000174, 0.000047
+641, 0.000009, 0.000144, 0.000051
+641, 0.000004, 0.000141, 0.000049
+641, 0.000007, 0.000135, 0.000039
+641, 0.000012, 0.000184, 0.000041
+641, 0.000013, 0.000160, 0.000042
+641, 0.000012, 0.000175, 0.000046
+715, 0.000026, 0.000131, 0.000039
+715, 0.000007, 0.000135, 0.000051
+715, 0.000018, 0.000170, 0.000056
+715, 0.000010, 0.000204, 0.000057
+715, 0.000010, 0.000202, 0.000046
+715, 0.000004, 0.000161, 0.000056
+715, 0.000003, 0.000165, 0.000069
+715, 0.000010, 0.000139, 0.000047
+715, 0.000010, 0.000289, 0.000053
+715, 0.000008, 0.000187, 0.000058
+715, 0.000005, 0.000155, 0.000062
+715, 0.000004, 0.000135, 0.000063
+715, 0.000007, 0.000153, 0.000050
+715, 0.000016, 0.000189, 0.000052
+715, 0.000018, 0.000173, 0.000052
+715, 0.000018, 0.000159, 0.000042
+715, 0.000005, 0.000137, 0.000065
+715, 0.000008, 0.000161, 0.000056
+715, 0.000008, 0.000283, 0.000065
+715, 0.000013, 0.000184, 0.000073
+797, 0.000019, 0.000147, 0.000093
+797, 0.000059, 0.001465, 0.000062
+797, 0.000003, 0.000491, 0.000134
+797, 0.000009, 0.000239, 0.000080
+797, 0.000012, 0.000256, 0.000081
+797, 0.000004, 0.000171, 0.000075
+797, 0.000010, 0.000143, 0.000056
+797, 0.000009, 0.000178, 0.000091
+797, 0.000006, 0.000231, 0.000088
+797, 0.000003, 0.000267, 0.000111
+797, 0.000011, 0.000160, 0.000072
+797, 0.000008, 0.000163, 0.000083
+797, 0.000029, 0.000158, 0.000068
+797, 0.000021, 0.000188, 0.000068
+797, 0.000020, 0.000177, 0.000054
+797, 0.000016, 0.000189, 0.000077
+797, 0.000017, 0.000179, 0.000057
+797, 0.000013, 0.000169, 0.000054
+797, 0.000011, 0.000282, 0.000205
+797, 0.000031, 0.000253, 0.000072
+889, 0.000020, 0.000286, 0.000093
+889, 0.000015, 0.000233, 0.000105
+889, 0.000012, 0.000178, 0.000082
+889, 0.000009, 0.000788, 0.000088
+889, 0.000020, 0.000219, 0.000079
+889, 0.000004, 0.000184, 0.000087
+889, 0.000018, 0.000150, 0.000074
+889, 0.000011, 0.000203, 0.000092
+889, 0.000029, 0.000157, 0.000056
+889, 0.000005, 0.000158, 0.000084
+889, 0.000004, 0.000164, 0.000085
+889, 0.000015, 0.000188, 0.000072
+889, 0.000015, 0.000367, 0.000070
+889, 0.000298, 0.000153, 0.000090
+889, 0.000005, 0.000230, 0.000105
+889, 0.000016, 0.000180, 0.000069
+889, 0.000025, 0.000199, 0.000074
+889, 0.000027, 0.000261, 0.000218
+889, 0.000019, 0.000176, 0.000076
+889, 0.000019, 0.001428, 0.000081
+992, 0.000028, 0.000162, 0.000100
+992, 0.000020, 0.000176, 0.000082
+992, 0.000109, 0.000188, 0.000087
+992, 0.000015, 0.000221, 0.000152
+992, 0.000034, 0.000271, 0.000101
+992, 0.000021, 0.000176, 0.000098
+992, 0.000087, 0.000182, 0.000153
+992, 0.000028, 0.000204, 0.000094
+992, 0.000007, 0.000253, 0.000107
+992, 0.000025, 0.000137, 0.000093
+992, 0.000028, 0.000149, 0.000068
+992, 0.000023, 0.000184, 0.000099
+992, 0.000047, 0.001503, 0.000104
+992, 0.000005, 0.000269, 0.000110
+992, 0.000022, 0.000173, 0.000079
+992, 0.000009, 0.000150, 0.000073
+992, 0.000017, 0.000144, 0.000073
+992, 0.000033, 0.000164, 0.000072
+992, 0.000006, 0.000286, 0.000146
+992, 0.000019, 0.000211, 0.000068
+1107, 0.000009, 0.000145, 0.000110
+1107, 0.000025, 0.000150, 0.000154
+1107, 0.000016, 0.000204, 0.000100
+1107, 0.000023, 0.000185, 0.000103
+1107, 0.000015, 0.000156, 0.000108
+1107, 0.000010, 0.000145, 0.000091
+1107, 0.000029, 0.000149, 0.000073
+1107, 0.000019, 0.000264, 0.000115
+1107, 0.000018, 0.000186, 0.000102
+1107, 0.000010, 0.000155, 0.000109
+1107, 0.000015, 0.000143, 0.000101
+1107, 0.000015, 0.000162, 0.000103
+1107, 0.000007, 0.000216, 0.000127
+1107, 0.000014, 0.000172, 0.000110
+1107, 0.000027, 0.000172, 0.000097
+1107, 0.000026, 0.000152, 0.000148
+1107, 0.000083, 0.000241, 0.000096
+1107, 0.000008, 0.000254, 0.000126
+1107, 0.000017, 0.000182, 0.000116
+1107, 0.000007, 0.000149, 0.000125
+1235, 0.000068, 0.000156, 0.000099
+1235, 0.000011, 0.000161, 0.000124
+1235, 0.000020, 0.000192, 0.000108
+1235, 0.000028, 0.000199, 0.000133
+1235, 0.000037, 0.000136, 0.000086
+1235, 0.000037, 0.000174, 0.000153
+1235, 0.000021, 0.000180, 0.000122
+1235, 0.000010, 0.000382, 0.000166
+1235, 0.000009, 0.000200, 0.000145
+1235, 0.000036, 0.000147, 0.000094
+1235, 0.000030, 0.000143, 0.000102
+1235, 0.000009, 0.000150, 0.000135
+1235, 0.000035, 0.000200, 0.000107
+1235, 0.000056, 0.000231, 0.000101
+1235, 0.000030, 0.000179, 0.000094
+1235, 0.000010, 0.000153, 0.000118
+1235, 0.000023, 0.000150, 0.000104
+1235, 0.000023, 0.000189, 0.000133
+1235, 0.000012, 0.000169, 0.000136
+1235, 0.000029, 0.000179, 0.000090
+1377, 0.000029, 0.000160, 0.000116
+1377, 0.000025, 0.000170, 0.000155
+1377, 0.000092, 0.000225, 0.000131
+1377, 0.000008, 0.000231, 0.000160
+1377, 0.000044, 0.000181, 0.000133
+1377, 0.000005, 0.000184, 0.000183
+1377, 0.000032, 0.000215, 0.000112
+1377, 0.000022, 0.000208, 0.000161
+1377, 0.000017, 0.000183, 0.000174
+1377, 0.000032, 0.000150, 0.000117
+1377, 0.000021, 0.000144, 0.000106
+1377, 0.000027, 0.000156, 0.000118
+1377, 0.000019, 0.000268, 0.000151
+1377, 0.000036, 0.000176, 0.000144
+1377, 0.000006, 0.000174, 0.000192
+1377, 0.000031, 0.000142, 0.000104
+1377, 0.000022, 0.000144, 0.000153
+1377, 0.000039, 0.000271, 0.000122
+1377, 0.000009, 0.000292, 0.000206
+1377, 0.000024, 0.000207, 0.000155
+1536, 0.000030, 0.000151, 0.000127
+1536, 0.000024, 0.000185, 0.000154
+1536, 0.000073, 0.000303, 0.000221
+1536, 0.000014, 0.000253, 0.000206
+1536, 0.000023, 0.000174, 0.000179
+1536, 0.000049, 0.000144, 0.000124
+1536, 0.000013, 0.000160, 0.000186
+1536, 0.000170, 0.000175, 0.000143
+1536, 0.000057, 0.000270, 0.000268
+1536, 0.000356, 0.000510, 0.000585
+1536, 0.000034, 0.000789, 0.000926
+1536, 0.000020, 0.000395, 0.000238
+1536, 0.002599, 0.000267, 0.000356
+1536, 0.000097, 0.000281, 0.000181
+1536, 0.000041, 0.000302, 0.000205
+1536, 0.000027, 0.000255, 0.000404
+1536, 0.000075, 0.000270, 0.000275
+1536, 0.000123, 0.000327, 0.000239
+1536, 0.000017, 0.000278, 0.000196
+1536, 0.000060, 0.000304, 0.000260
+1714, 0.000139, 0.000299, 0.000385
+1714, 0.000367, 0.000400, 0.000453
+1714, 0.000029, 0.000307, 0.000273
+1714, 0.000155, 0.000343, 0.000276
+1714, 0.000016, 0.000280, 0.000585
+1714, 0.000100, 0.000223, 0.000205
+1714, 0.000047, 0.000223, 0.000382
+1714, 0.000012, 0.000343, 0.000365
+1714, 0.000170, 0.000253, 0.001693
+1714, 0.000026, 0.001399, 0.000296
+1714, 0.000322, 0.000272, 0.000433
+1714, 0.000117, 0.000809, 0.000185
+1714, 0.000592, 0.000273, 0.000257
+1714, 0.000044, 0.000266, 0.000256
+1714, 0.000073, 0.000541, 0.000275
+1714, 0.000107, 0.000371, 0.000337
+1714, 0.000019, 0.000298, 0.000699
+1714, 0.000654, 0.000293, 0.000326
+1714, 0.000019, 0.000297, 0.000373
+1714, 0.000052, 0.000384, 0.000289
+1912, 0.000067, 0.000286, 0.000312
+1912, 0.000123, 0.000285, 0.000706
+1912, 0.000151, 0.000253, 0.000383
+1912, 0.000050, 0.000268, 0.000522
+1912, 0.000099, 0.000256, 0.000299
+1912, 0.000048, 0.000298, 0.000298
+1912, 0.000084, 0.000209, 0.000182
+1912, 0.000023, 0.000183, 0.000254
+1912, 0.000021, 0.000228, 0.000526
+1912, 0.000265, 0.000265, 0.000223
+1912, 0.000062, 0.000255, 0.000349
+1912, 0.000101, 0.000212, 0.000193
+1912, 0.000033, 0.000181, 0.000257
+1912, 0.000092, 0.000228, 0.000223
+1912, 0.000041, 0.000294, 0.000296
+1912, 0.000073, 0.000180, 0.000194
+1912, 0.000011, 0.000200, 0.000311
+1912, 0.000028, 0.000205, 0.000221
+1912, 0.000023, 0.000178, 0.000238
+1912, 0.000007, 0.000206, 0.000335
+2133, 0.000054, 0.000188, 0.000197
+2133, 0.000012, 0.000228, 0.000317
+2133, 0.000025, 0.000212, 0.000345
+2133, 0.000059, 0.000170, 0.000258
+2133, 0.000040, 0.000234, 0.000253
+2133, 0.000027, 0.000184, 0.000343
+2133, 0.000080, 0.000229, 0.000335
+2133, 0.000063, 0.000224, 0.000304
+2133, 0.000176, 0.000262, 0.000276
+2133, 0.000060, 0.000205, 0.000290
+2133, 0.000046, 0.000245, 0.000271
+2133, 0.000010, 0.000251, 0.000371
+2133, 0.000069, 0.000171, 0.000229
+2133, 0.000174, 0.000222, 0.000212
+2133, 0.000045, 0.000224, 0.000239
+2133, 0.000048, 0.000192, 0.000227
+2133, 0.000049, 0.000225, 0.000219
+2133, 0.000008, 0.000183, 0.000369
+2133, 0.000054, 0.000167, 0.000260
+2133, 0.000070, 0.000535, 0.000208
+2379, 0.000044, 0.000226, 0.000382
+2379, 0.000062, 0.000181, 0.000260
+2379, 0.000058, 0.000236, 0.000600
+2379, 0.000035, 0.000250, 0.000454
+2379, 0.000061, 0.000190, 0.000293
+2379, 0.000019, 0.000240, 0.000466
+2379, 0.000016, 0.000222, 0.000368
+2379, 0.000060, 0.000275, 0.000349
+2379, 0.000021, 0.000224, 0.000364
+2379, 0.000040, 0.000202, 0.000314
+2379, 0.000034, 0.000261, 0.000521
+2379, 0.000046, 0.000187, 0.000247
+2379, 0.000042, 0.000186, 0.000294
+2379, 0.000024, 0.000181, 0.000365
+2379, 0.000049, 0.000207, 0.000418
+2379, 0.000075, 0.000218, 0.000225
+2379, 0.000026, 0.000206, 0.000385
+2379, 0.000088, 0.000171, 0.000310
+2379, 0.000084, 0.000270, 0.000597
+2379, 0.000021, 0.000252, 0.000553
+2654, 0.000033, 0.000221, 0.000422
+2654, 0.000057, 0.000217, 0.000361
+2654, 0.000046, 0.000182, 0.000415
+2654, 0.000039, 0.000215, 0.000366
+2654, 0.000062, 0.000208, 0.000309
+2654, 0.000009, 0.000213, 0.000469
+2654, 0.000040, 0.000181, 0.000393
+2654, 0.000053, 0.000185, 0.000403
+2654, 0.000009, 0.000249, 0.000515
+2654, 0.000029, 0.000190, 0.000420
+2654, 0.000019, 0.000222, 0.000467
+2654, 0.000009, 0.000251, 0.000488
+2654, 0.000017, 0.000228, 0.000442
+2654, 0.000074, 0.000238, 0.000309
+2654, 0.000073, 0.000223, 0.000309
+2654, 0.000058, 0.000180, 0.000308
+2654, 0.000061, 0.000168, 0.000379
+2654, 0.000110, 0.000162, 0.000334
+2654, 0.000012, 0.000227, 0.000478
+2654, 0.000047, 0.000176, 0.000332
+2960, 0.000051, 0.000173, 0.000396
+2960, 0.000080, 0.000177, 0.000407
+2960, 0.000016, 0.000203, 0.000724
+2960, 0.000037, 0.000216, 0.000521
+2960, 0.000075, 0.000202, 0.000425
+2960, 0.000012, 0.000198, 0.000588
+2960, 0.000067, 0.000179, 0.000486
+2960, 0.000066, 0.000210, 0.000479
+2960, 0.000074, 0.000252, 0.000345
+2960, 0.000033, 0.000199, 0.000510
+2960, 0.000091, 0.000178, 0.000342
+2960, 0.000073, 0.000164, 0.000325
+2960, 0.000071, 0.000223, 0.000366
+2960, 0.000014, 0.000245, 0.000563
+2960, 0.000059, 0.000186, 0.000340
+2960, 0.000048, 0.000180, 0.000446
+2960, 0.000018, 0.000202, 0.000569
+2960, 0.000039, 0.000205, 0.000558
+2960, 0.000050, 0.000197, 0.000417
+2960, 0.000067, 0.000184, 0.000400
+3302, 0.000016, 0.000214, 0.000624
+3302, 0.000089, 0.000181, 0.000412
+3302, 0.000077, 0.000227, 0.000503
+3302, 0.000061, 0.000232, 0.000431
+3302, 0.000030, 0.000203, 0.000615
+3302, 0.000026, 0.000203, 0.000633
+3302, 0.000061, 0.000181, 0.000393
+3302, 0.000050, 0.000231, 0.000414
+3302, 0.000038, 0.000193, 0.000532
+3302, 0.000106, 0.000178, 0.000380
+3302, 0.000039, 0.000193, 0.000576
+3302, 0.000023, 0.000197, 0.000797
+3302, 0.000068, 0.000267, 0.000596
+3302, 0.000065, 0.000219, 0.000422
+3302, 0.000046, 0.000190, 0.000435
+3302, 0.000040, 0.000188, 0.000579
+3302, 0.000057, 0.000193, 0.000614
+3302, 0.000102, 0.000202, 0.000335
+3302, 0.000024, 0.000203, 0.000615
+3302, 0.000099, 0.000189, 0.000416
+3684, 0.000013, 0.000222, 0.000839
+3684, 0.000156, 0.000207, 0.000414
+3684, 0.000055, 0.000192, 0.000560
+3684, 0.000041, 0.000224, 0.000733
+3684, 0.000026, 0.000203, 0.000789
+3684, 0.000086, 0.000190, 0.000567
+3684, 0.000041, 0.000207, 0.000717
+3684, 0.000055, 0.000204, 0.000546
+3684, 0.000038, 0.000198, 0.000764
+3684, 0.000065, 0.000190, 0.000598
+3684, 0.000085, 0.000312, 0.000892
+3684, 0.000260, 0.001483, 0.000815
+3684, 0.000046, 0.001080, 0.001005
+3684, 0.000087, 0.001380, 0.000982
+3684, 0.000070, 0.002081, 0.001545
+3684, 0.000165, 0.003639, 0.000899
+3684, 0.000132, 0.000311, 0.000708
+3684, 0.000042, 0.000358, 0.002256
+3684, 0.000025, 0.001141, 0.001164
+3684, 0.000088, 0.000269, 0.000777
+4109, 0.000088, 0.000396, 0.001006
+4109, 0.000100, 0.001172, 0.000875
+4109, 0.000095, 0.000577, 0.000948
+4109, 0.000125, 0.000332, 0.000837
+4109, 0.000249, 0.000408, 0.001074
+4109, 0.000079, 0.000339, 0.000893
+4109, 0.000014, 0.000365, 0.001199
+4109, 0.000117, 0.000281, 0.000805
+4109, 0.000079, 0.000343, 0.000832
+4109, 0.000067, 0.000224, 0.000856
+4109, 0.000113, 0.000231, 0.000596
+4109, 0.000034, 0.000297, 0.001202
+4109, 0.000114, 0.000372, 0.000704
+4109, 0.000066, 0.000307, 0.000735
+4109, 0.000080, 0.000228, 0.000881
+4109, 0.000019, 0.000335, 0.000980
+4109, 0.000171, 0.000263, 0.000655
+4109, 0.000087, 0.000210, 0.000584
+4109, 0.000044, 0.000261, 0.000873
+4109, 0.000137, 0.000212, 0.000615
+4584, 0.000027, 0.000277, 0.001304
+4584, 0.000092, 0.000213, 0.001102
+4584, 0.000137, 0.000233, 0.000670
+4584, 0.000090, 0.000204, 0.000811
+4584, 0.000021, 0.000239, 0.001156
+4584, 0.000071, 0.000232, 0.000805
+4584, 0.000147, 0.000260, 0.000692
+4584, 0.000075, 0.000221, 0.000867
+4584, 0.000016, 0.000297, 0.001324
+4584, 0.000088, 0.000234, 0.000928
+4584, 0.000071, 0.000299, 0.000892
+4584, 0.000079, 0.000238, 0.000936
+4584, 0.000039, 0.000295, 0.001156
+4584, 0.000078, 0.000232, 0.000835
+4584, 0.000057, 0.000232, 0.000922
+4584, 0.000088, 0.000267, 0.000904
+4584, 0.000032, 0.000239, 0.001129
+4584, 0.000031, 0.000223, 0.001107
+4584, 0.000081, 0.000206, 0.000758
+4584, 0.000069, 0.000294, 0.001027
+5113, 0.000023, 0.000354, 0.001629
+5113, 0.000117, 0.000214, 0.000803
+5113, 0.000055, 0.000242, 0.000955
+5113, 0.000107, 0.000266, 0.000829
+5113, 0.000014, 0.000348, 0.001662
+5113, 0.000040, 0.000278, 0.001268
+5113, 0.000041, 0.000239, 0.001299
+5113, 0.000114, 0.000234, 0.000891
+5113, 0.000031, 0.000372, 0.001513
+5113, 0.000133, 0.000214, 0.000875
+5113, 0.000035, 0.000228, 0.001337
+5113, 0.000096, 0.000265, 0.001025
+5113, 0.000060, 0.000331, 0.001809
+5113, 0.000113, 0.000505, 0.000904
+5113, 0.000079, 0.000258, 0.000851
+5113, 0.000020, 0.000263, 0.001737
+5113, 0.000026, 0.000347, 0.001694
+5113, 0.000021, 0.000438, 0.001765
+5113, 0.000112, 0.000229, 0.001055
+5113, 0.000042, 0.000262, 0.001423
+5704, 0.000100, 0.000498, 0.001664
+5704, 0.000227, 0.000402, 0.001401
+5704, 0.000212, 0.000235, 0.001142
+5704, 0.000099, 0.000237, 0.001527
+5704, 0.000115, 0.000250, 0.001424
+5704, 0.000099, 0.000392, 0.001584
+5704, 0.000070, 0.000365, 0.001325
+5704, 0.000211, 0.000225, 0.000928
+5704, 0.000105, 0.000258, 0.001075
+5704, 0.000110, 0.000370, 0.001169
+5704, 0.000203, 0.000296, 0.001386
+5704, 0.000021, 0.000296, 0.001864
+5704, 0.000097, 0.000224, 0.001349
+5704, 0.000094, 0.000302, 0.001376
+5704, 0.000094, 0.000302, 0.001111
+5704, 0.000088, 0.000241, 0.001302
+5704, 0.000033, 0.000254, 0.001631
+5704, 0.000128, 0.000219, 0.001005
+5704, 0.000114, 0.000295, 0.001342
+5704, 0.000067, 0.000541, 0.001325
+6362, 0.000045, 0.000273, 0.001960
+6362, 0.000042, 0.000301, 0.002031
+6362, 0.000101, 0.000397, 0.001435
+6362, 0.000101, 0.000336, 0.001289
+6362, 0.000204, 0.000208, 0.001031
+6362, 0.000125, 0.000222, 0.001246
+6362, 0.000056, 0.000337, 0.001956
+6362, 0.000040, 0.000334, 0.002082
+6362, 0.000096, 0.000300, 0.001837
+6362, 0.000156, 0.000226, 0.001169
+6362, 0.000047, 0.000299, 0.001832
+6362, 0.000074, 0.000313, 0.001645
+6362, 0.000041, 0.000303, 0.001911
+6362, 0.000063, 0.000255, 0.001641
+6362, 0.000170, 0.000246, 0.001152
+6362, 0.000091, 0.000287, 0.001793
+6362, 0.000060, 0.000277, 0.001990
+6362, 0.000059, 0.000254, 0.001894
+6362, 0.000065, 0.000362, 0.001739
+6362, 0.000057, 0.000341, 0.001970
+7097, 0.000052, 0.000334, 0.002387
+7097, 0.000040, 0.000304, 0.002512
+7097, 0.000222, 0.000266, 0.001316
+7097, 0.000080, 0.000345, 0.002125
+7097, 0.000147, 0.000240, 0.001732
+7097, 0.000060, 0.000273, 0.002358
+7097, 0.000079, 0.000347, 0.002041
+7097, 0.000097, 0.000340, 0.001639
+7097, 0.000096, 0.000244, 0.002112
+7097, 0.000041, 0.000287, 0.002565
+7097, 0.000145, 0.000300, 0.001843
+7097, 0.000191, 0.000242, 0.001552
+7097, 0.000053, 0.000273, 0.002428
+7097, 0.000106, 0.000317, 0.002324
+7097, 0.000180, 0.000289, 0.001326
+7097, 0.000106, 0.000264, 0.001953
+7097, 0.000106, 0.000263, 0.001716
+7097, 0.000175, 0.000262, 0.001490
+7097, 0.000109, 0.000337, 0.001909
+7097, 0.000183, 0.000254, 0.001462
+7917, 0.000100, 0.000298, 0.002264
+7917, 0.000158, 0.000310, 0.002259
+7917, 0.000220, 0.000279, 0.002143
+7917, 0.000054, 0.000453, 0.009217
+7917, 0.000175, 0.000414, 0.002412
+7917, 0.000078, 0.000785, 0.003923
+7917, 0.000081, 0.000343, 0.004566
+7917, 0.000105, 0.000383, 0.003836
+7917, 0.000109, 0.000390, 0.004773
+7917, 0.000120, 0.000410, 0.003143
+7917, 0.000140, 0.000247, 0.002296
+7917, 0.000193, 0.000433, 0.003292
+7917, 0.000166, 0.001584, 0.004315
+7917, 0.000118, 0.000300, 0.004629
+7917, 0.000158, 0.000350, 0.002370
+7917, 0.000133, 0.000251, 0.002266
+7917, 0.000101, 0.000415, 0.002678
+7917, 0.000205, 0.000279, 0.001689
+7917, 0.000093, 0.000298, 0.002378
+7917, 0.000252, 0.000238, 0.001621
+8831, 0.000119, 0.000426, 0.004435
+8831, 0.000120, 0.000310, 0.002883
+8831, 0.000116, 0.000297, 0.003571
+8831, 0.000293, 0.000374, 0.002846
+8831, 0.000219, 0.000354, 0.002601
+8831, 0.000124, 0.000299, 0.003668
+8831, 0.000174, 0.000381, 0.002862
+8831, 0.000098, 0.000342, 0.002967
+8831, 0.000159, 0.000259, 0.002414
+8831, 0.000210, 0.000334, 0.002792
+8831, 0.000281, 0.000277, 0.002510
+8831, 0.000189, 0.000280, 0.002585
+8831, 0.000222, 0.000387, 0.002190
+8831, 0.000068, 0.000462, 0.003716
+8831, 0.000059, 0.000313, 0.003558
+8831, 0.000119, 0.000387, 0.002924
+8831, 0.000331, 0.000322, 0.002729
+8831, 0.000187, 0.000288, 0.002190
+8831, 0.000186, 0.000353, 0.002333
+8831, 0.000211, 0.000332, 0.002167
+9851, 0.000202, 0.000287, 0.002782
+9851, 0.000145, 0.000440, 0.003551
+9851, 0.000126, 0.000413, 0.003519
+9851, 0.000096, 0.000302, 0.003753
+9851, 0.000267, 0.000383, 0.003048
+9851, 0.000209, 0.000321, 0.002682
+9851, 0.000189, 0.000294, 0.002537
+9851, 0.000361, 0.000405, 0.002397
+9851, 0.000221, 0.000360, 0.002843
+9851, 0.000128, 0.000291, 0.003928
+9851, 0.000271, 0.000352, 0.003022
+9851, 0.000271, 0.000272, 0.002437
+9851, 0.000168, 0.000277, 0.002723
+9851, 0.000187, 0.000370, 0.003919
+9851, 0.000203, 0.000278, 0.002679
+9851, 0.000150, 0.000317, 0.003301
+9851, 0.000085, 0.000557, 0.004922
+9851, 0.000258, 0.000312, 0.002868
+9851, 0.000305, 0.000286, 0.002487
+9851, 0.000214, 0.000402, 0.003192
+10989, 0.000225, 0.000302, 0.003370
+10989, 0.000228, 0.000486, 0.003682
+10989, 0.000275, 0.000338, 0.002872
+10989, 0.000251, 0.000298, 0.004172
+10989, 0.000235, 0.000344, 0.003874
+10989, 0.000031, 0.000526, 0.006461
+10989, 0.000386, 0.000374, 0.003054
+10989, 0.000111, 0.000384, 0.004592
+10989, 0.000178, 0.000318, 0.003474
+10989, 0.000165, 0.000525, 0.005455
+10989, 0.000239, 0.000284, 0.003342
+10989, 0.000189, 0.000410, 0.004522
+10989, 0.000036, 0.000522, 0.006431
+10989, 0.000171, 0.000479, 0.005686
+10989, 0.000322, 0.000318, 0.002822
+10989, 0.000155, 0.000369, 0.003926
+10989, 0.000115, 0.000507, 0.006246
+10989, 0.000269, 0.000286, 0.002978
+10989, 0.000273, 0.000351, 0.003241
+10989, 0.000100, 0.000377, 0.005301
+12258, 0.000131, 0.000395, 0.006905
+12258, 0.000243, 0.000332, 0.005791
+12258, 0.000342, 0.000550, 0.006236
+12258, 0.000205, 0.000327, 0.005142
+12258, 0.000090, 0.000568, 0.007442
+12258, 0.000144, 0.000350, 0.005099
+12258, 0.000210, 0.000394, 0.005819
+12258, 0.000192, 0.000326, 0.004409
+12258, 0.000208, 0.000423, 0.004695
+12258, 0.000230, 0.000462, 0.006000
+12258, 0.000302, 0.000510, 0.004269
+12258, 0.000220, 0.000313, 0.004406
+12258, 0.000397, 0.000297, 0.004071
+12258, 0.000324, 0.000479, 0.003869
+12258, 0.000198, 0.000346, 0.005670
+12258, 0.000274, 0.000391, 0.003904
+12258, 0.000140, 0.000381, 0.005222
+12258, 0.000359, 0.000397, 0.004566
+12258, 0.000293, 0.000297, 0.004312
+12258, 0.000308, 0.000368, 0.004273
+13673, 0.000168, 0.000492, 0.008066
+13673, 0.000118, 0.000450, 0.008020
+13673, 0.000157, 0.000382, 0.008296
+13673, 0.000258, 0.000345, 0.005757
+13673, 0.000268, 0.000331, 0.006026
+13673, 0.000268, 0.000366, 0.004776
+13673, 0.000186, 0.000400, 0.006214
+13673, 0.000341, 0.000337, 0.005060
+13673, 0.000214, 0.000343, 0.005597
+13673, 0.000260, 0.000395, 0.005197
+13673, 0.000065, 0.000673, 0.011590
+13673, 0.000185, 0.000359, 0.008311
+13673, 0.000112, 0.000438, 0.008593
+13673, 0.000398, 0.000567, 0.009050
+13673, 0.000062, 0.000592, 0.010538
+13673, 0.000138, 0.000364, 0.007455
+13673, 0.000230, 0.000504, 0.008418
+13673, 0.000243, 0.000345, 0.005497
+13673, 0.000291, 0.000329, 0.005887
+13673, 0.000303, 0.000438, 0.005977
+15253, 0.000141, 0.000467, 0.010222
+15253, 0.000308, 0.000427, 0.005424
+15253, 0.000278, 0.000364, 0.007457
+15253, 0.000390, 0.000413, 0.005462
+15253, 0.000333, 0.000338, 0.005541
+15253, 0.000267, 0.000392, 0.006707
+15253, 0.000200, 0.000464, 0.009463
+15253, 0.000045, 0.000549, 0.012478
+15253, 0.000201, 0.000374, 0.008687
+15253, 0.000280, 0.000496, 0.008451
+15253, 0.000320, 0.000440, 0.008025
+15253, 0.000287, 0.000348, 0.007059
+15253, 0.000421, 0.000433, 0.006028
+15253, 0.000098, 0.000456, 0.010646
+15253, 0.000210, 0.000385, 0.006509
+15253, 0.000328, 0.000601, 0.006159
+15253, 0.000328, 0.000361, 0.005704
+15253, 0.000139, 0.000529, 0.010345
+15253, 0.000166, 0.000392, 0.008408
+15253, 0.000245, 0.000359, 0.007834
+17014, 0.000462, 0.000461, 0.006614
+17014, 0.000106, 0.000556, 0.014254
+17014, 0.000235, 0.000503, 0.009163
+17014, 0.000291, 0.000435, 0.011383
+17014, 0.000414, 0.000394, 0.007135
+17014, 0.000209, 0.000494, 0.008946
+17014, 0.000270, 0.000428, 0.011126
+17014, 0.000100, 0.000525, 0.013158
+17014, 0.000204, 0.000442, 0.010516
+17014, 0.000252, 0.000464, 0.010270
+17014, 0.000356, 0.000394, 0.007103
+17014, 0.000115, 0.000481, 0.012750
+17014, 0.000261, 0.000393, 0.010229
+17014, 0.000392, 0.000385, 0.006488
+17014, 0.000267, 0.000506, 0.008736
+17014, 0.000390, 0.000354, 0.007966
+17014, 0.000514, 0.000499, 0.005693
+17014, 0.000212, 0.000487, 0.010974
+17014, 0.000275, 0.000374, 0.008234
+17014, 0.000412, 0.000654, 0.006585
+18979, 0.000108, 0.000594, 0.016875
+18979, 0.000153, 0.000669, 0.016432
+18979, 0.000186, 0.000598, 0.012639
+18979, 0.000270, 0.000551, 0.012831
+18979, 0.000616, 0.000417, 0.007746
+18979, 0.000304, 0.000452, 0.009834
+18979, 0.000278, 0.000420, 0.011931
+18979, 0.000510, 0.000415, 0.008464
+18979, 0.000456, 0.000599, 0.012814
+18979, 0.000165, 0.000565, 0.014468
+18979, 0.000344, 0.000673, 0.011657
+18979, 0.000299, 0.000493, 0.010032
+18979, 0.000419, 0.000465, 0.009717
+18979, 0.000287, 0.000414, 0.012301
+18979, 0.000068, 0.000659, 0.018539
+18979, 0.000095, 0.000576, 0.016707
+18979, 0.000360, 0.000490, 0.011706
+18979, 0.000202, 0.000517, 0.012287
+18979, 0.000283, 0.000509, 0.014392
+18979, 0.000371, 0.000411, 0.009409
+21171, 0.000299, 0.000512, 0.013697
+21171, 0.000398, 0.000474, 0.013170
+21171, 0.000583, 0.000408, 0.010052
+21171, 0.000358, 0.000635, 0.020092
+21171, 0.000802, 0.000391, 0.009658
+21171, 0.000660, 0.000450, 0.008773
+21171, 0.000065, 0.001123, 0.023114
+21171, 0.000167, 0.000584, 0.019276
+21171, 0.000296, 0.000580, 0.011851
+21171, 0.000253, 0.000539, 0.017905
+21171, 0.000115, 0.000699, 0.019497
+21171, 0.000400, 0.000431, 0.014056
+21171, 0.000302, 0.000450, 0.012747
+21171, 0.000222, 0.000523, 0.018542
+21171, 0.000646, 0.000415, 0.012924
+21171, 0.000714, 0.000442, 0.010931
+21171, 0.000549, 0.000449, 0.011572
+21171, 0.000214, 0.000575, 0.018578
+21171, 0.000262, 0.000560, 0.013986
+21171, 0.000240, 0.000486, 0.017910
+23616, 0.000501, 0.000558, 0.013371
+23616, 0.000161, 0.000793, 0.024561
+23616, 0.000436, 0.000463, 0.015850
+23616, 0.000350, 0.000545, 0.017907
+23616, 0.000607, 0.000584, 0.014116
+23616, 0.000262, 0.000656, 0.019259
+23616, 0.000446, 0.000568, 0.018436
+23616, 0.000602, 0.000489, 0.015562
+23616, 0.000296, 0.000689, 0.020546
+23616, 0.000444, 0.000616, 0.016548
+23616, 0.000412, 0.000469, 0.015018
+23616, 0.000153, 0.000612, 0.024820
+23616, 0.000469, 0.000480, 0.013394
+23616, 0.000477, 0.000602, 0.014574
+23616, 0.000193, 0.000617, 0.022094
+23616, 0.000329, 0.000550, 0.020148
+23616, 0.000280, 0.000742, 0.016496
+23616, 0.000310, 0.000567, 0.016890
+23616, 0.000195, 0.000573, 0.022709
+23616, 0.000273, 0.000630, 0.018246
+26343, 0.000500, 0.000548, 0.019644
+26343, 0.000534, 0.000659, 0.020871
+26343, 0.000428, 0.000619, 0.021580
+26343, 0.000727, 0.000470, 0.015115
+26343, 0.000644, 0.000629, 0.023673
+26343, 0.000356, 0.000565, 0.026750
+26343, 0.000508, 0.000568, 0.015832
+26343, 0.000340, 0.000570, 0.024039
+26343, 0.000140, 0.001014, 0.036237
+26343, 0.000275, 0.000585, 0.026911
+26343, 0.000500, 0.000730, 0.018681
+26343, 0.000545, 0.000479, 0.019265
+26343, 0.000136, 0.000879, 0.031602
+26343, 0.000746, 0.000560, 0.016520
+26343, 0.000364, 0.000738, 0.028600
+26343, 0.000400, 0.000634, 0.024845
+26343, 0.000530, 0.000715, 0.022500
+26343, 0.000220, 0.000655, 0.026391
+26343, 0.000261, 0.000576, 0.024479
+26343, 0.000104, 0.000822, 0.034844
+29386, 0.000821, 0.000791, 0.018741
+29386, 0.000412, 0.000589, 0.030309
+29386, 0.000528, 0.000786, 0.026109
+29386, 0.000476, 0.000621, 0.031153
+29386, 0.000452, 0.000576, 0.022143
+29386, 0.000666, 0.000615, 0.026044
+29386, 0.000644, 0.000522, 0.018825
+29386, 0.000459, 0.000637, 0.027629
+29386, 0.000588, 0.000607, 0.022358
+29386, 0.000271, 0.000687, 0.030507
+29386, 0.000388, 0.000644, 0.024347
+29386, 0.000693, 0.000590, 0.021360
+29386, 0.000441, 0.000640, 0.025746
+29386, 0.000391, 0.000728, 0.024278
+29386, 0.000587, 0.000630, 0.024754
+29386, 0.000164, 0.000823, 0.040693
+29386, 0.000686, 0.000555, 0.017791
+29386, 0.000587, 0.000648, 0.025086
+29386, 0.000101, 0.000889, 0.044448
+29386, 0.000798, 0.000661, 0.022860
+32780, 0.000437, 0.000631, 0.034086
+32780, 0.000673, 0.000689, 0.031343
+32780, 0.001083, 0.000540, 0.022513
+32780, 0.000118, 0.000968, 0.054194
+32780, 0.000470, 0.000903, 0.037347
+32780, 0.000162, 0.000898, 0.048918
+32780, 0.000709, 0.000844, 0.029405
+32780, 0.000530, 0.000690, 0.036094
+32780, 0.000589, 0.000713, 0.029415
+32780, 0.000575, 0.000687, 0.026319
+32780, 0.000702, 0.000576, 0.029710
+32780, 0.000451, 0.000780, 0.033190
+32780, 0.000365, 0.000864, 0.035497
+32780, 0.000601, 0.000590, 0.032119
+32780, 0.000449, 0.000782, 0.029395
+32780, 0.000089, 0.001111, 0.051331
+32780, 0.000370, 0.000688, 0.044180
+32780, 0.000345, 0.000715, 0.043513
+32780, 0.000112, 0.000987, 0.052214
+32780, 0.000488, 0.000777, 0.029119
+36565, 0.000927, 0.000651, 0.029375
+36565, 0.000573, 0.000753, 0.046007
+36565, 0.001122, 0.000608, 0.031053
+36565, 0.000565, 0.000749, 0.035559
+36565, 0.001061, 0.000698, 0.025616
+36565, 0.000372, 0.000781, 0.048048
+36565, 0.000357, 0.000766, 0.048799
+36565, 0.000755, 0.000867, 0.035729
+36565, 0.000532, 0.000731, 0.043083
+36565, 0.000114, 0.001129, 0.069180
+36565, 0.000754, 0.000634, 0.036880
+36565, 0.000434, 0.000907, 0.043928
+36565, 0.001422, 0.000871, 0.030279
+36565, 0.000244, 0.000923, 0.053042
+36565, 0.000392, 0.000752, 0.045394
+36565, 0.000449, 0.000718, 0.042236
+36565, 0.001073, 0.000893, 0.032784
+36565, 0.000683, 0.000591, 0.031960
+36565, 0.000614, 0.000658, 0.041068
+36565, 0.000349, 0.000817, 0.055825
+40788, 0.000486, 0.000865, 0.064377
+40788, 0.000831, 0.000755, 0.048286
+40788, 0.001284, 0.000678, 0.036944
+40788, 0.000720, 0.000723, 0.042987
+40788, 0.000254, 0.000956, 0.073480
+40788, 0.000404, 0.000846, 0.054318
+40788, 0.001203, 0.000624, 0.031251
+40788, 0.000186, 0.001107, 0.077130
+40788, 0.001387, 0.000624, 0.035141
+40788, 0.000742, 0.000816, 0.051902
+40788, 0.001046, 0.000686, 0.032046
+40788, 0.000184, 0.001091, 0.074056
+40788, 0.000132, 0.001217, 0.084738
+40788, 0.000781, 0.000675, 0.042827
+40788, 0.000495, 0.001055, 0.065767
+40788, 0.000343, 0.000933, 0.061479
+40788, 0.000526, 0.000884, 0.047977
+40788, 0.000699, 0.000815, 0.051120
+40788, 0.000570, 0.000932, 0.063438
+40788, 0.000489, 0.000806, 0.056868
+45499, 0.000505, 0.000953, 0.067691
+45499, 0.000641, 0.001029, 0.057220
+45499, 0.000207, 0.001215, 0.099005
+45499, 0.001316, 0.000750, 0.050094
+45499, 0.000963, 0.000718, 0.055095
+45499, 0.000785, 0.000786, 0.045576
+45499, 0.000894, 0.000808, 0.046295
+45499, 0.000372, 0.001052, 0.084780
+45499, 0.000543, 0.000940, 0.072099
+45499, 0.000728, 0.000805, 0.061462
+45499, 0.000913, 0.000865, 0.053302
+45499, 0.000480, 0.001024, 0.083998
+45499, 0.000809, 0.000831, 0.069726
+45499, 0.000709, 0.000892, 0.056318
+45499, 0.000618, 0.001051, 0.058405
+45499, 0.000972, 0.000869, 0.051444
+45499, 0.000819, 0.000764, 0.050120
+45499, 0.000929, 0.001148, 0.052161
+45499, 0.000135, 0.001441, 0.108127
+45499, 0.000786, 0.000902, 0.065767
+50753, 0.000748, 0.000916, 0.079871
+50753, 0.000598, 0.001167, 0.082037
+50753, 0.000772, 0.000983, 0.091345
+50753, 0.000916, 0.000824, 0.064267
+50753, 0.001067, 0.000820, 0.060385
+50753, 0.000923, 0.001003, 0.059166
+50753, 0.001045, 0.000852, 0.063991
+50753, 0.000174, 0.001437, 0.130433
+50753, 0.000928, 0.000836, 0.059853
+50753, 0.000650, 0.001121, 0.071612
+50753, 0.001714, 0.000923, 0.073702
+50753, 0.000742, 0.000879, 0.079489
+50753, 0.000740, 0.001130, 0.098123
+50753, 0.000504, 0.001077, 0.107366
+50753, 0.000568, 0.001127, 0.077485
+50753, 0.000705, 0.000960, 0.091113
+50753, 0.000748, 0.001152, 0.073948
+50753, 0.000425, 0.001096, 0.106485
+50753, 0.000279, 0.001208, 0.113703
+50753, 0.000568, 0.000978, 0.096789
+56615, 0.001428, 0.001471, 0.070891
+56615, 0.000990, 0.001313, 0.123102
+56615, 0.001037, 0.000879, 0.083464
+56615, 0.001099, 0.001033, 0.080616
+56615, 0.000405, 0.001246, 0.119855
+56615, 0.001249, 0.001066, 0.087964
+56615, 0.000749, 0.001106, 0.118553
+56615, 0.000949, 0.000891, 0.083487
+56615, 0.000668, 0.001056, 0.099397
+56615, 0.001095, 0.000867, 0.074270
+56615, 0.000858, 0.001979, 0.135989
+56615, 0.000758, 0.001093, 0.082764
+56615, 0.001429, 0.000829, 0.067294
+56615, 0.001184, 0.000920, 0.093260
+56615, 0.001716, 0.000879, 0.067974
+56615, 0.000552, 0.001738, 0.128585
+56615, 0.001337, 0.000931, 0.077478
+56615, 0.001179, 0.001003, 0.081300
+56615, 0.000410, 0.001265, 0.132778
+56615, 0.001142, 0.000937, 0.087388
+63153, 0.000384, 0.002129, 0.178280
+63153, 0.000948, 0.001081, 0.094041
+63153, 0.000507, 0.001377, 0.160884
+63153, 0.000583, 0.001289, 0.130684
+63153, 0.000795, 0.001155, 0.126944
+63153, 0.000546, 0.001768, 0.146561
+63153, 0.001078, 0.001403, 0.107971
+63153, 0.000517, 0.001287, 0.163976
+63153, 0.000474, 0.002075, 0.163008
+63153, 0.002342, 0.001221, 0.076952
+63153, 0.000567, 0.001747, 0.158588
+63153, 0.000588, 0.001315, 0.152782
+63153, 0.001013, 0.001122, 0.114438
+63153, 0.000216, 0.001743, 0.194858
+63153, 0.001753, 0.001111, 0.116494
+63153, 0.000775, 0.001233, 0.116018
+63153, 0.000594, 0.001344, 0.162071
+63153, 0.001228, 0.001013, 0.119372
+63153, 0.001137, 0.001142, 0.088218
+63153, 0.001325, 0.000969, 0.090761
+70446, 0.000404, 0.001704, 0.206712
+70446, 0.001277, 0.001658, 0.193705
+70446, 0.000748, 0.001806, 0.156499
+70446, 0.000785, 0.001287, 0.158744
+70446, 0.002213, 0.001231, 0.087415
+70446, 0.001091, 0.001152, 0.135684
+70446, 0.002174, 0.000976, 0.102828
+70446, 0.001349, 0.001226, 0.141337
+70446, 0.000843, 0.001386, 0.134187
+70446, 0.001364, 0.001142, 0.133045
+70446, 0.000355, 0.001920, 0.221714
+70446, 0.001079, 0.001222, 0.126927
+70446, 0.001448, 0.001221, 0.149837
+70446, 0.001252, 0.001118, 0.110500
+70446, 0.001306, 0.001048, 0.126298
+70446, 0.000416, 0.001648, 0.205191
+70446, 0.000580, 0.001546, 0.207571
+70446, 0.001749, 0.001039, 0.094151
+70446, 0.001159, 0.001229, 0.143976
+70446, 0.000715, 0.001364, 0.188580
+78582, 0.001821, 0.001727, 0.150690
+78582, 0.002095, 0.001301, 0.135505
+78582, 0.000258, 0.002220, 0.300402
+78582, 0.001279, 0.001778, 0.198932
+78582, 0.001478, 0.001177, 0.133889
+78582, 0.001709, 0.001460, 0.158808
+78582, 0.000440, 0.001775, 0.256670
+78582, 0.001474, 0.001304, 0.130428
+78582, 0.001311, 0.001584, 0.158133
+78582, 0.001470, 0.001258, 0.160188
+78582, 0.001732, 0.001115, 0.144322
+78582, 0.001069, 0.001551, 0.174701
+78582, 0.001239, 0.001326, 0.195129
+78582, 0.001844, 0.001113, 0.138360
+78582, 0.001661, 0.001336, 0.157315
+78582, 0.001600, 0.001876, 0.197520
+78582, 0.001537, 0.001568, 0.160793
+78582, 0.001182, 0.001309, 0.161767
+78582, 0.000830, 0.002074, 0.298445
+78582, 0.002621, 0.001128, 0.119489
+87657, 0.002834, 0.001435, 0.157568
+87657, 0.000766, 0.001743, 0.299802
+87657, 0.000373, 0.002820, 0.366984
+87657, 0.000459, 0.002045, 0.320059
+87657, 0.001091, 0.001514, 0.235227
+87657, 0.000604, 0.001881, 0.310823
+87657, 0.001964, 0.001704, 0.189479
+87657, 0.001114, 0.002197, 0.226904
+87657, 0.001448, 0.001515, 0.192062
+87657, 0.001404, 0.001547, 0.238329
+87657, 0.003198, 0.001412, 0.141873
+87657, 0.000837, 0.001670, 0.300237
+87657, 0.001690, 0.001332, 0.172433
+87657, 0.000503, 0.001923, 0.312677
+87657, 0.002301, 0.001317, 0.144767
+87657, 0.001177, 0.002023, 0.240207
+87657, 0.002284, 0.001381, 0.162255
+87657, 0.001052, 0.001637, 0.238107
+87657, 0.000603, 0.001897, 0.299938
+87657, 0.000982, 0.001764, 0.279733
+97780, 0.001459, 0.001994, 0.256341
+97780, 0.002660, 0.001440, 0.197784
+97780, 0.001056, 0.002402, 0.280451
+97780, 0.001147, 0.001684, 0.310776
+97780, 0.001167, 0.001813, 0.309483
+97780, 0.001920, 0.001473, 0.235046
+97780, 0.002077, 0.001555, 0.211777
+97780, 0.001574, 0.001517, 0.237663
+97780, 0.001737, 0.001685, 0.271955
+97780, 0.000653, 0.002067, 0.370472
+97780, 0.002072, 0.002013, 0.243480
+97780, 0.001452, 0.001786, 0.260219
+97780, 0.001524, 0.001512, 0.236783
+97780, 0.001908, 0.001728, 0.280593
+97780, 0.001151, 0.001746, 0.267799
+97780, 0.002064, 0.001536, 0.209299
+97780, 0.002305, 0.001594, 0.228665
+97780, 0.001673, 0.001490, 0.237459
+97780, 0.001748, 0.001778, 0.243067
+97780, 0.002279, 0.001283, 0.198438
+109073, 0.000658, 0.002494, 0.487207
+109073, 0.000931, 0.002274, 0.395791
+109073, 0.000710, 0.002392, 0.482639
+109073, 0.001288, 0.002000, 0.352987
+109073, 0.001220, 0.002617, 0.440557
+109073, 0.000749, 0.002439, 0.494723
+109073, 0.000896, 0.002618, 0.457989
+109073, 0.000876, 0.002240, 0.470467
+109073, 0.001446, 0.001814, 0.379179
+109073, 0.002546, 0.002174, 0.362686
+109073, 0.001945, 0.001607, 0.314542
+109073, 0.002880, 0.001666, 0.265823
+109073, 0.002675, 0.001688, 0.303910
+109073, 0.002697, 0.001694, 0.234939
+109073, 0.001239, 0.002045, 0.371052
+109073, 0.001044, 0.002078, 0.372416
+109073, 0.000851, 0.002273, 0.476847
+109073, 0.001244, 0.002931, 0.458735
+109073, 0.001763, 0.001824, 0.264288
+109073, 0.002399, 0.001514, 0.275642
+121669, 0.002288, 0.002036, 0.307621
+121669, 0.001002, 0.003068, 0.551804
+121669, 0.001017, 0.002229, 0.509570
+121669, 0.003431, 0.002343, 0.259532
+121669, 0.003341, 0.001658, 0.294964
+121669, 0.002322, 0.001910, 0.386415
+121669, 0.001101, 0.002264, 0.503683
+121669, 0.001150, 0.003086, 0.586765
+121669, 0.002185, 0.002019, 0.368261
+121669, 0.000499, 0.003338, 0.642109
+121669, 0.001214, 0.002309, 0.558814
+121669, 0.001464, 0.002794, 0.522162
+121669, 0.002268, 0.002165, 0.365710
+121669, 0.002415, 0.001898, 0.431669
+121669, 0.001478, 0.002608, 0.379398
+121669, 0.001145, 0.002243, 0.520646
+121669, 0.002734, 0.001870, 0.309204
+121669, 0.000547, 0.002973, 0.633558
+121669, 0.000916, 0.003272, 0.623437
+121669, 0.001401, 0.002320, 0.391093
+135720, 0.002172, 0.002536, 0.454882
+135720, 0.000948, 0.002999, 0.715571
+135720, 0.002421, 0.003833, 0.749145
+135720, 0.001701, 0.003360, 0.517373
+135720, 0.003897, 0.001843, 0.367282
+135720, 0.005526, 0.002484, 0.311551
+135720, 0.002316, 0.002200, 0.377114
+135720, 0.002402, 0.002313, 0.486564
+135720, 0.001075, 0.003301, 0.709164
+135720, 0.002089, 0.002961, 0.434623
+135720, 0.002707, 0.002696, 0.559672
+135720, 0.000941, 0.003497, 0.751190
+135720, 0.003199, 0.001862, 0.378413
+135720, 0.001286, 0.002610, 0.711585
+135720, 0.003344, 0.002725, 0.386716
+135720, 0.005545, 0.002321, 0.353841
+135720, 0.005575, 0.002726, 0.318281
+135720, 0.002493, 0.002152, 0.420061
+135720, 0.002130, 0.002699, 0.546405
+135720, 0.001425, 0.003199, 0.549747
+151394, 0.001999, 0.002913, 0.594916
+151394, 0.002414, 0.002940, 0.559560
+151394, 0.003084, 0.002314, 0.643892
+151394, 0.001557, 0.004879, 0.863727
+151394, 0.002211, 0.002410, 0.696711
+151394, 0.001477, 0.002832, 0.746110
+151394, 0.001333, 0.003827, 0.717733
+151394, 0.003516, 0.002621, 0.560967
+151394, 0.001450, 0.002693, 0.812575
+151394, 0.001354, 0.004051, 0.927244
+151394, 0.001866, 0.002570, 0.750161
+151394, 0.002234, 0.002463, 0.602530
+151394, 0.001617, 0.004811, 0.775903
+151394, 0.004259, 0.002971, 0.534052
+151394, 0.004154, 0.002139, 0.402691
+151394, 0.002919, 0.003398, 0.450155
+151394, 0.003963, 0.002634, 0.539033
+151394, 0.003085, 0.002433, 0.676493
+151394, 0.002674, 0.002178, 0.492380
+151394, 0.002495, 0.003534, 0.633298
+168878, 0.001172, 0.003968, 1.082583
+168878, 0.003474, 0.002793, 0.753755
+168878, 0.000654, 0.004419, 1.290758
+168878, 0.001797, 0.004728, 0.904938
+168878, 0.003339, 0.002645, 0.623039
+168878, 0.002850, 0.002802, 0.617652
+168878, 0.001540, 0.003119, 0.975955
+168878, 0.003805, 0.002591, 0.489619
+168878, 0.000576, 0.004721, 1.313947
+168878, 0.003538, 0.003103, 0.693068
+168878, 0.003534, 0.003533, 0.714188
+168878, 0.004401, 0.002278, 0.544818
+168878, 0.002990, 0.003263, 0.771827
+168878, 0.002937, 0.003332, 0.867731
+168878, 0.002426, 0.002986, 0.913764
+168878, 0.000717, 0.004401, 1.342848
+168878, 0.001834, 0.002889, 0.907493
+168878, 0.002029, 0.003851, 1.132654
+168878, 0.001313, 0.003449, 1.098130
+168878, 0.002793, 0.003717, 0.790276
+188382, 0.003535, 0.003540, 0.860350
+188382, 0.004350, 0.003466, 0.703802
+188382, 0.003396, 0.002725, 0.899501
+188382, 0.000863, 0.004577, 1.576245
+188382, 0.002842, 0.003774, 1.188318
+188382, 0.002708, 0.003705, 1.146344
+188382, 0.004326, 0.002985, 0.794872
+188382, 0.005912, 0.002684, 0.742765
+188382, 0.002506, 0.005279, 1.384501
+188382, 0.003586, 0.003192, 0.770460
+188382, 0.005871, 0.003792, 0.994006
+188382, 0.003692, 0.003305, 0.715739
+188382, 0.002232, 0.006605, 1.510223
+188382, 0.001315, 0.003855, 1.268064
+188382, 0.003092, 0.002969, 0.824809
+188382, 0.002281, 0.004257, 1.160838
+188382, 0.004874, 0.002847, 0.809004
+188382, 0.001764, 0.003991, 1.102195

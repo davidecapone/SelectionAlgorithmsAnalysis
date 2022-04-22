@@ -5,13 +5,161 @@ library(ggplot2)
 
 
 ```{r}
-# importare da folder dataset/
-fixed_k <- read.csv("dataset/divided_n.csv")
-#random_k <- read.csv("dataset/random_k_times.csv")
-#worst_case <- read.csv("dataset/worst_case_qk.csv")
+# import
+divided_n = read.csv("dataset/divided_n.csv")
+square_n = read.csv("dataset/square_n.csv")
+random_k = read.csv("dataset/random_k.csv")
+quickselect_worst = read.csv("dataset/quickselect_worst.csv")
+```
+
+```{r}
+# stats for each analysis:
+# k = n/2
+divided_n_stats = divided_n %>%
+  group_by(size) %>%
+  summarise( quickselect_average = mean(quickselect), 
+             quickselect_variance = var(quickselect) ,
+             heapselect_average = mean(heapselect), 
+             heapselect_variance = var(heapselect),
+             medianmediansselect_average = mean(medianmediansselect), 
+             medianmediansselect_variance = var(medianmediansselect))
+# k = sqrt(n)
+square_n_stats = square_n %>%
+  group_by(size) %>%
+  summarise( quickselect_average = mean(quickselect), 
+             quickselect_variance = var(quickselect) ,
+             heapselect_average = mean(heapselect), 
+             heapselect_variance = var(heapselect),
+             medianmediansselect_average = mean(medianmediansselect), 
+             medianmediansselect_variance = var(medianmediansselect))
+# k = random
+random_k_stats = random_k %>%
+  group_by(size) %>%
+  summarise( quickselect_average = mean(quickselect), 
+             quickselect_variance = var(quickselect) ,
+             heapselect_average = mean(heapselect), 
+             heapselect_variance = var(heapselect),
+             medianmediansselect_average = mean(medianmediansselect), 
+             medianmediansselect_variance = var(medianmediansselect))
+# k = 0, quickselect worst case
+quickselect_worst_stats = quickselect_worst %>%
+  group_by(size) %>%
+  summarise( quickselect_average = mean(quickselect), 
+             quickselect_variance = var(quickselect))
+```
+
+```{r}
+# Graphs with k random
+random_k_stats %>%
+  select(size, quickselect_average) %>%
+  ggplot(aes(x = size, y = quickselect_average)) + 
+  geom_line() + 
+  labs(x = "dimensione", y = "tempo", title = "quick select random k")
+
+random_k_stats %>%
+  select(size, heapselect_average) %>%
+  ggplot(aes(x = size, y = heapselect_average)) + 
+  geom_line() + 
+  labs(x = "dimensione", y = "tempo", title = "heap select random k")
+
+
+random_k_stats %>%
+  select(size, medianmediansselect_average) %>%
+  ggplot(aes(x = size, y = medianmediansselect_average)) + 
+  geom_line() + 
+  labs(x = "dimensione", y = "tempo", title = "median select random k")
+```
+
+```{r}
+# Graphs with square n
+square_n_stats %>%
+  select(size, quickselect_average) %>%
+  ggplot(aes(x = size, y = quickselect_average)) + 
+  geom_line() + 
+  labs(x = "dimensione", y = "tempo", title = "quick select square n")
+
+square_n_stats %>%
+  select(size, heapselect_average) %>%
+  ggplot(aes(x = size, y = heapselect_average)) + 
+  geom_line() + 
+  labs(x = "dimensione", y = "tempo", title = "heap select square n")
+
+
+square_n_stats %>%
+  select(size, medianmediansselect_average) %>%
+  ggplot(aes(x = size, y = medianmediansselect_average)) + 
+  geom_line() + 
+  labs(x = "dimensione", y = "tempo", title = "median select square n")
+```
+
+
+```{r}
+# Graphs with divided n
+divided_n_stats %>%
+  select(size, quickselect_average) %>%
+  ggplot(aes(x = size, y = quickselect_average)) + 
+  geom_line() + 
+  labs(x = "dimensione", y = "tempo", title = "quick select divided n")
+
+divided_n_stats %>%
+  select(size, heapselect_average) %>%
+  ggplot(aes(x = size, y = heapselect_average)) + 
+  geom_line() + 
+  labs(x = "dimensione", y = "tempo", title = "heap select divided n")
+
+
+divided_n_stats %>%
+  select(size, medianmediansselect_average) %>%
+  ggplot(aes(x = size, y = medianmediansselect_average)) + 
+  geom_line() + 
+  labs(x = "dimensione", y = "tempo", title = "median select divided n")
+```
+
+
+```{r}
+# Graph quick select worst case
+quickselect_worst_stats %>%
+  select(size, quickselect_average) %>%
+  ggplot(aes(x = size, y = quickselect_average)) + 
+  geom_line() + 
+  labs(x = "dimensione", y = "tempo", title = "quick select caso pessimo")
+
+```
 
 
 
+```{r}
+plot_algorithm <- function(algorithm_df, algorithm_name){
+  algorithm_df %>% 
+    filter(algorithm == algorithm_name) %>% 
+    ggplot(aes(x = size, y = average_time)) +
+    geom_ribbon(aes(ymin = (average_time - (variance/2)), ymax = (average_time + (variance/2))), color = "red", fill = "lightgray", alpha = .3) +
+    geom_line(color = "blue") +
+    labs(x = "Dimensione", y = "Tempo", title = algorithm_name) +
+    scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M")) +
+    theme_light()+
+    theme(axis.text.y = element_blank(),
+          plot.title = element_text(face = "bold"))
+}
+
+plot_algorithm_log <- function(algorithm_df, algorithm_name){
+  algorithm_df %>% 
+    filter(algorithm == algorithm_name) %>% 
+    ggplot(aes(x = size, y = average_time)) + 
+    scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M"), trans = 'log2') + 
+    scale_y_continuous(trans = 'log2') + 
+    geom_ribbon(aes(ymin = (average_time - (variance/2)), ymax = (average_time + (variance/2))), color = "red", fill = "lightgray", alpha = .3) +
+    geom_line(color = "blue") +
+    labs(x = "Dimensione", y = "Tempo", title = algorithm_name, subtitle = "scala logaritmica") +
+    theme_light() +
+    theme(axis.text.y = element_blank(),
+          plot.title = element_text(face = "bold"),
+          axis.text.x=element_text(angle = 90))
+}
+```
+
+
+```{r}
 mm = read.csv("dataset/divided_n.csv")
 
 mm %>%
@@ -62,69 +210,8 @@ mm %>%
   ggplot(aes(x = size, y = average)) +
     geom_line() +
     labs(x = "Dimensione", y = "Tempo", title = "lol") + geom_smooth()
-```
 
-```{r}
-# statistiche (media, varianza) algoritmi con k fissato
-fixed_k_stats <- fixed_k %>%
-  group_by( size, algorithm ) %>%
-  summarise( average_time = mean(time), variance = var(time) ) %>%
-  arrange( size )
-# View(fixed_k_stats)
-
-# statistiche (media, varianza) algoritmi con k random
-random_k_stats <- random_k %>%
-  group_by( size, algorithm ) %>%
-  summarise( average_time = mean(time), variance = var(time) ) %>%
-  arrange( size )
-# View(random_k_stats)
-
-# statistiche (media, varianza) per il caso peggiore quickSelect
-worst_case_stats <- worst_case %>%
-  group_by( size ) %>%
-  summarise( average_time = mean(time), variance = var(time) ) %>%
-  arrange( size )
-# View(worst_case_stats)
-
-View(fixed_k_stats)
-```
-
-
-```{r}
-plot_algorithm <- function(algorithm_df, algorithm_name){
-  algorithm_df %>% 
-    filter(algorithm == algorithm_name) %>% 
-    ggplot(aes(x = size, y = average_time)) +
-    geom_ribbon(aes(ymin = (average_time - (variance/2)), ymax = (average_time + (variance/2))), color = "red", fill = "lightgray", alpha = .3) +
-    geom_line(color = "blue") +
-    labs(x = "Dimensione", y = "Tempo", title = algorithm_name) +
-    scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M")) +
-    theme_light()+
-    theme(axis.text.y = element_blank(),
-          plot.title = element_text(face = "bold"))
-}
-
-plot_algorithm_log <- function(algorithm_df, algorithm_name){
-  algorithm_df %>% 
-    filter(algorithm == algorithm_name) %>% 
-    ggplot(aes(x = size, y = average_time)) + 
-    scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M"), trans = 'log2') + 
-    scale_y_continuous(trans = 'log2') + 
-    geom_ribbon(aes(ymin = (average_time - (variance/2)), ymax = (average_time + (variance/2))), color = "red", fill = "lightgray", alpha = .3) +
-    geom_line(color = "blue") +
-    labs(x = "Dimensione", y = "Tempo", title = algorithm_name, subtitle = "scala logaritmica") +
-    theme_light() +
-    theme(axis.text.y = element_blank(),
-          plot.title = element_text(face = "bold"),
-          axis.text.x=element_text(angle = 90))
-}
-```
-
-
-```{r}
-
-
-
+# inizo old
 
 plot_algorithm(fixed_k_stats, "heapSelect")
 plot_algorithm_log(fixed_k_stats, "heapSelect")

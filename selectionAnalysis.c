@@ -203,7 +203,7 @@ void execute_samples( Analysis type, int size, int n_samples, ArrayOrdered order
     if (type == quickselect_worstcase) {
       quickSelectTime = get_execution_time( QuickSelect, sample, size, k );
       fprintf(ptr, "%d, %f\n", size, quickSelectTime);
-      printf("SIZE: %d, quickSelect: %f\n", size, quickSelectTime, heapSelectTime, medianSelectTime);
+      printf("SIZE: %d, quickSelect: %f\n", size, quickSelectTime);
     } else {
       quickSelectTime = get_execution_time( QuickSelect, sample, size, k );
       heapSelectTime = get_execution_time( HeapSelect, sample, size, k );
@@ -286,10 +286,10 @@ int main () {
   //analysis(divided_n, 20);
 
   // aumentiamo la numerosità dei campioni per evidenziare maggiormente la varianza:
-  analysis(random_k, 35);
+  //analysis(random_k, 35);
 
   // a partire da test effettuati si evidenzia maggiormente l'andamento con 50 campioni per dimensione:
-  //analysis(quickselect_worstcase, 50);
+  analysis(quickselect_worstcase, 50);
 
   return (EXIT_SUCCESS);
 }
