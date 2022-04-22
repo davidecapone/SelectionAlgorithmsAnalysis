@@ -41,13 +41,11 @@ typedef enum {
 } VControl;
 
 double duration(struct timespec start, struct timespec end) {
-
 	return end.tv_sec - start.tv_sec +
 		((end.tv_nsec - start.tv_nsec) / (double) 1000000000.0);
 }
 
 double getResolution() {
-
 	struct timespec start, end;
 	clock_gettime(CLOCK_MONOTONIC, &start);
 	do {
@@ -62,7 +60,6 @@ double getResolution() {
  * @return double : tempo minimo misurabile in secondi
  */
 double get_t_min() {
-
 	double R = getResolution();
 	return (R*(1/E+1));
 }
@@ -74,7 +71,6 @@ double get_t_min() {
  * @return int : dimensione 
  */
 int exp_distribution(int i) {
-
 	return ( A * pow(2, B*i) );
 }
 
@@ -84,7 +80,6 @@ int exp_distribution(int i) {
  * @return int : numero compreso tra -INT_MAX e +INT_MAX
  */
 int get_random_int() {
-
   int randomUnsigned = rand();
   int sign = rand() % 2;
   return ( sign == 0 ) ? ( -1 * randomUnsigned ) : randomUnsigned;
@@ -98,13 +93,10 @@ int get_random_int() {
  * @param order tipo di riempimento (True: ordinato, False: random)
  */
 void populate( int A[], int size, ArrayOrdered order ) {
-
   if ( order == True ) {
     for (int i = 0; i < size; i++) A[i] = i;
-    
   } else {
     for (int i = 0; i < size; i++) A[i] = get_random_int();
-
   }
 }
 
@@ -118,7 +110,6 @@ void populate( int A[], int size, ArrayOrdered order ) {
  * @return int : tempo di esecuzione (in secondi)
  */
 double get_execution_time( Algorithm type, int A[], int size, int k ) {
-
   struct timespec start, end;
   struct timespec backup_start, backup_end;
   double period = 0.0;
@@ -165,7 +156,6 @@ double get_execution_time( Algorithm type, int A[], int size, int k ) {
 		count++;
 	} while (period <= Tmin);
 
-
   free(copy);
 	return ((double) ((period - backupTime) / count));
 }
@@ -180,7 +170,6 @@ double get_execution_time( Algorithm type, int A[], int size, int k ) {
  * @param ptr puntatore al file
  */
 void execute_samples( Analysis type, int size, int n_samples, ArrayOrdered order, FILE * ptr ) {
-  
 	int *sample = NULL;
   double quickSelectTime = 0;
   double heapSelectTime = 0;
@@ -251,7 +240,6 @@ FILE * setup_csv ( Analysis type ) {
  * @param n_samples quanti campioni generare per ogni dimensione exp.
  */
 void analysis( Analysis type, int n_samples ) {
-
   // dimensione finale (default) da raggiungere 5 milioni
   int size, k, final = 99;
 

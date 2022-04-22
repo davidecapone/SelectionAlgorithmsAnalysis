@@ -49,7 +49,7 @@ int MoMSelect(int arr[], int p, int q, int k){
   */ 
  
   if(k == posPerno){ 
-    return k; 
+    return arr[k]; 
   } else if(k < posPerno){ 
     q = posPerno - 1; 
     return MoMSelect(arr, p, q, k); 
