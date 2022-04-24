@@ -16,39 +16,6 @@ int MoMPartition(int arr[], int p, int q, int k, int posPerno);
 int med(int arr[], int p, int q);
 void insertionSort(int arr[], int p, int q );
 
-/**
- * @brief scambia 2 elementi in A
- * 
- * @param A 
- * @param i indice primo elemento
- * @param j indice secondo elemento
- */
-void swap( int A[], int i, int j ){
-  
-  int key = A[ i ];
-  
-  A[ i ] = A[ j ];
-  A[ j ] = key;
-}
-
-int scanArray(int *A) {
-    // scan line of text
-    char line[MAX_LINE_SIZE];
-    scanf("%[^\n]", line);
-
-    // convert text into array
-    int size = 0, offset = 0, numFilled, n;
-    do {
-        numFilled = sscanf(line + offset, "%d%n", &(A[size]), &n);
-        if (numFilled > 0) {
-            size++;
-            offset += n;
-        }
-    } while (numFilled > 0);
-    
-    return size;
-}
-
 /** 
  * @brief: trova l'indice di k in arr se arr fosse ordinato  
  *  
@@ -240,14 +207,3 @@ int med(int arr[], int p, int q){
   return ceil( (p+q)/2.0 ); 
 }
 
-int main(){
-    
-    int arr[ MAX_LINE_SIZE ] = {};
-    int size = scanArray( arr );
-    int k;
-    scanf("%d", &k);
-    int kSmallest = MoMSelect(arr, 0, size-1, k-1);  
-    printf("%d", arr[kSmallest]);
-    
-    return 0;
-}

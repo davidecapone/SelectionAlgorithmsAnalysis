@@ -52,14 +52,10 @@ int scanArrayNodes(Node A[])
  * @param i indice primo elemento
  * @param j indice secondo elemento
  */
-void swapNodes(Node A[], int i, int j)
-{
-
+void swapNodes(Node A[], int i, int j) {
     Node temp = A[i];
-
     A[i] = A[j];
     A[j] = temp;
-    
 }
 
 /**
@@ -84,7 +80,7 @@ int right(int i) { return (2 * i) + 2; }
  * @param i figlio destro/sinistro
  * @return int posizione del genitore
  */
-int parent(int i) { return (i - 1) / 2; } // passando all'enumerazione degli indici di c, è necessario togliere 1 all'indice del figlio per ottenere l'indice del genitore
+int parent(int i) { return (i - 1) / 2; } 
 
 /**
  * @brief preservare le propietà della min-heap A
@@ -93,41 +89,23 @@ int parent(int i) { return (i - 1) / 2; } // passando all'enumerazione degli ind
  * @param heapsize dimensione della heap
  * @param i posizione ove stiamo analizzando l'errore nell'albero
  */
-void heapify(Node A[], int heapsize, int i)
-{
-
+void heapify(Node A[], int heapsize, int i) {
     int done = -1;
-
-    while (done != 0)
-    {
-
+    while (done != 0) {
         int smallest = i;
         int l = left(i);
         int r = right(i);
 
-        if (l < heapsize && A[l].key < A[i].key)
-        {
-            smallest = l; // caso in cui scambio con il figlio sinistro
-        }
-        else
-        {
-            smallest = i;
-        }
-
-        if (r < heapsize && A[r].key < A[smallest].key)
-        {
-            smallest = r; // caso in cui scambio con il figlio destro
-        }
-
-        if (smallest != i)
-        { // se serve lo scambio,qui viene eseguito, altrimenti la procedura termina
+        if (l < heapsize && A[l].key < A[i].key) smallest = l;
+        else smallest = i;
+        if (r < heapsize && A[r].key < A[smallest].key) smallest = r;
+        
+        if (smallest != i) {
             swapNodes(A, i, smallest);
             i = smallest;
         }
-        else
-        {
-            done = 0;
-        }
+
+        else done = 0;
     }
 }
 
@@ -137,20 +115,14 @@ void heapify(Node A[], int heapsize, int i)
  * @param A vettore
  * @param dim dimensione del vettore A
  */
-void buildMinHeap(Node A[], int len)
-{
-
-    // correzione degli errori con heapify
-    for (int i = len / 2; i >= 0; i--)
-    {
+void buildMinHeap(Node A[], int len) {
+    for (int i = len / 2; i >= 0; i--) {
         heapify(A, len, i);
     }
-    
     // assegnazione indici ai nodi
-    for(int i=0; i<len; i++){
+    for (int i = 0; i < len; i++) {
         A[i].index = i;
     }
-
 }
 
 /**
@@ -162,13 +134,10 @@ void buildMinHeap(Node A[], int len)
  */
 Node extractMinHeap(Node A[], int *heapsize)
 {
-
     Node root = A[0];
-
     swapNodes(A, 0, *heapsize - 1);
     *heapsize = *heapsize - 1;
     heapify(A, *heapsize, 0);
-
     return root;
 }
 
@@ -180,14 +149,14 @@ Node extractMinHeap(Node A[], int *heapsize)
  * @param heapsize dimensione dell'heap (il valore viene modificato, quindi lo passo come riferimento)
  */
 void minHeapInsert(Node A[], int *heapsize, int key, int index) {
-
-    *heapsize = *heapsize + 1;
-    int i = *heapsize - 1;
+    // aumento la dimensione della heap
+    *heapsize = (*heapsize + 1);
+    // i: ultimo indice della heap
+    int i = (*heapsize - 1);
     A[i].key = key;
     A[i].index = index;
 
-    while (i > 0 && A[i].key < A[parent(i)].key)
-    {
+    while (i > 0 && A[i].key < A[ parent(i) ].key) {
         swapNodes(A, i, parent(i));
         i = parent(i);
     }
@@ -200,7 +169,6 @@ void toNode(int H1[], int size, Node H1_node[]) {
     }
 }
 
-
 /**
  * @brief selezione del k-esimo elemento più piccolo
  *
@@ -210,8 +178,6 @@ void toNode(int H1[], int size, Node H1_node[]) {
  * @param k indice del k-esimo elemento
  * @return int chiave del k-esimo elemento
  */
-
-
 int heapSelect(int H1[], int p, int q, int k)
 {
     if (k < p || k > q) return INT_MIN;
@@ -233,7 +199,7 @@ int heapSelect(int H1[], int p, int q, int k)
         minHeapInsert(H2, &heapsize2, H1_node[0].key, H1_node[0].index);
 
         Node root_h2;
-
+        
         for (int i = 1; i <= k; i++) {
             // estrazione radice H2
             root_h2 = extractMinHeap(H2, &heapsize2);
@@ -246,9 +212,8 @@ int heapSelect(int H1[], int p, int q, int k)
                 minHeapInsert( H2, &heapsize2, H1_node[leftSon].key, H1_node[leftSon].index );
                 minHeapInsert( H2, &heapsize2, H1_node[rightSon].key, H1_node[rightSon].index );
             }
-            else if (leftSon < heapsize) {
+            else if (leftSon < heapsize) 
                 minHeapInsert( H2, &heapsize2, H1_node[leftSon].key, H1_node[leftSon].index );
-            }
         }
 
         // k-esimo elemento
