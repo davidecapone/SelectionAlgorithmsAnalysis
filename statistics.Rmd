@@ -1,6 +1,7 @@
 ```{r}
 library(dplyr)
 library(ggplot2)
+library(latex2exp)
 ```
 
 
@@ -13,216 +14,88 @@ quickselect_worst = read.csv("dataset/quickselect_worst.csv")
 ```
 
 ```{r}
-# stats for each analysis:
-# k = n/2
+# generating stats for each analysis:
+
 divided_n_stats = divided_n %>%
   group_by(size) %>%
-  summarise( quickselect_average = mean(quickselect), 
-             quickselect_variance = var(quickselect) ,
-             heapselect_average = mean(heapselect), 
-             heapselect_variance = var(heapselect),
-             medianmediansselect_average = mean(medianmediansselect), 
-             medianmediansselect_variance = var(medianmediansselect))
-# k = sqrt(n)
+  summarise( quickselect_average = mean(quickselect), quickselect_variance = var(quickselect) ,
+             heapselect_average = mean(heapselect), heapselect_variance = var(heapselect),
+             medianmediansselect_average = mean(medianmediansselect), medianmediansselect_variance = var(medianmediansselect))
+
 square_n_stats = square_n %>%
   group_by(size) %>%
-  summarise( quickselect_average = mean(quickselect), 
-             quickselect_variance = var(quickselect) ,
-             heapselect_average = mean(heapselect), 
-             heapselect_variance = var(heapselect),
-             medianmediansselect_average = mean(medianmediansselect), 
-             medianmediansselect_variance = var(medianmediansselect))
-# k = random
+  summarise( quickselect_average = mean(quickselect), quickselect_variance = var(quickselect) ,
+             heapselect_average = mean(heapselect), heapselect_variance = var(heapselect),
+             medianmediansselect_average = mean(medianmediansselect), medianmediansselect_variance = var(medianmediansselect))
+
 random_k_stats = random_k %>%
   group_by(size) %>%
-  summarise( quickselect_average = mean(quickselect), 
-             quickselect_variance = var(quickselect) ,
-             heapselect_average = mean(heapselect), 
-             heapselect_variance = var(heapselect),
-             medianmediansselect_average = mean(medianmediansselect), 
-             medianmediansselect_variance = var(medianmediansselect))
-# k = 0, quickselect worst case
+  summarise( quickselect_average = mean(quickselect), quickselect_variance = var(quickselect) ,
+             heapselect_average = mean(heapselect), heapselect_variance = var(heapselect),
+             medianmediansselect_average = mean(medianmediansselect), medianmediansselect_variance = var(medianmediansselect))
+
 quickselect_worst_stats = quickselect_worst %>%
   group_by(size) %>%
-  summarise( quickselect_average = mean(quickselect), 
-             quickselect_variance = var(quickselect))
+  summarise( quickselect_average = mean(quickselect), quickselect_variance = var(quickselect))
 ```
 
 ```{r}
 # Graphs with k random
-random_k_stats %>%
-  select(size, quickselect_average) %>%
-  ggplot(aes(x = size, y = quickselect_average)) + 
-  geom_line() + 
-  labs(x = "dimensione", y = "tempo", title = "quick select random k")
 
-random_k_stats %>%
-  select(size, heapselect_average) %>%
-  ggplot(aes(x = size, y = heapselect_average)) + 
-  geom_line() + 
-  labs(x = "dimensione", y = "tempo", title = "heap select random k")
+random_k_stats  %>% ggplot( aes(x = size) ) + 
+  geom_line(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
+  geom_line(aes(y=heapselect_average,colour="heapSelect"),size=1) +
+  geom_line(aes(y=medianmediansselect_average,colour="medianMediansSelect"),size=1) +
+  labs(x = "dimensione", y = "tempo", 
+       title = TeX("Analisi asintotica con k random"),
+       subtitle = "20 campioni per ogni dimensione",
+       caption = "") +
+  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = "#283593", "heapSelect" = "#AD1457", "medianMediansSelect" = "#EF6C00"))
 
-
-random_k_stats %>%
-  select(size, medianmediansselect_average) %>%
-  ggplot(aes(x = size, y = medianmediansselect_average)) + 
-  geom_line() + 
-  labs(x = "dimensione", y = "tempo", title = "median select random k")
 ```
 
 ```{r}
-# Graphs with square n
-square_n_stats %>%
-  select(size, quickselect_average) %>%
-  ggplot(aes(x = size, y = quickselect_average)) + 
-  geom_line() + 
-  labs(x = "dimensione", y = "tempo", title = "quick select square n")
+# Graphs for square n analysis
 
-square_n_stats %>%
-  select(size, heapselect_average) %>%
-  ggplot(aes(x = size, y = heapselect_average)) + 
-  geom_line() + 
-  labs(x = "dimensione", y = "tempo", title = "heap select square n")
-
-
-square_n_stats %>%
-  select(size, medianmediansselect_average) %>%
-  ggplot(aes(x = size, y = medianmediansselect_average)) + 
-  geom_line() + 
-  labs(x = "dimensione", y = "tempo", title = "median select square n")
+square_n_stats  %>% ggplot( aes(x = size) ) + 
+  geom_line(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
+  geom_line(aes(y=heapselect_average,colour="heapSelect"),size=1) +
+  geom_line(aes(y=medianmediansselect_average,colour="medianMediansSelect"),size=1) +
+  labs(x = "dimensione", y = "tempo", 
+       title = TeX("Analisi asintotica con $k = \\sqrt{n}$"),
+       subtitle = "20 campioni per ogni dimensione",
+       caption = "") +
+  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = "#283593", "heapSelect" = "#AD1457", "medianMediansSelect" = "#EF6C00"))
 ```
 
 
 ```{r}
-# Graphs with divided n
-divided_n_stats %>%
-  select(size, quickselect_average) %>%
-  ggplot(aes(x = size, y = quickselect_average)) + 
-  geom_line() + 
-  labs(x = "dimensione", y = "tempo", title = "quick select divided n")
+# Graphs for divided n analysis
 
-divided_n_stats %>%
-  select(size, heapselect_average) %>%
-  ggplot(aes(x = size, y = heapselect_average)) + 
-  geom_line() + 
-  labs(x = "dimensione", y = "tempo", title = "heap select divided n")
-
-
-divided_n_stats %>%
-  select(size, medianmediansselect_average) %>%
-  ggplot(aes(x = size, y = medianmediansselect_average)) + 
-  geom_line() + 
-  labs(x = "dimensione", y = "tempo", title = "median select divided n")
+divided_n_stats  %>% ggplot( aes(x = size) ) + 
+  geom_line(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
+  geom_line(aes(y=heapselect_average,colour="heapSelect"),size=1) +
+  geom_line(aes(y=medianmediansselect_average,colour="medianMediansSelect"),size=1) +
+  labs(x = "dimensione", y = "tempo", 
+       title = TeX("Analisi asintotica con $k = \\frac{n}{2}$"),
+       subtitle = "20 campioni per ogni dimensione",
+       caption = "") +
+  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = "#283593", "heapSelect" = "#AD1457", "medianMediansSelect" = "#EF6C00"))
 ```
 
 
 ```{r}
 # Graph quick select worst case
-quickselect_worst_stats %>%
-  select(size, quickselect_average) %>%
-  ggplot(aes(x = size, y = quickselect_average)) + 
-  geom_line() + 
-  labs(x = "dimensione", y = "tempo", title = "quick select caso pessimo")
 
+quickselect_worst_stats %>% ggplot( aes(x = size) ) + 
+  geom_line(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
+  labs(x = "dimensione", y = "tempo", 
+       title = TeX("Analisi asintotica caso pessimo quickSelect"),
+       subtitle = "35 campioni per ogni dimensione",
+       caption = "") +
+  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = "#283593"))
 ```
 
 
 
-```{r}
-plot_algorithm <- function(algorithm_df, algorithm_name){
-  algorithm_df %>% 
-    filter(algorithm == algorithm_name) %>% 
-    ggplot(aes(x = size, y = average_time)) +
-    geom_ribbon(aes(ymin = (average_time - (variance/2)), ymax = (average_time + (variance/2))), color = "red", fill = "lightgray", alpha = .3) +
-    geom_line(color = "blue") +
-    labs(x = "Dimensione", y = "Tempo", title = algorithm_name) +
-    scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M")) +
-    theme_light()+
-    theme(axis.text.y = element_blank(),
-          plot.title = element_text(face = "bold"))
-}
-
-plot_algorithm_log <- function(algorithm_df, algorithm_name){
-  algorithm_df %>% 
-    filter(algorithm == algorithm_name) %>% 
-    ggplot(aes(x = size, y = average_time)) + 
-    scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M"), trans = 'log2') + 
-    scale_y_continuous(trans = 'log2') + 
-    geom_ribbon(aes(ymin = (average_time - (variance/2)), ymax = (average_time + (variance/2))), color = "red", fill = "lightgray", alpha = .3) +
-    geom_line(color = "blue") +
-    labs(x = "Dimensione", y = "Tempo", title = algorithm_name, subtitle = "scala logaritmica") +
-    theme_light() +
-    theme(axis.text.y = element_blank(),
-          plot.title = element_text(face = "bold"),
-          axis.text.x=element_text(angle = 90))
-}
-```
-
-
-```{r}
-mm = read.csv("dataset/divided_n.csv")
-
-mm %>%
-  select(size, medianmediansselect) %>%
-  group_by(size) %>%
-  summarise(average = mean(medianmediansselect)) %>%
-  ggplot(aes(x = size, y = average)) +
-    geom_line(color = "blue") +
-    labs(x = "Dimensione", y = "Tempo", title = "lol")
-
-
-randk = read.csv("dataset/random_k.csv")
-
-randk %>%
-  select(size, quickselect) %>%
-  group_by(size) %>%
-  summarise(average = mean(quickselect), variance = var(quickselect)) %>%
-  ggplot(aes(x = size, y = average)) +
-    geom_line(color = "blue") +
-    labs(x = "Dimensione", y = "Tempo", title = "quick select random k")
-
-
-randk %>%
-  select(size, heapselect) %>%
-  group_by(size) %>%
-  summarise(average = mean(heapselect), variance = var(heapselect)) %>%
-  ggplot(aes(x = size, y = average)) +
-    geom_line() +
-    labs(x = "Dimensione", y = "Tempo", title = "heap select random k") + geom_smooth()
-
-
-randk %>%
-  select(size, medianmediansselect) %>%
-  group_by(size) %>%
-  summarise(average = mean(medianmediansselect), variance = var(medianmediansselect)) %>%
-  ggplot(aes(x = size, y = average)) +
-    geom_line(color = "blue") +
-    labs(x = "Dimensione", y = "Tempo", title = "median select random k")+ geom_smooth()
-
-
-
-mm = read.csv("dataset/divided_n.csv")
-
-mm %>%
-  select(size, medianmediansselect) %>%
-  group_by(size) %>%
-  summarise(average = mean(medianmediansselect), variance = var(medianmediansselect)) %>%
-  ggplot(aes(x = size, y = average)) +
-    geom_line() +
-    labs(x = "Dimensione", y = "Tempo", title = "lol") + geom_smooth()
-
-# inizo old
-
-plot_algorithm(fixed_k_stats, "heapSelect")
-plot_algorithm_log(fixed_k_stats, "heapSelect")
-
-plot_algorithm(fixed_k_stats, "medianMediansSelect")
-plot_algorithm_log(fixed_k_stats, "medianMediansSelect")
-
-plot_algorithm(random_k_stats, "heapSelect")
-plot_algorithm_log(random_k_stats, "heapSelect")
-
-plot_algorithm(random_k_stats, "medianMediansSelect")
-plot_algorithm_log(random_k_stats, "medianMediansSelect")
-```
 
