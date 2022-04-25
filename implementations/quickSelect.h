@@ -1,7 +1,5 @@
-/**
- * @file quickSelect.c
- * @author Capone, Della Rovere, Gortani, Fior
- */
+#ifndef QUICKSELECT
+#define QUICKSELECT
 #include <limits.h>
 #include "scanArray.h"
 #include "partition.h"
@@ -35,3 +33,4 @@ int quickSelect( int A[], int i, int j, int k ) {
     return INT_MIN;
   }
 }
+#endif QUICKSELECT

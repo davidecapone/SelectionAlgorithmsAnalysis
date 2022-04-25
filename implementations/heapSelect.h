@@ -1,8 +1,5 @@
-/**
- * @file heapSelect.c
- * @author Capone, Della Rovere, Gortani, Fior
- */
-
+#ifndef HEAPSELECT
+#define HEAPSELECT
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
@@ -209,3 +206,4 @@ int heapSelect(Node H1[], int p, int q, int k)
         return H2[0].key;
     }
 }
+#endif HEAPSELECT
