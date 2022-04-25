@@ -135,8 +135,10 @@ double get_execution_time( Algorithm type, int A[], int size, int k ) {
 
   // creazione array di nodi per heapSelect
   Node *A_node = NULL;
-  A_node = MALLOC_ARRAY(size, Node);
-  toNode(A, size, A_node);
+  if(type == HeapSelect){
+    A_node = MALLOC_ARRAY(size, Node);
+    toNode(A, size, A_node);
+  }
 
   int kSmallest;
 	clock_gettime(CLOCK_MONOTONIC, &start);
@@ -162,7 +164,9 @@ double get_execution_time( Algorithm type, int A[], int size, int k ) {
     if (period <= Tmin) {
       clock_gettime(CLOCK_MONOTONIC, &backup_start);
       memcpy(A, copy, size*sizeof(int));
-      toNode(A, size, A_node);
+      if(type == HeapSelect){
+        toNode(A, size, A_node);
+      }
       clock_gettime(CLOCK_MONOTONIC, &backup_end);
 
       // tempo di backup da sottrarre al termine:
@@ -173,7 +177,10 @@ double get_execution_time( Algorithm type, int A[], int size, int k ) {
 	} while (period <= Tmin);
 
   free(copy);
-  free(A_node);
+  
+  if(type == HeapSelect){
+    free(A_node);
+  }
 	return ((double) ((period - backupTime) / count));
 }
 
