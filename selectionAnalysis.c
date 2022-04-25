@@ -1,8 +1,8 @@
 #include <time.h>
 #include <string.h>
-#include "implementations/quickSelect.c"
-#include "implementations/heapSelect.c"
-#include "implementations/medianMediansSelect.c"
+#include "implementations/quickSelect.h"
+#include "implementations/heapSelect.h"
+#include "implementations/medianMediansSelect.h"
 
 #define MALLOC_ARRAY(number, type)\
 	((type*) malloc((number) *sizeof(type)))
