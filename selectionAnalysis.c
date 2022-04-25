@@ -1,8 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include <time.h>
-#include <math.h>
-#include <limits.h>
 #include <string.h>
 #include "implementations/quickSelect.c"
 #include "implementations/heapSelect.c"
@@ -101,6 +97,20 @@ void populate( int A[], int size, ArrayOrdered order ) {
 }
 
 /**
+ * @brief converte un array di interi in un array di nodi, per heapSelect
+ * 
+ * @param A array di interi
+ * @param size dimensione di A
+ * @param A_node array di nodi
+ */
+void toNode(int A[], int size, Node A_node[]) {
+    for (int i = 0; i < size; i++) {
+        A_node[i].key = A[i];
+        A_node[i].index = NULL;
+    }
+}
+
+/**
  * @brief Calcola tempo di esecuzione di un campione A di interi
  * 
  * @param type quale algoritmo utilizzare
@@ -123,6 +133,11 @@ double get_execution_time( Algorithm type, int A[], int size, int k ) {
   copy = MALLOC_ARRAY(size, int);
   memcpy(copy, A, size*sizeof(int));
 
+  // creazione array di nodi per heapSelect
+  Node *A_node = NULL;
+  A_node = MALLOC_ARRAY(size, Node);
+  toNode(A, size, A_node);
+
   int kSmallest;
 	clock_gettime(CLOCK_MONOTONIC, &start);
 	do {
@@ -131,7 +146,7 @@ double get_execution_time( Algorithm type, int A[], int size, int k ) {
 				kSmallest = quickSelect(A, 0, size-1, k);
 				break;
 			case HeapSelect:
-				kSmallest = heapSelect(A, 0, size-1, k);
+				kSmallest = heapSelect(A_node, 0, size-1, k);
 				break;
 			case MedianMediansSelect:
 				kSmallest = MoMSelect(A, 0, size-1, k);
@@ -147,6 +162,7 @@ double get_execution_time( Algorithm type, int A[], int size, int k ) {
     if (period <= Tmin) {
       clock_gettime(CLOCK_MONOTONIC, &backup_start);
       memcpy(A, copy, size*sizeof(int));
+      toNode(A, size, A_node);
       clock_gettime(CLOCK_MONOTONIC, &backup_end);
 
       // tempo di backup da sottrarre al termine:
@@ -157,6 +173,7 @@ double get_execution_time( Algorithm type, int A[], int size, int k ) {
 	} while (period <= Tmin);
 
   free(copy);
+  free(A_node);
 	return ((double) ((period - backupTime) / count));
 }
 
@@ -271,13 +288,13 @@ int main () {
   //analysis(square_n, 20);
 
   // analisi k = n/2
-  //analysis(divided_n, 20);
+  analysis(divided_n, 20);
 
   // aumentiamo la numerosità dei campioni per evidenziare maggiormente la varianza:
   //analysis(random_k, 35);
 
   // a partire da test effettuati si evidenzia maggiormente l'andamento con 50 campioni per dimensione:
-  analysis(quickselect_worstcase, 50);
+  //analysis(quickselect_worstcase, 50);
 
   return (EXIT_SUCCESS);
 }

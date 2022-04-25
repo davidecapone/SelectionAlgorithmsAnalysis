@@ -162,13 +162,6 @@ void minHeapInsert(Node A[], int *heapsize, int key, int index) {
     }
 }
 
-void toNode(int H1[], int size, Node H1_node[]) {
-    for (int i = 0; i < size; i++) {
-        H1_node[i].key = H1[i];
-        H1_node[i]. index = i;
-    }
-}
-
 /**
  * @brief selezione del k-esimo elemento più piccolo
  *
@@ -178,25 +171,21 @@ void toNode(int H1[], int size, Node H1_node[]) {
  * @param k indice del k-esimo elemento
  * @return int chiave del k-esimo elemento
  */
-int heapSelect(int H1[], int p, int q, int k)
+int heapSelect(Node H1[], int p, int q, int k)
 {
     if (k < p || k > q) return INT_MIN;
     else {
         int heapsize = q - p + 1;
-        Node H1_node[ heapsize ];
-
-        // conversione dell'array di interi in input in array di Node
-        toNode(H1, heapsize, H1_node);
         
         // costruisco una min-heap a partire da H1
-        buildMinHeap(H1_node, heapsize);
+        buildMinHeap(H1, heapsize);
 
         // heapsize viene incrementato da minHeapInsert
         int heapsize2 = 0;
         Node H2[k+1];
         
         // inizialmente H2 contiene solamente la radice di H1
-        minHeapInsert(H2, &heapsize2, H1_node[0].key, H1_node[0].index);
+        minHeapInsert(H2, &heapsize2, H1[0].key, H1[0].index);
 
         Node root_h2;
         
@@ -209,11 +198,11 @@ int heapSelect(int H1[], int p, int q, int k)
 
             // inserimento in H2 dei figli di i a partire da H1, se esistono
             if (rightSon < heapsize) {
-                minHeapInsert( H2, &heapsize2, H1_node[leftSon].key, H1_node[leftSon].index );
-                minHeapInsert( H2, &heapsize2, H1_node[rightSon].key, H1_node[rightSon].index );
+                minHeapInsert( H2, &heapsize2, H1[leftSon].key, H1[leftSon].index );
+                minHeapInsert( H2, &heapsize2, H1[rightSon].key, H1[rightSon].index );
             }
             else if (leftSon < heapsize) 
-                minHeapInsert( H2, &heapsize2, H1_node[leftSon].key, H1_node[leftSon].index );
+                minHeapInsert( H2, &heapsize2, H1[leftSon].key, H1[leftSon].index );
         }
 
         // k-esimo elemento
