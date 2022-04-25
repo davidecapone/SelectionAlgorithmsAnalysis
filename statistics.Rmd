@@ -40,6 +40,11 @@ quickselect_worst_stats = quickselect_worst %>%
 ```
 
 ```{r}
+# palette:
+quickselect_color = "#283593"
+heapSelect_color = "#AD1457"
+medianMediansSelect_color = "#EF6C00"
+
 # Graphs with k random
 
 random_k_stats  %>% ggplot( aes(x = size) ) + 
@@ -50,11 +55,8 @@ random_k_stats  %>% ggplot( aes(x = size) ) +
        title = TeX("Analisi asintotica con k random"),
        subtitle = "20 campioni per ogni dimensione",
        caption = "") +
-  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = "#283593", "heapSelect" = "#AD1457", "medianMediansSelect" = "#EF6C00"))
+  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color))
 
-```
-
-```{r}
 # Graphs for square n analysis
 
 square_n_stats  %>% ggplot( aes(x = size) ) + 
@@ -65,11 +67,9 @@ square_n_stats  %>% ggplot( aes(x = size) ) +
        title = TeX("Analisi asintotica con $k = \\sqrt{n}$"),
        subtitle = "20 campioni per ogni dimensione",
        caption = "") +
-  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = "#283593", "heapSelect" = "#AD1457", "medianMediansSelect" = "#EF6C00"))
-```
+  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color)) +
+  scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M"))
 
-
-```{r}
 # Graphs for divided n analysis
 
 divided_n_stats  %>% ggplot( aes(x = size) ) + 
@@ -80,11 +80,8 @@ divided_n_stats  %>% ggplot( aes(x = size) ) +
        title = TeX("Analisi asintotica con $k = \\frac{n}{2}$"),
        subtitle = "20 campioni per ogni dimensione",
        caption = "") +
-  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = "#283593", "heapSelect" = "#AD1457", "medianMediansSelect" = "#EF6C00"))
-```
+  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color))
 
-
-```{r}
 # Graph quick select worst case
 
 quickselect_worst_stats %>% ggplot( aes(x = size) ) + 
@@ -93,7 +90,7 @@ quickselect_worst_stats %>% ggplot( aes(x = size) ) +
        title = TeX("Analisi asintotica caso pessimo quickSelect"),
        subtitle = "35 campioni per ogni dimensione",
        caption = "") +
-  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = "#283593"))
+  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = quickselect_color))
 ```
 
 
