@@ -7,7 +7,7 @@ library(latex2exp)
 
 ```{r}
 # import
-divided_n = read.csv("dataset/divided_n.csv")
+half_n = read.csv("dataset/half_n.csv")
 square_n = read.csv("dataset/square_n.csv")
 random_k = read.csv("dataset/random_k.csv")
 quickselect_worst = read.csv("dataset/quickselect_worst.csv")
@@ -16,7 +16,7 @@ quickselect_worst = read.csv("dataset/quickselect_worst.csv")
 ```{r}
 # generating stats for each analysis:
 
-divided_n_stats = divided_n %>%
+half_n_stats = divided_n %>%
   group_by(size) %>%
   summarise( quickselect_average = mean(quickselect), quickselect_variance = var(quickselect) ,
              heapselect_average = mean(heapselect), heapselect_variance = var(heapselect),
@@ -55,7 +55,9 @@ random_k_stats  %>% ggplot( aes(x = size) ) +
        title = TeX("Analisi asintotica con k random"),
        subtitle = "20 campioni per ogni dimensione",
        caption = "") +
-  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color))
+  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color))+
+  scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M")) + 
+  ggsave("graphs/random_k.png")
 
 # Graphs for square n analysis
 
@@ -68,11 +70,12 @@ square_n_stats  %>% ggplot( aes(x = size) ) +
        subtitle = "20 campioni per ogni dimensione",
        caption = "") +
   scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color)) +
-  scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M"))
+  scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M")) + 
+  ggsave("graphs/square_n.png")
 
 # Graphs for divided n analysis
 
-divided_n_stats  %>% ggplot( aes(x = size) ) + 
+half_n_stats  %>% ggplot( aes(x = size) ) + 
   geom_line(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
   geom_line(aes(y=heapselect_average,colour="heapSelect"),size=1) +
   geom_line(aes(y=medianmediansselect_average,colour="medianMediansSelect"),size=1) +
@@ -80,7 +83,9 @@ divided_n_stats  %>% ggplot( aes(x = size) ) +
        title = TeX("Analisi asintotica con $k = \\frac{n}{2}$"),
        subtitle = "20 campioni per ogni dimensione",
        caption = "") +
-  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color))
+  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color)) +
+  scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M")) + 
+  ggsave("graphs/half_n.png")
 
 # Graph quick select worst case
 
@@ -88,9 +93,10 @@ quickselect_worst_stats %>% ggplot( aes(x = size) ) +
   geom_line(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
   labs(x = "dimensione", y = "tempo", 
        title = TeX("Analisi asintotica caso pessimo quickSelect"),
-       subtitle = "35 campioni per ogni dimensione",
+       subtitle = "50 campioni per ogni dimensione",
        caption = "") +
-  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = quickselect_color))
+  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = quickselect_color)) + 
+  ggsave("graphs/quickselect_worstcase.png")
 ```
 
 

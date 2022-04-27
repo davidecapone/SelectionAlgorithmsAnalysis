@@ -33,11 +33,6 @@ typedef enum {
   quickselect_worstcase   // k = 0
 } Analysis;
 
-typedef enum {
-  testing,
-  release
-} VControl;
-
 double duration(struct timespec start, struct timespec end) {
 	return end.tv_sec - start.tv_sec +
 		((end.tv_nsec - start.tv_nsec) / (double) 1000000000.0);
@@ -298,11 +293,11 @@ int main () {
   // analisi k = n/2
   analysis(half_n, n_samples);
 
-  // aumentiamo la numerosità dei campioni per evidenziare maggiormente la varianza:
+  // k = random
   analysis(random_k, n_samples);
 
-  // a partire da test effettuati si evidenzia maggiormente l'andamento con 50 campioni per dimensione:
-  //analysis(quickselect_worstcase, 50);
+  // caso pessimo quick select
+  analysis(quickselect_worstcase, 50);
 
   return (EXIT_SUCCESS);
 }
