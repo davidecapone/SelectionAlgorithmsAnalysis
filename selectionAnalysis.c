@@ -28,7 +28,7 @@ typedef enum {
 
 typedef enum {
   square_n,     // k = sqrt(n)
-  divided_n,    // k = n/2
+  half_n,    // k = n/2
   random_k,
   quickselect_worstcase   // k = 0
 } Analysis;
@@ -202,7 +202,7 @@ void execute_samples( Analysis type, int size, int n_samples, ArrayOrdered order
   int k;
   // quale k scegliere?
   if (type == quickselect_worstcase) k = 0;
-  else if (type == divided_n) k = size / 2;
+  else if (type == half_n) k = size / 2;
   else if (type == square_n) k = sqrt(size);
 
   // creare 100 campioni dimensione size, calcolare tempo medio esecuzione
@@ -236,8 +236,8 @@ FILE * setup_csv ( Analysis type ) {
     case square_n:
       strcpy(filename, "dataset/square_n.csv");
       break;
-    case divided_n:
-      strcpy(filename, "dataset/divided_n.csv");
+    case half_n:
+      strcpy(filename, "dataset/half_n.csv");
       break;
     case random_k:
       strcpy(filename, "dataset/random_k.csv");
@@ -296,7 +296,7 @@ int main () {
   analysis(square_n, n_samples);
 
   // analisi k = n/2
-  analysis(divided_n, n_samples);
+  analysis(half_n, n_samples);
 
   // aumentiamo la numerosità dei campioni per evidenziare maggiormente la varianza:
   analysis(random_k, n_samples);
