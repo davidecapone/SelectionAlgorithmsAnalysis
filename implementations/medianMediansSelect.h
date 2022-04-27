@@ -204,5 +204,5 @@ int med(int arr[], int p, int q){
   insertionSort(arr, p, q); 
   return ceil( (p+q)/2.0 ); 
 }
-#endif MEDIANSELECT
+#endif 
 

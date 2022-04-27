@@ -1,11 +1,13 @@
 #include <time.h>
 #include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "implementations/quickSelect.h"
 #include "implementations/heapSelect.h"
 #include "implementations/medianMediansSelect.h"
 
 #define MALLOC_ARRAY(number, type)\
-	((type*) malloc((number) *sizeof(type)))
+	(type*) calloc((number) *sizeof(type), sizeof(type))
 
 const double E = 0.001;
 double Tmin;
@@ -106,7 +108,7 @@ void populate( int A[], int size, ArrayOrdered order ) {
 void toNode(int A[], int size, Node A_node[]) {
     for (int i = 0; i < size; i++) {
         A_node[i].key = A[i];
-        A_node[i].index = NULL;
+        A_node[i].index = 0;
     }
 }
 
@@ -177,10 +179,8 @@ double get_execution_time( Algorithm type, int A[], int size, int k ) {
 	} while (period <= Tmin);
 
   free(copy);
+  if(type == HeapSelect) free(A_node);
   
-  if(type == HeapSelect){
-    free(A_node);
-  }
 	return ((double) ((period - backupTime) / count));
 }
 
@@ -285,6 +285,7 @@ void analysis( Analysis type, int n_samples ) {
   fclose(ptr);
 }
 
+
 int main () {
   srand(time(NULL));
   Tmin = get_t_min();
@@ -292,13 +293,13 @@ int main () {
   printf("\e[1;1H\e[2J");
 
   // analisi k = sqrt(n)
-  //analysis(square_n, 20);
+  analysis(square_n, n_samples);
 
   // analisi k = n/2
-  analysis(divided_n, 20);
+  analysis(divided_n, n_samples);
 
   // aumentiamo la numerosità dei campioni per evidenziare maggiormente la varianza:
-  //analysis(random_k, 35);
+  analysis(random_k, n_samples);
 
   // a partire da test effettuati si evidenzia maggiormente l'andamento con 50 campioni per dimensione:
   //analysis(quickselect_worstcase, 50);

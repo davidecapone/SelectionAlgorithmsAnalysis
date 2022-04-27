@@ -33,4 +33,4 @@ int quickSelect( int A[], int i, int j, int k ) {
     return INT_MIN;
   }
 }
-#endif QUICKSELECT
+#endif 

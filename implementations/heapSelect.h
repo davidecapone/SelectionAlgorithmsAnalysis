@@ -5,7 +5,8 @@
 #include <limits.h>
 
 #define MAX_LINE_SIZE 5000 // maximum size of a line of input
-
+#define MALLOC_ARRAY(number, type)\
+	(type*) calloc((number) *sizeof(type), sizeof(type))
 /**
  * @brief nodo della heap, contiene attributi chiave e indice
  * 
@@ -101,7 +102,6 @@ void heapify(Node A[], int heapsize, int i) {
             swapNodes(A, i, smallest);
             i = smallest;
         }
-
         else done = 0;
     }
 }
@@ -179,8 +179,9 @@ int heapSelect(Node H1[], int p, int q, int k)
 
         // heapsize viene incrementato da minHeapInsert
         int heapsize2 = 0;
-        Node H2[k+1];
-        
+        Node *H2 = NULL;
+        H2 = MALLOC_ARRAY(k+1, Node);
+
         // inizialmente H2 contiene solamente la radice di H1
         minHeapInsert(H2, &heapsize2, H1[0].key, H1[0].index);
 
@@ -202,8 +203,10 @@ int heapSelect(Node H1[], int p, int q, int k)
                 minHeapInsert( H2, &heapsize2, H1[leftSon].key, H1[leftSon].index );
         }
 
+        int var = H2[0].key;
+        free(H2);
         // k-esimo elemento
-        return H2[0].key;
+        return var;
     }
 }
-#endif HEAPSELECT
+#endif 
