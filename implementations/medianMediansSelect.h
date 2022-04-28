@@ -35,6 +35,7 @@ int MoMSelect(int arr[], int p, int q, int k){
   } 
   
   //calcolo la posizione del perno (MoM) e partiziono l'array
+  int posPerno;
   posPerno = MoMPlace(arr, p, q);
   posPerno = MoMPartition(arr, p, q, k, posPerno); 
  
@@ -85,7 +86,7 @@ int MoMPlace(int arr[], int p, int q){
   }
 
   int tempQ = p + floor( (q-p)/5 );
-  mid = (tempQ-p+1)/2;
+  int mid = (tempQ-p+1)/2;
 
   return MoMSelect(arr, p, tempQ, p+mid-1 );
 }
