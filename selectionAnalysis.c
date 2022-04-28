@@ -30,7 +30,8 @@ typedef enum {
   square_n,     // k = sqrt(n)
   half_n,    // k = n/2
   random_k,
-  quickselect_worstcase   // k = 0
+  quickselect_worstcase,   // k = 0
+  static_size
 } Analysis;
 
 double duration(struct timespec start, struct timespec end) {
@@ -240,14 +241,20 @@ FILE * setup_csv ( Analysis type ) {
     case quickselect_worstcase:
       strcpy(filename, "dataset/quickselect_worst.csv");
       break;
+    case static_size:
+      strcpy(filename, "dataset/static_size.csv");
     default:
       break;
   }
 
+  // intestazioni file csv:
   ptr = fopen(filename, "w");
   if (type == quickselect_worstcase) fprintf(ptr, "size,quickselect\n");
+  else if (type == static_size) fprintf(ptr, "k,quickselect,heapselect,medianmediansselect\n");
   else fprintf(ptr, "size,quickselect,heapselect,medianmediansselect\n");
   fclose(ptr);
+
+  // apertura in append:
   ptr = fopen(filename, "a");
   return ptr;
 }
@@ -280,6 +287,34 @@ void analysis( Analysis type, int n_samples ) {
   fclose(ptr);
 }
 
+void analysis_static_size(Analysis type, int size) {
+  FILE * ptr = setup_csv(type);
+  ArrayOrdered order = False;
+
+  int sample[size];
+  double quickSelectTime = 0;
+  double heapSelectTime = 0;
+  double medianSelectTime = 0;
+  int k;
+
+  for (int i = 0; i < 1000; i++) {
+    populate(sample, size, order);
+
+    // prendiamo k = i
+    quickSelectTime = get_execution_time( QuickSelect, sample, size, i );
+    heapSelectTime = get_execution_time( HeapSelect, sample, size, i );
+    medianSelectTime = get_execution_time( MedianMediansSelect, sample, size, i );
+    fprintf(ptr, "%d, %f, %f, %f\n", i, quickSelectTime, heapSelectTime, medianSelectTime);
+    printf("k: %d, quickSelect: %f - heapSelect: %f - medianMediansSelect: %f \n", i, quickSelectTime, heapSelectTime, medianSelectTime);
+  }
+
+  fclose(ptr);
+}
+
+/** TODO:
+ *  - dimensione fissa e k variabile
+ *  - n/100 analisi
+ */
 
 int main () {
   srand(time(NULL));
@@ -288,16 +323,19 @@ int main () {
   printf("\e[1;1H\e[2J");
 
   // analisi k = sqrt(n)
-  analysis(square_n, n_samples);
+  //analysis(square_n, n_samples);
 
   // analisi k = n/2
-  analysis(half_n, n_samples);
+  //analysis(half_n, n_samples);
 
   // k = random
-  analysis(random_k, n_samples);
+  //analysis(random_k, n_samples);
 
   // caso pessimo quick select
-  analysis(quickselect_worstcase, 50);
+  //analysis(quickselect_worstcase, 50);
+
+  // analisi dei tempi di esecuzione con k variabile e dimensione fissata
+  analysis_static_size(static_size, 10000);
 
   return (EXIT_SUCCESS);
 }
