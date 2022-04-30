@@ -252,7 +252,7 @@ FILE * setup_csv ( Analysis type ) {
   // intestazioni file csv:
   ptr = fopen(filename, "w");
   if (type == quickselect_worstcase) fprintf(ptr, "size,quickselect\n");
-  else if (type == static_size) fprintf(ptr, "k,quickselect,heapselect,medianmediansselect\n");
+  else if (type == static_size) fprintf(ptr, "k_method,k,quickselect,heapselect,medianmediansselect\n");
   else fprintf(ptr, "size,quickselect,heapselect,medianmediansselect\n");
   fclose(ptr);
 
@@ -289,25 +289,65 @@ void analysis( Analysis type, int n_samples ) {
   fclose(ptr);
 }
 
-void analysis_static_size(Analysis type, int size) {
-  FILE * ptr = setup_csv(type);
+/**
+ * @brief test algoritmi con k variabile e dimensione fissata, 2 varianti:
+ *  - k crescente
+ *  - k random
+ * 
+ * @param size dimensione vettore
+ * @param threshold limite superiore k incrementale
+ * @param n_samples quantità campionamenti
+ */
+void analysis_static_size(int size, int threshold, int n_samples) {
+  FILE * ptr = setup_csv(static_size);
   ArrayOrdered order = False;
 
-  int sample[size];
-  double quickSelectTime = 0;
-  double heapSelectTime = 0;
-  double medianSelectTime = 0;
+  // popolazione vettore e creazione backup
+  int *sample = NULL;
+  sample = MALLOC_ARRAY(size, int);
+  populate(sample, size, order);
+
+  int *sampleCopy = NULL;
+  sampleCopy = MALLOC_ARRAY(size, int);;
+  memcpy(sampleCopy, sample, size*sizeof(int));
+
   int k;
+  double quickSelectTime;
+  double heapSelectTime;
+  double medianSelectTime;
 
-  for (int i = 0; i < 1000; i++) {
-    populate(sample, size, order);
+  // se threshold supera size, viene modificato con il massimo possibile.
+  if(size <= 1000){
+    threshold = size-1;
+    printf("threshold supera size, modificato in %d\n", threshold);
+  }
 
-    // prendiamo k = i
-    quickSelectTime = get_execution_time( QuickSelect, sample, size, i );
-    heapSelectTime = get_execution_time( HeapSelect, sample, size, i );
-    medianSelectTime = get_execution_time( MedianMediansSelect, sample, size, i );
-    fprintf(ptr, "%d, %f, %f, %f\n", i, quickSelectTime, heapSelectTime, medianSelectTime);
-    printf("k: %d, quickSelect: %f - heapSelect: %f - medianMediansSelect: %f \n", i, quickSelectTime, heapSelectTime, medianSelectTime);
+  // analisi con k crescente da 0 a 1000, oppure da 0 a size
+  for (int i = 0; i < threshold; i++) {
+
+    k = rand() % size;
+    for(int j = 0; j < n_samples; j++){
+
+      // k crescente, k = i
+      quickSelectTime = get_execution_time( QuickSelect, sample, size, i );
+      memcpy(sample, sampleCopy, size*sizeof(int));
+      heapSelectTime = get_execution_time( HeapSelect, sample, size, i );
+      memcpy(sample, sampleCopy, size*sizeof(int));
+      medianSelectTime = get_execution_time( MedianMediansSelect, sample, size, i );
+      memcpy(sample, sampleCopy, size*sizeof(int));
+      fprintf(ptr, "%s, %d, %f, %f, %f\n", "increasing", i, quickSelectTime, heapSelectTime, medianSelectTime);
+      printf("k crescente, k: %d, quickSelect: %f - heapSelect: %f - medianMediansSelect: %f \n", i, quickSelectTime, heapSelectTime, medianSelectTime);
+
+      // k random
+      quickSelectTime = get_execution_time( QuickSelect, sample, size, k );
+      memcpy(sample, sampleCopy, size*sizeof(int));
+      heapSelectTime = get_execution_time( HeapSelect, sample, size, k );
+      memcpy(sample, sampleCopy, size*sizeof(int));
+      medianSelectTime = get_execution_time( MedianMediansSelect, sample, size, k );
+      memcpy(sample, sampleCopy, size*sizeof(int));
+      fprintf(ptr, "%s, %d, %f, %f, %f\n", "random", k, quickSelectTime, heapSelectTime, medianSelectTime);
+      printf("k random, k: %d, quickSelect: %f - heapSelect: %f - medianMediansSelect: %f \n", k, quickSelectTime, heapSelectTime, medianSelectTime);
+    }    
   }
 
   fclose(ptr);
@@ -340,7 +380,7 @@ int main () {
   //analysis(quickselect_worstcase, 50);
 
   // analisi dei tempi di esecuzione con k variabile e dimensione fissata
-  analysis_static_size(static_size, 10000);
+  analysis_static_size(10000, 5000, 20);
 
   return (EXIT_SUCCESS);
 }
