@@ -29,7 +29,7 @@ typedef enum {
 typedef enum {
   square_n,     // k = sqrt(n)
   half_n,    // k = n/2
-  hundred_k,
+  hundred_n,
   random_k,
   quickselect_worstcase,   // k = 0
   static_size
@@ -201,7 +201,7 @@ void execute_samples( Analysis type, int size, int n_samples, ArrayOrdered order
   if (type == quickselect_worstcase) k = 0;
   else if (type == half_n) k = size / 2;
   else if (type == square_n) k = sqrt(size);
-  else if (type == hundred_k) k = size/100;
+  else if (type == hundred_n) k = size/100;
 
   // creare 100 campioni dimensione size, calcolare tempo medio esecuzione
   for (int i = 1; i <= n_samples; i++) {
@@ -245,6 +245,8 @@ FILE * setup_csv ( Analysis type ) {
       break;
     case static_size:
       strcpy(filename, "dataset/static_size.csv");
+    case hundred_n:
+      strcpy(filename, "dataset/hundred_n.csv");
     default:
       break;
   }
@@ -366,7 +368,7 @@ int main () {
   //analysis(half_n, n_samples);
 
   // analisi k = n/100
-  //analysis(hundred_n, n_samples);
+  analysis(hundred_n, n_samples);
 
   // k = random
   //analysis(random_k, n_samples);
@@ -375,7 +377,7 @@ int main () {
   //analysis(quickselect_worstcase, 50);
 
   // analisi dei tempi di esecuzione con k variabile e dimensione fissata
-  analysis_static_size(10000, 5000, 20);
+  //analysis_static_size(10000, 5000, 20);
 
   return (EXIT_SUCCESS);
 }
