@@ -353,11 +353,6 @@ void analysis_static_size(int size, int threshold, int n_samples) {
   fclose(ptr);
 }
 
-/** TODO:
- *  - dimensione fissa e k variabile
- *  - n/100 analisi
- */
-
 int main () {
   srand(time(NULL));
   Tmin = get_t_min();
