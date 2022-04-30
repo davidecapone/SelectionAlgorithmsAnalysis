@@ -2,7 +2,10 @@
 library(dplyr)
 library(ggplot2)
 library(latex2exp)
+
 ```
+
+
 ```{r}
 # import
 half_n = read.csv("dataset/half_n.csv")
@@ -10,8 +13,11 @@ square_n = read.csv("dataset/square_n.csv")
 random_k = read.csv("dataset/random_k.csv")
 quickselect_worst = read.csv("dataset/quickselect_worst.csv")
 hundred_n = read.csv("dataset/hundred_n.csv")
-#static_size = read.csv("dataset/static_size.csv")
+static_size = read.csv("dataset/static_size.csv")
+
 ```
+
+
 ```{r}
 # generating stats for each analysis:
 
@@ -43,12 +49,15 @@ quickselect_worst_stats = quickselect_worst %>%
   group_by(size) %>%
   summarise( quickselect_average = mean(quickselect), quickselect_variance = var(quickselect))
 
-#static_size_stats = static_size %>%
-#  group_by(k) %>%
-#  summarise( quickselect_average = mean(quickselect), quickselect_variance = var(quickselect) ,
-#             heapselect_average = mean(heapselect), heapselect_variance = var(heapselect),
-#             medianmediansselect_average = mean(medianmediansselect), medianmediansselect_variance = var(medianmediansselect))
+static_size_stats = static_size %>%
+  group_by(k) %>%
+  summarise( quickselect_average = mean(quickselect), quickselect_variance = var(quickselect) ,
+             heapselect_average = mean(heapselect), heapselect_variance = var(heapselect),
+             medianmediansselect_average = mean(medianmediansselect), medianmediansselect_variance = var(medianmediansselect))
+
 ```
+
+
 ```{r}
 # palette:
 quickselect_color = "#4CAF50"
@@ -64,11 +73,11 @@ random_k_stats  %>% ggplot( aes(x = size) ) +
   geom_line(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
   geom_line(aes(y=heapselect_average,colour="heapSelect"),size=1) +
   geom_line(aes(y=medianmediansselect_average,colour="medianMediansSelect"),size=1) +
-  labs(x = "dimensione", y = "tempo", 
+  labs(x = "Dimensione", y = "Tempo", 
        title = TeX("Analisi asintotica k random"),
        subtitle = "20 campioni per dimensione",
-       caption = "scala lineare") +
-  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color))+
+       caption = "Scala lineare") +
+  scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color))+
   scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M"))
 
 # square n:
@@ -76,11 +85,11 @@ square_n_stats  %>% ggplot( aes(x = size) ) +
   geom_line(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
   geom_line(aes(y=heapselect_average,colour="heapSelect"),size=1) +
   geom_line(aes(y=medianmediansselect_average,colour="medianMediansSelect"),size=1) +
-  labs(x = "dimensione", y = "tempo", 
+  labs(x = "Dimensione", y = "Tempo", 
        title = TeX("Analisi asintotica $k = \\sqrt{n}$"),
        subtitle = "20 campioni per dimensione",
-       caption = "scala lineare") +
-  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color)) +
+       caption = "Scala lineare") +
+  scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color)) +
   scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M"))
 
 # half n:
@@ -88,11 +97,11 @@ half_n_stats  %>% ggplot( aes(x = size) ) +
   geom_line(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
   geom_line(aes(y=heapselect_average,colour="heapSelect"),size=1) +
   geom_line(aes(y=medianmediansselect_average,colour="medianMediansSelect"),size=1) +
-  labs(x = "dimensione", y = "tempo", 
+  labs(x = "Dimensione", y = "Tempo", 
        title = TeX("Analisi asintotica $k = \\frac{n}{2}$"),
        subtitle = "20 campioni per dimensione",
-       caption = "scala lineare") +
-  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color)) +
+       caption = "Scala lineare") +
+  scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color)) +
   scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M"))
 
 # hundred n:
@@ -100,22 +109,36 @@ hundred_n_stats  %>% ggplot( aes(x = size) ) +
   geom_line(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
   geom_line(aes(y=heapselect_average,colour="heapSelect"),size=1) +
   geom_line(aes(y=medianmediansselect_average,colour="medianMediansSelect"),size=1) +
-  labs(x = "dimensione", y = "tempo", 
+  labs(x = "Dimensione", y = "Tempo", 
        title = TeX("Analisi asintotica $k = \\frac{n}{100}$"),
        subtitle = "20 campioni per dimensione",
-       caption = "scala lineare") +
-  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color)) +
+       caption = "Scala lineare") +
+  scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color)) +
   scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M"))
 
 # quick select worst case:
 quickselect_worst_stats %>% ggplot( aes(x = size) ) + 
   geom_line(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
-  labs(x = "dimensione", y = "tempo", 
+  labs(x = "Dimensione", y = "Tempo", 
        title = TeX("Analisi asintotica caso pessimo quickSelect"),
        subtitle = "50 campioni per dimensione",
-       caption = "scala lineare") +
-  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = quickselect_color))
+       caption = "Scala lineare") +
+  scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color))
+
+# increasing k static size
+static_size_stats  %>% ggplot( aes(x = k) ) + 
+  geom_smooth(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
+  geom_smooth(aes(y=heapselect_average,colour="heapSelect"),size=1) +
+  geom_smooth(aes(y=medianmediansselect_average,colour="medianMediansSelect"),size=1) +
+  labs(x = "k", y = "Tempo", 
+       title = TeX("Analisi asintotica k incrementale e dimensione fissata"),
+       subtitle = "20 campioni per k",
+       caption = "Scala lineare") +
+  scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color))
+
 ```
+
+
 ```{r}
 # LOG SCALE GRAPHS:
 # k random:
@@ -123,11 +146,11 @@ random_k_stats  %>% ggplot( aes(x = size) ) +
   geom_line(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
   geom_line(aes(y=heapselect_average,colour="heapSelect"),size=1) +
   geom_line(aes(y=medianmediansselect_average,colour="medianMediansSelect"),size=1) +
-  labs(x = "dimensione", y = "tempo", 
+  labs(x = "Dimensione", y = "Tempo", 
        title = TeX("Analisi asintotica con k random"),
        subtitle = "20 campioni per ogni dimensione",
-       caption = "scala doppiamente logaritmica") +
-  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color))+
+       caption = "Scala doppiamente logaritmica") +
+  scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color))+
   scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M"), trans = 'log2') +
   scale_y_continuous(trans='log2')
 
@@ -136,11 +159,11 @@ square_n_stats  %>% ggplot( aes(x = size) ) +
   geom_line(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
   geom_line(aes(y=heapselect_average,colour="heapSelect"),size=1) +
   geom_line(aes(y=medianmediansselect_average,colour="medianMediansSelect"),size=1) +
-  labs(x = "dimensione", y = "tempo", 
+  labs(x = "Dimensione", y = "Tempo", 
        title = TeX("Analisi asintotica con $k = \\sqrt{n}$"),
        subtitle = "20 campioni per ogni dimensione",
-       caption = "scala doppiamente logaritmica") +
-  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color)) +
+       caption = "Scala doppiamente logaritmica") +
+  scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color)) +
   scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M"), trans = 'log2') +
   scale_y_continuous(trans='log2')
 
@@ -149,24 +172,36 @@ half_n_stats  %>% ggplot( aes(x = size) ) +
   geom_line(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
   geom_line(aes(y=heapselect_average,colour="heapSelect"),size=1) +
   geom_line(aes(y=medianmediansselect_average,colour="medianMediansSelect"),size=1) +
-  labs(x = "dimensione", y = "tempo", 
+  labs(x = "Dimensione", y = "Tempo", 
        title = TeX("Analisi asintotica con $k = \\frac{n}{2}$"),
        subtitle = "20 campioni per ogni dimensione",
-       caption = "scala doppiamente logaritmica") +
-  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color)) +
+       caption = "Scala doppiamente logaritmica") +
+  scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color)) +
   scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M"), trans = 'log2') +
   scale_y_continuous(trans='log2')
 
 # quick select worst case:
 quickselect_worst_stats %>% ggplot( aes(x = size) ) + 
   geom_line(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
-  labs(x = "dimensione", y = "tempo", 
+  labs(x = "Dimensione", y = "Tempo", 
        title = TeX("Analisi asintotica caso pessimo quickSelect"),
        subtitle = "50 campioni per ogni dimensione",
-       caption = "scala doppiamente logaritmica") +
-  scale_color_manual(name = "Algoritmi selezione", values = c("quickSelect" = quickselect_color)) +
+       caption = "Scala doppiamente logaritmica") +
+  scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color)) +
   scale_x_continuous(trans = 'log') +
   scale_y_continuous(trans = 'log')
+
+# increasing k static size
+static_size_stats  %>% ggplot( aes(x = k) ) + 
+  geom_smooth(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
+  geom_smooth(aes(y=heapselect_average,colour="heapSelect"),size=1) +
+  geom_smooth(aes(y=medianmediansselect_average,colour="medianMediansSelect"),size=1) +
+  labs(x = "k", y = "Tempo", 
+       title = TeX("Analisi asintotica k incrementale e dimensione fissata"),
+       subtitle = "20 campioni per k",
+       caption = "Scala logaritmica") +
+  scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color))+
+  scale_y_continuous(trans='log2')
 ```
 
 
