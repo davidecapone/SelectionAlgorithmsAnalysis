@@ -54,7 +54,6 @@ static_size_stats = static_size %>%
   summarise( quickselect_average = mean(quickselect), quickselect_variance = var(quickselect) ,
              heapselect_average = mean(heapselect), heapselect_variance = var(heapselect),
              medianmediansselect_average = mean(medianmediansselect), medianmediansselect_variance = var(medianmediansselect))
-
 ```
 
 
@@ -124,18 +123,6 @@ quickselect_worst_stats %>% ggplot( aes(x = size) ) +
        subtitle = "50 campioni per dimensione",
        caption = "Scala lineare") +
   scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color))
-
-# increasing k static size
-static_size_stats  %>% ggplot( aes(x = k) ) + 
-  geom_smooth(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
-  geom_smooth(aes(y=heapselect_average,colour="heapSelect"),size=1) +
-  geom_smooth(aes(y=medianmediansselect_average,colour="medianMediansSelect"),size=1) +
-  labs(x = "k", y = "Tempo", 
-       title = TeX("Analisi asintotica k incrementale e dimensione fissata"),
-       subtitle = "20 campioni per k",
-       caption = "Scala lineare") +
-  scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color))
-
 ```
 
 
@@ -190,7 +177,8 @@ quickselect_worst_stats %>% ggplot( aes(x = size) ) +
   scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color)) +
   scale_x_continuous(trans = 'log') +
   scale_y_continuous(trans = 'log')
-
+```
+```{r}
 # increasing k static size
 static_size_stats  %>% ggplot( aes(x = k) ) + 
   geom_smooth(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
@@ -199,11 +187,26 @@ static_size_stats  %>% ggplot( aes(x = k) ) +
   labs(x = "k", y = "Tempo", 
        title = TeX("Analisi asintotica k incrementale e dimensione fissata"),
        subtitle = "20 campioni per k",
-       caption = "Scala logaritmica") +
-  scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color))+
-  scale_y_continuous(trans='log2')
+       caption = "Scala lineare") +
+  scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color))
 ```
 
+
+```{r}
+# sospettiamo una correlazione tra parametro k e heapselect, verifichiamo:
+cor(static_size_stats$k, static_size_stats$heapselect_average, method = "pearson")
+# valore prossimo ad 1: correlazione lineare positiva molto forte
+
+# dimostriamo invece la scarsa correlazione per gli altri algoritmi:
+cor(static_size_stats$k, static_size_stats$quickselect_average, method = "pearson")
+cor(static_size_stats$k, static_size_stats$medianmediansselect_average, method = "pearson")
+
+```
+```{r}
+# valutiamo quindi i tempi di esecuzione utilizzando una max heap per dimostrare che questi decrescono all'aumentare di k:
+
+
+```
 
 
 
