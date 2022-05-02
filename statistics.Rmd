@@ -117,7 +117,8 @@ hundred_n_stats  %>% ggplot( aes(x = size) ) +
 
 # quick select worst case:
 quickselect_worst_stats %>% ggplot( aes(x = size) ) + 
-  geom_line(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
+  geom_line(aes(y=quickselect_average, colour="quickSelect"),size=1 )+
+  stat_smooth(aes(y = quickselect_average), method = "lm", formula = y ~ x + I(x^2), size = 1, se=F, color="red") +
   labs(x = "Dimensione", y = "Tempo", 
        title = TeX("Analisi asintotica caso pessimo quickSelect"),
        subtitle = "50 campioni per dimensione",
@@ -138,8 +139,8 @@ random_k_stats  %>% ggplot( aes(x = size) ) +
        subtitle = "20 campioni per ogni dimensione",
        caption = "Scala doppiamente logaritmica") +
   scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color))+
-  scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M"), trans = 'log2') +
-  scale_y_continuous(trans='log2')
+  scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M"), trans = 'log') +
+  scale_y_continuous(trans='log')
 
 # square n:
 square_n_stats  %>% ggplot( aes(x = size) ) + 
@@ -151,8 +152,8 @@ square_n_stats  %>% ggplot( aes(x = size) ) +
        subtitle = "20 campioni per ogni dimensione",
        caption = "Scala doppiamente logaritmica") +
   scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color)) +
-  scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M"), trans = 'log2') +
-  scale_y_continuous(trans='log2')
+  scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M"), trans = 'log') +
+  scale_y_continuous(trans='log')
 
 # half n:
 half_n_stats  %>% ggplot( aes(x = size) ) + 
@@ -164,20 +165,23 @@ half_n_stats  %>% ggplot( aes(x = size) ) +
        subtitle = "20 campioni per ogni dimensione",
        caption = "Scala doppiamente logaritmica") +
   scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color)) +
-  scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M"), trans = 'log2') +
-  scale_y_continuous(trans='log2')
+  scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M"), trans = 'log') +
+  scale_y_continuous(trans='log')
 
 # quick select worst case:
 quickselect_worst_stats %>% ggplot( aes(x = size) ) + 
-  geom_line(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
+  geom_line(aes(y=quickselect_average, colour="quickSelect"),size=1 )+
+  stat_smooth(aes(y = quickselect_average), method = "lm", formula = y ~ x + I(x^2), size = 1, se=F, color="red") +
   labs(x = "Dimensione", y = "Tempo", 
        title = TeX("Analisi asintotica caso pessimo quickSelect"),
-       subtitle = "50 campioni per ogni dimensione",
-       caption = "Scala doppiamente logaritmica") +
+       subtitle = "50 campioni per dimensione",
+       caption = "Scala lineare") +
   scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color)) +
   scale_x_continuous(trans = 'log') +
   scale_y_continuous(trans = 'log')
 ```
+
+
 ```{r}
 # increasing k static size
 static_size_stats  %>% ggplot( aes(x = k) ) + 
@@ -204,7 +208,10 @@ cor(static_size_stats$k, static_size_stats$medianmediansselect_average, method =
 ```
 ```{r}
 # valutiamo quindi i tempi di esecuzione utilizzando una max heap per dimostrare che questi decrescono all'aumentare di k:
+```
 
+
+```{r}
 
 ```
 
