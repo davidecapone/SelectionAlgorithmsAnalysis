@@ -294,9 +294,8 @@ void analysis( Analysis type, int n_samples ) {
 }
 
 /**
- * @brief test algoritmi con k variabile e dimensione fissata, 2 varianti:
+ * @brief test algoritmi con k variabile e dimensione fissata
  *  - k crescente
- *  - k random
  * 
  * @param size dimensione vettore
  * @param threshold limite superiore k incrementale
@@ -349,26 +348,26 @@ void analysis_static_size(int size, int threshold, int n_samples) {
 int main () {
   srand(time(NULL));
   Tmin = get_t_min();
-  int n_samples = 20;
+  int n_samples = 50;
   printf("\e[1;1H\e[2J");
 
   // analisi k = sqrt(n)
-  //analysis(square_n, n_samples);
+  analysis(square_n, n_samples);
 
   // analisi k = n/2
-  //analysis(half_n, n_samples);
+  analysis(half_n, n_samples);
 
   // analisi k = n/100
-  //analysis(hundred_n, n_samples);
+  analysis(hundred_n, n_samples);
 
   // k = random
-  //analysis(random_k, n_samples);
+  analysis(random_k, n_samples);
 
   // caso pessimo quick select
-  //analysis(quickselect_worstcase, 50);
+  analysis(quickselect_worstcase, n_samples);
 
   // analisi dei tempi di esecuzione con k incrementale e dimensione fissata
-  analysis_static_size(10000, 5000, n_samples);
+  //analysis_static_size(10000, 5000, n_samples);
 
   return (EXIT_SUCCESS);
 }
