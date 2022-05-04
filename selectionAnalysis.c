@@ -355,7 +355,7 @@ void analysis_static_size(int size, int threshold, int n_samples) {
 int main () {
   srand(time(NULL));
   Tmin = get_t_min();
-  int n_samples = 50;
+  int n_samples = 40;
   printf("\e[1;1H\e[2J");
 
   // analisi k = sqrt(n)
@@ -371,7 +371,7 @@ int main () {
   analysis(random_k, n_samples);
 
   // caso pessimo quick select
-  analysis(quickselect_worstcase, n_samples);
+  // analysis(quickselect_worstcase, n_samples);
 
   // analisi dei tempi di esecuzione con k incrementale e dimensione fissata
   //analysis_static_size(10000, 5000, n_samples);
