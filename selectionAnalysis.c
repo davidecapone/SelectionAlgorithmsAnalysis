@@ -6,7 +6,7 @@
 #include "implementations/heapSelect.h"
 #include "implementations/medianMediansSelect.h"
 
-#define MALLOC_ARRAY(number, type)\
+#define ALLOC_ARRAY(number, type)\
 	(type*) calloc((number) *sizeof(type), sizeof(type))
 
 const double E = 0.001;
@@ -130,13 +130,13 @@ double get_execution_time( Algorithm type, int A[], int size, int k ) {
 
   // backup del campione in 'copy':
   int *copy = NULL;
-  copy = MALLOC_ARRAY(size, int);
+  copy = ALLOC_ARRAY(size, int);
   memcpy(copy, A, size*sizeof(int));
 
   // creazione array di nodi per heapSelect
   Node *A_node = NULL;
-  if(type == MaxHeapSelect || type == MinHeapSelect){
-    A_node = MALLOC_ARRAY(size, Node);
+  if(type == HeapSelect){
+    A_node = ALLOC_ARRAY(size, Node);
     toNode(A, size, A_node);
   }
 
@@ -210,7 +210,7 @@ void execute_samples( Analysis type, int size, int n_samples, ArrayOrdered order
   // creare 100 campioni dimensione size, calcolare tempo medio esecuzione
   for (int i = 1; i <= n_samples; i++) {
 
-    sample = MALLOC_ARRAY(size, int);
+    sample = ALLOC_ARRAY(size, int);
     populate(sample, size, order);
 
     if (type == random_k) k = rand() % size;
@@ -277,7 +277,7 @@ FILE * setup_csv ( Analysis type ) {
  */
 void analysis( Analysis type, int n_samples ) {
   // dimensione finale (default) da raggiungere 5 milioni
-  int size, k, final = 99;
+  int size, final = 99;
 
   FILE * ptr = setup_csv(type);
   ArrayOrdered order = False ;
@@ -311,11 +311,11 @@ void analysis_static_size(int size, int threshold, int n_samples) {
 
   // popolazione vettore e creazione backup
   int *sample = NULL;
-  sample = MALLOC_ARRAY(size, int);
+  sample = ALLOC_ARRAY(size, int);
   populate(sample, size, order);
 
   int *sampleCopy = NULL;
-  sampleCopy = MALLOC_ARRAY(size, int);;
+  sampleCopy = ALLOC_ARRAY(size, int);;
   memcpy(sampleCopy, sample, size*sizeof(int));
 
   double quickSelectTime;
@@ -359,22 +359,22 @@ int main () {
   printf("\e[1;1H\e[2J");
 
   // analisi k = sqrt(n)
-  analysis(square_n, n_samples);
+  //analysis(square_n, n_samples);
 
   // analisi k = n/2
-  analysis(half_n, n_samples);
+  //analysis(half_n, n_samples);
 
   // analisi k = n/100
-  analysis(hundred_n, n_samples);
+  //analysis(hundred_n, n_samples);
 
   // k = random
-  analysis(random_k, n_samples);
+  //analysis(random_k, n_samples);
 
   // caso pessimo quick select
   // analysis(quickselect_worstcase, n_samples);
 
   // analisi dei tempi di esecuzione con k incrementale e dimensione fissata
-  //analysis_static_size(10000, 5000, n_samples);
+  analysis_static_size(10000, 5000, n_samples);
 
   return (EXIT_SUCCESS);
 }
