@@ -194,7 +194,7 @@ void heapInsert(Node A[], int *heapsize, int key, int index, Heap type) {
  *
  * @param H1 una min heap
  * @param p indice inizale
- * @param p indice inizale
+ * @param q indice finale
  * @param k indice del k-esimo elemento
  * @return int chiave del k-esimo elemento
  */
