@@ -374,7 +374,9 @@ int main () {
   // analysis(quickselect_worstcase, n_samples);
 
   // analisi dei tempi di esecuzione con k incrementale e dimensione fissata
-  analysis_static_size(10000, 5000, n_samples);
+  int size = 10000;
+  int threshold = 7000;
+  analysis_static_size(size, threshold, n_samples);
 
   return (EXIT_SUCCESS);
 }
