@@ -135,7 +135,7 @@ double get_execution_time( Algorithm type, int A[], int size, int k ) {
 
   // creazione array di nodi per heapSelect
   Node *A_node = NULL;
-  if(type == HeapSelect){
+  if(type == MinHeapSelect || type == MaxHeapSelect){
     A_node = ALLOC_ARRAY(size, Node);
     toNode(A, size, A_node);
   }
@@ -148,10 +148,10 @@ double get_execution_time( Algorithm type, int A[], int size, int k ) {
 				kSmallest = quickSelect(A, 0, size-1, k);
 				break;
 			case MinHeapSelect:
-				kSmallest = heapSelect(A_node, 0, size-1, k, MinHeap);
+				kSmallest = heapSelect(A_node, 0, size-1, k, MinHeapSelect);
 				break;
       case MaxHeapSelect:
-        kSmallest = heapSelect(A_node, 0, size-1, k, MaxHeap);
+				kSmallest = heapSelect(A_node, 0, size-1, k, MaxHeapSelect);
 				break;
 			case MedianMediansSelect:
 				kSmallest = MoMSelect(A, 0, size-1, k);
@@ -167,7 +167,7 @@ double get_execution_time( Algorithm type, int A[], int size, int k ) {
     if (period <= Tmin) {
       clock_gettime(CLOCK_MONOTONIC, &backup_start);
       memcpy(A, copy, size*sizeof(int));
-      if(type == MaxHeapSelect || type == MinHeapSelect){
+      if(type == MinHeapSelect || type == MaxHeapSelect){
         toNode(A, size, A_node);
       }
       clock_gettime(CLOCK_MONOTONIC, &backup_end);
@@ -224,7 +224,7 @@ void execute_samples( Analysis type, int size, int n_samples, ArrayOrdered order
       quickSelectTime = get_execution_time( QuickSelect, sample, size, k );
       memcpy(sample, backup, size*sizeof(int));
 
-      heapSelectTime = get_execution_time( HeapSelect, sample, size, k );
+      heapSelectTime = get_execution_time( MinHeapSelect, sample, size, k );
       memcpy(sample, backup, size*sizeof(int));
 
       medianSelectTime = get_execution_time( MedianMediansSelect, sample, size, k );
@@ -318,7 +318,7 @@ void analysis( Analysis type, int n_samples ) {
  * @param n_samples qta campioni per ogni dimensione
  */
 void analysis_static_size(int size, int threshold, int n_samples) {
-  double quickSelectTime, heapSelectTime, medianSelectTime;
+  double quickSelectTime, minHeapSelectTime, maxHeapSelectTime, medianSelectTime;
   int *sample = NULL;
   int *backup = NULL;
   
@@ -340,14 +340,17 @@ void analysis_static_size(int size, int threshold, int n_samples) {
       quickSelectTime = get_execution_time( QuickSelect, sample, size, i );
       memcpy(sample, backup, size*sizeof(int));
 
-      heapSelectTime = get_execution_time( HeapSelect, sample, size, i );
+      minHeapSelectTime = get_execution_time( MinHeapSelect, sample, size, i );
+      memcpy(sample, backup, size*sizeof(int));
+
+      maxHeapSelectTime = get_execution_time( MaxHeapSelect, sample, size, i );
       memcpy(sample, backup, size*sizeof(int));
 
       medianSelectTime = get_execution_time( MedianMediansSelect, sample, size, i );
       memcpy(sample, backup, size*sizeof(int));
 
-      fprintf(ptr, "%d, %f, %f, %f\n", i, quickSelectTime, heapSelectTime, medianSelectTime);
-      printf("k: %d, quickSelect: %f - heapSelect: %f - medianMediansSelect: %f \n", i, quickSelectTime, heapSelectTime, medianSelectTime);
+      fprintf(ptr, "%d, %f, %f, %f, %f\n", i, quickSelectTime, minHeapSelectTime, maxHeapSelectTime, medianSelectTime);
+      printf("k: %d, quickSelect: %f - minHeapSelect: %f - maxHeapSelect: %f - medianMediansSelect: %f \n", i, quickSelectTime, minHeapSelectTime, maxHeapSelectTime, medianSelectTime);
     }    
   }
 
@@ -361,7 +364,7 @@ int main () {
   printf("\e[1;1H\e[2J");
 
   // analisi k = sqrt(n)
-  analysis(square_n, n_samples);
+  //analysis(square_n, n_samples);
 
   // analisi k = n/2
   //analysis(half_n, n_samples);
@@ -378,7 +381,7 @@ int main () {
   // analisi dei tempi di esecuzione con dimensione fissata
   int size = 10000;       // dimensione vettore
   int threshold = 7000;   // limite massimo per k incrementante
-  //analysis_static_size(size, threshold, n_samples);
+  analysis_static_size(size, threshold, n_samples);
 
   return (EXIT_SUCCESS);
 }
