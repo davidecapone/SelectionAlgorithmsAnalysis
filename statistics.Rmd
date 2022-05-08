@@ -215,7 +215,7 @@ quickselect_worst_stats %>% ggplot( aes(x = size) ) +
   labs(x = "dimensione", y = "tempo (secondi)", 
        title = TeX("Analisi asintotica caso pessimo quickSelect"),
        subtitle = "50 campioni per dimensione",
-       caption = "Scala lineare") +
+       caption = "Scala doppiamente logaritmica") +
   scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color)) +
   scale_x_continuous(trans = 'log') +
   scale_y_continuous(trans = 'log')

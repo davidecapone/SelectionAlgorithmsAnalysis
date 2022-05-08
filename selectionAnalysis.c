@@ -228,7 +228,6 @@ void execute_samples( Analysis type, int size, int n_samples, ArrayOrdered order
       memcpy(sample, backup, size*sizeof(int));
 
       medianSelectTime = get_execution_time( MedianMediansSelect, sample, size, k );
-      memcpy(sample, backup, size*sizeof(int));
 
       fprintf(ptr, "%d, %f, %f, %f\n", size, quickSelectTime, heapSelectTime, medianSelectTime);
       printf("size: %d, quickSelect: %f - heapSelect: %f - medianMediansSelect: %f \n", size, quickSelectTime, heapSelectTime, medianSelectTime);
