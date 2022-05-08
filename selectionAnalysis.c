@@ -210,15 +210,17 @@ void execute_samples( Analysis type, int size, int n_samples, ArrayOrdered order
 
   for (int i = 1; i <= n_samples; i++) {
     populate(sample, size, order);
-    // copia del campione in backup:
     memcpy(backup, sample, size*sizeof(int));
+
     if (type == random_k) k = rand() % size;
     if ( type == quickselect_worstcase ) {
+
       quickSelectTime = get_execution_time( QuickSelect, sample, size, k );
       fprintf(ptr, "%d, %f\n", size, quickSelectTime);
-      printf("SIZE: %d, quickSelect: %f\n", size, quickSelectTime);
+      printf("size: %d, quickSelect: %f\n", size, quickSelectTime);
 
     } else {
+
       quickSelectTime = get_execution_time( QuickSelect, sample, size, k );
       memcpy(sample, backup, size*sizeof(int));
 
@@ -229,7 +231,8 @@ void execute_samples( Analysis type, int size, int n_samples, ArrayOrdered order
       memcpy(sample, backup, size*sizeof(int));
 
       fprintf(ptr, "%d, %f, %f, %f\n", size, quickSelectTime, heapSelectTime, medianSelectTime);
-      printf("SIZE: %d, quickSelect: %f - heapSelect: %f - medianMediansSelect: %f \n", size, quickSelectTime, heapSelectTime, medianSelectTime);
+      printf("size: %d, quickSelect: %f - heapSelect: %f - medianMediansSelect: %f \n", size, quickSelectTime, heapSelectTime, medianSelectTime);
+    
     }
   }
 
@@ -330,8 +333,7 @@ void analysis_static_size(int size, int threshold, int n_samples) {
   memcpy(backup, sample, size*sizeof(int));
 
 
-  // analisi con k crescente da 0 a 1000, oppure da 0 a size
-  for (int i = 0; i < threshold; i++) {
+  for (int i = 0; i <= threshold; i++) {
 
     for(int j = 0; j < n_samples; j++){
 
@@ -346,7 +348,7 @@ void analysis_static_size(int size, int threshold, int n_samples) {
       memcpy(sample, backup, size*sizeof(int));
 
       fprintf(ptr, "%d, %f, %f, %f\n", i, quickSelectTime, heapSelectTime, medianSelectTime);
-      printf("k crescente, k: %d, quickSelect: %f - heapSelect: %f - medianMediansSelect: %f \n", i, quickSelectTime, heapSelectTime, medianSelectTime);
+      printf("k: %d, quickSelect: %f - heapSelect: %f - medianMediansSelect: %f \n", i, quickSelectTime, heapSelectTime, medianSelectTime);
     }    
   }
 
@@ -369,15 +371,15 @@ int main () {
   //analysis(hundred_n, n_samples);
 
   // k = random
-  analysis(random_k, n_samples);
+  //analysis(random_k, n_samples);
 
   // caso pessimo quick select
   // analysis(quickselect_worstcase, n_samples);
 
-  // analisi dei tempi di esecuzione con k incrementale e dimensione fissata
-  int size = 10000;
-  int threshold = 7000;
-  analysis_static_size(size, threshold, n_samples);
+  // analisi dei tempi di esecuzione con dimensione fissata
+  int size = 10000;       // dimensione vettore
+  int threshold = 7000;   // limite massimo per k incrementante
+  //analysis_static_size(size, threshold, n_samples);
 
   return (EXIT_SUCCESS);
 }

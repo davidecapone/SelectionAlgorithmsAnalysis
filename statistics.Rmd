@@ -201,7 +201,7 @@ hundred_n_stats  %>% ggplot( aes(x = size) ) +
   geom_line(aes(y=heapselect_average,colour="heapSelect"),size=1) +
   geom_line(aes(y=medianmediansselect_average,colour="medianMediansSelect"),size=1) +
   labs(x = "dimensione", y = "tempo (secondi)", 
-       title = TeX("Analisi asintotica con $k = \\frac{n}{2}$"),
+       title = TeX("Analisi asintotica con $k = \\frac{n}{100}$"),
        subtitle = "40 campioni per ogni dimensione",
        caption = "Scala doppiamente logaritmica") +
   scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color)) +
@@ -229,7 +229,7 @@ static_size_stats  %>% ggplot( aes(x = k) ) +
   geom_smooth(aes(y=heapselect_average,colour="heapSelect"),size=1) +
   geom_smooth(aes(y=medianmediansselect_average,colour="medianMediansSelect"),size=1) +
   labs(x = "k", y = "tempo (secondi)", 
-       title = TeX("Analisi asintotica k incrementale e dimensione fissata"),
+       title = TeX("Analisi asintotica k incrementale, dimensione fissa = 10000"),
        subtitle = "40 campioni per k",
        caption = "Scala lineare") +
   scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color))
@@ -238,11 +238,11 @@ static_size_stats  %>% ggplot( aes(x = k) ) +
 
 ```{r}
 
-# sospettiamo una correlazione tra parametro k e heapselect, verifichiamo:
+# correlazione lineare tra parametro k e heapselect:
 cor(static_size_stats$k, static_size_stats$heapselect_average, method = "pearson")
-# valore prossimo ad 1: correlazione lineare positiva molto forte
+# valore prossimo ad 1, correlazione lineare positiva molto forte
 
-# dimostriamo invece la scarsa correlazione per gli altri algoritmi:
+# scarsa correlazione per gli altri algoritmi:
 cor(static_size_stats$k, static_size_stats$quickselect_average, method = "pearson")
 cor(static_size_stats$k, static_size_stats$medianmediansselect_average, method = "pearson")
 
