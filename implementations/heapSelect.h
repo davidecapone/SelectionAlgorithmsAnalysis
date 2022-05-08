@@ -210,7 +210,11 @@ int heapSelect(Node H1[], int p, int q, int k, Heap type)
         // heapsize viene incrementato da minHeapInsert
         int heapsize2 = 0;
         Node *H2 = NULL;
-        H2 = ALLOC_ARRAY(k+1, Node);
+        if(type == MinHeap){
+            H2 = ALLOC_ARRAY(k+1, Node);
+        } else {
+            H2 = ALLOC_ARRAY(heapsize-k, Node);
+        }
 
         // inizialmente H2 contiene solamente la radice di H1
         heapInsert(H2, &heapsize2, H1[0].key, H1[0].index, type);
