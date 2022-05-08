@@ -361,7 +361,7 @@ int main () {
   printf("\e[1;1H\e[2J");
 
   // analisi k = sqrt(n)
-  analysis(square_n, 10);
+  analysis(square_n, n_samples);
 
   // analisi k = n/2
   //analysis(half_n, n_samples);
