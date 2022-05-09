@@ -148,10 +148,10 @@ double get_execution_time( Algorithm type, int A[], int size, int k ) {
 				kSmallest = quickSelect(A, 0, size-1, k);
 				break;
 			case MinHeapSelect:
-				kSmallest = heapSelect(A_node, 0, size-1, k, MinHeapSelect);
+				kSmallest = heapSelect(A_node, 0, size-1, k, MinHeap);
 				break;
       case MaxHeapSelect:
-				kSmallest = heapSelect(A_node, 0, size-1, k, MaxHeapSelect);
+				kSmallest = heapSelect(A_node, 0, size-1, k, MaxHeap);
 				break;
 			case MedianMediansSelect:
 				kSmallest = MoMSelect(A, 0, size-1, k);
@@ -347,7 +347,6 @@ void analysis_static_size(int size, int threshold, int n_samples) {
       memcpy(sample, backup, size*sizeof(int));
 
       medianSelectTime = get_execution_time( MedianMediansSelect, sample, size, i );
-      memcpy(sample, backup, size*sizeof(int));
 
       fprintf(ptr, "%d, %f, %f, %f, %f\n", i, quickSelectTime, minHeapSelectTime, maxHeapSelectTime, medianSelectTime);
       printf("k: %d, quickSelect: %f - minHeapSelect: %f - maxHeapSelect: %f - medianMediansSelect: %f \n", i, quickSelectTime, minHeapSelectTime, maxHeapSelectTime, medianSelectTime);

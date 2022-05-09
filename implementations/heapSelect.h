@@ -70,43 +70,25 @@ void swapNodes(Node A[], int i, int j) {
  */
 void heapify(Node A[], int heapsize, int i, Heap type)
 {
-    if(type == MaxHeap)
-    {
-
+    if(type == MaxHeap) {
         int done = -1;
-
-        while (done != 0)
-        {
-
+        while (done != 0) {
             int biggest = i;
             int l = left(i);
             int r = right(i);
 
-            if (l < heapsize && A[l].key > A[i].key)
-            {
-                biggest = l; // caso in cui scambio con il figlio sinistro
-            }
-            else
-            {
-                biggest = i;
-            }
+            if (l < heapsize && A[l].key > A[i].key) biggest = l; 
+            else biggest = i;
+            if (r < heapsize && A[r].key > A[biggest].key) biggest = r;
 
-            if (r < heapsize && A[r].key > A[biggest].key)
-            {
-                biggest = r; // caso in cui scambio con il figlio destro
-            }
-
-            if (biggest != i)
-            { // se serve lo scambio,qui viene eseguito, altrimenti la procedura termina
+            if (biggest != i) {
                 swapNodes(A, i, biggest);
                 i = biggest;
             }
-            else
-            {
-                done = 0;
-            }
+            else done = 0;
+
         }
-    } else {
+    } else if (type == MinHeap) {
         int done = -1;
         while (done != 0) {
             int smallest = i;
@@ -127,16 +109,17 @@ void heapify(Node A[], int heapsize, int i, Heap type)
 }
 
 /**
- * @brief costruire una min-heap a partire da un vettore A
+ * @brief costruire heap a partire da vettore non heap
  *
- * @param A vettore
- * @param dim dimensione del vettore A
- * @param type tipo della heap (MinHeap o MaxHeap)
+ * @param A vettore non heap
+ * @param dim dimensione vettore A
+ * @param type tipo heap
  */
 void buildHeap(Node A[], int len, Heap type) {
     for (int i = len / 2; i >= 0; i--) {
         heapify(A, len, i, type);
     }
+
     // assegnazione indici ai nodi
     for (int i = 0; i < len; i++) {
         A[i].index = i;
@@ -144,15 +127,14 @@ void buildHeap(Node A[], int len, Heap type) {
 }
 
 /**
- * @brief estrae la radice dalla min-heap
+ * @brief estrazione radice della heap
  *
  * @param A heap
  * @param heapsize dimensione heap
- * @param type tipo della heap (MaxHeap o MinHeap)
- * @return radice di H2 estratta
+ * @param type tipo heap
+ * @return radice
  */
-Node extractHeap(Node A[], int *heapsize, Heap type)
-{
+Node extractHeap(Node A[], int *heapsize, Heap type) {
     Node root = A[0];
     swapNodes(A, 0, *heapsize - 1);
     *heapsize = *heapsize - 1;
@@ -161,30 +143,32 @@ Node extractHeap(Node A[], int *heapsize, Heap type)
 }
 
 /**
- * @brief inserisce una chiave k nel vettore min heap
+ * @brief inserisce chiave nella heap
  *
- * @param A min heap
- * @param k chiave da inserire
- * @param heapsize dimensione dell'heap (il valore viene modificato, quindi lo passo come riferimento)
- * @param type tipo della heap (MaxHeap o MinHeap)
+ * @param A heap
+ * @param heapsize dimensione heap (in seguito all'aggiunta viene aumentata)
+ * @param k chiave
+ * @param index ??
+ * @param type tipo heap
  */
 void heapInsert(Node A[], int *heapsize, int key, int index, Heap type) {
-    // aumento la dimensione della heap
+    // aumenta la dimensione:
     *heapsize = (*heapsize + 1);
+
     // i: ultimo indice della heap
     int i = (*heapsize - 1);
+
     A[i].key = key;
     A[i].index = index;
-
-    if(type == MinHeap){
+    if(type == MinHeap) {
         while (i > 0 && A[i].key < A[ parent(i) ].key) {
-        swapNodes(A, i, parent(i));
-        i = parent(i);
+            swapNodes(A, i, parent(i));
+            i = parent(i);
         }
-    } else {
+    } else if (type == MaxHeap) {
         while (i > 0 && A[i].key > A[parent(i)].key) {
-        swapNodes(A, i, parent(i));
-        i = parent(i);
+            swapNodes(A, i, parent(i));
+            i = parent(i);
         }
     }
 }
@@ -192,63 +176,47 @@ void heapInsert(Node A[], int *heapsize, int key, int index, Heap type) {
 /**
  * @brief selezione del k-esimo elemento più piccolo
  *
- * @param H1 una min heap
+ * @param H1 vettore fornito in input
  * @param p indice inizale
  * @param q indice finale
- * @param k indice del k-esimo elemento
- * @return int chiave del k-esimo elemento
+ * @param k indice del k-esimo elemento da trovare
+ * @return int elemento in posizione k se H1 fosse ordinato
  */
-int heapSelect(Node H1[], int p, int q, int k, Heap type)
-{
+int heapSelect(Node H1[], int p, int q, int k, Heap type) {
     if (k < p || k > q) return INT_MIN;
-    else {
-        int heapsize = q - p + 1;
-        
-        // costruisco una min-heap a partire da H1
-        buildHeap(H1, heapsize, type);
 
-        // heapsize viene incrementato da minHeapInsert
-        int heapsize2 = 0;
-        Node *H2 = NULL;
-        if(type == MinHeap){
-            H2 = ALLOC_ARRAY(k+1, Node);
-        } else {
-            H2 = ALLOC_ARRAY(heapsize-k, Node);
+    int heapsize = q - p + 1;
+    buildHeap(H1, heapsize, type);          // costruisco una heap da H1
+    int heapsize2 = 0;                      // H2 vuota
+    Node *H2 = NULL;
+    Node root_h2;
+    int size, end;
+
+    if(type == MinHeap) { size = k+1; end = k; }
+    else if (type == MaxHeap) { size = heapsize-k; end = heapsize-k; }
+
+    H2 = ALLOC_ARRAY(size, Node);
+    heapInsert(H2, &heapsize2, H1[0].key, H1[0].index, type);   // inizialmente H2 contiene la radice di H1
+
+    for (int i = 1; i <= end; i++) {
+        // estrazione radice H2
+        root_h2 = extractHeap(H2, &heapsize2, type);
+        // indici dei figli sinistro e destro
+        int leftSon = left(root_h2.index);
+        int rightSon = right(root_h2.index);
+
+        // inserimento in H2 dei figli di i a partire da H1, se esistono
+        if (rightSon < heapsize) {
+            heapInsert( H2, &heapsize2, H1[leftSon].key, H1[leftSon].index, type);
+            heapInsert( H2, &heapsize2, H1[rightSon].key, H1[rightSon].index, type);
         }
-
-        // inizialmente H2 contiene solamente la radice di H1
-        heapInsert(H2, &heapsize2, H1[0].key, H1[0].index, type);
-
-        Node root_h2;
-
-        // stabilisco quando deve terminare l'algoritmo
-        int end;
-        if(type == MinHeap){
-            end = k;
-        } else {
-            end = heapsize - k - 1;
-        }
-        
-        for (int i = 1; i <= end; i++) {
-            // estrazione radice H2
-            root_h2 = extractHeap(H2, &heapsize2, type);
-            // indici dei figli sinistro e destro
-            int leftSon = left(root_h2.index);
-            int rightSon = right(root_h2.index);
-
-            // inserimento in H2 dei figli di i a partire da H1, se esistono
-            if (rightSon < heapsize) {
-                heapInsert( H2, &heapsize2, H1[leftSon].key, H1[leftSon].index, type);
-                heapInsert( H2, &heapsize2, H1[rightSon].key, H1[rightSon].index, type);
-            }
-            else if (leftSon < heapsize) 
-                heapInsert( H2, &heapsize2, H1[leftSon].key, H1[leftSon].index, type);
-        }
-
-        int var = H2[0].key;
-        free(H2);
-        // k-esimo elemento
-        return var;
+        else if (leftSon < heapsize) 
+            heapInsert( H2, &heapsize2, H1[leftSon].key, H1[leftSon].index, type);
     }
+
+    int var = H2[0].key;
+    free(H2);
+    // k-esimo elemento
+    return var;
 }
 #endif 
