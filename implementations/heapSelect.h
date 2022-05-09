@@ -70,7 +70,7 @@ void swapNodes(Node A[], int i, int j) {
  */
 void heapify(Node A[], int heapsize, int i, Heap type)
 {
-    if(type == MaxHeap) {
+    if (type == MaxHeap) {
         int done = -1;
         while (done != 0) {
             int biggest = i;
@@ -193,7 +193,7 @@ int heapSelect(Node H1[], int p, int q, int k, Heap type) {
     int size, end;
 
     if(type == MinHeap) { size = k+1; end = k; }
-    else if (type == MaxHeap) { size = heapsize-k; end = heapsize-k; }
+    else if (type == MaxHeap) { size = heapsize-k; end = heapsize-k-1; }
 
     H2 = ALLOC_ARRAY(size, Node);
     heapInsert(H2, &heapsize2, H1[0].key, H1[0].index, type);   // inizialmente H2 contiene la radice di H1
