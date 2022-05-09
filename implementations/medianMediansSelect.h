@@ -24,30 +24,26 @@ void insertionSort(int arr[], int p, int q );
  * @return int: posizione di k se arr fosse ordinato
  */ 
 int MoMSelect(int arr[], int p, int q, int k){
- 
-  if( k < p || k > q){
-    return INT_MIN;
-  }
+  if( k < p || k > q) return INT_MIN;
 
   //caso base della ricorsione: 1 elemento 
-  if(p == q){ 
-    return p; 
-  } 
+  if(p == q) return p; 
   
   //calcolo la posizione del perno (MoM) e partiziono l'array
   int posPerno;
   posPerno = MoMPlace(arr, p, q);
   posPerno = MoMPartition(arr, p, q, k, posPerno); 
  
-  /*posPerno a questo punto può essere:
-  * -uguale a k: ho finito
-  * -minore/maggiore di k: ricorsione nella parte di array contentente k
+  /*
+  posPerno a questo punto può essere:
+    -uguale a k: ho finito
+    -minore/maggiore di k: ricorsione nella parte di array contentente k
   *                        escludendo la posizione del perno
   */ 
  
-  if(k == posPerno){ 
+  if(k == posPerno) 
     return k; 
-  } else if(k < posPerno){ 
+  else if(k < posPerno) { 
     q = posPerno - 1; 
     return MoMSelect(arr, p, q, k); 
   } else { 
@@ -66,12 +62,11 @@ int MoMSelect(int arr[], int p, int q, int k){
  */ 
 int MoMPlace(int arr[], int p, int q){
 
-  if( q-p < 5){
-     return med(arr, p, q);
-  }
+  if( q-p < 5) return med(arr, p, q);
+  
 
   //mettiamo i mediani dei blocchi da 5 nelle prime n/5 posizioni dello stesso array
-  int sLimit; //section limit: indice che definisce il blocco da 5 elementi
+  int sLimit;   //section limit: indice che definisce il blocco da 5 elementi
 
 
   for(int i = p; i <= q; i = i+5){ 
@@ -93,16 +88,15 @@ int MoMPlace(int arr[], int p, int q){
 
 int MoM(int arr[], int p, int q){
 
-  if( q-p < 5){
-     return med(arr, p, q);
-  }
+  if( q-p < 5) return med(arr, p, q);
+  
 
   int j=0;
   int sLimit;
   int dim = ceil( (q-p+1)/5.0 );
   int B[dim];
   
-  for(int i = p; i <= q; i = i+5){ 
+  for(int i = p; i <= q; i = i+5) { 
     sLimit = i+4;
     if(sLimit > q){  
       sLimit = q;
@@ -113,7 +107,6 @@ int MoM(int arr[], int p, int q){
   }
 
   return B[med(B, 0, dim-1)];
-
 }
 
 /** 
@@ -131,13 +124,12 @@ int MoM(int arr[], int p, int q){
  *              
  */ 
 int MoMPartition(int arr[], int p, int q, int k, int posPerno){ 
- 
   int perno = arr[posPerno];
   swap(arr, posPerno, q);      //sposto il perno in ultima posizione 
   int indice = p;
  
   //sezione di elementi minori del perno
-  for(int i = p; i <= q-1; i++){ 
+  for(int i = p; i <= q-1; i++) { 
     if(arr[i] < perno){ 
       swap(arr, indice, i); 
       indice++; 
@@ -157,7 +149,7 @@ int MoMPartition(int arr[], int p, int q, int k, int posPerno){
   //sistemo il perno in  modo da avere stabilità 
   swap(arr, q, indiciEq); 
  
-  if(k < indice){ 
+  if(k < indice) { 
     return indice; 
   } 
   if(k <= indiciEq){ 
@@ -167,7 +159,7 @@ int MoMPartition(int arr[], int p, int q, int k, int posPerno){
 } 
 
 /** 
- * @brief: ordina l'array da p a q 
+ * @brief: ordina l'array tra la porzione [p...q]
  *  
  * @param arr: array
  * @param p: prima posizione della parte di vettore considerata 
@@ -191,7 +183,7 @@ void insertionSort(int A[], int p, int q ){
 }
 
 /** 
- * @brief: trova il mediano di un vettore
+ * @brief: trova il mediano di una porzione
  *  
  * @param arr: array
  * @param p: prima posizione della parte di vettore considerata 
