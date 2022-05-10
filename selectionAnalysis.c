@@ -328,14 +328,10 @@ void analysis_static_size(int size, int threshold, int n_samples) {
   FILE * ptr = setup_csv(static_size);
   ArrayOrdered order = False;
 
-  populate(sample, size, order);
-  memcpy(backup, sample, size*sizeof(int));
-
-
   for (int i = 0; i <= threshold; i++) {
-
-    for(int j = 0; j < n_samples; j++){
-
+    for(int j = 0; j < n_samples; j++) {
+      populate(sample, size, order);
+      memcpy(backup, sample, size*sizeof(int));
       // k crescente, k = i
       quickSelectTime = get_execution_time( QuickSelect, sample, size, i );
       memcpy(sample, backup, size*sizeof(int));
@@ -358,10 +354,11 @@ void analysis_static_size(int size, int threshold, int n_samples) {
 
 int main () {
   srand(time(NULL));
-  Tmin = get_t_min();
-  int n_samples = 40;
   printf("\e[1;1H\e[2J");
+  Tmin = get_t_min();
 
+  int n_samples = 40;   // n.ro di campioni per ogni dimensione
+  
   // analisi k = sqrt(n)
   //analysis(square_n, n_samples);
 
@@ -377,10 +374,10 @@ int main () {
   // caso pessimo quick select
   // analysis(quickselect_worstcase, n_samples);
 
-  // analisi dei tempi di esecuzione con dimensione fissata
-  int size = 10000;       // dimensione vettore
-  int threshold = 7000;   // limite massimo per k incrementante
-  analysis_static_size(size, threshold, n_samples);
+  // analisi (aggiuntiva) dei tempi di esecuzione con dimensione fissata
+  int size = 9000;       // dimensione vettore
+  int threshold = size-1;   // limite massimo per k incrementante
+  analysis_static_size(size, threshold, 20);
 
   return (EXIT_SUCCESS);
 }

@@ -52,7 +52,8 @@ quickselect_worst_stats = quickselect_worst %>%
 static_size_stats = static_size %>%
   group_by(k) %>%
   summarise( quickselect_average = mean(quickselect), quickselect_variance = var(quickselect) ,
-             heapselect_average = mean(heapselect), heapselect_variance = var(heapselect),
+             minheapselect_average = mean(minheapselect), minheapselect_variance = var(minheapselect),
+             maxheapselect_average = mean(maxheapselect), maxheapselect_variance = var(maxheapselect),
              medianmediansselect_average = mean(medianmediansselect), medianmediansselect_variance = var(medianmediansselect))
 ```
 
@@ -226,28 +227,42 @@ quickselect_worst_stats %>% ggplot( aes(x = size) ) +
 # increasing k static size
 static_size_stats  %>% ggplot( aes(x = k) ) + 
   geom_smooth(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
-  geom_smooth(aes(y=heapselect_average,colour="heapSelect"),size=1) +
+  geom_smooth(aes(y=minheapselect_average,colour="minheapSelect"),size=1) +
   geom_smooth(aes(y=medianmediansselect_average,colour="medianMediansSelect"),size=1) +
   labs(x = "k", y = "tempo (secondi)", 
        title = TeX("Analisi asintotica k incrementale, dimensione fissa = 10000"),
-       subtitle = "40 campioni per k",
+       subtitle = "10 campioni per ogni k",
        caption = "Scala lineare") +
-  scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color))
+  scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, 
+                                                                 "minheapSelect" = heapSelect_color, 
+                                                                 "maxheapSelect" = "grey", 
+                                                                 "medianMediansSelect" = medianMediansSelect_color))
 ```
 
 
 ```{r}
 
-# correlazione lineare tra parametro k e heapselect:
-cor(static_size_stats$k, static_size_stats$heapselect_average, method = "pearson")
-# valore prossimo ad 1, correlazione lineare positiva molto forte
-
-# scarsa correlazione per gli altri algoritmi:
-cor(static_size_stats$k, static_size_stats$quickselect_average, method = "pearson")
-cor(static_size_stats$k, static_size_stats$medianmediansselect_average, method = "pearson")
+# correlazione lineare tra parametro k e tempi medi di esecuzione:
+static_size_stats %>%
+  summarise(corr_k_minheapselect = cor(k, minheapselect_average, method = "pearson"),
+            corr_k_quickselect = cor(k, quickselect_average, method = "pearson"),
+            corr_k_medianmediansselect = cor(k, medianmediansselect_average, method = "pearson"))
 
 ```
 
 
+```{r}
+maxheapselect_color = "#26c6da"
+# min-heap vs max-heap:
+static_size_stats  %>% ggplot( aes(x = k) ) + 
+  geom_smooth(aes(y=minheapselect_average,colour="minheapSelect"),size=1) +
+  geom_smooth(aes(y=maxheapselect_average,colour="maxheapSelect"),size=1) +
+  labs(x = "k", y = "tempo (secondi)", 
+       title = TeX("Analisi asintotica k incrementale, dimensione fissa = 10000"),
+       subtitle = "10 campioni per ogni k, selezione con una min-heap vs max-heap",
+       caption = "Scala lineare") +
+  scale_color_manual(name = "Algoritmi di selezione", values = c("minheapSelect" = heapSelect_color, 
+                                                                 "maxheapSelect" = maxheapselect_color))
+```
 
 
