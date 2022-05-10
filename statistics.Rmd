@@ -226,12 +226,24 @@ quickselect_worst_stats %>% ggplot( aes(x = size) ) +
 ```{r}
 # increasing k static size
 static_size_stats  %>% ggplot( aes(x = k) ) + 
+  geom_line(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
+  geom_line(aes(y=minheapselect_average,colour="minheapSelect"),size=1) +
+  geom_line(aes(y=medianmediansselect_average,colour="medianMediansSelect"),size=1) +
+  labs(x = "k", y = "tempo (secondi)", 
+       title = TeX("Analisi asintotica k incrementale, dimensione fissa = 5000"),
+       subtitle = "30 campioni per ogni k",
+       caption = "Scala lineare") +
+  scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, 
+                                                                 "minheapSelect" = heapSelect_color,
+                                                                 "medianMediansSelect" = medianMediansSelect_color))
+
+static_size_stats  %>% ggplot( aes(x = k) ) + 
   geom_smooth(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
   geom_smooth(aes(y=minheapselect_average,colour="minheapSelect"),size=1) +
   geom_smooth(aes(y=medianmediansselect_average,colour="medianMediansSelect"),size=1) +
   labs(x = "k", y = "tempo (secondi)", 
-       title = TeX("Analisi asintotica k incrementale, dimensione fissa = 10000"),
-       subtitle = "10 campioni per ogni k",
+       title = TeX("Analisi asintotica k incrementale, dimensione fissa = 5000"),
+       subtitle = "30 campioni per ogni k",
        caption = "Scala lineare") +
   scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, 
                                                                  "minheapSelect" = heapSelect_color,
@@ -246,9 +258,9 @@ static_size_stats %>%
             corr_k_quickselect = cor(k, quickselect_average, method = "pearson"),
             corr_k_medianmediansselect = cor(k, medianmediansselect_average, method = "pearson"))
 
-#plot(static_size_stats$k, static_size_stats$medianmediansselect_average)
-#plot(static_size_stats$k, static_size_stats$minheapselect_average)
-#plot(static_size_stats$k, static_size_stats$quickselect_average)
+plot(static_size_stats$k, static_size_stats$medianmediansselect_average)
+plot(static_size_stats$k, static_size_stats$minheapselect_average)
+plot(static_size_stats$k, static_size_stats$quickselect_average)
 ```
 
 
@@ -256,11 +268,21 @@ static_size_stats %>%
 maxheapselect_color = "#26c6da"
 # min-heap vs max-heap:
 static_size_stats  %>% ggplot( aes(x = k) ) + 
+  geom_line(aes(y=minheapselect_average,colour="minheapSelect"),size=1) +
+  geom_line(aes(y=maxheapselect_average,colour="maxheapSelect"),size=1) +
+  labs(x = "k", y = "tempo (secondi)", 
+       title = TeX("Analisi asintotica k incrementale, dimensione fissa = 5000"),
+       subtitle = "30 campioni per ogni k, selezione con una min-heap vs max-heap",
+       caption = "Scala lineare") +
+  scale_color_manual(name = "Algoritmi di selezione", values = c("minheapSelect" = heapSelect_color, 
+                                                                 "maxheapSelect" = maxheapselect_color))
+
+static_size_stats  %>% ggplot( aes(x = k) ) + 
   geom_smooth(aes(y=minheapselect_average,colour="minheapSelect"),size=1) +
   geom_smooth(aes(y=maxheapselect_average,colour="maxheapSelect"),size=1) +
   labs(x = "k", y = "tempo (secondi)", 
-       title = TeX("Analisi asintotica k incrementale, dimensione fissa = 10000"),
-       subtitle = "10 campioni per ogni k, selezione con una min-heap vs max-heap",
+       title = TeX("Analisi asintotica k incrementale, dimensione fissa = 5000"),
+       subtitle = "30 campioni per ogni k, selezione con una min-heap vs max-heap",
        caption = "Scala lineare") +
   scale_color_manual(name = "Algoritmi di selezione", values = c("minheapSelect" = heapSelect_color, 
                                                                  "maxheapSelect" = maxheapselect_color))
