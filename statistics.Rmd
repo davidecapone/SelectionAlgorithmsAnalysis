@@ -234,20 +234,21 @@ static_size_stats  %>% ggplot( aes(x = k) ) +
        subtitle = "10 campioni per ogni k",
        caption = "Scala lineare") +
   scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, 
-                                                                 "minheapSelect" = heapSelect_color, 
-                                                                 "maxheapSelect" = "grey", 
+                                                                 "minheapSelect" = heapSelect_color,
                                                                  "medianMediansSelect" = medianMediansSelect_color))
 ```
 
 
 ```{r}
-
 # correlazione lineare tra parametro k e tempi medi di esecuzione:
 static_size_stats %>%
   summarise(corr_k_minheapselect = cor(k, minheapselect_average, method = "pearson"),
             corr_k_quickselect = cor(k, quickselect_average, method = "pearson"),
             corr_k_medianmediansselect = cor(k, medianmediansselect_average, method = "pearson"))
 
+#plot(static_size_stats$k, static_size_stats$medianmediansselect_average)
+#plot(static_size_stats$k, static_size_stats$minheapselect_average)
+#plot(static_size_stats$k, static_size_stats$quickselect_average)
 ```
 
 

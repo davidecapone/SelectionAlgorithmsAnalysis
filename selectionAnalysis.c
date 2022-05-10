@@ -375,9 +375,9 @@ int main () {
   // analysis(quickselect_worstcase, n_samples);
 
   // analisi (aggiuntiva) dei tempi di esecuzione con dimensione fissata
-  int size = 9000;       // dimensione vettore
+  int size = 5000;       // dimensione vettore
   int threshold = size-1;   // limite massimo per k incrementante
-  analysis_static_size(size, threshold, 20);
+  analysis_static_size(size, threshold, 30);
 
   return (EXIT_SUCCESS);
 }
