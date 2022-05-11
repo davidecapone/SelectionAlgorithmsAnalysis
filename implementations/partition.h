@@ -13,8 +13,8 @@
  */
 int partition( int A[], int p, int q ) {
   
-  int i = p;
-  int perno = A[ q ]; // perno (ultima posizione nell'intervallo [p, q])
+  int i = p; // serve per salvare la posizione finale del perno. Ora viene inizializzata con la posizione iniziale dell'intervallo [p, q]
+  int perno = A[ q ]; // posizione iniziale del perno. Prende il valore dell'elemento in ultima posizione nell'intervallo [p, q]
   
   for( int j = p; j < q; j++ ) {  // procedura di partizionamento del vettore intorno al perno
     if( A[ j ] < perno ) {
@@ -23,7 +23,7 @@ int partition( int A[], int p, int q ) {
     }
   }
 
-  swap( A, i, q );  // il perno si trova ancora in posizione q, viene spostato nella posizione in cui dovrebbe stare se il vettore fosse ordinato
+  swap( A, i, q );  // il perno si trova ancora in posizione q. Viene spostato nella posizione in cui dovrebbe stare se il vettore fosse ordinato
   
   return i;
 }
