@@ -15,11 +15,13 @@ double Tmin;
 int A = 100;
 double B = 0.157673137;
 
+// tipo di ordinamento
 typedef enum {
   True,
   False
 } ArrayOrdered;
 
+// algoritmi di selezione
 typedef enum {
 	QuickSelect,
 	MinHeapSelect,
@@ -27,13 +29,14 @@ typedef enum {
 	MedianMediansSelect
 } Algorithm;
 
+// analisi effettuate
 typedef enum {
-  square_n,     // k = sqrt(n)
-  half_n,    // k = n/2
-  hundred_n,
-  random_k,
-  quickselect_worstcase,   // k = 0
-  static_size
+  square_n,               // k = sqrt(n)
+  half_n,                 // k = n/2
+  hundred_n,              // k = n/100
+  random_k,               // k random
+  quickselect_worstcase,  // k = 0
+  static_size             // k crescente
 } Analysis;
 
 double duration(struct timespec start, struct timespec end) {
@@ -51,9 +54,9 @@ double getResolution() {
 }
 
 /**
- * @brief Ottenere il tempo minimo misurabile dalla macchina in base al'errore minimo ammissibile
+ * @brief ottenere tempo minimo misurabile in base al'errore minimo ammissibile E
  * 
- * @return double : tempo minimo misurabile in secondi
+ * @return double tempo minimo misurabile (secondi)
  */
 double get_t_min() {
 	double R = getResolution();
@@ -61,18 +64,18 @@ double get_t_min() {
 }
 
 /**
- * @brief Generare dimensioni per array che crescono esponenzialmente
- * 
- * @param i numero da usare come esponente
- * @return int : dimensione 
+ * @brief generare interi da una distribuzione esponenziale
+ *        variabili A, B definite globalmente
+ *        segue la formula: A * 2^( B * i )
+ * @param i indice
+ * @return int : dimensione ottenuta
  */
 int exp_distribution(int i) {
 	return ( A * pow(2, B*i) );
 }
 
 /**
- * @brief Generare numeri interi pseudocasuali
- * 
+ * @brief genera numeri (interi) pseudocasuali
  * @return int : numero compreso tra -INT_MAX e +INT_MAX
  */
 int get_random_int() {
@@ -82,26 +85,21 @@ int get_random_int() {
 }
 
 /**
- * @brief Popola l'array di interi
- * 
- * @param A array da popolare
- * @param size dimensione array
- * @param order tipo di riempimento (True: ordinato, False: random)
+ * @brief popola un vettore di interi
+ * @param A vettore
+ * @param size dimensione vettore
+ * @param order tipo popolamento (True: ordinato, False: random)
  */
 void populate( int A[], int size, ArrayOrdered order ) {
-  if ( order == True ) {
-    for (int i = 0; i < size; i++) A[i] = i;
-  } else {
-    for (int i = 0; i < size; i++) A[i] = get_random_int();
-  }
+  if ( order == False ) for (int i = 0; i < size; i++) A[i] = get_random_int();
+  else for (int i = 0; i < size; i++) A[i] = i;
 }
 
 /**
- * @brief converte un array di interi in un array di nodi, per heapSelect
- * 
- * @param A array di interi
- * @param size dimensione di A
- * @param A_node array di nodi
+ * @brief conversione vettore di interi in vettore di nodi
+ * @param A vettore di interi da convertire
+ * @param size dimensione vettore
+ * @param A_node vettore convertito
  */
 void toNode(int A[], int size, Node A_node[]) {
     for (int i = 0; i < size; i++) {
@@ -111,13 +109,12 @@ void toNode(int A[], int size, Node A_node[]) {
 }
 
 /**
- * @brief Calcola tempo di esecuzione di un campione A di interi
- * 
- * @param type quale algoritmo utilizzare
- * @param A campione
- * @param size dimensione array
- * @param k posizione da determinare
- * @return int : tempo di esecuzione (in secondi)
+ * @brief calcola tempo di esecuzione per un campione
+ * @param type scelta dell'algoritmo di selezione
+ * @param A vettore, campione
+ * @param size dimensione vettore
+ * @param k parametro di selezione
+ * @return int tempo esecuzione
  */
 double get_execution_time( Algorithm type, int A[], int size, int k ) {
   struct timespec start, end;
@@ -135,7 +132,7 @@ double get_execution_time( Algorithm type, int A[], int size, int k ) {
 
   // creazione array di nodi per heapSelect
   Node *A_node = NULL;
-  if(type == MinHeapSelect || type == MaxHeapSelect){
+  if(type == MinHeapSelect || type == MaxHeapSelect) {
     A_node = ALLOC_ARRAY(size, Node);
     toNode(A, size, A_node);
   }
@@ -172,7 +169,7 @@ double get_execution_time( Algorithm type, int A[], int size, int k ) {
       }
       clock_gettime(CLOCK_MONOTONIC, &backup_end);
 
-      // tempo di backup da sottrarre al termine:
+      // TEMPO EFFETTUATO PER IL BACKUP, da sottrarre al termine:
       backupTime += duration(backup_start, backup_end);
     }
     
@@ -181,17 +178,15 @@ double get_execution_time( Algorithm type, int A[], int size, int k ) {
 
   free(copy);
   if(type == MinHeapSelect || type == MaxHeapSelect) free(A_node);
-  
 	return ((double) ((period - backupTime) / count));
 }
 
 /**
- * @brief Compila il file con i dati 
- * 
- * @param analysisType tipo di analisi
- * @param size dimensione degli array
- * @param n_samples numero di array
- * @param k posizione da determinare
+ * @brief effettua l'analisi per n_samples campioni e scrive i tempi ottenuti su file
+ * @param type analisi asintotica effettuata
+ * @param size dimensione dei campioni
+ * @param n_samples numero di campioni
+ * @param k parametro di selezione
  * @param ptr puntatore al file
  */
 void execute_samples( Analysis type, int size, int n_samples, ArrayOrdered order, FILE * ptr ) {
@@ -239,6 +234,11 @@ void execute_samples( Analysis type, int size, int n_samples, ArrayOrdered order
   free(backup);
 }
 
+/**
+ * @brief imposta le intestazioni e apre il file in append in base all'analisi scelta
+ * @param type tipo di analisi da effettuare
+ * @return FILE* puntatore al file (aperto in append) 
+ */
 FILE * setup_csv ( Analysis type ) {
   char filename[50];
   FILE * ptr;
@@ -278,10 +278,10 @@ FILE * setup_csv ( Analysis type ) {
 }
 
 /**
- * @brief esecuzione dell'analisi su n_samples campioni per ogni dimensione generata
- * 
- * @param type tipo di analisi da effettuare
- * @param n_samples quanti campioni generare per ogni dimensione exp.
+ * @brief ottiene la dimensione dei campioni e fa partire l'analisi
+ *        imposta inoltre la dimensione finale da raggiungere
+ * @param type analisi da effettuare
+ * @param n_samples numero di campioni da generare
  */
 void analysis( Analysis type, int n_samples ) {
   // dimensione finale (default) da raggiungere: 5 milioni
@@ -311,11 +311,10 @@ void analysis( Analysis type, int n_samples ) {
 }
 
 /**
- * @brief test algoritmi con k crescente e dimensione fissa
- * 
+ * @brief analisi aggiuntiva: k crescente e dimensione fissa
  * @param size dimensione vettore
- * @param threshold limite superiore per parametro k
- * @param n_samples qta campioni per ogni dimensione
+ * @param threshold limite superiore per parametro k crescente
+ * @param n_samples campioni da generare per ogni dimensione
  */
 void analysis_static_size(int size, int threshold, int n_samples) {
   double quickSelectTime, minHeapSelectTime, maxHeapSelectTime, medianSelectTime;
@@ -323,7 +322,7 @@ void analysis_static_size(int size, int threshold, int n_samples) {
   int *backup = NULL;
   
   sample = ALLOC_ARRAY(size, int);
-  backup = ALLOC_ARRAY(size, int);
+  backup = ALLOC_ARRAY(size, int);      // vettore copia
 
   FILE * ptr = setup_csv(static_size);
   ArrayOrdered order = False;
@@ -348,7 +347,6 @@ void analysis_static_size(int size, int threshold, int n_samples) {
       printf("k: %d, quickSelect: %f - minHeapSelect: %f - maxHeapSelect: %f - medianMediansSelect: %f \n", i, quickSelectTime, minHeapSelectTime, maxHeapSelectTime, medianSelectTime);
     }    
   }
-
   fclose(ptr);
 }
 
@@ -374,10 +372,10 @@ int main () {
   // caso pessimo quick select
   // analysis(quickselect_worstcase, n_samples);
 
-  // analisi (aggiuntiva) dei tempi di esecuzione con dimensione fissata
-  int size = 5000;       // dimensione vettore
-  int threshold = size-1;   // limite massimo per k incrementante
-  //analysis_static_size(size, threshold, 30);
+  // analisi tempi di esecuzione con dimensione fissata e k crescente
+  int size = 5000;          // dimensione vettore
+  int threshold = size-1;   // limite massimo per k
+  analysis_static_size(size, threshold, 30);
 
   return (EXIT_SUCCESS);
 }
