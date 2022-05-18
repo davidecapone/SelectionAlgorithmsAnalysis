@@ -136,19 +136,19 @@ int MoM(int arr[], int p, int q){
  *              
  */ 
 int MoMPartition(int arr[], int p, int q, int k, int posPerno){ 
-  
+ 
   int perno = arr[posPerno];
   swap(arr, posPerno, q);      //sposto il perno in ultima posizione 
   int indice = p;
  
   //sezione di elementi minori del perno
-  for(int i = p; i <= q-1; i++) { 
+  for(int i = p; i <= q-1; i++){ 
     if(arr[i] < perno){ 
       swap(arr, indice, i); 
       indice++; 
     } 
   } 
-
+/*
   int indiciEq = indice; //indice dell'ultimo elemento uguale al perno 
  
   //sezione di elementi uguali al perno
@@ -158,17 +158,18 @@ int MoMPartition(int arr[], int p, int q, int k, int posPerno){
       indiciEq++; 
     } 
   } 
-
+*/
   //sistemo il perno in  modo da avere stabilità 
-  swap(arr, q, indiciEq); 
- 
-  if(k < indice) { 
+  swap(arr, q, indice); 
+ /*
+  if(k < indice){ 
     return indice; 
   } 
   if(k <= indiciEq){ 
     return k; 
   } 
-  return indiciEq; 
+  return indiciEq; */
+  return indice;
 } 
 
 /** 

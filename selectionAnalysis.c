@@ -4,7 +4,8 @@
 #include <stdlib.h>
 #include "implementations/quickSelect.h"
 #include "implementations/heapSelect.h"
-#include "implementations/medianMediansSelect.h"
+//#include "implementations/medianMediansSelect.h"
+#include "implementations/medianSelect.h"
 
 #define ALLOC_ARRAY(number, type)\
 	(type*) calloc((number) *sizeof(type), sizeof(type))
@@ -71,7 +72,7 @@ double get_t_min() {
  * @return int : dimensione ottenuta
  */
 int exp_distribution(int i) {
-	return ( A * pow(2, B*i) );
+	return (A * pow(2, B*i));
 }
 
 /**
@@ -358,16 +359,16 @@ int main () {
   int n_samples = 40;   // n.ro di campioni per ogni dimensione
   
   // analisi k = sqrt(n)
-  analysis(square_n, n_samples);
+  //analysis(square_n, n_samples);
 
   // analisi k = n/2
-  analysis(half_n, n_samples);
+  //analysis(half_n, n_samples);
 
   // analisi k = n/100
   analysis(hundred_n, n_samples);
 
   // k = random
-  analysis(random_k, n_samples);
+  //analysis(random_k, n_samples);
 
   // caso pessimo quick select
   // analysis(quickselect_worstcase, n_samples);
@@ -375,7 +376,7 @@ int main () {
   // analisi tempi di esecuzione con dimensione fissata e k crescente
   int size = 5000;          // dimensione vettore
   int threshold = size-1;   // limite massimo per k
-  analysis_static_size(size, threshold, 30);
+  //analysis_static_size(size, threshold, 30);
 
   return (EXIT_SUCCESS);
 }
