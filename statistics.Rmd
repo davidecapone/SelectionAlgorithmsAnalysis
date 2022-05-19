@@ -5,7 +5,6 @@ library(latex2exp)
 
 ```
 
-
 ```{r dataset load}
 # import
 half_n = read.csv("dataset/half_n.csv")
@@ -17,7 +16,6 @@ static_size = read.csv("dataset/static_size.csv")
 
 ```
 
-
 ```{r statistics}
 # generating stats for each analysis:
 
@@ -25,38 +23,37 @@ half_n_stats = half_n %>%
   group_by(size) %>%
   summarise( quickselect_average = mean(quickselect), quickselect_variance = var(quickselect) ,
              heapselect_average = mean(heapselect), heapselect_variance = var(heapselect),
-             medianmediansselect_average = mean(medianmediansselect), medianmediansselect_variance = var(medianmediansselect))
+             medianmediansselect_average = mean(medianmediansselect), medianmediansselect_variance = var(medianmediansselect)) %>% write.csv("dataset/stats/half_n_stats.csv")
 
 square_n_stats = square_n %>%
   group_by(size) %>%
   summarise( quickselect_average = mean(quickselect), quickselect_variance = var(quickselect) ,
              heapselect_average = mean(heapselect), heapselect_variance = var(heapselect),
-             medianmediansselect_average = mean(medianmediansselect), medianmediansselect_variance = var(medianmediansselect))
+             medianmediansselect_average = mean(medianmediansselect), medianmediansselect_variance = var(medianmediansselect)) %>% write.csv("dataset/stats/square_n_stats.csv")
 
 random_k_stats = random_k %>%
   group_by(size) %>%
   summarise( quickselect_average = mean(quickselect), quickselect_variance = var(quickselect) ,
              heapselect_average = mean(heapselect), heapselect_variance = var(heapselect),
-             medianmediansselect_average = mean(medianmediansselect), medianmediansselect_variance = var(medianmediansselect))
+             medianmediansselect_average = mean(medianmediansselect), medianmediansselect_variance = var(medianmediansselect)) %>% write.csv("dataset/stats/random_k_stats.csv")
 
 hundred_n_stats = hundred_n %>%
   group_by(size) %>%
   summarise( quickselect_average = mean(quickselect), quickselect_variance = var(quickselect) ,
              heapselect_average = mean(heapselect), heapselect_variance = var(heapselect),
-             medianmediansselect_average = mean(medianmediansselect), medianmediansselect_variance = var(medianmediansselect))
+             medianmediansselect_average = mean(medianmediansselect), medianmediansselect_variance = var(medianmediansselect)) %>% write.csv("dataset/stats/hundred_n_stats.csv")
 
 quickselect_worst_stats = quickselect_worst %>%
   group_by(size) %>%
-  summarise( quickselect_average = mean(quickselect), quickselect_variance = var(quickselect))
+  summarise( quickselect_average = mean(quickselect), quickselect_variance = var(quickselect)) %>% write.csv("dataset/stats/quickselect_worst_stats.csv")
 
 static_size_stats = static_size %>%
   group_by(k) %>%
   summarise( quickselect_average = mean(quickselect), quickselect_variance = var(quickselect) ,
              minheapselect_average = mean(minheapselect), minheapselect_variance = var(minheapselect),
              maxheapselect_average = mean(maxheapselect), maxheapselect_variance = var(maxheapselect),
-             medianmediansselect_average = mean(medianmediansselect), medianmediansselect_variance = var(medianmediansselect))
+             medianmediansselect_average = mean(medianmediansselect), medianmediansselect_variance = var(medianmediansselect)) %>% write.csv("dataset/stats/static_size_stats.csv")
 ```
-
 
 ```{r color palette}
 # palette:
@@ -85,7 +82,7 @@ random_k_stats  %>% ggplot( aes(x = size) ) +
        caption = "Scala lineare") +
   scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color))+
   scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M")) +
-  theme_light()
+  theme_light() + jpeg("graphs/random_k_linear.png", quality = 100)
 
 # square n:
 square_n_stats  %>% ggplot( aes(x = size) ) + 
@@ -104,7 +101,7 @@ square_n_stats  %>% ggplot( aes(x = size) ) +
        caption = "Scala lineare") +
   scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color))+
   scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M")) +
-  theme_light()
+  theme_light() + jpeg("graphs/square_n_linear.png", quality = 100)
 
 # half n:
 half_n_stats %>% ggplot( aes(x = size) ) + 
@@ -123,7 +120,7 @@ half_n_stats %>% ggplot( aes(x = size) ) +
        caption = "Scala lineare") +
   scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color))+
   scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M")) +
-  theme_light()
+  theme_light() + jpeg("graphs/half_n_linear.png", quality = 100)
 
 # hundred n:
 hundred_n_stats %>% ggplot( aes(x = size) ) + 
@@ -142,7 +139,7 @@ hundred_n_stats %>% ggplot( aes(x = size) ) +
        caption = "Scala lineare") +
   scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color))+
   scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "3M", "4M", "5M")) +
-  theme_light()
+  theme_light() + jpeg("graphs/hundred_n_linear.png", quality = 100)
 
 # quick select worst case:
 quickselect_worst_stats %>% ggplot( aes(x = size) ) + 
@@ -155,10 +152,9 @@ quickselect_worst_stats %>% ggplot( aes(x = size) ) +
        subtitle = "50 campioni per dimensione",
        caption = "Scala lineare") +
   scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color)) +
-  theme_light()
+  theme_light() + jpeg("graphs/quickselect_worst_linear.png", quality = 100)
 
 ```
-
 
 ```{r logaritmic scale graphs}
 # LOG SCALE GRAPHS:
@@ -174,7 +170,7 @@ random_k_stats  %>% ggplot( aes(x = size) ) +
   scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color)) +
   scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "\n3M", "\n\n4M", "\n\n\n5M"), trans = 'log') +
   scale_y_continuous(trans='log', labels = scales::number_format(accuracy = 0.00001)) +
-  theme_light()
+  theme_light() + jpeg("graphs/random_k_log.png", quality = 100)
 
 # square n:
 square_n_stats  %>% ggplot( aes(x = size) ) + 
@@ -188,7 +184,7 @@ square_n_stats  %>% ggplot( aes(x = size) ) +
   scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color)) +
   scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "\n3M", "\n\n4M", "\n\n\n5M"), trans = 'log') +
   scale_y_continuous(trans='log', labels = scales::number_format(accuracy = 0.00001)) +
-  theme_light()
+  theme_light() + jpeg("graphs/square_n_log.png", quality = 100)
 
 # half n:
 half_n_stats  %>% ggplot( aes(x = size) ) + 
@@ -202,7 +198,7 @@ half_n_stats  %>% ggplot( aes(x = size) ) +
   scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color)) +
   scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "\n3M", "\n\n4M", "\n\n\n5M"), trans = 'log') +
   scale_y_continuous(trans='log', labels = scales::number_format(accuracy = 0.00001)) +
-  theme_light()
+  theme_light() + jpeg("graphs/half_n_log.png", quality = 100)
 
 # hundred n:
 hundred_n_stats  %>% ggplot( aes(x = size) ) + 
@@ -216,7 +212,7 @@ hundred_n_stats  %>% ggplot( aes(x = size) ) +
   scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, "heapSelect" = heapSelect_color, "medianMediansSelect" = medianMediansSelect_color)) +
   scale_x_continuous(breaks = c(100, 1000000, 2000000, 3000000, 4000000, 5000000), labels = c("100", "1M", "2M", "\n3M", "\n\n4M", "\n\n\n5M"), trans = 'log') +
   scale_y_continuous(trans='log', labels = scales::number_format(accuracy = 0.00001)) +
-  theme_light()
+  theme_light() + jpeg("graphs/hundred_n_log.png", quality = 100)
 
 # quick select worst case:
 quickselect_worst_stats %>% ggplot( aes(x = size) ) + 
@@ -229,9 +225,8 @@ quickselect_worst_stats %>% ggplot( aes(x = size) ) +
   scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color)) +
   scale_x_continuous(trans = 'log') +
   scale_y_continuous(trans = 'log', labels = scales::number_format(accuracy = 0.0001)) +
-  theme_light()
+  theme_light() + jpeg("graphs/quickselect_worst_log.png", quality = 100)
 ```
-
 
 ```{r}
 # increasing k static size
@@ -246,7 +241,7 @@ static_size_stats  %>% ggplot( aes(x = k) ) +
   scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, 
                                                                  "minheapSelect" = heapSelect_color,
                                                                  "medianMediansSelect" = medianMediansSelect_color)) + 
-  theme_light()
+  theme_light() + jpeg("graphs/fixed_size_with_minheap.png", quality = 100)
 
 static_size_stats  %>% ggplot( aes(x = k) ) + 
   geom_smooth(aes(y=quickselect_average,colour="quickSelect"),size=1 )+
@@ -259,9 +254,8 @@ static_size_stats  %>% ggplot( aes(x = k) ) +
   scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, 
                                                                  "minheapSelect" = heapSelect_color,
                                                                  "medianMediansSelect" = medianMediansSelect_color)) +
-  theme_light()
+  theme_light() + jpeg("graphs/fixed_size_with_minheap_smooth.png", quality = 100)
 ```
-
 
 ```{r correlation}
 # correlazione lineare tra parametro k e tempi medi di esecuzione:
@@ -275,7 +269,6 @@ plot(static_size_stats$k, static_size_stats$minheapselect_average)
 plot(static_size_stats$k, static_size_stats$quickselect_average)
 ```
 
-
 ```{r maxHeapSelect}
 maxheapselect_color = "#26c6da"
 # min-heap vs max-heap:
@@ -288,7 +281,7 @@ static_size_stats  %>% ggplot( aes(x = k) ) +
        caption = "Scala lineare") +
   scale_color_manual(name = "Algoritmi di selezione", values = c("minheapSelect" = heapSelect_color, 
                                                                  "maxheapSelect" = maxheapselect_color)) +
-  theme_light()
+  theme_light() + jpeg("graphs/fixed_size_with_maxheap.png", quality = 100)
 
 static_size_stats  %>% ggplot( aes(x = k) ) + 
   geom_smooth(aes(y=minheapselect_average,colour="minheapSelect"),size=1) +
@@ -299,7 +292,7 @@ static_size_stats  %>% ggplot( aes(x = k) ) +
        caption = "Scala lineare") +
   scale_color_manual(name = "Algoritmi di selezione", values = c("minheapSelect" = heapSelect_color, 
                                                                  "maxheapSelect" = maxheapselect_color)) +
-  theme_light()
+  theme_light() + jpeg("graphs/fixed_size_with_maxheap_smooth.png", quality = 100)
 ```
 
 
