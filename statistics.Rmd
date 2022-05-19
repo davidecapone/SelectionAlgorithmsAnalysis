@@ -259,7 +259,7 @@ static_size_stats  %>% ggplot( aes(x = k) ) +
   scale_color_manual(name = "Algoritmi di selezione", values = c("quickSelect" = quickselect_color, 
                                                                  "minheapSelect" = heapSelect_color,
                                                                  "medianMediansSelect" = medianMediansSelect_color)) +
-  theme_light
+  theme_light()
 ```
 
 
