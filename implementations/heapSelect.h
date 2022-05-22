@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <limits.h>
 
-#define MAX_LINE_SIZE 5000 // maximum size of a line of input
+#define MAX_LINE_SIZE 5000
 #define ALLOC_ARRAY(number, type)\
 	(type*) calloc((number) *sizeof(type), sizeof(type))
     
@@ -18,6 +18,10 @@ typedef struct {
     int key;
 } Node;
 
+/**
+ * @brief tipologia della heap, max heap o min heap
+ * 
+ */
 typedef enum {
     MaxHeap,
     MinHeap
@@ -48,11 +52,11 @@ int right(int i) { return (2 * i) + 2; }
 int parent(int i) { return (i - 1) / 2; } 
 
 /**
- * @brief scambia 2 elementi in A
+ * @brief scambia 2 elementi in un array di nodi
  *
- * @param A vettore
- * @param i indice primo elemento
- * @param j indice secondo elemento
+ * @param A vettore di nodi
+ * @param i indice primo elemento da scambiare
+ * @param j indice secondo elemento da scambiare
  */
 void swapNodes(Node A[], int i, int j) {
     Node temp = A[i];
@@ -61,7 +65,7 @@ void swapNodes(Node A[], int i, int j) {
 }
 
 /**
- * @brief preservare le propietà della heap A
+ * @brief algoritmo che corregge l'errore in una heap
  *
  * @param A heap
  * @param heapsize dimensione della heap
@@ -109,11 +113,11 @@ void heapify(Node A[], int heapsize, int i, Heap type)
 }
 
 /**
- * @brief costruire heap a partire da vettore non heap
+ * @brief costruire heap a partire da vettore
  *
- * @param A vettore non heap
+ * @param A vettore
  * @param dim dimensione vettore A
- * @param type tipo heap
+ * @param type tipologia heap
  */
 void buildHeap(Node A[], int len, Heap type) {
     for (int i = len / 2; i >= 0; i--) {
@@ -143,23 +147,25 @@ Node extractHeap(Node A[], int *heapsize, Heap type) {
 }
 
 /**
- * @brief inserisce chiave nella heap
+ * @brief inserisce una nuova chiave nella heap
  *
  * @param A heap
  * @param heapsize dimensione heap (in seguito all'aggiunta viene aumentata)
  * @param k chiave
- * @param index ??
- * @param type tipo heap
+ * @param index indice del nodo corrispondente alla nuova chiave
+ * @param type tipologia heap
  */
 void heapInsert(Node A[], int *heapsize, int key, int index, Heap type) {
     // aumenta la dimensione:
     *heapsize = (*heapsize + 1);
 
-    // i: ultimo indice della heap
+    // inserimento in ultima posizione nella heap
     int i = (*heapsize - 1);
 
     A[i].key = key;
     A[i].index = index;
+
+    // correzione dell'eventuale errore che si è creato
     if(type == MinHeap) {
         while (i > 0 && A[i].key < A[ parent(i) ].key) {
             swapNodes(A, i, parent(i));
@@ -180,7 +186,7 @@ void heapInsert(Node A[], int *heapsize, int key, int index, Heap type) {
  * @param p indice inizale
  * @param q indice finale
  * @param k indice del k-esimo elemento da trovare
- * @return int elemento in posizione k se H1 fosse ordinato
+ * @return int elemento che sarebbe in posizione k se H1 fosse ordinato
  */
 int heapSelect(Node H1[], int p, int q, int k, Heap type) {
     if (k < p || k > q) return INT_MIN;
@@ -192,7 +198,7 @@ int heapSelect(Node H1[], int p, int q, int k, Heap type) {
     Node root_h2;
     int size, end;
 
-    if(type == MinHeap) { size = k+1; end = k; }
+    if(type == MinHeap) { size = k+1; end = k; }                            // stabilisco quando deve terminare l'algoritmo
     else if (type == MaxHeap) { size = heapsize-k; end = heapsize-k-1; }
 
     H2 = ALLOC_ARRAY(size, Node);
